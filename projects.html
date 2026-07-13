@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Projects — PODA Pakistan</title>
+<meta name="description" content="Donor-funded projects at PODA — currently running initiatives and a two-decade archive of completed work across disability inclusion, civic leadership, gender-based violence, climate resilience and more." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- Icon sprite sheet — swap for an icon library / SVG imports in the Payload frontend -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="7" y1="2" x2="7" y2="6"/><line x1="17" y1="2" x2="17" y2="6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.5-8.5C1 9 2 5.5 5.5 5c2-.3 3.7.8 4.5 2 .8-1.2 2.5-2.3 4.5-2 3.5.5 4.5 4 3 7.5C19 16.65 12 21 12 21z"/></symbol>
+  <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20.5c0-4.1 3-6.5 6.5-6.5s6.5 2.4 6.5 6.5"/><circle cx="17.3" cy="8.3" r="2.4"/><path d="M15 14.2c2.6 0 5.3 1.9 5.5 6.3"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 13l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-bank" viewBox="0 0 24 24"><path d="M3 10l9-6 9 6"/><path d="M5 10v9M10 10v9M14 10v9M19 10v9"/><path d="M3 21h18"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.2" y2="16.2"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><line x1="4" y1="12" x2="20" y2="12"/><path d="M14 6l6 6-6 6"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-twitter" viewBox="0 0 24 24" stroke="none" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.6-2.3.7.8-.5 1.4-1.3 1.7-2.3-.8.5-1.7.8-2.6 1a3.8 3.8 0 0 0-6.5 3.5A10.8 10.8 0 0 1 3.9 4.6a3.9 3.9 0 0 0 1.2 5.2 3.8 3.8 0 0 1-1.7-.5 3.9 3.9 0 0 0 3 3.8c-.5.1-1.1.2-1.7.1a3.9 3.9 0 0 0 3.6 2.7A10.9 10.9 0 0 1 2 18.4a10.9 10.9 0 0 0 5.9 1.7c7 0 10.9-5.9 10.9-11v-.5c.8-.5 1.4-1.2 2-2z"/></symbol>
+  <symbol id="i-facebook" viewBox="0 0 24 24" stroke="none" fill="currentColor"><path d="M14 21v-8h2.7l.5-3.5H14V7.2c0-1 .3-1.7 1.8-1.7h1.6V2.4C17 2.3 15.9 2 14.6 2 11.9 2 10 3.6 10 6.8v2.7H7.3V13H10v8z"/></symbol>
+  <symbol id="i-youtube" viewBox="0 0 24 24" stroke="none" fill="currentColor"><path d="M22 8.4s-.2-1.5-.8-2.2c-.8-.8-1.6-.8-2-.9C16.4 5 12 5 12 5s-4.4 0-7.2.3c-.4 0-1.2.1-2 .9C2.2 6.9 2 8.4 2 8.4S1.8 10.2 1.8 12v1.9C1.8 15.8 2 17.6 2 17.6s.2 1.5.8 2.2c.8.8 1.9.8 2.3.9C6.6 21 12 21 12 21s4.4 0 7.2-.3c.4-.1 1.2-.1 2-.9.6-.7.8-2.2.8-2.2s.2-1.8.2-3.6V12c0-1.8-.2-3.6-.2-3.6zM9.9 15.4V8.9l5.8 3.3z"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24" stroke="none" fill="currentColor"><path d="M12 2.2c2.7 0 3 0 4 .1 1 0 1.7.2 2.3.4a4.6 4.6 0 0 1 1.7 1.1 4.6 4.6 0 0 1 1.1 1.7c.2.6.4 1.3.4 2.3.1 1 .1 1.3.1 4s0 3-.1 4c0 1-.2 1.7-.4 2.3a4.9 4.9 0 0 1-2.8 2.8c-.6.2-1.3.4-2.3.4-1 .1-1.3.1-4 .1s-3 0-4-.1c-1 0-1.7-.2-2.3-.4a4.6 4.6 0 0 1-1.7-1.1 4.6 4.6 0 0 1-1.1-1.7c-.2-.6-.4-1.3-.4-2.3-.1-1-.1-1.3-.1-4s0-3 .1-4c0-1 .2-1.7.4-2.3a4.6 4.6 0 0 1 1.1-1.7 4.6 4.6 0 0 1 1.7-1.1c.6-.2 1.3-.4 2.3-.4 1-.1 1.3-.1 4-.1zm0 3.5a6.3 6.3 0 1 0 0 12.6 6.3 6.3 0 0 0 0-12.6zm0 10.4a4.1 4.1 0 1 1 0-8.2 4.1 4.1 0 0 1 0 8.2zm6.4-10.6a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/></symbol>
+</svg>
+
+<!-- ======================= HEADER — Payload Global: Header ======================= -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a class="logo" href="index.html"><img src="images/logo.jpg" alt="PODA Pakistan"></a>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li class="has-children active"><a href="projects.html">Projects</a>
+          <ul class="submenu">
+            <li><a href="projects.html#ongoing-projects">Ongoing Projects</a></li>
+            <li><a href="projects.html#past-projects">Past Projects</a></li>
+          </ul>
+        </li>
+        <li class="has-children"><a href="news-and-media.html">News &amp; Media</a>
+          <ul class="submenu">
+            <li><a href="news-and-media.html#photo-gallery">Photo Gallery</a></li>
+            <li><a href="news-and-media.html#video-library">Video Library</a></li>
+            <li><a href="news-and-media.html#press-room">Press Room</a></li>
+            <li><a href="news-and-media.html#publications">Publications</a></li>
+            <li><a href="news-and-media.html#listen-live">Listen Live</a></li>
+          </ul>
+        </li>
+        <li class="has-children"><a href="impact.html">Our Impact</a>
+          <ul class="submenu">
+            <li><a href="impact.html#success-stories">Success Stories</a></li>
+            <li><a href="impact.html#key-achievements">Key Achievements</a></li>
+            <li><a href="impact.html#major-milestones">Major Milestones</a></li>
+            <li><a href="impact.html#community-transformation">Community Transformation</a></li>
+            <li><a href="impact.html#beneficiary-testimonials">Beneficiary Testimonials</a></li>
+          </ul>
+        </li>
+        <li><a href="internships.html">Internships</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="link-legal" href="#">Legal Aid Helpline</a>
+      <a class="btn btn-primary" href="donate.html"><svg class="icon"><use href="#i-heart"/></svg>Donate</a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<!-- ======================= PAGE HEADER — Payload Block: PageHeader ======================= -->
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb reveal"><a href="index.html">Home</a> / <span>Projects</span></div>
+    <span class="eyebrow" style="color:#ecc9f5;">Where the Funding Goes</span>
+    <h1 class="reveal">Donor-Funded Projects, Start to Finish</h1>
+    <p class="lead reveal" style="margin-bottom:24px;">From a European Union-backed disability inclusion programme launching in 2026 to a two-decade archive of completed initiatives — every project PODA has delivered, who funded it, and what it changed.</p>
+    <div class="tag-row reveal"><span>2 Ongoing</span><span>44 Completed</span><span>Since 2006</span></div>
+  </div>
+</section>
+
+<!-- ======================= PROJECTS STRIP — Payload Block: ImpactHighlights ======================= -->
+<div class="container impact-strip">
+  <div class="impact-card reveal">
+    <div class="impact-item">
+      <div class="ic"><svg class="icon"><use href="#i-grid"/></svg></div>
+      <div><div class="num">46 Projects</div><div class="lbl">Delivered since 2006</div></div>
+    </div>
+    <div class="impact-item">
+      <div class="ic"><svg class="icon"><use href="#i-bank"/></svg></div>
+      <div><div class="num">20+ Donors</div><div class="lbl">EU, NED, UN agencies &amp; more</div></div>
+    </div>
+    <div class="impact-item">
+      <div class="ic"><svg class="icon"><use href="#i-pin"/></svg></div>
+      <div><div class="num">100+ Districts</div><div class="lbl">Across all four provinces</div></div>
+    </div>
+    <div class="impact-item">
+      <div class="ic"><svg class="icon"><use href="#i-calendar"/></svg></div>
+      <div><div class="num">2006–2029</div><div class="lbl">Project span, past to ongoing</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================= SUB-NAV — jump-nav + scrollspy across the 2 sections ======================= -->
+<nav class="section-subnav" aria-label="Projects page sections">
+  <div class="container">
+    <div class="section-tabs">
+      <a href="#ongoing-projects" class="active"><span class="n">1</span>Ongoing Projects</a>
+      <a href="#past-projects"><span class="n">2</span>Past Projects</a>
+    </div>
+    <div class="section-select-wrap">
+      <select class="section-select" aria-label="Jump to a section">
+        <option value="ongoing-projects">1 · Ongoing Projects</option>
+        <option value="past-projects">2 · Past Projects</option>
+      </select>
+    </div>
+  </div>
+</nav>
+
+<!-- ======================= 1. ONGOING PROJECTS — Payload Block: ProjectFeatureList ======================= -->
+<section class="content-section" id="ongoing-projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Ongoing projects</span>
+      <h2>Currently Underway</h2>
+      <p class="lead">Two active, donor-funded projects running right now across Punjab and Khyber Pakhtunkhwa.</p>
+    </div>
+
+    <article class="project-feature reveal">
+      <span class="project-status">Ongoing</span>
+      <h3>Beyond Barriers: Promoting Capacity Building, Disability Inclusion, Safeguarding, and Gender Equity for Pakistani Women With and Without Disabilities</h3>
+      <div class="project-meta-grid">
+        <div class="field"><span>Thematic Area</span><p>Disability Inclusion, Women's Economic Empowerment, Gender Equality, GBVH, Safeguarding, Inclusive Employment, Policy Advocacy</p></div>
+        <div class="field"><span>Duration</span><p>April 2026 – March 2029</p></div>
+        <div class="field"><span>Donor Agency</span><p>European Union (EU)</p></div>
+        <div class="field"><span>Location</span><p>Punjab &amp; Khyber Pakhtunkhwa (Peshawar, Mardan, Chakwal, Multan)</p></div>
+      </div>
+      <h4 class="subhead">Key Interventions</h4>
+      <ul class="project-interventions">
+        <li><span class="ic"><svg><use href="#i-check"/></svg></span>Strengthens the institutional capacity of women-led organizations and Organizations of Women with Disabilities (OWDs) through organizational assessments, capacity-building programs, mentoring, training, and institutional development support.</li>
+        <li><span class="ic"><svg><use href="#i-check"/></svg></span>Promotes economic inclusion by conducting accessibility assessments of Technical and Vocational Education and Training (TVET) institutions, facilitating market-oriented skills development, disability confidence training, and employment linkages for women with and without disabilities.</li>
+        <li><span class="ic"><svg><use href="#i-check"/></svg></span>Engages employers, Business Development Service providers, and TVET institutions to adopt disability-inclusive policies, implement reasonable accommodation measures, and promote accessible and inclusive workplace practices.</li>
+        <li><span class="ic"><svg><use href="#i-check"/></svg></span>Conducts participatory research on Gender-Based Violence and Harassment (GBVH), develops disability-inclusive referral pathways, and strengthens evidence-based advocacy to foster safer, more inclusive, and equitable workplaces.</li>
+        <li><span class="ic"><svg><use href="#i-check"/></svg></span>Facilitates policy dialogue with government departments, labor market stakeholders, and relevant institutions to strengthen implementation of the SME Policy 2021, the Protection Against Harassment of Women at the Workplace Act 2022, and the National Action Plan on Business and Human Rights.</li>
+      </ul>
+    </article>
+
+    <article class="project-feature reveal">
+      <span class="project-status">Ongoing</span>
+      <h3>Promoting Civic Leadership and Participation</h3>
+      <div class="project-meta-grid">
+        <div class="field"><span>Thematic Area</span><p>Democratic Governance, Women's Leadership, Civic Participation, Legal Empowerment, Digital Safety, Human Rights, Community Mobilization</p></div>
+        <div class="field"><span>Duration</span><p>February 2026 – January 2027</p></div>
+        <div class="field"><span>Donor Agency</span><p>National Endowment for Democracy (NED)</p></div>
+        <div class="field"><span>Location</span><p>Pakistan — Punjab, Islamabad Capital Territory, and participants from 100+ districts nationwide</p></div>
+      </div>
+      <h4 class="subhead">Key Interventions</h4>
+      <ul class="project-interventions">
+        <li><span class="ic"><svg><use href="#i-check"/></svg></span>Strengthens the Rural Women's Network through leadership development, governance, and civic engagement training to enhance democratic participation and women's leadership.</li>
+        <li><span class="ic"><svg><use href="#i-check"/></svg></span>Expands access to legal identity and justice by providing mobile legal aid clinics, civil registration support, and free legal aid in collaboration with district bar associations and pro bono lawyers.</li>
+        <li><span class="ic"><svg><use href="#i-check"/></svg></span>Conducts training on digital safety, democratic values, constitutional rights, civic education, and media literacy to strengthen women's and youth's digital resilience and informed civic participation.</li>
+        <li><span class="ic"><svg><use href="#i-check"/></svg></span>Organizes weekly webinars, public awareness campaigns, and radio programs to promote women's rights, legal identity, electoral participation, democratic engagement, and civic awareness.</li>
+        <li><span class="ic"><svg><use href="#i-check"/></svg></span>Convenes the Annual Rural Women Leadership Conference and implements organizational development initiatives to strengthen institutional sustainability, strategic planning, governance systems, and staff capacity.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ======================= 2. PAST PROJECTS — Payload Block: ProjectArchiveList ======================= -->
+<section class="content-section" id="past-projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Past projects</span>
+      <h2>A Two-Decade Track Record</h2>
+      <p class="lead">44 completed projects since 2006 — search by keyword or filter by decade to explore the archive.</p>
+    </div>
+
+    <div class="list-toolbar reveal">
+      <div class="search-box">
+        <svg class="icon"><use href="#i-search"/></svg>
+        <input type="search" id="projSearch" placeholder="Search past projects…" aria-label="Search past projects">
+      </div>
+      <div class="category-filter" id="decadeFilter" style="margin-bottom:0;">
+        <button type="button" class="active" data-decade="all">All Decades</button>
+        <button type="button" data-decade="2020s">2020s</button>
+        <button type="button" data-decade="2010s">2010s</button>
+        <button type="button" data-decade="2000s">2000s</button>
+      </div>
+    </div>
+
+    <div class="project-card-grid" id="pastProjectsList">
+
+      <article class="project-card reveal" data-decade="2020s">
+        <span class="duration">Dec 2022 – Nov 2025</span>
+        <h4>Reduce Early Marriages to Enhance Gender Equality</h4>
+        <div class="row-meta">
+          <span title="Royal Norwegian Embassy"><svg class="icon"><use href="#i-bank"/></svg>Royal Norwegian Embassy</span>
+          <span title="Punjab"><svg class="icon"><use href="#i-pin"/></svg>Punjab</span>
+        </div>
+        <p class="excerpt">An enabling legal and social environment to curtail early marriages and enhance women's and girls' access to dignified reproductive health rights services. Initiated an inclusive process to amend the Punjab Marriage Restraint Act 2015 to raise the minimum marriage age for girls to 18 years; increased the capacity of target health facilities, health workers, and community resource persons to ensure quality SRHR services for women and adolescent girls in Punjab.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2020s">
+        <span class="duration">Jan – Mar 2025</span>
+        <h4>Advancing Gender-Responsive, Inclusive, and Climate-Resilient WASH Policies and Promoting Women's Leadership in WASH</h4>
+        <div class="row-meta">
+          <span title="WaterAid"><svg class="icon"><use href="#i-bank"/></svg>WaterAid</span>
+          <span title="Karachi, Lahore, Islamabad"><svg class="icon"><use href="#i-pin"/></svg>Karachi, Lahore, Islamabad</span>
+        </div>
+        <p class="excerpt">Gender-responsive, inclusive, and climate-resilient WASH policies and promoting women's leadership in WASH. Consultation meetings held across three cities.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2020s">
+        <span class="duration">May 2024 – Jan 2026</span>
+        <h4>Rural Women's Network for Civic Leadership and Participation</h4>
+        <div class="row-meta">
+          <span title="National Endowment for Democracy"><svg class="icon"><use href="#i-bank"/></svg>National Endowment for Democracy</span>
+          <span title="50 districts across KP, Punjab, Sindh &amp; Balochistan"><svg class="icon"><use href="#i-pin"/></svg>50 districts across KP, Punjab, Sindh &amp; Balochistan</span>
+        </div>
+        <p class="excerpt">Civic participation of rural women through civil registration and democracy education, and visibility of rural women leaders to monitor compliance with constitutional rights. Formed the District Information Women Alliance (DIWA); ran awareness camps on legal identity, voter registration campaigns, voter education capacity building, quarterly leadership skills training for young women, the Annual Rural Women Leadership Conference, and political rights awareness.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2020s">
+        <span class="duration">Oct 22–24, 2024</span>
+        <h4>Rural Women Leadership Training Conference 2024</h4>
+        <div class="row-meta">
+          <span title="EU, UN Women, CABI, Legal Aid Society, AKRSP, AWAZ CDS, SPO, NED, RNE, Care International"><svg class="icon"><use href="#i-bank"/></svg>EU, UN Women, CABI, Legal Aid Society, AKRSP, AWAZ CDS, SPO, NED, RNE, Care International</span>
+          <span title="All over Pakistan"><svg class="icon"><use href="#i-pin"/></svg>All over Pakistan</span>
+        </div>
+        <p class="excerpt">Empowering rural women through sustainable agriculture innovations, digital entrepreneurship, and climate action — challenges and opportunities.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2020s">
+        <span class="duration">Feb 2023 – Oct 2024; Mar – Aug 2025</span>
+        <h4>Olive Culture</h4>
+        <div class="row-meta">
+          <span title="Olive Culture"><svg class="icon"><use href="#i-bank"/></svg>Olive Culture</span>
+          <span title="Chakwal"><svg class="icon"><use href="#i-pin"/></svg>Chakwal</span>
+        </div>
+        <p class="excerpt">Olive product production, marketing, and sustainable value chains. Trainings on olive product production, marketing, and sustainable value chains.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2020s">
+        <span class="duration">Mar 2023 – Oct 2025</span>
+        <h4>Capacity Building of Women Rights Defenders to Protect Rights</h4>
+        <div class="row-meta">
+          <span title="Czech Embassy"><svg class="icon"><use href="#i-bank"/></svg>Czech Embassy</span>
+          <span title="25 districts across KP, Punjab, Sindh &amp; Balochistan"><svg class="icon"><use href="#i-pin"/></svg>25 districts across KP, Punjab, Sindh &amp; Balochistan</span>
+        </div>
+        <p class="excerpt">Capacity building of women rights defenders across four provinces.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2020s">
+        <span class="duration">Jun 2023 – Sep 2024</span>
+        <h4>UAF Assistance for Post-August 2021 Afghan Women and Girls at Risk of Gender-Based Violence in Transit in Pakistan</h4>
+        <div class="row-meta">
+          <span title="Vital Voices"><svg class="icon"><use href="#i-bank"/></svg>Vital Voices</span>
+          <span title="Islamabad, Quetta, Peshawar"><svg class="icon"><use href="#i-pin"/></svg>Islamabad, Quetta, Peshawar</span>
+        </div>
+        <p class="excerpt">Urgent assistance to Afghans. Cash assistance delivered to beneficiaries.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2020s">
+        <span class="duration">Jul 2023 – Mar 2024</span>
+        <h4>Vote Without Violence</h4>
+        <div class="row-meta">
+          <span title="National Institute for Democracy"><svg class="icon"><use href="#i-bank"/></svg>National Institute for Democracy</span>
+          <span title="24 districts of KP, Punjab, Sindh &amp; Balochistan"><svg class="icon"><use href="#i-pin"/></svg>24 districts of KP, Punjab, Sindh &amp; Balochistan</span>
+        </div>
+        <p class="excerpt">Capacity-building workshops. ToTs and downstream trainings on voting without violence.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2020s">
+        <span class="duration">Sep 2022 – Mar 2023</span>
+        <h4>Flood Response 2022 in Pakistan</h4>
+        <div class="row-meta">
+          <span title="MADRE"><svg class="icon"><use href="#i-bank"/></svg>MADRE</span>
+          <span title="25 districts across 4 provinces, incl. Gilgit-Baltistan"><svg class="icon"><use href="#i-pin"/></svg>25 districts across 4 provinces, incl. Gilgit-Baltistan</span>
+        </div>
+        <p class="excerpt">Flood response, disaster, and extreme weather events. Provided non-food item (NFI) kits and trainings for social and economic protection in disaster situations.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2020s">
+        <span class="duration">Aug 2022 – Jan 2023</span>
+        <h4>Amplifying the Voices and Skills of Pakistani Rural Women for Climate Action</h4>
+        <div class="row-meta">
+          <span title="Canadian Fund for Local Initiatives (CFLI), Canadian High Commission Islamabad"><svg class="icon"><use href="#i-bank"/></svg>Canadian Fund for Local Initiatives (CFLI), Canadian High Commission Islamabad</span>
+          <span title="AJK, Balochistan, GB, KPK, Punjab, Sindh, ICT"><svg class="icon"><use href="#i-pin"/></svg>AJK, Balochistan, GB, KPK, Punjab, Sindh, ICT</span>
+        </div>
+        <p class="excerpt">Climate action; rainwater harvesting. Developed a network of 180 Rural Women Climate Action Leaders in Pakistan. Thirty rural women gained and shared practical knowledge in rainwater harvesting, drip irrigation, and weather advisory services. An additional 150 rural women gained digital skills for online forums on climate change.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2020s">
+        <span class="duration">Sep – Nov 2022</span>
+        <h4>Enhancing Awareness and Understanding of Child Labour for Its Elimination, Focusing on Rural Communities Engaged in Agriculture/Cotton Production</h4>
+        <div class="row-meta">
+          <span title="UN Food and Agriculture Organization (FAO) Pakistan"><svg class="icon"><use href="#i-bank"/></svg>UN Food and Agriculture Organization (FAO) Pakistan</span>
+          <span title="Tehsil Hasilpur, District Bahawalpur, South Punjab"><svg class="icon"><use href="#i-pin"/></svg>Tehsil Hasilpur, District Bahawalpur, South Punjab</span>
+        </div>
+        <p class="excerpt">Agriculture, child labor, child education, poverty alleviation. Raised awareness and understanding of child labor to minimize its negative impact on the education, health, safety, and development of children in rural communities engaged in agriculture/cotton production. Also worked to reduce rural poverty and promote inclusive economic growth by reducing inequalities and supporting inclusive rural transformation.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2020s">
+        <span class="duration">May 2022 – Apr 2024</span>
+        <h4>Rural Women's Network for Civic Leadership and Participation</h4>
+        <div class="row-meta">
+          <span title="National Endowment for Democracy (NED)"><svg class="icon"><use href="#i-bank"/></svg>National Endowment for Democracy (NED)</span>
+          <span title="50 districts in 4 provinces of Pakistan"><svg class="icon"><use href="#i-pin"/></svg>50 districts in 4 provinces of Pakistan</span>
+        </div>
+        <p class="excerpt">Access to legal identity and legal empowerment of rural women. Trained women to facilitate rural women and girls above age 18 in obtaining their CNIC and learning about their legal rights as citizens of Pakistan, including the right to inheritance, property, and voting.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2020s">
+        <span class="duration">Nov 2021 – Mar 2022</span>
+        <h4>Study for Data Collection on Protection Issues Faced by Women Farmers in Pakistan to Develop Strategic Solutions</h4>
+        <div class="row-meta">
+          <span title="Food and Agriculture Organization of the United Nations (FAO)"><svg class="icon"><use href="#i-bank"/></svg>Food and Agriculture Organization of the United Nations (FAO)</span>
+          <span title="All over Pakistan"><svg class="icon"><use href="#i-pin"/></svg>All over Pakistan</span>
+        </div>
+        <p class="excerpt">Sustainable agriculture and climate change; women's protection issues. Collected data and identified gaps in the protection of women farmers from violence and harassment in the workplace during agricultural work — health hazards, lack of social safety nets, gender-based violence, denial of access to the justice system, harassment cases, and access to grievance redressal mechanisms across major crops, fisheries, and livestock.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2020s">
+        <span class="duration">Apr – Dec 2021</span>
+        <h4>Keeping Food Markets Working in Pakistan 2021: Production and Distribution of Safe and Nutritious Fruits and Vegetables for Low- and Middle-Income Consumers</h4>
+        <div class="row-meta">
+          <span title="The Global Alliance for Improved Nutrition (GAIN)"><svg class="icon"><use href="#i-bank"/></svg>The Global Alliance for Improved Nutrition (GAIN)</span>
+          <span title="Punjab – Chakwal"><svg class="icon"><use href="#i-pin"/></svg>Punjab – Chakwal</span>
+        </div>
+        <p class="excerpt">Sustainable agriculture and nutrition. Provided skill development and adaptation to climate-smart agriculture, teaching communities how to grow safe and nutritious organic food, raising awareness of food nutrition, and providing fresh, healthy food to women — especially girls and children — and local communities.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2010s">
+        <span class="duration">Jun 2018 – Apr 2022</span>
+        <h4>Improving Smallholder Dairy-Beef and Small Ruminants' Profitability by Enhancing Farm Production and Value Chain Management in Pakistan</h4>
+        <div class="row-meta">
+          <span title="ACIAR; University of Veterinary and Animal Sciences (UVAS)"><svg class="icon"><use href="#i-bank"/></svg>ACIAR; University of Veterinary and Animal Sciences (UVAS)</span>
+          <span title="Punjab – Jhelum &amp; Chakwal"><svg class="icon"><use href="#i-pin"/></svg>Punjab – Jhelum &amp; Chakwal</span>
+        </div>
+        <p class="excerpt">Livestock care and management; livelihoods. Improved efficiency of smallholder dairy farmer participation in dairy and beef value chains, and improved smallholder household livelihoods through increased value from beef. Strengthened connections between smallholder farmers and markets through increased engagement of youth and women working on-farm and in agriculture in rain-fed areas of Punjab.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2020s">
+        <span class="duration">Oct 2020 – Oct 2021</span>
+        <h4>Annual Rural Women Leadership Conference — The Game Changer</h4>
+        <div class="row-meta">
+          <span title="ECP, GAIN, NCSW, KPCSW, Lok Virsa, Islamabad Police, UNDP, UVAS"><svg class="icon"><use href="#i-bank"/></svg>ECP, GAIN, NCSW, KPCSW, Lok Virsa, Islamabad Police, UNDP, UVAS</span>
+          <span title="All over Pakistan"><svg class="icon"><use href="#i-pin"/></svg>All over Pakistan</span>
+        </div>
+        <p class="excerpt">Equity, Ecology, Democracy, and Economic Development. A three-day conference organized at Lok Virsa, Islamabad. 677 women participated from 109 districts of Pakistan, with six policy sessions on economic empowerment, agriculture, climate change, and political participation.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2010s">
+        <span class="duration">May 2019 – Apr 2021</span>
+        <h4>Strengthening Political Participation of Rural Communities</h4>
+        <div class="row-meta">
+          <span title="National Endowment for Democracy (NED)"><svg class="icon"><use href="#i-bank"/></svg>National Endowment for Democracy (NED)</span>
+          <span title="Chakwal, Sargodha, Jhelum, Rawalpindi"><svg class="icon"><use href="#i-pin"/></svg>Chakwal, Sargodha, Jhelum, Rawalpindi</span>
+        </div>
+        <p class="excerpt">Democracy education. Enhanced participation of rural women and girls in national development through 10,000 CNIC registrations, financial literacy, and livelihood skills training.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2010s">
+        <span class="duration">Oct 2019 – Oct 2020</span>
+        <h4>Rural Women's Day Conference</h4>
+        <div class="row-meta">
+          <span title="EU Delegation in Pakistan, NCSW, ECP, UNDP Pakistan, ADB, FAO"><svg class="icon"><use href="#i-bank"/></svg>EU Delegation in Pakistan, NCSW, ECP, UNDP Pakistan, ADB, FAO</span>
+          <span title="All over Pakistan"><svg class="icon"><use href="#i-pin"/></svg>All over Pakistan</span>
+        </div>
+        <p class="excerpt">Capacity building of rural women's leadership in climate change adaptation, COVID-19 response, governance, and disaster preparedness in Pakistan.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2010s">
+        <span class="duration">May 2018 – Apr 2019</span>
+        <h4>Effective Participation of Rural Communities in General Elections</h4>
+        <div class="row-meta">
+          <span title="National Endowment for Democracy (NED)"><svg class="icon"><use href="#i-bank"/></svg>National Endowment for Democracy (NED)</span>
+          <span title="Chakwal, Sargodha, Jhelum, Rawalpindi"><svg class="icon"><use href="#i-pin"/></svg>Chakwal, Sargodha, Jhelum, Rawalpindi</span>
+        </div>
+        <p class="excerpt">Democracy education. Built the capacity of rural communities to participate in general elections, strengthening rural governance for better development.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2010s">
+        <span class="duration">May 2017 – Apr 2018</span>
+        <h4>Strengthening Democratic Governance in Rural Communities</h4>
+        <div class="row-meta">
+          <span title="National Endowment for Democracy (NED)"><svg class="icon"><use href="#i-bank"/></svg>National Endowment for Democracy (NED)</span>
+          <span title="Chakwal, Sargodha, Jhelum, Rawalpindi"><svg class="icon"><use href="#i-pin"/></svg>Chakwal, Sargodha, Jhelum, Rawalpindi</span>
+        </div>
+        <p class="excerpt">Democracy education. Organized awareness sessions and theater performances among rural communities in four districts on CNIC and voter registration.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2010s">
+        <span class="duration">Sep 2016 – Aug 2017</span>
+        <h4>European Instrument for Democracy and Human Rights (EIDHR) Support Measure 2013</h4>
+        <div class="row-meta">
+          <span title="European Union Delegation in Pakistan"><svg class="icon"><use href="#i-bank"/></svg>European Union Delegation in Pakistan</span>
+          <span title="All over Pakistan"><svg class="icon"><use href="#i-pin"/></svg>All over Pakistan</span>
+        </div>
+        <p class="excerpt">Human rights. Organized activities during the 16 Days of Activism, consultations for women human rights defenders, an event promoting women in sports, and activities marking Universal Human Rights Day.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2010s">
+        <span class="duration">Jul 2016 – Jun 2017</span>
+        <h4>Promoting Democratic Governance in Rural Punjab</h4>
+        <div class="row-meta">
+          <span title="National Endowment for Democracy (NED)"><svg class="icon"><use href="#i-bank"/></svg>National Endowment for Democracy (NED)</span>
+          <span title="Chakwal, Jhelum, Sargodha, Rawalpindi"><svg class="icon"><use href="#i-pin"/></svg>Chakwal, Jhelum, Sargodha, Rawalpindi</span>
+        </div>
+        <p class="excerpt">Democracy education. Promoted constitutional literacy among rural communities to build a better understanding of citizens' rights and responsibilities. Established Democracy Learning Centers in villages to provide books, newspapers, and reading materials to communities and youth.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2010s">
+        <span class="duration">Jul 2016 – Jun 2017</span>
+        <h4>Provision of Free Legal Aid to GBV Victims in District Rawalpindi</h4>
+        <div class="row-meta">
+          <span title="The Fund for Global Human Rights (USA)"><svg class="icon"><use href="#i-bank"/></svg>The Fund for Global Human Rights (USA)</span>
+          <span title="Rawalpindi"><svg class="icon"><use href="#i-pin"/></svg>Rawalpindi</span>
+        </div>
+        <p class="excerpt">Provision of free legal aid. Provided free legal aid to GBV victims, conducted sessions on pro-women laws, and provided referral services to GBV victims.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2000s">
+        <span class="duration">2008 – 2016</span>
+        <h4>Early Childhood Education Center, Youth Study Groups, and Training of Rural Teachers in Chakwal</h4>
+        <div class="row-meta">
+          <span title="The Global Fund for Children (USA), Embassy of Switzerland, Teachers Without Borders (USA)"><svg class="icon"><use href="#i-bank"/></svg>The Global Fund for Children (USA), Embassy of Switzerland, Teachers Without Borders (USA)</span>
+          <span title="Chakwal"><svg class="icon"><use href="#i-pin"/></svg>Chakwal</span>
+        </div>
+        <p class="excerpt">Childhood education center. Established and managed an Early Childhood Center in UC Jand, District Chakwal. Trained 50 teachers for literacy centers and local community centers. Formed Youth Study Circles and libraries at the village level for boys and girls aged 10 to 18. Supported the DCO Chakwal in establishing 80 literacy centers for girls in areas without schools for girls.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2010s">
+        <span class="duration">Feb 2015 – Jun 2016</span>
+        <h4>Innovative Approaches to Promote Women's Economic Empowerment</h4>
+        <div class="row-meta">
+          <span title="Gender Equity Program (GEP) of AF-USAID"><svg class="icon"><use href="#i-bank"/></svg>Gender Equity Program (GEP) of AF-USAID</span>
+          <span title="Chakwal"><svg class="icon"><use href="#i-pin"/></svg>Chakwal</span>
+        </div>
+        <p class="excerpt">Livelihood skills training. Delivered skill development trainings for 120 out-of-school girls/women in District Chakwal, covering basic literacy, legal rights information, and financial literacy to empower them as artisans.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2010s">
+        <span class="duration">Oct 2014 – Jun 2016</span>
+        <h4>Pakistani Alliance of Rural Women for Action and Zenith (PARWAZ)</h4>
+        <div class="row-meta">
+          <span title="Public Affairs Section, Embassy of the USA in Pakistan"><svg class="icon"><use href="#i-bank"/></svg>Public Affairs Section, Embassy of the USA in Pakistan</span>
+          <span title="All over Pakistan"><svg class="icon"><use href="#i-pin"/></svg>All over Pakistan</span>
+        </div>
+        <p class="excerpt">Women's rights. Formed a network of 500 women from across Pakistan to develop leadership skills for ending gender-based violence, and organized public education campaigns on the right to education for girls.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2010s">
+        <span class="duration">Apr – Oct 2015</span>
+        <h4>Promoting Rainwater Harvesting through Community Participation</h4>
+        <div class="row-meta">
+          <span title="Korea Green Foundation"><svg class="icon"><use href="#i-bank"/></svg>Korea Green Foundation</span>
+          <span title="Jhelum &amp; Chakwal"><svg class="icon"><use href="#i-pin"/></svg>Jhelum &amp; Chakwal</span>
+        </div>
+        <p class="excerpt">Rainwater harvesting and conservation. Provided training and installation of rainwater harvesting models with community involvement to conserve water for domestic and agricultural use in rain-dependent areas.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2010s">
+        <span class="duration">Mar 2014 – Feb 2015</span>
+        <h4>Promoting Youth Development for Youth Empowerment in District Chakwal</h4>
+        <div class="row-meta">
+          <span title="CVP/USAID"><svg class="icon"><use href="#i-bank"/></svg>CVP/USAID</span>
+          <span title="Chakwal"><svg class="icon"><use href="#i-pin"/></svg>Chakwal</span>
+        </div>
+        <p class="excerpt">Youth empowerment. Implemented the Punjab Youth Policy in District Chakwal by providing leadership training to 90 youth, including girls (aged 16 to 24), to become active citizens. Launched a campaign to highlight missing school facilities as a barrier to learning and engaged the district government in improving access and quality for all learners.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2010s">
+        <span class="duration">Aug 2014 – Jun 2015</span>
+        <h4>Building Youth's Capacity to Negotiate a Peaceful Life</h4>
+        <div class="row-meta">
+          <span title="Umeed Jawan, Creative Associates (USAID)"><svg class="icon"><use href="#i-bank"/></svg>Umeed Jawan, Creative Associates (USAID)</span>
+          <span title="Muzaffargarh"><svg class="icon"><use href="#i-pin"/></svg>Muzaffargarh</span>
+        </div>
+        <p class="excerpt">Youth livelihood skills training. Provided functional literacy and skills training to 500 unemployed youth, including 250 girls, in six trades — electrician, welding, plumbing, tailoring, tunnel farming, and medical assistant — in District Muzaffargarh (South Punjab).</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2010s">
+        <span class="duration">Nov 2014 – Oct 2015</span>
+        <h4>European Instrument for Democracy and Human Rights (EIDHR) Support Measure 2013</h4>
+        <div class="row-meta">
+          <span title="European Union Delegation in Pakistan"><svg class="icon"><use href="#i-bank"/></svg>European Union Delegation in Pakistan</span>
+          <span title="All over Pakistan"><svg class="icon"><use href="#i-pin"/></svg>All over Pakistan</span>
+        </div>
+        <p class="excerpt">Human rights. Organized 10 seminars, 8 consultations, and a debate competition on women's role in peacebuilding and development. Encouraged youth to express their views on human rights, women's rights, and children's rights to help build a society grounded in human rights principles and values.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2010s">
+        <span class="duration">Jul 2013 – Jun 2014</span>
+        <h4>Implementation of Right to Education, Article 25-A</h4>
+        <div class="row-meta">
+          <span title="The Fund for Global Human Rights (USA)"><svg class="icon"><use href="#i-bank"/></svg>The Fund for Global Human Rights (USA)</span>
+          <span title="Chakwal"><svg class="icon"><use href="#i-pin"/></svg>Chakwal</span>
+        </div>
+        <p class="excerpt">Right to education. Designed and distributed materials to raise awareness of the Right to Education under Article 25-A, and discussed them with the district education team, students, parents, community elders, and teachers. Held theater performances with clear messages on the right to education to raise awareness among disadvantaged groups in remote areas with low enrollment. As a result, enrollment increased.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2010s">
+        <span class="duration">Oct 2013 – Jun 2014</span>
+        <h4>Ensuring Inclusion of Rural Communities for an Effective Grassroots Democratic System</h4>
+        <div class="row-meta">
+          <span title="National Endowment for Democracy (NED)"><svg class="icon"><use href="#i-bank"/></svg>National Endowment for Democracy (NED)</span>
+          <span title="Chakwal, Jhelum, Rawalpindi"><svg class="icon"><use href="#i-pin"/></svg>Chakwal, Jhelum, Rawalpindi</span>
+        </div>
+        <p class="excerpt">Democracy education in rural Pakistan. Advocated with NADRA for CNIC issuance to the rural population, facilitated voter registration, established village committees for registration, and trained local councilors and teachers on ICCPR and UDHR standards.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2010s">
+        <span class="duration">2011 – 2014</span>
+        <h4>Drop-In Center for Street Children</h4>
+        <div class="row-meta">
+          <span title="Plan International Pakistan"><svg class="icon"><use href="#i-bank"/></svg>Plan International Pakistan</span>
+          <span title="Chakwal"><svg class="icon"><use href="#i-pin"/></svg>Chakwal</span>
+        </div>
+        <p class="excerpt">Protection and education. Provided children's education, hygiene, and protection services.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2010s">
+        <span class="duration">Oct 2012 – Sep 2014</span>
+        <h4>Empowering Rural Women through Agricultural Innovation and Farm Management Skills</h4>
+        <div class="row-meta">
+          <span title="USAID/SGAFP"><svg class="icon"><use href="#i-bank"/></svg>USAID/SGAFP</span>
+          <span title="Muzaffargarh"><svg class="icon"><use href="#i-pin"/></svg>Muzaffargarh</span>
+        </div>
+        <p class="excerpt">Women farmers' development. Formed women's agriculture support units, trained women, and established a farmers' network.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2010s">
+        <span class="duration">2013 – 2014</span>
+        <h4>Capacity Building of Women and Community to Reduce GBV in Pakistan</h4>
+        <div class="row-meta">
+          <span title="S/GWI"><svg class="icon"><use href="#i-bank"/></svg>S/GWI</span>
+          <span title="Rawalpindi"><svg class="icon"><use href="#i-pin"/></svg>Rawalpindi</span>
+        </div>
+        <p class="excerpt">Awareness of GBV. Trained women on GBV.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2010s">
+        <span class="duration">Oct 2012 – Sep 2013</span>
+        <h4>Voter Education of Rural Communities and Awareness for the Next General Elections in Pakistan</h4>
+        <div class="row-meta">
+          <span title="National Endowment for Democracy (NED)"><svg class="icon"><use href="#i-bank"/></svg>National Endowment for Democracy (NED)</span>
+          <span title="Chakwal, Jhelum, Rawalpindi, Muzaffargarh"><svg class="icon"><use href="#i-pin"/></svg>Chakwal, Jhelum, Rawalpindi, Muzaffargarh</span>
+        </div>
+        <p class="excerpt">Democracy education in rural Pakistan. Voter education and voter registration in project locations.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2000s">
+        <span class="duration">2006 – 2012</span>
+        <h4>Democracy Education in Rural Pakistan</h4>
+        <div class="row-meta">
+          <span title="National Endowment for Democracy (NED)"><svg class="icon"><use href="#i-bank"/></svg>National Endowment for Democracy (NED)</span>
+          <span title="Chakwal, Muzaffargarh, Buner, Mardan, Hyderabad"><svg class="icon"><use href="#i-pin"/></svg>Chakwal, Muzaffargarh, Buner, Mardan, Hyderabad</span>
+        </div>
+        <p class="excerpt">Democracy education in rural Pakistan. Advocated with NADRA for CNIC issuance to the rural population, facilitated voter registration, established village committees for registration, and trained local councilors and teachers on ICCPR and UDHR standards.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2000s">
+        <span class="duration">2006 – 2011</span>
+        <h4>Early Childhood Education Center</h4>
+        <div class="row-meta">
+          <span title="The Global Fund for Children (GFC)"><svg class="icon"><use href="#i-bank"/></svg>The Global Fund for Children (GFC)</span>
+          <span title="Chakwal"><svg class="icon"><use href="#i-pin"/></svg>Chakwal</span>
+        </div>
+        <p class="excerpt">Children's education and protection. Established a "Madrassah Alternate School" as a pilot project in a village, including a school lunch program and formal and informal education involving parents through monthly mothers' meetings.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2010s">
+        <span class="duration">Jul 2012 – Mar 2013</span>
+        <h4>Livelihood Skills and Legal Literacy</h4>
+        <div class="row-meta">
+          <span title="The Asia Foundation (TAF)"><svg class="icon"><use href="#i-bank"/></svg>The Asia Foundation (TAF)</span>
+          <span title="Rawalpindi, Islamabad, Chakwal"><svg class="icon"><use href="#i-pin"/></svg>Rawalpindi, Islamabad, Chakwal</span>
+        </div>
+        <p class="excerpt">Empowering women to improve their social status. Provided training in paper recycling skills.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2000s">
+        <span class="duration">2006 – 2011</span>
+        <h4>Strengthening Human Rights Defenders Networks</h4>
+        <div class="row-meta">
+          <span title="The Fund for Global Human Rights (FGHR)"><svg class="icon"><use href="#i-bank"/></svg>The Fund for Global Human Rights (FGHR)</span>
+          <span title="Chakwal"><svg class="icon"><use href="#i-pin"/></svg>Chakwal</span>
+        </div>
+        <p class="excerpt">Creating human rights defender groups at the district level. Trained local teachers, lawyers, farmers, lady health workers, and journalists as human rights defenders through freedom of association, and formed community-based groups.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2010s">
+        <span class="duration">2010 – 2011</span>
+        <h4>Empowering Women in Flood-Affected Areas through Legal Literacy and Livelihood Skills Training</h4>
+        <div class="row-meta">
+          <span title="Global Women's Initiative (GWI), U.S. Department of State"><svg class="icon"><use href="#i-bank"/></svg>Global Women's Initiative (GWI), U.S. Department of State</span>
+          <span title="Mardan, Multan, Hyderabad"><svg class="icon"><use href="#i-pin"/></svg>Mardan, Multan, Hyderabad</span>
+        </div>
+        <p class="excerpt">Providing legal rights training to women and linking them to livelihood sources. Provided legal assistance to flood-affected women; advocated for the protection of women and children; informed women, local government, and camp officials about the Anti-Sexual Harassment Legislation 2010.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2010s">
+        <span class="duration">2011</span>
+        <h4>Rural Women's Conference, October 15</h4>
+        <div class="row-meta">
+          <span title="Embassy of Norway"><svg class="icon"><use href="#i-bank"/></svg>Embassy of Norway</span>
+          <span title="Islamabad"><svg class="icon"><use href="#i-pin"/></svg>Islamabad</span>
+        </div>
+        <p class="excerpt">Bringing together rural women from across Pakistan for the conference. Brought together 800 rural women from across Pakistan to participate in the conference.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2010s">
+        <span class="duration">2011</span>
+        <h4>Establishment of Women-Friendly Spaces in Sindh to Address GBV</h4>
+        <div class="row-meta">
+          <span title="UNFPA"><svg class="icon"><use href="#i-bank"/></svg>UNFPA</span>
+          <span title="Tando Muhammad Khan, Tando Hyder, Tando Allahyar"><svg class="icon"><use href="#i-pin"/></svg>Tando Muhammad Khan, Tando Hyder, Tando Allahyar</span>
+        </div>
+        <p class="excerpt">Establishment of 15 women-friendly spaces to train 5,000 women. Women's rights advocacy and livelihood skills trainings.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+      <article class="project-card reveal" data-decade="2010s">
+        <span class="duration">2011 – 2012</span>
+        <h4>Establishment of 50 Child-Friendly Spaces in Sindh</h4>
+        <div class="row-meta">
+          <span title="UNICEF"><svg class="icon"><use href="#i-bank"/></svg>UNICEF</span>
+          <span title="Badin, Nawabshah, Sanghar"><svg class="icon"><use href="#i-pin"/></svg>Badin, Nawabshah, Sanghar</span>
+        </div>
+        <p class="excerpt">Establishment of 50 spaces for children in 3 districts to provide protection training. Child protection education.</p>
+        <button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      </article>
+
+    </div>
+    <div class="projects-more"><button type="button" id="projLoadMore" class="btn btn-ghost">Load More Projects <svg class="icon"><use href="#i-chevron"/></svg></button></div>
+    <p class="empty-state" id="projEmpty">No past projects match your search.</p>
+    <p class="archive-note">44 completed projects, 2006–2025 — search and decade filters work across the full archive.</p>
+  </div>
+</section>
+
+<!-- ======================= CTA BAR — Payload Block: CtaBar ======================= -->
+<section class="cta-bar">
+  <div class="container">
+    <div>
+      <h3>Want to support this work?</h3>
+      <p>Donate, get free legal aid, or intern with PODA's field teams.</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-white" href="donate.html"><svg class="icon"><use href="#i-heart"/></svg>Donate</a>
+      <a class="btn btn-outline" href="#">Legal Aid Helpline</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FOOTER — Payload Global: Footer ======================= -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="images/logo.jpg" alt="PODA Pakistan">
+      <p>PODA is a women's rights NGO working for promotion and protection of human rights in rural areas of Pakistan through education, training &amp; advocacy.</p>
+      <div class="social-row">
+        <a href="https://twitter.com/PODAPakistan" aria-label="Twitter"><svg><use href="#i-twitter"/></svg></a>
+        <a href="https://www.facebook.com/pages/Potohar-Organization-for-Development-Advocacy-PODA/651141511571116" aria-label="Facebook"><svg><use href="#i-facebook"/></svg></a>
+        <a href="https://www.youtube.com/channel/UCrwavdYNT5nGdmK3r6LTUOg" aria-label="YouTube"><svg><use href="#i-youtube"/></svg></a>
+        <a href="https://www.instagram.com/poda.pakistan/" aria-label="Instagram"><svg><use href="#i-instagram"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h3>Programs</h3>
+      <ul>
+        <li><a href="programs/annual-rural-women-leadership-conference.html">Leadership Conference</a></li>
+        <li><a href="programs/ai-digital-literacy-program.html">AI &amp; Digital Literacy</a></li>
+        <li><a href="programs/climate-smart-agriculture-green-job-skills-program.html">Climate Smart Agriculture</a></li>
+        <li><a href="programs/women-rights-education-program.html">Women Rights Education</a></li>
+        <li><a href="programs/disaster-risk-reduction-humanitarian-response-program.html">Disaster Risk Reduction</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>News &amp; Media</h3>
+      <ul>
+        <li><a href="news-and-media.html">Media Centre</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="press.html">Press</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="radio-programs.html">Radio Programs</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Contact Us</h3>
+      <address><svg><use href="#i-pin"/></svg><span>(+92) 51 6120785 / (+92) 51 8773808</span></address>
+      <address><svg><use href="#i-pin"/></svg><span>Mobile: (+92) 313 0852522</span></address>
+      <address><svg><use href="#i-pin"/></svg><span>info@poda.org.pk</span></address>
+      <a class="btn btn-primary" href="donate.html"><svg class="icon"><use href="#i-heart"/></svg>Make A Donation</a>
+    </div>
+  </div>
+  <div class="site-info">
+    <div class="container">
+      <p>Copyright © 2026. All rights reserved.</p>
+      <p>Designed &amp; Developed by <a href="https://www.uexel.com/">uExel Solutions</a></p>
+    </div>
+  </div>
+</footer>
+
+<a class="btn btn-primary floating-donate" href="donate.html"><svg class="icon"><use href="#i-heart"/></svg>Donate</a>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>

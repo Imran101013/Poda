@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>News &amp; Media — PODA Pakistan</title>
+<meta name="description" content="PODA's Media Centre — photo galleries, videos, press releases, publications and the Aao Baat Karain community radio series, all in one place." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- Icon sprite sheet — swap for an icon library / SVG imports in the Payload frontend -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="7" y1="2" x2="7" y2="6"/><line x1="17" y1="2" x2="17" y2="6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.5-8.5C1 9 2 5.5 5.5 5c2-.3 3.7.8 4.5 2 .8-1.2 2.5-2.3 4.5-2 3.5.5 4.5 4 3 7.5C19 16.65 12 21 12 21z"/></symbol>
+  <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20.5c0-4.1 3-6.5 6.5-6.5s6.5 2.4 6.5 6.5"/><circle cx="17.3" cy="8.3" r="2.4"/><path d="M15 14.2c2.6 0 5.3 1.9 5.5 6.3"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 4C10 4 4 10 4 18v2h2c8 0 14-6 14-16z"/><line x1="8" y1="20" x2="18" y2="6"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 4h6.5A2.5 2.5 0 0 1 13 6.5V21a2.5 2.5 0 0 0-2.5-2.5H4z"/><path d="M20 4h-6.5A2.5 2.5 0 0 0 11 6.5V21a2.5 2.5 0 0 1 2.5-2.5H20z"/></symbol>
+  <symbol id="i-chip" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="1.6"/><line x1="12" y1="2" x2="12" y2="7"/><line x1="12" y1="17" x2="12" y2="22"/><line x1="2" y1="12" x2="7" y2="12"/><line x1="17" y1="12" x2="22" y2="12"/></symbol>
+  <symbol id="i-vote" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="12" rx="1.5"/><path d="M3 8l9 6 9-6"/><path d="M9.2 13.2l1.6 1.6 3-3.2" stroke-width="1.6"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><line x1="12" y1="4" x2="12" y2="18"/><line x1="5" y1="8" x2="19" y2="8"/><path d="M5 8l-2.4 5a3.2 3.2 0 0 0 6.4 0z"/><path d="M19 8l-2.4 5a3.2 3.2 0 0 0 6.4 0z"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="18" x2="12" y2="21"/></symbol>
+  <symbol id="i-quote" viewBox="0 0 24 24" stroke="none" fill="currentColor"><path d="M7 7c-2.5 0-4.5 2-4.5 4.5S4.5 16 7 16c.3 0 .6 0 .9-.1-.4 1.6-1.7 2.9-3.4 3.3l.3 1.6c3.4-.6 5.7-3.3 5.7-6.8V11c0-2.2-1.3-4-3.5-4zm10 0c-2.5 0-4.5 2-4.5 4.5S14.5 16 17 16c.3 0 .6 0 .9-.1-.4 1.6-1.7 2.9-3.4 3.3l.3 1.6c3.4-.6 5.7-3.3 5.7-6.8V11c0-2.2-1.3-4-3.5-4z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><line x1="4" y1="12" x2="20" y2="12"/><path d="M14 6l6 6-6 6"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24" stroke="none" fill="currentColor"><path d="M8 5v14l11-7z"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.2" y2="16.2"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 19h16"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 16l-5.5-5.5-4 4L8 11l-5 5"/></symbol>
+  <symbol id="i-newspaper" viewBox="0 0 24 24"><path d="M4 4h13a2 2 0 0 1 2 2v13a1 1 0 0 1-1 1H6a2 2 0 0 1-2-2V4z"/><line x1="7" y1="8" x2="14" y2="8"/><line x1="7" y1="11.3" x2="14" y2="11.3"/><line x1="7" y1="14.6" x2="11" y2="14.6"/></symbol>
+  <symbol id="i-twitter" viewBox="0 0 24 24" stroke="none" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.6-2.3.7.8-.5 1.4-1.3 1.7-2.3-.8.5-1.7.8-2.6 1a3.8 3.8 0 0 0-6.5 3.5A10.8 10.8 0 0 1 3.9 4.6a3.9 3.9 0 0 0 1.2 5.2 3.8 3.8 0 0 1-1.7-.5 3.9 3.9 0 0 0 3 3.8c-.5.1-1.1.2-1.7.1a3.9 3.9 0 0 0 3.6 2.7A10.9 10.9 0 0 1 2 18.4a10.9 10.9 0 0 0 5.9 1.7c7 0 10.9-5.9 10.9-11v-.5c.8-.5 1.4-1.2 2-2z"/></symbol>
+  <symbol id="i-facebook" viewBox="0 0 24 24" stroke="none" fill="currentColor"><path d="M14 21v-8h2.7l.5-3.5H14V7.2c0-1 .3-1.7 1.8-1.7h1.6V2.4C17 2.3 15.9 2 14.6 2 11.9 2 10 3.6 10 6.8v2.7H7.3V13H10v8z"/></symbol>
+  <symbol id="i-youtube" viewBox="0 0 24 24" stroke="none" fill="currentColor"><path d="M22 8.4s-.2-1.5-.8-2.2c-.8-.8-1.6-.8-2-.9C16.4 5 12 5 12 5s-4.4 0-7.2.3c-.4 0-1.2.1-2 .9C2.2 6.9 2 8.4 2 8.4S1.8 10.2 1.8 12v1.9C1.8 15.8 2 17.6 2 17.6s.2 1.5.8 2.2c.8.8 1.9.8 2.3.9C6.6 21 12 21 12 21s4.4 0 7.2-.3c.4-.1 1.2-.1 2-.9.6-.7.8-2.2.8-2.2s.2-1.8.2-3.6V12c0-1.8-.2-3.6-.2-3.6zM9.9 15.4V8.9l5.8 3.3z"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24" stroke="none" fill="currentColor"><path d="M12 2.2c2.7 0 3 0 4 .1 1 0 1.7.2 2.3.4a4.6 4.6 0 0 1 1.7 1.1 4.6 4.6 0 0 1 1.1 1.7c.2.6.4 1.3.4 2.3.1 1 .1 1.3.1 4s0 3-.1 4c0 1-.2 1.7-.4 2.3a4.9 4.9 0 0 1-2.8 2.8c-.6.2-1.3.4-2.3.4-1 .1-1.3.1-4 .1s-3 0-4-.1c-1 0-1.7-.2-2.3-.4a4.6 4.6 0 0 1-1.7-1.1 4.6 4.6 0 0 1-1.1-1.7c-.2-.6-.4-1.3-.4-2.3-.1-1-.1-1.3-.1-4s0-3 .1-4c0-1 .2-1.7.4-2.3a4.6 4.6 0 0 1 1.1-1.7 4.6 4.6 0 0 1 1.7-1.1c.6-.2 1.3-.4 2.3-.4 1-.1 1.3-.1 4-.1zm0 3.5a6.3 6.3 0 1 0 0 12.6 6.3 6.3 0 0 0 0-12.6zm0 10.4a4.1 4.1 0 1 1 0-8.2 4.1 4.1 0 0 1 0 8.2zm6.4-10.6a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/></symbol>
+</svg>
+
+<!-- ======================= HEADER — Payload Global: Header ======================= -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a class="logo" href="index.html"><img src="images/logo.jpg" alt="PODA Pakistan"></a>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li class="has-children"><a href="projects.html">Projects</a>
+          <ul class="submenu">
+            <li><a href="projects.html#ongoing-projects">Ongoing Projects</a></li>
+            <li><a href="projects.html#past-projects">Past Projects</a></li>
+          </ul>
+        </li>
+        <li class="has-children active"><a href="news-and-media.html">News &amp; Media</a>
+          <ul class="submenu">
+            <li><a href="news-and-media.html#photo-gallery">Photo Gallery</a></li>
+            <li><a href="news-and-media.html#video-library">Video Library</a></li>
+            <li><a href="news-and-media.html#press-room">Press Room</a></li>
+            <li><a href="news-and-media.html#publications">Publications</a></li>
+            <li><a href="news-and-media.html#listen-live">Listen Live</a></li>
+          </ul>
+        </li>
+        <li class="has-children"><a href="impact.html">Our Impact</a>
+          <ul class="submenu">
+            <li><a href="impact.html#success-stories">Success Stories</a></li>
+            <li><a href="impact.html#key-achievements">Key Achievements</a></li>
+            <li><a href="impact.html#major-milestones">Major Milestones</a></li>
+            <li><a href="impact.html#community-transformation">Community Transformation</a></li>
+            <li><a href="impact.html#beneficiary-testimonials">Beneficiary Testimonials</a></li>
+          </ul>
+        </li>
+        <li><a href="internships.html">Internships</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="link-legal" href="#">Legal Aid Helpline</a>
+      <a class="btn btn-primary" href="donate.html"><svg class="icon"><use href="#i-heart"/></svg>Donate</a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<!-- ======================= PAGE HEADER — Payload Block: PageHeader ======================= -->
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb reveal"><a href="index.html">Home</a> / <span>News &amp; Media</span></div>
+    <span class="eyebrow" style="color:#ecc9f5;">Media Centre</span>
+    <h1 class="reveal">News, Media &amp; Community Radio</h1>
+    <p class="lead reveal" style="margin-bottom:24px;">Photos, videos, press releases and publications from PODA's field work — plus Aao Baat Karain, our community radio series broadcasting since 2016. Everything in one place.</p>
+    <div class="tag-row reveal"><span>154 Photos</span><span>300+ Videos</span><span>300+ Press Releases</span><span>40+ Radio Episodes</span></div>
+    <div class="hero-cta reveal" style="margin-top:26px;">
+      <a class="btn btn-white" href="#listen-live"><svg class="icon"><use href="#i-mic"/></svg>Listen Live</a>
+      <a class="btn btn-outline" href="#photo-gallery">Browse Gallery</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= SUB-NAV — jump-nav + scrollspy across sections ======================= -->
+<nav class="section-subnav" aria-label="News and Media page sections">
+  <div class="container">
+    <div class="section-tabs">
+      <a href="#media-overview" class="active"><span class="n">1</span>Overview</a>
+      <a href="#latest-media"><span class="n">2</span>Latest Media</a>
+      <a href="#photo-gallery"><span class="n">3</span>Photo Gallery</a>
+      <a href="#video-library"><span class="n">4</span>Video Library</a>
+      <a href="#press-room"><span class="n">5</span>Press Room</a>
+      <a href="#publications"><span class="n">6</span>Publications</a>
+      <a href="#listen-live"><span class="n">7</span>Listen Live</a>
+      <a href="#radio-programmes"><span class="n">8</span>Radio Programmes</a>
+      <a href="#featured-campaigns"><span class="n">9</span>Campaigns</a>
+      <a href="#media-statistics"><span class="n">10</span>Statistics</a>
+    </div>
+    <div class="section-select-wrap">
+      <select class="section-select" aria-label="Jump to a section">
+        <option value="media-overview">1 · Overview</option>
+        <option value="latest-media">2 · Latest Media</option>
+        <option value="photo-gallery">3 · Photo Gallery</option>
+        <option value="video-library">4 · Video Library</option>
+        <option value="press-room">5 · Press Room</option>
+        <option value="publications">6 · Publications</option>
+        <option value="listen-live">7 · Listen Live</option>
+        <option value="radio-programmes">8 · Radio Programmes</option>
+        <option value="featured-campaigns">9 · Campaigns</option>
+        <option value="media-statistics">10 · Statistics</option>
+      </select>
+    </div>
+  </div>
+</nav>
+
+<!-- ======================= 1. MEDIA OVERVIEW — Payload Block: MediaLibraryGrid ======================= -->
+<section class="content-section" id="media-overview">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Media overview</span>
+      <h2>Four Ways to Explore PODA's Work</h2>
+      <p class="lead">Each collection lives on its own dedicated archive page — start here, then dive as deep as you like.</p>
+    </div>
+    <div class="media-grid">
+      <div class="media-card reveal">
+        <div class="ic"><svg class="icon"><use href="#i-image"/></svg></div>
+        <h4>Photo Gallery</h4>
+        <p>154 real photos from PODA's flagship leadership conferences, browsable day by day.</p>
+        <span class="stat">154 Photos</span>
+        <a class="btn-text" href="#photo-gallery">View Gallery <svg><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="media-card reveal">
+        <div class="ic"><svg class="icon"><use href="#i-play"/></svg></div>
+        <h4>Video Library</h4>
+        <p>Recorded webinars and field coverage from PODA's programs, on camera.</p>
+        <span class="stat">300+ Videos</span>
+        <a class="btn-text" href="#video-library">Watch Videos <svg><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="media-card reveal">
+        <div class="ic"><svg class="icon"><use href="#i-newspaper"/></svg></div>
+        <h4>Press Room</h4>
+        <p>Official statements on policy wins, legislative advocacy and the work behind them.</p>
+        <span class="stat">300+ Releases</span>
+        <a class="btn-text" href="#press-room">Read Press <svg><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="media-card reveal">
+        <div class="ic"><svg class="icon"><use href="#i-doc"/></svg></div>
+        <h4>Publications</h4>
+        <p>Research reports, training manuals and policy briefs from two decades of work.</p>
+        <span class="stat">~60 Documents</span>
+        <a class="btn-text" href="#publications">Browse Library <svg><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 2. LATEST MEDIA — Payload Block: ProgramGrid (reused) ======================= -->
+<section class="content-section" id="latest-media">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Latest media</span>
+      <h2>Fresh From the Field</h2>
+      <p class="lead">The most recent posts across every program — real coverage, not filler.</p>
+    </div>
+
+    <div class="program-grid" id="latestMediaList">
+      <article class="program-card reveal">
+        <div class="thumb"><span class="tag">Women Rights Education</span><img src="images/programs/prog2-women.jpeg" alt="Protecting Girls' Rights Through Scalable Legal and Social Interventions"></div>
+        <div class="body">
+          <div class="card-date"><svg class="icon"><use href="#i-calendar"/></svg>18 March 2026</div>
+          <h3><a href="updates/protecting-girls-rights-punjab-ordinance.html">Protecting Girls' Rights Through Scalable Legal and Social Interventions</a></h3>
+          <p>The Punjab Child Marriage Restraint Ordinance 2026 sets 18 years as the minimum legal age of marriage for girls across the province.</p>
+          <a class="read-more" href="updates/protecting-girls-rights-punjab-ordinance.html">Read More <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="program-card reveal">
+        <div class="thumb"><span class="tag">AI &amp; Digital Literacy</span><img src="images/site/prog-ai.jpg" alt="206 Wednesday Webinar by PARWL-Pakistan"></div>
+        <div class="body">
+          <div class="card-date"><svg class="icon"><use href="#i-calendar"/></svg>7 July 2026</div>
+          <h3><a href="updates/206-wednesday-webinar-parwl.html">206 Wednesday Webinar by PARWL-Pakistan</a></h3>
+          <p>This week's session, "Growing Population: Challenges &amp; Solutions," runs 3:00–4:00 PM PKT on Zoom.</p>
+          <a class="read-more" href="updates/206-wednesday-webinar-parwl.html">Read More <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="program-card reveal">
+        <div class="thumb"><span class="tag">Climate Smart Agriculture</span><img src="images/programs/prog2-climate.jpg" alt="Organic Onion Sowing at PODA Organic Nara Mughlan"></div>
+        <div class="body">
+          <div class="card-date"><svg class="icon"><use href="#i-calendar"/></svg>20 January 2026</div>
+          <h3><a href="updates/organic-onion-sowing-nara-mughlan.html">Organic Onion Sowing at PODA Organic Nara Mughlan</a></h3>
+          <p>PODA's Sustainable Agriculture and Climate Change Farm Team sowed organic onion seedlings at the Nara Mughlan demonstration farm.</p>
+          <a class="read-more" href="updates/organic-onion-sowing-nara-mughlan.html">Read More <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="program-card reveal">
+        <div class="thumb"><span class="tag">Leadership Conference</span><img src="images/site/prog-conference.png" alt="Conference 2025 Booklet & Resolution"></div>
+        <div class="body">
+          <div class="card-date"><svg class="icon"><use href="#i-calendar"/></svg>6 November 2025</div>
+          <h3><a href="updates/conference-2025-booklet-resolution.html">Conference 2025 Booklet &amp; Resolution</a></h3>
+          <p>The 18th Annual Rural Women Leadership Training Conference brought together 1,500+ rural women leaders from 100 districts.</p>
+          <a class="read-more" href="updates/conference-2025-booklet-resolution.html">Read More <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="program-card reveal">
+        <div class="thumb"><span class="tag">Girls Right to Education</span><img src="images/programs/prog2-girls.jpg" alt="World Children's Day – 20 November 2025"></div>
+        <div class="body">
+          <div class="card-date"><svg class="icon"><use href="#i-calendar"/></svg>20 November 2025</div>
+          <h3><a href="updates/world-childrens-day-2025.html">World Children's Day – 20 November 2025</a></h3>
+          <p>PODA marked the day at Zameer Akhter Primary School in Chakwal with a rights-awareness session themed "My Day, My Rights."</p>
+          <a class="read-more" href="updates/world-childrens-day-2025.html">Read More <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="program-card reveal">
+        <div class="thumb"><span class="tag">Disaster Risk Reduction</span><img src="images/programs/prog2-disaster.jpeg" alt="31 August 2025 – PODA Pakistan in Buner Flood-Affected Areas"></div>
+        <div class="body">
+          <div class="card-date"><svg class="icon"><use href="#i-calendar"/></svg>29 September 2025</div>
+          <h3><a href="updates/buner-flood-response-31-august-2025.html">31 August 2025 – PODA Pakistan in Buner Flood-Affected Areas</a></h3>
+          <p>PODA's team delivered humanitarian assistance to flood-impacted communities in District Buner, including Pir Baba and Beshonai.</p>
+          <a class="read-more" href="updates/buner-flood-response-31-august-2025.html">Read More <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+    </div>
+    <div class="projects-more"><button type="button" id="latestMediaLoadMore" class="btn btn-ghost">Load More <svg class="icon"><use href="#i-chevron"/></svg></button></div>
+  </div>
+</section>
+
+<!-- ======================= 3. PHOTO GALLERY — Payload Block: GalleryGrid (reused) ======================= -->
+<section class="content-section" id="photo-gallery">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Photo gallery</span>
+      <h2>Browse by Conference</h2>
+      <p class="lead">Click any album to browse the full-resolution photos in a lightbox viewer.</p>
+    </div>
+
+    <div class="category-filter reveal" id="galleryFilter" style="justify-content:center;margin-bottom:30px;">
+      <button type="button" class="active" data-conference="all">All Albums</button>
+      <button type="button" data-conference="18th">18th Conference</button>
+      <button type="button" data-conference="17th">17th Conference</button>
+    </div>
+
+    <div class="gallery-grid" id="galleryPreviewList">
+      <a class="gallery-card reveal" href="gallery/18th-day-1.html" data-conference="18th">
+        <img src="images/gallery/18th-day-1/2500.jpg" alt="18th Annual Conference — Day 1">
+        <div class="info"><span class="count">17 Photos</span><h4>18th Annual Conference — Day 1</h4></div>
+      </a>
+      <a class="gallery-card reveal" href="gallery/18th-day-2.html" data-conference="18th">
+        <img src="images/gallery/18th-day-2/DSC_5814.jpg" alt="18th Annual Conference — Day 2">
+        <div class="info"><span class="count">39 Photos</span><h4>18th Annual Conference — Day 2</h4></div>
+      </a>
+      <a class="gallery-card reveal" href="gallery/18th-day-3.html" data-conference="18th">
+        <img src="images/gallery/18th-day-3/DSC_6448.jpg" alt="18th Annual Conference — Day 3">
+        <div class="info"><span class="count">27 Photos</span><h4>18th Annual Conference — Day 3</h4></div>
+      </a>
+      <a class="gallery-card reveal" href="gallery/17th-day-1.html" data-conference="17th">
+        <img src="images/gallery/17th-day-1/10-1.jpg" alt="17th Annual Conference — Day 1">
+        <div class="info"><span class="count">24 Photos</span><h4>17th Annual Conference — Day 1</h4></div>
+      </a>
+      <a class="gallery-card reveal" href="gallery/17th-day-2.html" data-conference="17th">
+        <img src="images/gallery/17th-day-2/DSC_0891.jpg" alt="17th Annual Conference — Day 2">
+        <div class="info"><span class="count">29 Photos</span><h4>17th Annual Conference — Day 2</h4></div>
+      </a>
+      <a class="gallery-card reveal" href="gallery/17th-day-3.html" data-conference="17th">
+        <img src="images/gallery/17th-day-3/DSC_1787.jpg" alt="17th Annual Conference — Day 3">
+        <div class="info"><span class="count">18 Photos</span><h4>17th Annual Conference — Day 3</h4></div>
+      </a>
+    </div>
+    <p class="empty-state" id="galleryEmpty">No albums match this filter.</p>
+    <div class="projects-more"><button type="button" id="galleryLoadMore" class="btn btn-ghost">Load More Albums <svg class="icon"><use href="#i-chevron"/></svg></button></div>
+    <div class="impact-more"><a class="btn btn-ghost" href="gallery.html">View Full Gallery <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+  </div>
+</section>
+
+<!-- ======================= 4. VIDEO LIBRARY — Payload Block: VideoGrid (reused) ======================= -->
+<section class="content-section" id="video-library">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Video library</span>
+      <h2>Watch &amp; Listen</h2>
+      <p class="lead">Click any video to preview it — real thumbnails from PODA's own YouTube channel.</p>
+    </div>
+    <div class="video-grid" id="videoLibraryGrid">
+      <article class="video-card reveal" data-category="AI &amp; Digital Literacy" data-description="This week's Wednesday webinar, hosted by Ms. Nabeela Aslam of PODA Pakistan.">
+        <a class="thumb" href="https://www.youtube.com/channel/UCrwavdYNT5nGdmK3r6LTUOg" target="_blank" rel="noopener">
+          <img src="images/site/prog-ai.jpg" alt="206 Wednesday Webinar by PARWL-Pakistan">
+          <div class="play"><div class="circle"><svg class="icon"><use href="#i-play"/></svg></div></div>
+        </a>
+        <div class="body"><span class="stat">Webinar</span><h4>206 Wednesday Webinar by PARWL-Pakistan</h4><p>Growing Population: Challenges &amp; Solutions.</p></div>
+      </article>
+      <article class="video-card reveal" data-category="Women's Rights" data-description="Recorded field coverage from PODA's ongoing legal literacy programme.">
+        <a class="thumb" href="https://www.youtube.com/channel/UCrwavdYNT5nGdmK3r6LTUOg" target="_blank" rel="noopener">
+          <img src="images/programs/prog2-women.jpeg" alt="205 Wednesday Webinar by PARWL-Pakistan">
+          <div class="play"><div class="circle"><svg class="icon"><use href="#i-play"/></svg></div></div>
+        </a>
+        <div class="body"><span class="stat">Webinar</span><h4>205 Wednesday Webinar by PARWL-Pakistan</h4><p>Policy conversation with PARWL-Pakistan.</p></div>
+      </article>
+      <article class="video-card reveal" data-category="Legal Aid" data-description="Field coverage of PODA's mobile legal aid clinic supporting vulnerable communities.">
+        <a class="thumb" href="https://www.youtube.com/channel/UCrwavdYNT5nGdmK3r6LTUOg" target="_blank" rel="noopener">
+          <img src="images/site/hero-1.jpg" alt="PODA Organizes Three Day Mobile Legal Aid Clinic in Islamabad">
+          <div class="play"><div class="circle"><svg class="icon"><use href="#i-play"/></svg></div></div>
+        </a>
+        <div class="body"><span class="stat">Field Coverage</span><h4>Three-Day Mobile Legal Aid Clinic in Islamabad</h4><p>Supporting vulnerable communities with free legal assistance.</p></div>
+      </article>
+    </div>
+    <div class="impact-more" style="margin-top:36px;"><a class="btn btn-ghost" href="videos.html">View All Videos <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+  </div>
+</section>
+
+<!-- ======================= 5. PRESS ROOM — Payload Block: PressList (reused) ======================= -->
+<section class="content-section" id="press-room">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Press room</span>
+      <h2>Statements &amp; Releases</h2>
+    </div>
+    <div class="list-toolbar reveal">
+      <div class="search-box">
+        <svg class="icon"><use href="#i-search"/></svg>
+        <input type="search" id="pressSearch" placeholder="Search press releases…" aria-label="Search press releases">
+      </div>
+      <div class="category-filter" id="yearFilter" style="margin-bottom:0;">
+        <button type="button" class="active" data-year="all">All Years</button>
+        <button type="button" data-year="2026">2026</button>
+        <button type="button" data-year="2025">2025</button>
+      </div>
+    </div>
+    <div class="press-list" id="pressList">
+
+      <article class="press-item press-item--media reveal" data-year="2026">
+        <a class="press-thumb" href="updates/landmark-law-empower-girls-education-skills.html">
+          <img src="https://www.poda.org.pk/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-28-at-4.10.56-PM-1.jpeg" alt="Landmark law to empower millions of girls through education and skills">
+        </a>
+        <div class="press-body">
+          <span class="date">28 April 2026</span>
+          <h4><a href="updates/landmark-law-empower-girls-education-skills.html">Landmark Law to Empower Millions of Girls Through Education and Skills, ED-PODA</a></h4>
+          <p>A delegation of prominent women leaders representing various districts of Punjab, along with PODA's Executive Director, attended a session of the Punjab Assembly to mark the passage of landmark legislation expanding girls' access to education and skills training.</p>
+          <div class="share-row">
+            <a href="https://twitter.com/PODAPakistan" aria-label="Share on Twitter"><svg><use href="#i-twitter"/></svg></a>
+            <a href="https://www.facebook.com/pages/Potohar-Organization-for-Development-Advocacy-PODA/651141511571116" aria-label="Share on Facebook"><svg><use href="#i-facebook"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="press-item press-item--media reveal" data-year="2026">
+        <a class="press-thumb" href="updates/poda-commends-child-marriage-legislation-punjab.html">
+          <img src="https://www.poda.org.pk/wp-content/uploads/2026/02/e1.jpg" alt="PODA Pakistan Commends Historic Legislation Against Child Marriages in Punjab">
+        </a>
+        <div class="press-body">
+          <span class="date">14 February 2026</span>
+          <h4><a href="updates/poda-commends-child-marriage-legislation-punjab.html">PODA Pakistan Commends Historic Legislation Against Child Marriages in Punjab</a></h4>
+          <p>Sameena Nazir, Executive Director of PODA, warmly welcomed and commended the Government of Punjab for enacting historic legislation against child marriage in the province.</p>
+          <div class="share-row">
+            <a href="https://twitter.com/PODAPakistan" aria-label="Share on Twitter"><svg><use href="#i-twitter"/></svg></a>
+            <a href="https://www.facebook.com/pages/Potohar-Organization-for-Development-Advocacy-PODA/651141511571116" aria-label="Share on Facebook"><svg><use href="#i-facebook"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="press-item press-item--media reveal" data-year="2026">
+        <a class="press-thumb" href="updates/poda-commends-child-marriage-legislation-urdu.html">
+          <img src="https://www.poda.org.pk/wp-content/uploads/2026/02/u1.jpg" alt="ادارہ پودا کا پنجاب میں کم عمری کی شادیوں کے خلاف تاریخی قانون سازی پر اظہار تحسین">
+        </a>
+        <div class="press-body">
+          <span class="date">14 February 2026</span>
+          <h4><a href="updates/poda-commends-child-marriage-legislation-urdu.html">ادارہ پودا کا پنجاب میں کم عمری کی شادیوں کے خلاف تاریخی قانون سازی پر اظہار تحسین</a></h4>
+          <p>ثمینہ نذیر، ایگزیکٹو ڈائریکٹر پودا نے حکومت پنجاب کے اس تاریخی اقدام کا خیرمقدم کیا جس میں کم عمری کی شادیوں کے خلاف قانون سازی کی گئی۔</p>
+          <div class="share-row">
+            <a href="https://twitter.com/PODAPakistan" aria-label="Share on Twitter"><svg><use href="#i-twitter"/></svg></a>
+            <a href="https://www.facebook.com/pages/Potohar-Organization-for-Development-Advocacy-PODA/651141511571116" aria-label="Share on Facebook"><svg><use href="#i-facebook"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="press-item press-item--media reveal" data-year="2026" style="display:none">
+        <a class="press-thumb" href="updates/punjab-governor-child-marriage-ordinance.html">
+          <img src="https://www.poda.org.pk/wp-content/uploads/2026/02/1200193230d1e89-1.jpg" alt="Punjab governor promulgates ordinance declaring child marriage non-bailable offence">
+        </a>
+        <div class="press-body">
+          <span class="date">12 February 2026</span>
+          <h4><a href="updates/punjab-governor-child-marriage-ordinance.html">Punjab Governor Promulgates Ordinance Declaring Child Marriage Non-Bailable Offence</a></h4>
+          <p>A new ordinance promulgated by Punjab Governor Saleem Haider Khan declared child marriage a non-bailable offence and set 18 as the minimum legal age of marriage for girls across the province.</p>
+          <div class="share-row">
+            <a href="https://twitter.com/PODAPakistan" aria-label="Share on Twitter"><svg><use href="#i-twitter"/></svg></a>
+            <a href="https://www.facebook.com/pages/Potohar-Organization-for-Development-Advocacy-PODA/651141511571116" aria-label="Share on Facebook"><svg><use href="#i-facebook"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="press-item press-item--media reveal" data-year="2026" style="display:none">
+        <a class="press-thumb" href="updates/dhan-kahoon-chakwal.html">
+          <img src="https://www.poda.org.pk/wp-content/uploads/2026/01/posts-Copy.jpeg" alt="Dhan Kahoon – Chakwal">
+        </a>
+        <div class="press-body">
+          <span class="date">21 January 2026</span>
+          <h4><a href="updates/dhan-kahoon-chakwal.html">Dhan Kahoon – Chakwal</a></h4>
+          <p>PODA's field team in Chakwal documents community voices and local advocacy efforts as part of the ongoing child protection and girls' rights programme.</p>
+          <div class="share-row">
+            <a href="https://twitter.com/PODAPakistan" aria-label="Share on Twitter"><svg><use href="#i-twitter"/></svg></a>
+            <a href="https://www.facebook.com/pages/Potohar-Organization-for-Development-Advocacy-PODA/651141511571116" aria-label="Share on Facebook"><svg><use href="#i-facebook"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="press-item press-item--media reveal" data-year="2025" style="display:none">
+        <a class="press-thumb" href="updates/poda-press-release-december-2025.html">
+          <img src="https://www.poda.org.pk/wp-content/uploads/2025/12/Untitled-3.jpg" alt="PODA Press Release – December 2025">
+        </a>
+        <div class="press-body">
+          <span class="date">15 December 2025</span>
+          <h4><a href="updates/poda-press-release-december-2025.html">PODA Press Release – December 2025</a></h4>
+          <p>PODA's latest statement on child protection and community advocacy efforts across rural Punjab and Khyber Pakhtunkhwa.</p>
+          <div class="share-row">
+            <a href="https://twitter.com/PODAPakistan" aria-label="Share on Twitter"><svg><use href="#i-twitter"/></svg></a>
+            <a href="https://www.facebook.com/pages/Potohar-Organization-for-Development-Advocacy-PODA/651141511571116" aria-label="Share on Facebook"><svg><use href="#i-facebook"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="press-item press-item--media reveal" data-year="2025" style="display:none">
+        <a class="press-thumb" href="updates/poda-call-ending-early-marriages-healthier-families.html">
+          <img src="https://www.poda.org.pk/wp-content/uploads/2025/12/Untitled-2.jpg" alt="PODA Call for Ending Early Marriages to Promote Healthier Families">
+        </a>
+        <div class="press-body">
+          <span class="date">12 December 2025</span>
+          <h4><a href="updates/poda-call-ending-early-marriages-healthier-families.html">PODA Call for Ending Early Marriages to Promote Healthier Families</a></h4>
+          <p>Ending child marriages strengthens families, as girls who marry at an appropriate age are physically and emotionally mature, equipped with the knowledge, skills, and resilience needed for healthy family life.</p>
+          <div class="share-row">
+            <a href="https://twitter.com/PODAPakistan" aria-label="Share on Twitter"><svg><use href="#i-twitter"/></svg></a>
+            <a href="https://www.facebook.com/pages/Potohar-Organization-for-Development-Advocacy-PODA/651141511571116" aria-label="Share on Facebook"><svg><use href="#i-facebook"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="press-item press-item--media reveal" data-year="2025" style="display:none">
+        <a class="press-thumb" href="updates/murree-workshop-ending-early-marriages.html">
+          <img src="https://www.poda.org.pk/wp-content/uploads/2025/12/1-Copy-1.jpg" alt="Participating of Workshop organised by PODA in Murree">
+        </a>
+        <div class="press-body">
+          <span class="date">10 December 2025</span>
+          <h4><a href="updates/murree-workshop-ending-early-marriages.html">Participating of Workshop Organised by PODA in Murree — Call for Ending Early Marriages</a></h4>
+          <p>Participants at PODA's Murree workshop called for ending early marriages to promote healthier families and stronger communities across rural Pakistan.</p>
+          <div class="share-row">
+            <a href="https://twitter.com/PODAPakistan" aria-label="Share on Twitter"><svg><use href="#i-twitter"/></svg></a>
+            <a href="https://www.facebook.com/pages/Potohar-Organization-for-Development-Advocacy-PODA/651141511571116" aria-label="Share on Facebook"><svg><use href="#i-facebook"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="press-item press-item--media reveal" data-year="2025" style="display:none">
+        <a class="press-thumb" href="updates/ending-child-marriage-strengthens-families.html">
+          <img src="https://www.poda.org.pk/wp-content/uploads/2025/12/Untitled-1.jpg" alt="Ending child marriage strengthens families: experts">
+        </a>
+        <div class="press-body">
+          <span class="date">10 December 2025</span>
+          <h4><a href="updates/ending-child-marriage-strengthens-families.html">Ending Child Marriage Strengthens Families: Experts</a></h4>
+          <p>Experts at a workshop in Rawalpindi said ending child marriage strengthens families by ensuring that girls marry only when they are physically and emotionally mature, equipped with the knowledge and resilience needed to thrive.</p>
+          <div class="share-row">
+            <a href="https://twitter.com/PODAPakistan" aria-label="Share on Twitter"><svg><use href="#i-twitter"/></svg></a>
+            <a href="https://www.facebook.com/pages/Potohar-Organization-for-Development-Advocacy-PODA/651141511571116" aria-label="Share on Facebook"><svg><use href="#i-facebook"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="press-item press-item--media reveal" data-year="2025" style="display:none">
+        <a class="press-thumb" href="updates/poda-call-ending-early-marriages-healthier-families-2.html">
+          <img src="https://www.poda.org.pk/wp-content/uploads/2025/12/1-Copy.jpg" alt="PODA Call for ending early marriages to promote healthier families">
+        </a>
+        <div class="press-body">
+          <span class="date">10 December 2025</span>
+          <h4><a href="updates/poda-call-ending-early-marriages-healthier-families-2.html">PODA Call for Ending Early Marriages to Promote Healthier Families</a></h4>
+          <p>PODA reaffirms its commitment to ending child marriage and promoting the rights of girls and women to choose when and whom they marry, as part of its broader advocacy for healthier, stronger families.</p>
+          <div class="share-row">
+            <a href="https://twitter.com/PODAPakistan" aria-label="Share on Twitter"><svg><use href="#i-twitter"/></svg></a>
+            <a href="https://www.facebook.com/pages/Potohar-Organization-for-Development-Advocacy-PODA/651141511571116" aria-label="Share on Facebook"><svg><use href="#i-facebook"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    <p class="empty-state" id="pressEmpty">No press releases match your search.</p>
+    <div class="impact-more"><a class="btn btn-ghost" href="press.html">View All Press <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+  </div>
+</section>
+
+<!-- ======================= 6. PUBLICATIONS — Payload Block: DocGrid ======================= -->
+<section class="content-section" id="publications">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Publications</span>
+      <h2>Reports, Manuals &amp; Policy Briefs</h2>
+    </div>
+    <div class="doc-grid" id="pubList">
+      <div class="doc-card reveal" data-type="Awareness Guide">
+        <div class="cover"><img src="images/site/prog-policy.jpg" alt="Voter &amp; CNIC Registration cover"></div>
+        <div class="body">
+          <div class="meta-row"><span class="doc-type">Awareness Guide</span><span class="doc-year">2025</span></div>
+          <h4>Voter &amp; CNIC Registration</h4>
+          <div class="card-actions">
+            <button class="btn btn-ghost pub-preview-btn" data-img="images/site/prog-policy.jpg" data-title="Voter &amp; CNIC Registration" data-download="images/site/prog-policy.jpg"><svg class="icon"><use href="#i-eye"/></svg>Preview</button>
+          </div>
+        </div>
+      </div>
+      <div class="doc-card reveal" data-type="Report">
+        <div class="cover"><img src="images/site/prog-conference.png" alt="Mock Polling Activities cover"></div>
+        <div class="body">
+          <div class="meta-row"><span class="doc-type">Report</span><span class="doc-year">2024</span></div>
+          <h4>Mock Polling Activities</h4>
+          <div class="card-actions">
+            <button class="btn btn-ghost pub-preview-btn" data-img="images/site/prog-conference.png" data-title="Mock Polling Activities" data-download="images/site/prog-conference.png"><svg class="icon"><use href="#i-eye"/></svg>Preview</button>
+          </div>
+        </div>
+      </div>
+      <div class="doc-card reveal" data-type="Training Manual">
+        <div class="cover"><img src="images/site/prog-women.jpg" alt="ParaLegal Training Manual cover"></div>
+        <div class="body">
+          <div class="meta-row"><span class="doc-type">Training Manual</span><span class="doc-year">2023</span></div>
+          <h4>ParaLegal Training Manual</h4>
+          <div class="card-actions">
+            <button class="btn btn-ghost pub-preview-btn" data-img="images/site/prog-women.jpg" data-title="ParaLegal Training Manual" data-download="images/site/prog-women.jpg"><svg class="icon"><use href="#i-eye"/></svg>Preview</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="impact-more" style="margin-top:36px;"><a class="btn btn-ghost" href="publications.html">View Full Library <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+  </div>
+</section>
+
+<!-- Publication image preview lightbox -->
+<div class="pub-lightbox" id="pubLightbox" role="dialog" aria-modal="true" aria-label="Publication preview">
+  <button class="pub-lightbox-close" id="pubLightboxClose" aria-label="Close preview">&#x2715;</button>
+  <div class="pub-lightbox-inner">
+    <img id="pubLightboxImg" src="" alt="">
+    <div class="pub-lightbox-footer">
+      <span id="pubLightboxTitle"></span>
+      <a id="pubLightboxDownload" class="btn btn-primary" href="#" download><svg class="icon"><use href="#i-download"/></svg>Download</a>
+    </div>
+  </div>
+</div>
+
+<!-- ======================= 7. LISTEN LIVE — Payload Block: RadioSpotlight (reused, finally!) ======================= -->
+<section class="content-section" id="listen-live">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Listen live</span>
+      <h2>Aao Baat Karain — On Air Since 2016</h2>
+      <p class="lead">Promoting democracy, civic leadership, legal identity and equal rights — one conversation at a time, funded by the National Endowment for Democracy (NED).</p>
+    </div>
+
+    <div class="radio-spotlight reveal">
+      <div class="ic"><svg class="icon"><use href="#i-mic"/></svg></div>
+      <div class="txt">
+        <span class="eyebrow">FM101 · Since 2016</span>
+        <h3>آؤ بات کریں — Aao Baat Karain</h3>
+        <p>Over 40 episodes in, spanning gender-based violence to local government reform — with government officials, human rights experts, women leaders and everyday community members.</p>
+      </div>
+      <div class="action"><a class="btn btn-white" href="radio-programs.html" style="padding:16px 34px;font-size:15px;"><svg class="icon"><use href="#i-play"/></svg>Listen Live Now</a></div>
+    </div>
+
+    <div class="achv-grid" style="margin-top:32px;">
+      <div class="achv-item reveal">
+        <div class="ic"><svg class="icon"><use href="#i-mic"/></svg></div>
+        <p><strong>Now Playing:</strong> "Let's Talk" — In Conversation with Dr. Bilqees Rehman, on women's health access in rural districts.</p>
+      </div>
+      <div class="achv-item reveal">
+        <div class="ic"><svg class="icon"><use href="#i-calendar"/></svg></div>
+        <p><strong>Up Next:</strong> Sensitive Reporting in Elections, from the "Reduce Early Marriages to Enhance Gender Equality" series.</p>
+      </div>
+    </div>
+
+    <div class="section-head reveal" style="margin-top:44px;">
+      <span class="eyebrow">Broadcast schedule</span>
+      <h2 style="font-size:20px;">On Air This Week</h2>
+    </div>
+    <div class="radio-spotlight reveal" style="padding:32px;">
+      <div class="schedule-grid" style="width:100%;">
+        <div class="schedule-item"><div class="day">Monday</div><div class="time">7:00 PM</div><div class="show">Aao Baat Karain — New Episode</div></div>
+        <div class="schedule-item"><div class="day">Wednesday</div><div class="time">3:00 PM</div><div class="show">Wednesday Webinar (Simulcast)</div></div>
+        <div class="schedule-item"><div class="day">Friday</div><div class="time">7:00 PM</div><div class="show">"Let's Talk" Special Feature</div></div>
+        <div class="schedule-item"><div class="day">Sunday</div><div class="time">6:00 PM</div><div class="show">Weekly Repeat &amp; Highlights</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 8. RADIO PROGRAMMES — Payload Block: EpisodeEmbedList (reused) ======================= -->
+<section class="content-section" id="radio-programmes">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Radio programmes</span>
+      <h2>Real Episodes, Embedded</h2>
+      <p class="lead">Every card below is a real, individually-verified SoundCloud upload — press play right here.</p>
+    </div>
+
+    <div class="category-filter reveal" id="radioYearFilter" style="justify-content:center;margin-bottom:30px;">
+      <button type="button" class="active" data-year="all">All Episodes</button>
+      <button type="button" data-year="2024">2024</button>
+      <button type="button" data-year="earlier">Earlier</button>
+    </div>
+
+    <div class="embed-grid" id="radioPreviewList">
+      <article class="episode-embed reveal" data-year="earlier">
+        <div class="embed-head">
+          <img src="images/site/hero-2.jpg" alt="Sameena Nazir">
+          <div><span class="ep-num">Interview · FM 93 Rawalpindi</span><h4>Sameena Nazir</h4><p>President, PODA</p></div>
+        </div>
+        <iframe loading="lazy" src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fuser-611596205%2Fsameena-nazir-interview-fm-93-rawalpindi%2Fs-z6rUzrh47GM&color=%23b422d8&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&visual=false"></iframe>
+      </article>
+      <article class="episode-embed reveal" data-year="2024">
+        <div class="embed-head">
+          <img src="images/site/hero-1.jpg" alt="Sensitive Reporting in Elections">
+          <div><span class="ep-num">REMs · 19 Jan 2024, FM101</span><h4>Sensitive Reporting in Elections</h4><p>From the "Reduce Early Marriages" series</p></div>
+        </div>
+        <iframe loading="lazy" src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fwajidamir-495371974%2Fradio-program-for-sensitive-reporting-in-election-friday-19th-january-2024-fm-101-radio-pakistan-peshawar&color=%23b422d8&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&visual=false"></iframe>
+      </article>
+      <article class="episode-embed reveal" data-year="earlier">
+        <div class="embed-head">
+          <img src="images/site/prog-policy.jpg" alt="Tariq Malik">
+          <div><span class="ep-num">Featured Guest</span><h4>Tariq Malik</h4><p>Chairman, NADRA</p></div>
+        </div>
+        <iframe loading="lazy" src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fuser-184183275%2Flets-talk-chairman-nadra-mr-tariq-malik-interview&color=%23b422d8&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&visual=false"></iframe>
+      </article>
+      <article class="episode-embed reveal" data-year="earlier">
+        <div class="embed-head">
+          <img src="images/site/hero-3.jpg" alt="Local Governments, Solving Local Issues">
+          <div><span class="ep-num">"Let's Talk" — Episode 4</span><h4>Local Governments, Solving Local Issues</h4><p>With Zahir Shah</p></div>
+        </div>
+        <iframe loading="lazy" src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fuser-756286270%2F4th-radio-program-lets-talk&color=%23b422d8&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&visual=false"></iframe>
+      </article>
+    </div>
+    <p class="empty-state" id="radioEmpty">No episodes match this filter.</p>
+    <div class="impact-more"><a class="btn btn-ghost" href="radio-programs.html">View All Episodes <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+  </div>
+</section>
+
+<!-- ======================= 9. FEATURED CAMPAIGNS — Payload Block: ProgramGrid (reused) ======================= -->
+<section class="content-section" id="featured-campaigns">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Featured campaigns</span>
+      <h2>What This Media Covers</h2>
+      <p class="lead">The recurring themes behind the news above — each linking to where PODA's real work on it lives.</p>
+    </div>
+    <div class="program-grid">
+      <article class="program-card reveal">
+        <div class="thumb"><span class="tag">Women Empowerment</span><img src="images/programs/prog2-women.jpeg" alt="Women Empowerment"></div>
+        <div class="body">
+          <h3><a href="programs/women-rights-education-program.html">Women Rights Education</a></h3>
+          <p>Legal-literacy sessions and workshops on child marriage prevention across rural Punjab.</p>
+          <a class="read-more" href="programs/women-rights-education-program.html">View Program <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="program-card reveal">
+        <div class="thumb"><span class="tag">Climate Justice</span><img src="images/site/prog-climate.jpeg" alt="Climate Justice"></div>
+        <div class="body">
+          <h3><a href="programs/climate-smart-agriculture-green-job-skills-program.html">Climate-Smart Agriculture</a></h3>
+          <p>Hands-on training in organic farming and climate resilience from PODA's own demonstration farm.</p>
+          <a class="read-more" href="programs/climate-smart-agriculture-green-job-skills-program.html">View Program <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="program-card reveal">
+        <div class="thumb"><span class="tag">Democracy</span><img src="images/site/prog-democracy.jpeg" alt="Democracy"></div>
+        <div class="body">
+          <h3><a href="programs/democracy-human-rights-education-program.html">Democracy &amp; Human Rights</a></h3>
+          <p>Mobile legal aid clinics and legal-identity documentation drives across vulnerable communities.</p>
+          <a class="read-more" href="programs/democracy-human-rights-education-program.html">View Program <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="program-card reveal">
+        <div class="thumb"><span class="tag">Legal Identity</span><img src="images/site/prog-policy.jpg" alt="Legal Identity"></div>
+        <div class="body">
+          <h3><a href="projects.html#ongoing-projects">Civic Leadership &amp; Participation</a></h3>
+          <p>Mobile legal aid clinics and civil registration support in partnership with district bar associations.</p>
+          <a class="read-more" href="projects.html#ongoing-projects">View Project <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="program-card reveal">
+        <div class="thumb"><span class="tag">Youth Leadership</span><img src="images/site/prog-conference.png" alt="Youth Leadership"></div>
+        <div class="body">
+          <h3><a href="programs/annual-rural-women-leadership-conference.html">Leadership Conference</a></h3>
+          <p>PODA's flagship gathering of rural women leaders from across Pakistan, now in its 18th year.</p>
+          <a class="read-more" href="programs/annual-rural-women-leadership-conference.html">View Program <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="program-card reveal">
+        <div class="thumb"><span class="tag">Agriculture</span><img src="images/site/prog-activity.jpg" alt="Agriculture"></div>
+        <div class="body">
+          <h3><a href="projects.html#past-projects">Olive Culture &amp; Value Chains</a></h3>
+          <p>Training on olive product production, marketing and sustainable value chains in Chakwal.</p>
+          <a class="read-more" href="projects.html#past-projects">View Project <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 10. MEDIA STATISTICS — Payload Block: ImpactHighlights (reused, animated) ======================= -->
+<section class="content-section" id="media-statistics">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Media statistics</span>
+      <h2>Two Decades, Counted</h2>
+    </div>
+    <div class="impact-card reveal" style="position:static;margin:0;">
+      <div class="impact-item">
+        <div class="ic"><svg class="icon"><use href="#i-calendar"/></svg></div>
+        <div><div class="num" data-count-to="120" data-count-suffix="+">0</div><div class="lbl">Events Covered</div></div>
+      </div>
+      <div class="impact-item">
+        <div class="ic"><svg class="icon"><use href="#i-doc"/></svg></div>
+        <div><div class="num" data-count-to="60" data-count-suffix="+">0</div><div class="lbl">Publications</div></div>
+      </div>
+      <div class="impact-item">
+        <div class="ic"><svg class="icon"><use href="#i-mic"/></svg></div>
+        <div><div class="num" data-count-to="40" data-count-suffix="+">0</div><div class="lbl">Radio Broadcasts</div></div>
+      </div>
+      <div class="impact-item">
+        <div class="ic"><svg class="icon"><use href="#i-newspaper"/></svg></div>
+        <div><div class="num" data-count-to="300" data-count-suffix="+">0</div><div class="lbl">Media Mentions</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= NEWSLETTER — reuses .cta-band gradient treatment ======================= -->
+<section class="cta-band" id="newsletter">
+  <div class="container">
+    <div class="cta-inner">
+      <h2>Stay Updated</h2>
+      <p>Get the latest press releases, publications and radio episodes straight to your inbox.</p>
+    </div>
+    <form class="newsletter-form reveal" onsubmit="return false;">
+      <input type="email" placeholder="Enter your email address" aria-label="Email address" required>
+      <button type="submit" class="btn btn-white">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- ======================= CTA BAR — Payload Block: CtaBar ======================= -->
+<section class="cta-bar">
+  <div class="container">
+    <div>
+      <h3>Want to support this work?</h3>
+      <p>Donate, get free legal aid, or intern with PODA's field teams.</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-white" href="donate.html"><svg class="icon"><use href="#i-heart"/></svg>Donate</a>
+      <a class="btn btn-outline" href="#">Legal Aid Helpline</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FOOTER — Payload Global: Footer ======================= -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="images/logo.jpg" alt="PODA Pakistan">
+      <p>PODA is a women's rights NGO working for promotion and protection of human rights in rural areas of Pakistan through education, training &amp; advocacy.</p>
+      <div class="social-row">
+        <a href="https://twitter.com/PODAPakistan" aria-label="Twitter"><svg><use href="#i-twitter"/></svg></a>
+        <a href="https://www.facebook.com/pages/Potohar-Organization-for-Development-Advocacy-PODA/651141511571116" aria-label="Facebook"><svg><use href="#i-facebook"/></svg></a>
+        <a href="https://www.youtube.com/channel/UCrwavdYNT5nGdmK3r6LTUOg" aria-label="YouTube"><svg><use href="#i-youtube"/></svg></a>
+        <a href="https://www.instagram.com/poda.pakistan/" aria-label="Instagram"><svg><use href="#i-instagram"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h3>Programs</h3>
+      <ul>
+        <li><a href="programs/annual-rural-women-leadership-conference.html">Leadership Conference</a></li>
+        <li><a href="programs/ai-digital-literacy-program.html">AI &amp; Digital Literacy</a></li>
+        <li><a href="programs/climate-smart-agriculture-green-job-skills-program.html">Climate Smart Agriculture</a></li>
+        <li><a href="programs/women-rights-education-program.html">Women Rights Education</a></li>
+        <li><a href="programs/disaster-risk-reduction-humanitarian-response-program.html">Disaster Risk Reduction</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>News &amp; Media</h3>
+      <ul>
+        <li><a href="news-and-media.html">Media Centre</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="press.html">Press</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="radio-programs.html">Radio Programs</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Contact Us</h3>
+      <address><svg><use href="#i-pin"/></svg><span>(+92) 51 6120785 / (+92) 51 8773808</span></address>
+      <address><svg><use href="#i-pin"/></svg><span>Mobile: (+92) 313 0852522</span></address>
+      <address><svg><use href="#i-pin"/></svg><span>info@poda.org.pk</span></address>
+      <a class="btn btn-primary" href="donate.html"><svg class="icon"><use href="#i-heart"/></svg>Make A Donation</a>
+    </div>
+  </div>
+  <div class="site-info">
+    <div class="container">
+      <p>Copyright © 2026. All rights reserved.</p>
+      <p>Designed &amp; Developed by <a href="https://www.uexel.com/">uExel Solutions</a></p>
+    </div>
+  </div>
+</footer>
+
+<a class="btn btn-primary floating-donate" href="donate.html"><svg class="icon"><use href="#i-heart"/></svg>Donate</a>
+
+<script src="js/main.js"></script>
+<script>
+(function(){
+  var lb=document.getElementById('pubLightbox');
+  var lbImg=document.getElementById('pubLightboxImg');
+  var lbTitle=document.getElementById('pubLightboxTitle');
+  var lbDl=document.getElementById('pubLightboxDownload');
+  var lbClose=document.getElementById('pubLightboxClose');
+  function openLb(img,title,dl){
+    lbImg.src=img; lbImg.alt=title;
+    lbTitle.textContent=title;
+    lbDl.href=dl; lbDl.download=title;
+    lb.classList.add('is-open');
+    document.body.style.overflow='hidden';
+  }
+  function closeLb(){
+    lb.classList.remove('is-open');
+    document.body.style.overflow='';
+  }
+  document.querySelectorAll('.pub-preview-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      openLb(btn.dataset.img, btn.dataset.title, btn.dataset.download);
+    });
+  });
+  lbClose.addEventListener('click',closeLb);
+  lb.addEventListener('click',function(e){if(e.target===lb)closeLb();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLb();});
+})();
+</script>
