@@ -39,7 +39,7 @@ body{
 img{max-width:100%;display:block;}
 a{text-decoration:none;color:inherit;}
 ul{margin:0;padding:0;list-style:none;}
-svg.icon{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+svg.icon{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
 .container{max-width:var(--container);margin:0 auto;padding:0 24px;}
 section{position:relative;}
 .eyebrow{
@@ -114,16 +114,16 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
   content:"";position:absolute;inset:0;
   background:linear-gradient(100deg, rgba(30,10,45,.88) 0%, rgba(45,15,60,.55) 42%, rgba(45,15,60,.2) 75%);
 }
-.hero-inner{position:relative;z-index:2;height:100%;display:flex;align-items:center;}
-.hero-content{max-width:640px;padding:0 24px;}
+.hero-inner{position:relative;z-index:2;height:100%;display:flex;align-items:center;justify-content:center;}
+.hero-content{max-width:640px;padding:0 24px;text-align:center;}
 .hero-content .eyebrow{color:#ecc9f5;}
 .hero-content .eyebrow::before{background:var(--green-accent);}
 .hero-content h2{
   color:var(--white);font-size:clamp(30px,4.6vw,50px);font-weight:800;line-height:1.15;
   text-shadow:0 8px 30px rgba(0,0,0,.35);margin-bottom:18px;
 }
-.hero-content p{color:rgba(255,255,255,.85);font-size:16.5px;max-width:520px;margin-bottom:30px;}
-.hero-cta{display:flex;gap:14px;flex-wrap:wrap;}
+.hero-content p{color:rgba(255,255,255,.85);font-size:16.5px;max-width:520px;margin:0 auto 30px;}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
 .hero-dots{position:absolute;bottom:26px;right:32px;display:flex;gap:9px;z-index:5;}
 .hero-dots button{width:9px;height:9px;border-radius:50%;border:0;background:rgba(255,255,255,.4);cursor:pointer;padding:0;transition:all .2s;}
 .hero-dots button.active{background:var(--white);width:26px;border-radius:6px;}
@@ -181,6 +181,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 
 /* ============ MISSION & VISION — Payload Block: "MissionVision" ============
    fields: image(upload), missionText(richText), visionText(richText) */
+   .mission-vision{padding:30px 0;}
 .mv-grid{display:grid;grid-template-columns:0.85fr 1fr;gap:64px;align-items:center;}
 .mv-media{position:relative;}
 .mv-media img{border-radius:var(--radius-lg);box-shadow:var(--shadow-card);width:100%;height:460px;object-fit:cover;}
@@ -562,13 +563,13 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
   display:grid;grid-template-columns:repeat(5,1fr);gap:20px;
 }
 .glance-card{
-  background:var(--white);border-radius:var(--radius);padding:30px 20px;text-align:center;
+  background:var(--white);border-radius:var(--radius);padding:15px;text-align:center;
   box-shadow:var(--shadow-card);border:1px solid #f2ecf5;
   transition:transform .18s ease, box-shadow .18s ease;
 }
 .glance-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lift);}
 .glance-card .ic{
-  width:56px;height:56px;border-radius:16px;margin:0 auto 16px;
+  width:35px;height:35px;border-radius:16px;margin:0 auto 16px;
   background:linear-gradient(135deg, var(--lavender-200), var(--lavender-300));
   color:var(--purple-brand);display:flex;align-items:center;justify-content:center;
 }
@@ -605,14 +606,14 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .stories{padding:30px 0;background:var(--lavender-100);}
 .story-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
 .story-card{
-  background:var(--white);border-radius:var(--radius);padding:28px 24px;
+  background:var(--white);border-radius:var(--radius);padding:20px;
   box-shadow:0 4px 16px rgba(77,33,122,.06);position:relative;
   transition:transform .18s ease, box-shadow .18s ease;
 }
 .story-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-card);}
 .story-card .ic{color:var(--lavender-300);margin-bottom:10px;}
 .story-card .ic svg{width:30px;height:30px;}
-.story-card h4{font-size:15.5px;line-height:1.4;margin-bottom:14px;min-height:66px;}
+.story-card h4{font-size:15.5px;line-height:1.4;margin-bottom:10px;min-height:50px;}
 .story-card .loc{font-size:12px;color:var(--text-muted);margin-bottom:12px;display:flex;align-items:center;gap:6px;}
 .story-card .loc svg{width:13px;height:13px;flex-shrink:0;}
 .story-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
@@ -640,6 +641,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .spotlight-card .role{color:var(--text-muted);font-size:15px;margin-bottom:16px;}
 .spotlight-card p.bio{font-family:var(--font-secondary);font-size:17px;line-height:1.6;color:#463a4d;margin:0;}
 
+.team-group{padding:30px 0;}
 .team-group-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:30px;flex-wrap:wrap;gap:10px;}
 .team-group-head h3{font-size:20px;}
 .team-group-head span{font-size:13px;color:var(--text-muted);}
