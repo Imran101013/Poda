@@ -40,20 +40,21 @@ img{max-width:100%;display:block;}
 a{text-decoration:none;color:inherit;}
 ul{margin:0;padding:0;list-style:none;}
 svg.icon{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
-.container{max-width:var(--container);margin:0 auto;padding:0 24px;}
+.container{max-width:var(--container);padding:30px 24px;}
 section{position:relative;}
 .eyebrow{
   display:inline-flex;align-items:center;gap:8px;
   font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--purple-brand);margin-bottom:14px;
+  color:var(--purple-brand);margin-bottom:5px;
 }
 .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green-accent);}
 h1,h2,h3,h4{font-family:var(--font-primary);color:var(--purple-800);margin:0;}
+h1{line-height:1.1;}
 .lead{color:var(--text-muted);font-size:16.5px;}
 
 .btn{
   display:inline-flex;align-items:center;gap:9px;
-  padding:14px 28px;border-radius:50px;font-weight:600;font-size:14.5px;
+  padding:10px 15px;border-radius:50px;font-weight:600;font-size:14.5px;
   border:1.5px solid transparent;transition:all .2s ease;cursor:pointer;white-space:nowrap;
 }
 .btn svg{width:18px;height:18px;}
@@ -131,7 +132,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
   font-size:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;backdrop-filter:blur(4px);
 }
 .hero-arrow:hover{background:rgba(255,255,255,.28);}
-.hero-arrow.prev{left:24px;} .hero-arrow.next{right:24px;}
+.hero-arrow.prev{left:0px;} .hero-arrow.next{right:0px;}
 
 /* ============ PAGE HEADER — Payload Block: "PageHeader" ============
    Compact banner for inner pages (About, Programs, Contact, etc.) —
@@ -140,7 +141,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
    fields: eyebrow(text), heading(text), body(textarea), backgroundImage(upload) */
 .page-header{
   background:linear-gradient(125deg, var(--purple-800) 0%, var(--purple-brand) 65%, var(--purple-soft) 100%);
-  padding:150px 0 100px;color:var(--white);position:relative;overflow:hidden;
+  padding:50px 0 100px;color:var(--white);position:relative;overflow:hidden;
 }
 .page-header::before{
   content:"";position:absolute;width:420px;height:420px;border-radius:50%;
@@ -153,21 +154,21 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
   bottom:-140px;left:-80px;
 }
 .page-header .container{position:relative;z-index:2;}
-.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.75);margin-bottom:18px;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.75);margin-bottom:10px;}
 .breadcrumb a:hover{color:var(--white);}
-.page-header h1{color:var(--white);font-size:clamp(30px,4.2vw,46px);font-weight:800;max-width:720px;margin-bottom:16px;}
+.page-header h1{color:var(--white);font-size:clamp(30px,4.2vw,46px);font-weight:800;line-height:1.1;max-width:720px;margin-bottom:16px;}
 .page-header .lead{color:rgba(255,255,255,.85);max-width:620px;font-size:16.5px;}
 
 /* ============ IMPACT STRIP — Payload Block: "ImpactHighlights" ============
    fields: items[] { icon(select), value(text), label(text) }
    All figures are real & verifiable (program count, conference edition, coverage). */
-.impact-strip{margin-top:-64px;position:relative;z-index:10;}
+.impact-strip{margin-top:-45px;position:relative;z-index:10;}
 .impact-card{
   background:var(--white);border-radius:var(--radius-lg);box-shadow:var(--shadow-lift);
   display:grid;grid-template-columns:repeat(4,1fr);
 }
 .impact-item{
-  display:flex;align-items:center;gap:14px;padding:26px 22px;border-right:1px solid #f1e9f4;
+  display:flex;align-items:center;gap:14px;padding:15px 15px;border-right:1px solid #f1e9f4;
 }
 .impact-item:last-child{border-right:0;}
 .impact-item .ic{
@@ -179,7 +180,6 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 
 /* ============ MISSION & VISION — Payload Block: "MissionVision" ============
    fields: image(upload), missionText(richText), visionText(richText) */
-.mission-vision{padding:70px 0 90px;}
 .mv-grid{display:grid;grid-template-columns:0.85fr 1fr;gap:64px;align-items:center;}
 .mv-media{position:relative;}
 .mv-media img{border-radius:var(--radius-lg);box-shadow:var(--shadow-card);width:100%;height:460px;object-fit:cover;}
@@ -207,7 +207,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 
 /* ============ WHAT WE DO / ICON FEATURE GRID — Payload Block: "IconFeatureGrid" ============
    Reused on About Us as "Our Approach" — fields: heading, eyebrow, items[] { icon, title, link } */
-.what-we-do{padding:80px 0;background:var(--lavender-100);}
+.what-we-do{background:var(--lavender-100);}
 .wwd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:20px;}
 .wwd-grid.cols-3{grid-template-columns:repeat(3,1fr);}
 .wwd-card{
@@ -229,9 +229,9 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .tag-row span{font-size:12px;font-weight:600;color:var(--white);background:rgba(255,255,255,.16);padding:6px 14px;border-radius:20px;backdrop-filter:blur(4px);}
 
 /* ============ PROGRAMS — Payload Block: "ProgramGrid" ============ */
-.programs{padding:88px 0;}
+.programs{padding:30px 0;}
 .section-head{max-width:660px;margin:0 auto 48px;text-align:center;}
-.section-head h2{font-size:clamp(26px,3.2vw,36px);margin-bottom:14px;}
+.section-head h2{font-size:clamp(26px,3.2vw,36px);margin-bottom:5px;}
 .program-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
 .program-grid.cols-2{grid-template-columns:repeat(2,1fr);max-width:800px;margin:0 auto;}
 .program-card{
@@ -265,7 +265,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .post-meta span{display:flex;align-items:center;gap:8px;font-size:13.5px;color:rgba(255,255,255,.85);}
 .post-meta svg{width:16px;height:16px;}
 
-.post-detail{padding:70px 0 90px;}
+.post-detail{padding:30px 0;}
 .post-layout{display:grid;grid-template-columns:1fr 320px;gap:56px;align-items:start;}
 .post-media{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);margin-bottom:36px;}
 .post-media img{width:100%;height:420px;object-fit:cover;}
@@ -556,7 +556,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .video-card .body p{font-size:13px;color:var(--text-muted);margin:8px 0 0;}
 
 /* ============ PODA AT A GLANCE — Payload Block: "StatsGrid" ============ */
-.glance{padding:88px 0;background:var(--lavender-100);}
+.glance{padding:30px 0;background:var(--lavender-100);}
 .glance-grid{
   display:grid;grid-template-columns:repeat(5,1fr);gap:20px;
 }
@@ -581,7 +581,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
    MissionVision block, so mission/vision copy lives in exactly one place
    (About) instead of being duplicated on the homepage.
    fields: eyebrow, heading, body, button { label, url } */
-.about-teaser{padding:90px 0;text-align:center;}
+.about-teaser{padding:30px 0;text-align:center;}
 .about-teaser .section-head{margin-bottom:26px;}
 
 /* ============ CTA BAR — Payload Block: "CtaBar" ============
@@ -601,7 +601,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 /* ============ STORIES OF CHANGE — Payload Block: "StoryGrid" ============
    fields: stories[] { title, location, tags[], link } — sourced from a
    "Stories" collection so new field cases publish automatically. */
-.stories{padding:88px 0;background:var(--lavender-100);}
+.stories{padding:30px 0;background:var(--lavender-100);}
 .story-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
 .story-card{
   background:var(--white);border-radius:var(--radius);padding:28px 24px;
@@ -660,7 +660,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 /* ============ CTA / WAYS TO HELP — Payload Block: "CtaBand" ============ */
 .cta-band{
   background:linear-gradient(125deg, var(--purple-800) 0%, var(--purple-brand) 65%, var(--purple-soft) 100%);
-  padding:88px 0;color:var(--white);position:relative;overflow:hidden;
+  padding:50px 0;color:var(--white);position:relative;overflow:hidden;
 }
 .cta-band::before{
   content:"";position:absolute;width:420px;height:420px;border-radius:50%;
@@ -768,7 +768,7 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--gree
 }
 .section-select:focus{outline:none;border-color:var(--purple-brand);}
 
-.content-section{padding:80px 0;scroll-margin-top:150px;}
+.content-section{padding:30px 0;scroll-margin-top:150px;}
 .content-section:nth-child(even){background:var(--lavender-100);}
 .content-section .section-head{max-width:720px;}
 .section-badge{
@@ -998,7 +998,7 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--gree
   .section-subnav{top:0;}
   .section-tabs{display:none;}
   .section-select-wrap{display:block;}
-  .content-section{scroll-margin-top:110px;padding:56px 0;}
+  .content-section{scroll-margin-top:110px;padding:30px 0;}
   .story-feature{padding:26px;}
   .achv-item{padding:18px;}
   .project-meta-grid{grid-template-columns:1fr;}
@@ -1251,7 +1251,7 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--gree
   display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;
 }
 .donate-method-card{
-  background:var(--white);border-radius:var(--radius-lg);padding:40px 36px;
+  background:var(--white);border-radius:var(--radius-lg);padding:20px 16px;
   box-shadow:var(--shadow-card);border:1px solid #f2ecf5;
 }
 .donate-method-head{
