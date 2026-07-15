@@ -87,28 +87,31 @@ if (photoLinks.length) {
 // reveal count resets whenever the search/filter changes so a new query always
 // starts from the top of its own result set instead of picking up wherever the
 // previous query's "page" left off.
-function wireListFilter({ searchId, filterId, listId, itemSelector, filterAttr, emptyId, pageSize, loadMoreId }) {
+function wireListFilter({ searchId, filterId, listId, itemSelector, filterAttr, emptyId, pageSize, loadMoreId, filterId2, filterAttr2 }) {
   const searchInput = document.getElementById(searchId);
   const filterGroup = document.getElementById(filterId);
+  const filterGroup2 = filterId2 ? document.getElementById(filterId2) : null;
   const list = document.getElementById(listId);
   const emptyState = document.getElementById(emptyId);
   const loadMoreBtn = loadMoreId ? document.getElementById(loadMoreId) : null;
   if (!list) return;
   const items = Array.from(list.querySelectorAll(itemSelector));
   let activeFilter = 'all';
+  let activeFilter2 = 'all';
   let revealCount = pageSize || Infinity;
 
-  // render() is pure — it paints the current activeFilter/query/revealCount
-  // state. applyFilters() additionally resets revealCount, so a *new* search
-  // or decade always starts from page one; the "Load More" handler calls
-  // render() directly so incrementing revealCount actually sticks.
+  // render() is pure — it paints the current activeFilter/activeFilter2/query/
+  // revealCount state. applyFilters() additionally resets revealCount, so a
+  // *new* search, decade or theme always starts from page one; the "Load
+  // More" handler calls render() directly so incrementing revealCount sticks.
   function render() {
     const query = (searchInput?.value || '').trim().toLowerCase();
     const matches = [];
     items.forEach(item => {
       const matchesFilter = activeFilter === 'all' || item.dataset[filterAttr] === activeFilter;
+      const matchesFilter2 = !filterAttr2 || activeFilter2 === 'all' || item.dataset[filterAttr2] === activeFilter2;
       const matchesSearch = !query || item.textContent.toLowerCase().includes(query);
-      const show = matchesFilter && matchesSearch;
+      const show = matchesFilter && matchesFilter2 && matchesSearch;
       item.classList.toggle('is-hidden', !show);
       if (show) matches.push(item);
     });
@@ -134,6 +137,15 @@ function wireListFilter({ searchId, filterId, listId, itemSelector, filterAttr, 
       applyFilters();
     });
   }
+  if (filterGroup2) {
+    filterGroup2.addEventListener('click', (e) => {
+      const btn = e.target.closest('button');
+      if (!btn) return;
+      filterGroup2.querySelectorAll('button').forEach(b => b.classList.toggle('active', b === btn));
+      activeFilter2 = btn.dataset[filterAttr2];
+      applyFilters();
+    });
+  }
   if (loadMoreBtn) {
     loadMoreBtn.addEventListener('click', () => {
       revealCount += pageSize;
@@ -145,9 +157,11 @@ function wireListFilter({ searchId, filterId, listId, itemSelector, filterAttr, 
 
 wireListFilter({ searchId: 'pressSearch', filterId: 'yearFilter', listId: 'pressList', itemSelector: '.press-item', filterAttr: 'year', emptyId: 'pressEmpty' });
 wireListFilter({ searchId: 'pubSearch', filterId: 'typeFilter', listId: 'pubList', itemSelector: '.doc-card', filterAttr: 'type', emptyId: 'pubEmpty' });
-wireListFilter({ searchId: 'projSearch', filterId: 'decadeFilter', listId: 'pastProjectsList', itemSelector: '.project-card', filterAttr: 'decade', emptyId: 'projEmpty', pageSize: 9, loadMoreId: 'projLoadMore' });
+wireListFilter({ searchId: 'projSearch', filterId: 'decadeFilter', filterId2: 'themeFilter', listId: 'pastProjectsList', itemSelector: '.project-card', filterAttr: 'decade', filterAttr2: 'theme', emptyId: 'projEmpty', pageSize: 9, loadMoreId: 'projLoadMore' });
 // news-and-media.html only — same generic wireListFilter, no new logic needed.
 wireListFilter({ listId: 'latestMediaList', itemSelector: '.program-card', pageSize: 3, loadMoreId: 'latestMediaLoadMore' });
+// activities.html only — full archive, search only, no pagination or category filter needed.
+wireListFilter({ searchId: 'activitySearch', listId: 'activityList', itemSelector: '.program-card', emptyId: 'activityEmpty' });
 wireListFilter({ filterId: 'galleryFilter', listId: 'galleryPreviewList', itemSelector: '.gallery-card', filterAttr: 'conference', emptyId: 'galleryEmpty', pageSize: 3, loadMoreId: 'galleryLoadMore' });
 wireListFilter({ filterId: 'radioYearFilter', listId: 'radioPreviewList', itemSelector: '.episode-embed', filterAttr: 'year', emptyId: 'radioEmpty' });
 

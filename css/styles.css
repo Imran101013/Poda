@@ -259,7 +259,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .program-card:hover .read-more svg{transform:translateX(3px);}
 .programs-more{text-align:center;margin-top:44px;}
 
-/* ============ UPDATE / POST DETAIL — Payload Block: "PostDetail" (the /updates/[slug] route) ============
+/* ============ UPDATE / POST DETAIL — Payload Block: "PostDetail" (the /activities/[slug] route) ============
    fields: title, featuredImage(upload), program(relationship → Programs), publishedDate, content(richText)
    PageHeader-style banner + two-column article layout; replaces linking out to the legacy WordPress post. */
 .post-header{padding-bottom:66px;}
