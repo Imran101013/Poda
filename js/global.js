@@ -121,32 +121,13 @@
     script.remove();
   }
 
-  function getFooterVariant() {
-    if (inDir('stories') || inDir('gallery')) return 'media';
-    if (inDir('activities')) return 'default';
-    var mediaFiles = ['news-and-media.html', 'radio-programs.html', 'gallery.html', 'videos.html',
-      'press.html', 'publications.html', 'events-campaigns.html', 'stories.html'];
-    return mediaFiles.indexOf(file) !== -1 ? 'media' : 'default';
-  }
-
   function renderFooter() {
-    var variant = getFooterVariant();
-    var newsColumn = variant === 'media'
-      ? '<h3>News &amp; Media</h3>\n      <ul>\n' +
-        '        <li><a href="' + basePath + 'news-and-media.html">Media Centre</a></li>\n' +
-        '        <li><a href="' + basePath + 'news-and-media.html#latest-media">Recent Activities</a></li>\n' +
-        '        <li><a href="' + basePath + 'gallery.html">Gallery</a></li>\n' +
-        '        <li><a href="' + basePath + 'videos.html">Videos</a></li>\n' +
-        '        <li><a href="' + basePath + 'press.html">Press</a></li>\n' +
-        '        <li><a href="' + basePath + 'publications.html">Publications</a></li>\n' +
-        '        <li><a href="' + basePath + 'radio-programs.html">Radio Programs</a></li>\n' +
-        '        <li><a href="' + basePath + 'news-and-media.html#success-stories">Success Stories</a></li>\n' +
-        '      </ul>'
-      : '<h3>News &amp; Events</h3>\n      <ul>\n' +
-        '        <li><a href="' + basePath + 'activities/206-wednesday-webinar-parwl.html">206 Wednesday Webinar by PARWL-Pakistan</a></li>\n' +
-        '        <li><a href="' + basePath + 'events-campaigns.html">World Rural Development Day – 6 July</a></li>\n' +
-        '        <li><a href="' + basePath + 'activities/205-wednesday-webinar-parwl.html">205 Wednesday Webinar by PARWL-Pakistan</a></li>\n' +
-        '      </ul>';
+    var newsColumn =
+      '<h3>News &amp; Events</h3>\n      <ul>\n' +
+      '        <li><a href="' + basePath + 'activities/206-wednesday-webinar-parwl.html">206 Wednesday Webinar by PARWL-Pakistan</a></li>\n' +
+      '        <li><a href="' + basePath + 'events-campaigns.html">World Rural Development Day – 6 July</a></li>\n' +
+      '        <li><a href="' + basePath + 'activities/205-wednesday-webinar-parwl.html">205 Wednesday Webinar by PARWL-Pakistan</a></li>\n' +
+      '      </ul>';
 
     var html =
       '<footer class="site-footer">\n' +

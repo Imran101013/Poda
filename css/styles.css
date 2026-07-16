@@ -169,7 +169,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .page-header .container{position:relative;z-index:2;}
 .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.75);margin-bottom:10px;}
 .breadcrumb a:hover{color:var(--white);}
-.page-header h1{color:var(--white);font-size:clamp(30px,4.2vw,46px);font-weight:800;line-height:1.1;max-width:720px;margin-bottom:16px;}
+.page-header h1{color:var(--white);font-size:clamp(20px,4.2vw,30px);font-weight:800;line-height:1.1;max-width:720px;margin-bottom:16px;}
 .page-header .lead{color:rgba(255,255,255,.85);max-width:620px;font-size:14px;}
 
 /* ============ IMPACT STRIP — Payload Block: "ImpactHighlights" ============
@@ -246,7 +246,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 /* ============ PROGRAMS — Payload Block: "ProgramGrid" ============ */
 .programs{padding:30px 0;}
 .section-head{max-width:660px;margin:0 auto 48px;text-align:center;}
-.section-head h2{font-size:clamp(18px,3.2vw,20px);margin-bottom:5px;}
+.section-head h2{font-size:clamp(20px,3.2vw,24px);margin-bottom:5px;}
 .program-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
 .program-grid.cols-2{grid-template-columns:repeat(2,1fr);max-width:800px;margin:0 auto;}
 .program-card{
@@ -282,6 +282,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 
 .post-detail{padding:30px 0;}
 .post-layout{display:grid;grid-template-columns:1fr 320px;gap:56px;align-items:start;}
+.post-layout.no-aside{grid-template-columns:1fr;max-width:800px;margin:0 auto;}
 .post-media{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);margin-bottom:36px;}
 .post-media img{width:100%;height:420px;object-fit:cover;}
 .post-body{font-size:16px;line-height:1.8;color:#463a4d;}
@@ -692,7 +693,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .ways-grid{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
 .way-card{
   background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:var(--radius);
-  padding:30px 26px;text-align:center;backdrop-filter:blur(6px);transition:background .2s ease;
+  padding:20px;text-align:center;backdrop-filter:blur(6px);transition:background .2s ease;
 }
 .way-card:hover{background:rgba(255,255,255,.14);}
 .way-card .ic{
