@@ -39,7 +39,7 @@ body{
 img{max-width:100%;display:block;}
 a{text-decoration:none;color:inherit;}
 ul{margin:0;padding:0;list-style:none;}
-svg.icon{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+svg.icon{width:25px;height:25px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
 .container{max-width:var(--container);margin:0 auto;padding:0 24px;}
 section{position:relative;}
 .eyebrow{
@@ -142,10 +142,10 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .hero-arrow{
   position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;
   background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.4);color:var(--white);
-  font-size:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;backdrop-filter:blur(4px);
+  font-size:30px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;backdrop-filter:blur(4px);
 }
 .hero-arrow:hover{background:rgba(255,255,255,.28);}
-.hero-arrow.prev{left:0px;} .hero-arrow.next{right:0px;}
+.hero-arrow.prev{left:10px;} .hero-arrow.next{right:10px;}
 
 /* ============ PAGE HEADER — Payload Block: "PageHeader" ============
    Compact banner for inner pages (About, Programs, Contact, etc.) —
@@ -226,7 +226,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .wwd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:20px;}
 .wwd-grid.cols-3{grid-template-columns:repeat(3,1fr);}
 .wwd-card{
-  background:var(--white);border-radius:var(--radius);padding:26px 20px;text-align:center;
+  background:var(--white);padding:26px 20px;text-align:center;
   box-shadow:0 4px 16px rgba(77,33,122,.06);transition:transform .18s ease, box-shadow .18s ease;
 }
 .wwd-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-card);}
@@ -250,7 +250,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .program-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
 .program-grid.cols-2{grid-template-columns:repeat(2,1fr);max-width:800px;margin:0 auto;}
 .program-card{
-  border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-card);border:1px solid #f2ecf5;
+  overflow:hidden;box-shadow:var(--shadow-card);border:1px solid #f2ecf5;
   display:flex;flex-direction:column;background:var(--white);
   transition:transform .2s ease, box-shadow .2s ease;
 }
@@ -334,7 +334,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
    its own thing rather than a fifth Media Library card. */
 .radio-spotlight{
   background:linear-gradient(120deg, var(--purple-800), var(--purple-soft));
-  border-radius:var(--radius-lg);padding:20px;color:var(--white);
+  padding:20px;color:var(--white);
   display:flex;gap:32px;align-items:center;flex-wrap:wrap;
   position:relative;overflow:hidden;
 }
@@ -357,7 +357,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
    not just a "Listen" link out) with a small thumbnail and title alongside it. */
 .embed-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
 .episode-embed{
-  background:var(--white);border-radius:var(--radius);border:1px solid #f2ecf5;
+  background:var(--white);border:1px solid #f2ecf5;
   box-shadow:0 4px 16px rgba(77,33,122,.06);overflow:hidden;
 }
 .episode-embed .embed-head{display:flex;gap:14px;align-items:center;padding:16px 18px;}
@@ -389,7 +389,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .press-item{padding:28px 0;border-bottom:1px solid #f1e9f4;}
 .press-item:first-child{padding-top:0;}
 .press-item--media{display:grid;grid-template-columns:160px 1fr;gap:22px;align-items:flex-start;}
-.press-thumb{display:block;flex-shrink:0;border-radius:var(--radius-sm);overflow:hidden;height:110px;}
+.press-thumb{display:block;flex-shrink:0;overflow:hidden;height:200px;}
 .press-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s ease;}
 .press-thumb:hover img{transform:scale(1.05);}
 .press-body{display:flex;flex-direction:column;}
@@ -413,7 +413,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
    an honest, functional pattern common on smaller NGO sites without self-serve downloads. */
 .doc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
 .doc-card{
-  background:var(--white);border-radius:var(--radius);overflow:hidden;border:1px solid #f2ecf5;
+  background:var(--white);overflow:hidden;border:1px solid #f2ecf5;
   box-shadow:0 4px 16px rgba(77,33,122,.06);transition:transform .18s ease, box-shadow .18s ease;
   display:flex;flex-direction:column;
 }
@@ -441,7 +441,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 /* ============ GALLERY — Payload Block: "GalleryGrid" ============
    fields: title, coverImage(upload), photoCount(number), externalUrl (pending full DAM migration) */
 .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-.gallery-card{position:relative;border-radius:var(--radius);overflow:hidden;height:220px;box-shadow:var(--shadow-card);}
+.gallery-card{position:relative;overflow:hidden;height:220px;box-shadow:var(--shadow-card);}
 .gallery-card img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease;}
 .gallery-card:hover img{transform:scale(1.06);}
 .gallery-card::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg, rgba(30,10,45,.78) 0%, rgba(30,10,45,.15) 55%, transparent 80%);}
@@ -559,7 +559,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 /* ============ VIDEOS — Payload Block: "VideoGrid" ============
    fields: title, thumbnail(upload), embedUrl (pending full DAM migration) */
 .video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-.video-card{border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 16px rgba(77,33,122,.06);border:1px solid #f2ecf5;background:var(--white);transition:transform .18s ease, box-shadow .18s ease;}
+.video-card{overflow:hidden;box-shadow:0 4px 16px rgba(77,33,122,.06);border:1px solid #f2ecf5;background:var(--white);transition:transform .18s ease, box-shadow .18s ease;}
 .video-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-card);}
 .video-card .thumb{position:relative;height:170px;background:var(--lavender-200);overflow:hidden;}
 .video-card .thumb img{width:100%;height:100%;object-fit:cover;}
@@ -620,7 +620,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .stories{padding:30px 0;background:var(--lavender-100);}
 .story-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
 .story-card{
-  background:var(--white);border-radius:var(--radius);padding:20px;
+  background:var(--white);padding:20px;
   box-shadow:0 4px 16px rgba(77,33,122,.06);position:relative;
   transition:transform .18s ease, box-shadow .18s ease;
 }
@@ -661,7 +661,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .team-group-head span{font-size:13px;color:var(--text-muted);}
 .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;}
 .team-card{
-  border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 16px rgba(77,33,122,.07);
+  overflow:hidden;box-shadow:0 4px 16px rgba(77,33,122,.07);
   background:var(--white);border:1px solid #f2ecf5;transition:transform .18s ease, box-shadow .18s ease;
 }
 .team-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-card);}
@@ -912,7 +912,7 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--gree
 }
 .project-status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green-accent);}
 .project-feature{
-  background:var(--white);border-radius:var(--radius-lg);padding:15px;box-shadow:var(--shadow-card);
+  background:var(--white);padding:15px;box-shadow:var(--shadow-card);
   border:1px solid #f2ecf5;margin-bottom:28px;
 }
 .project-feature:last-child{margin-bottom:0;}
@@ -941,7 +941,7 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--gree
    pagination layer, is-hidden is the search/filter layer; both must pass. */
 .project-card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
 .project-card{
-  display:flex;flex-direction:column;min-width:0;background:var(--white);border-radius:var(--radius);
+  display:flex;flex-direction:column;min-width:0;background:var(--white);
   padding:24px;border:1px solid #f2ecf5;box-shadow:0 4px 16px rgba(77,33,122,.05);
   transition:transform .18s ease, box-shadow .18s ease;
 }
