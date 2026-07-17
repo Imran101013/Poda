@@ -110,7 +110,7 @@
     var html =
       '<header class="site-header" id="siteHeader">\n' +
       '  <div class="header-inner">\n' +
-      '    <a class="logo" href="' + basePath + 'index.html"><img src="' + basePath + 'images/logo.jpg" alt="PODA Pakistan"></a>\n' +
+      '    <a class="logo" href="' + basePath + 'index.html"><img src="' + basePath + 'images/logo.png" alt="PODA Pakistan"></a>\n' +
       '    <nav class="main-nav">\n' +
       '      <ul>\n' +
       '        ' + items + '\n' +
@@ -141,7 +141,7 @@
       '<footer class="site-footer">\n' +
       '  <div class="container footer-grid">\n' +
       '    <div class="footer-brand">\n' +
-      '      <img src="' + basePath + 'images/logo.jpg" alt="PODA Pakistan">\n' +
+      '      <img src="' + basePath + 'images/logo.png" alt="PODA Pakistan">\n' +
       '      <p>PODA is a women\'s rights NGO working for promotion and protection of human rights in rural areas of Pakistan through education, training &amp; advocacy.</p>\n' +
       '      <div class="social-row">\n' +
       '        <a href="https://twitter.com/PODAPakistan" aria-label="Twitter"><svg><use href="#i-twitter"/></svg></a>\n' +
