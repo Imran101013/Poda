@@ -114,41 +114,159 @@
 
 <!-- ======================= PODA AT A GLANCE — Payload Block: StatsGrid ======================= -->
 <section class="glance">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">By the numbers</span>
-      <h2>PODA at a Glance</h2>
-      <p class="lead">Two decades of evidence-based programming, rights advocacy and community impact across rural Pakistan.</p>
-    </div>
-    <div class="glance-grid">
-      <div class="glance-card reveal">
-        <div class="ic"><svg class="icon"><use href="#i-grid"/></svg></div>
-        <div class="stat-num">120+</div>
-        <div class="stat-lbl">Projects Implemented</div>
+  <div class="glance-bg">
+    <div class="container">
+      <div class="section-head reveal" style="color:#fff;">
+        <span class="eyebrow" style="color:#ecc9f5;">By the numbers</span>
+        <h2 style="color:#fff;">PODA at a Glance</h2>
+        <p class="lead" style="color:rgba(255,255,255,.75);">Two decades of evidence-based programming, rights advocacy and community impact across rural Pakistan.</p>
       </div>
-      <div class="glance-card reveal">
-        <div class="ic"><svg class="icon"><use href="#i-people"/></svg></div>
-        <div class="stat-num">500,000+</div>
-        <div class="stat-lbl">Total Beneficiaries Reached</div>
-      </div>
-      <div class="glance-card reveal">
-        <div class="ic"><svg class="icon"><use href="#i-shield"/></svg></div>
-        <div class="stat-num">80+</div>
-        <div class="stat-lbl">Partner Organizations</div>
-      </div>
-      <div class="glance-card reveal">
-        <div class="ic"><svg class="icon"><use href="#i-heart"/></svg></div>
-        <div class="stat-num">350,000+</div>
-        <div class="stat-lbl">Women Beneficiaries</div>
-      </div>
-      <div class="glance-card reveal">
-        <div class="ic"><svg class="icon"><use href="#i-pin"/></svg></div>
-        <div class="stat-num">30+</div>
-        <div class="stat-lbl">Districts Covered</div>
+      <div class="glance-grid">
+
+        <div class="glance-card reveal" style="--accent:#b422d8;--accent-light:rgba(180,34,216,.15);">
+          <div class="glance-icon"><svg class="icon"><use href="#i-grid"/></svg></div>
+          <div class="glance-num-row"><span class="glance-num" data-target="120">0</span><span class="glance-plus">+</span></div>
+          <div class="glance-lbl">Projects Implemented</div>
+        </div>
+
+        <div class="glance-card reveal" style="--accent:#e040a0;--accent-light:rgba(224,64,160,.15);">
+          <div class="glance-icon"><svg class="icon"><use href="#i-people"/></svg></div>
+          <div class="glance-num-row"><span class="glance-num" data-target="500000">0</span><span class="glance-plus">+</span></div>
+          <div class="glance-lbl">Total Beneficiaries Reached</div>
+        </div>
+
+        <div class="glance-card reveal" style="--accent:#7c3aed;--accent-light:rgba(124,58,237,.15);">
+          <div class="glance-icon"><svg class="icon"><use href="#i-shield"/></svg></div>
+          <div class="glance-num-row"><span class="glance-num" data-target="80">0</span><span class="glance-plus">+</span></div>
+          <div class="glance-lbl">Partner Organizations</div>
+        </div>
+
+        <div class="glance-card reveal" style="--accent:#d946ef;--accent-light:rgba(217,70,239,.15);">
+          <div class="glance-icon"><svg class="icon"><use href="#i-heart"/></svg></div>
+          <div class="glance-num-row"><span class="glance-num" data-target="350000">0</span><span class="glance-plus">+</span></div>
+          <div class="glance-lbl">Women Beneficiaries</div>
+        </div>
+
+        <div class="glance-card reveal" style="--accent:#06b6d4;--accent-light:rgba(6,182,212,.15);">
+          <div class="glance-icon"><svg class="icon"><use href="#i-pin"/></svg></div>
+          <div class="glance-num-row"><span class="glance-num" data-target="30">0</span><span class="glance-plus">+</span></div>
+          <div class="glance-lbl">Districts Covered</div>
+        </div>
+
       </div>
     </div>
   </div>
 </section>
+
+<style>
+.glance{padding:0;background:none;}
+.glance-bg{
+  background:linear-gradient(135deg,#1a0a2e 0%,#2d1054 40%,#1e0a3c 70%,#0f0520 100%);
+  padding:72px 0;
+  position:relative;
+  overflow:hidden;
+}
+.glance-bg::before{
+  content:'';
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 50% at 20% 50%,rgba(180,34,216,.18) 0%,transparent 70%),
+             radial-gradient(ellipse 40% 60% at 80% 30%,rgba(124,58,237,.15) 0%,transparent 70%);
+  pointer-events:none;
+}
+.glance-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:20px;
+  position:relative;
+}
+.glance-card{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;
+  padding:32px 20px 20px;
+  text-align:center;
+  backdrop-filter:blur(8px);
+  transition:transform .25s ease,background .25s ease,border-color .25s ease;
+  position:relative;
+  overflow:hidden;
+}
+.glance-card::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--accent);
+  border-radius:16px 16px 0 0;
+}
+.glance-card:hover{
+  transform:translateY(-8px);
+  background:rgba(255,255,255,.09);
+  border-color:var(--accent);
+}
+.glance-icon{
+  width:42px;height:42px;border-radius:14px;
+  background:var(--accent-light);
+  border:1px solid var(--accent);
+  color:var(--accent);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 20px;
+}
+.glance-icon .icon{width:22px;height:22px;}
+.glance-num-row{display:flex;align-items:baseline;justify-content:center;gap:2px;margin-bottom:12px;}
+.glance-num{
+  font-size:clamp(18px,3.5vw,22px);
+  font-weight:600;
+  color:#fff;
+  line-height:1;
+  letter-spacing:-1px;
+}
+.glance-plus{
+  font-size:clamp(18px,3vw,22px);
+  font-weight:800;
+  color:var(--accent);
+  line-height:1;
+}
+.glance-lbl{
+  font-size:13px;
+  color:rgba(255,255,255,.6);
+  line-height:1.4;
+  font-weight:500;
+}
+@media(max-width:1080px){.glance-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:640px){.glance-grid{grid-template-columns:repeat(2,1fr);}}
+</style>
+
+<script>
+(function(){
+  function formatNum(n){
+    if(n>=1000) return (n/1000).toFixed(0)+'K';
+    return n.toString();
+  }
+  function animateCounter(el){
+    var target=parseInt(el.dataset.target,10);
+    var duration=1800;
+    var start=null;
+    function step(ts){
+      if(!start) start=ts;
+      var progress=Math.min((ts-start)/duration,1);
+      var ease=1-Math.pow(1-progress,3);
+      el.textContent=formatNum(Math.floor(ease*target));
+      if(progress<1) requestAnimationFrame(step);
+      else el.textContent=formatNum(target);
+    }
+    requestAnimationFrame(step);
+  }
+  var observer=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        animateCounter(e.target);
+        observer.unobserve(e.target);
+      }
+    });
+  },{threshold:0.4});
+  document.querySelectorAll('.glance-num[data-target]').forEach(function(el){
+    observer.observe(el);
+  });
+})();
+</script>
 
 <!-- ======================= LATEST UPDATES — Payload Block: ActivityGrid =======================
      A small, recency-sorted slice across all Activities — NOT one card per

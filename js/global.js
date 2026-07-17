@@ -48,37 +48,45 @@
   var NAV = [
     { key: 'home', label: 'Home', href: 'index.html' },
     { key: 'about', label: 'About Us', href: 'about.html' },
-    { key: 'conference', label: 'Annual Conference', href: 'annual-conference.html' },
+    {
+      key: 'conference', label: 'Annual Conference', href: 'annual-conference.html', children: [
+        { label: '18th Edition — 2025', href: 'conference-detail.html' },
+        { label: 'Conference 2024', href: 'annual-conference.html#conf-2024' },
+        { label: 'Conference 2020–2021', href: 'annual-conference.html#conf-2020' },
+        { label: 'Conference 2019–2020', href: 'annual-conference.html#conf-2019' },
+        { label: 'Conference 2011', href: 'annual-conference.html#conf-2011' }
+      ]
+    },
     {
       key: 'projects', label: 'Projects', href: 'projects.html', children: [
-        { label: 'Poda Current Projects', href: 'projects.html#current-projects' },
-        { label: 'Poda Past Projects', href: 'projects.html#past-projects' }
+        { label: 'PODA Current Projects', href: 'projects.html#current-projects' },
+        { label: 'PODA Past Projects', href: 'projects.html#past-projects' }
       ]
     },
     {
       key: 'news', label: 'News &amp; Media', href: 'news-and-media.html', children: [
-        { label: 'Poda Recent Activities', href: 'news-and-media.html#latest-media' },
-        { label: 'Poda Photo and Video Highlights', href: 'news-and-media.html#photo-video-highlights' },
-        { label: 'Poda Press Room', href: 'news-and-media.html#press-room' },
-        { label: 'Poda Publications', href: 'news-and-media.html#publications' },
-        { label: 'Poda Radio Programs', href: 'news-and-media.html#radio-programs' },
-        { label: 'Poda Webinar', href: 'news-and-media.html#poda-webinar' },
-        { label: 'Poda Success Stories', href: 'news-and-media.html#success-stories' }
+        { label: 'PODA Recent Activities', href: 'news-and-media.html#latest-media' },
+        { label: 'PODA Photo and Video Highlights', href: 'news-and-media.html#photo-video-highlights' },
+        { label: 'PODA Press Room', href: 'news-and-media.html#press-room' },
+        { label: 'PODA Publications', href: 'news-and-media.html#publications' },
+        { label: 'PODA Radio Programs', href: 'news-and-media.html#radio-programs' },
+        { label: 'PODA Webinar', href: 'news-and-media.html#poda-webinar' },
+        { label: 'PODA Success Stories', href: 'news-and-media.html#success-stories' }
       ]
     },
     {
       key: 'impact', label: 'Our Impact', href: 'impact.html', children: [
-        { label: 'Poda Key Achievements', href: 'impact.html#key-achievements' },
-        { label: 'Poda Major Milestones', href: 'impact.html#major-milestones' },
-        { label: 'Poda Community Transformation', href: 'impact.html#community-transformation' },
-        { label: 'Poda Beneficiary Testimonials', href: 'impact.html#beneficiary-testimonials' }
+        { label: 'PODA Key Achievements', href: 'impact.html#key-achievements' },
+        { label: 'PODA Major Milestones', href: 'impact.html#major-milestones' },
+        { label: 'PODA Community Transformation', href: 'impact.html#community-transformation' },
+        { label: 'PODA Beneficiary Testimonials', href: 'impact.html#beneficiary-testimonials' }
       ]
     },
     {
       key: 'careers', label: 'Careers', href: 'internships.html', children: [
-        { label: 'Poda Internships', href: 'internships.html' },
-        { label: 'Poda Jobs', href: 'jobs.html' },
-        { label: 'Poda Volunteer', href: 'volunteer.html' }
+        { label: 'PODA Internships', href: 'internships.html' },
+        { label: 'PODA Jobs', href: 'jobs.html' },
+        { label: 'PODA Volunteer', href: 'volunteer.html' }
       ]
     },
     { key: 'contact', label: 'Contact Us', href: 'contact.html' }
