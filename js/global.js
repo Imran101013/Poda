@@ -51,10 +51,10 @@
     {
       key: 'conference', label: 'Annual Conference', href: 'annual-conference.html', children: [
         { label: '18th Edition — 2025', href: 'conference-detail.html' },
-        { label: 'Conference 2024', href: 'annual-conference.html#conf-2024' },
-        { label: 'Conference 2020–2021', href: 'annual-conference.html#conf-2020' },
-        { label: 'Conference 2019–2020', href: 'annual-conference.html#conf-2019' },
-        { label: 'Conference 2011', href: 'annual-conference.html#conf-2011' }
+        { label: 'Conference 2024', href: 'conference-detail.html' },
+        { label: 'Conference 2020–2021', href: 'conference-detail.html' },
+        { label: 'Conference 2019–2020', href: 'conference-detail.html' },
+        { label: 'Conference 2011', href: 'conference-detail.html' }
       ]
     },
     {
