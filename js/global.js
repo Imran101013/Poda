@@ -33,9 +33,7 @@
     'gallery.html': 'news',
     'videos.html': 'news',
     'impact.html': 'impact',
-    'internships.html': 'careers',
-    'jobs.html': 'careers',
-    'volunteer.html': 'careers',
+    'careers.html': 'careers',
     'contact.html': 'contact'
     // donate.html and events-campaigns.html intentionally have no nav parent to highlight.
   };
@@ -83,10 +81,10 @@
       ]
     },
     {
-      key: 'careers', label: 'Careers', href: 'internships.html', children: [
-        { label: 'PODA Internships', href: 'internships.html' },
-        { label: 'PODA Jobs', href: 'jobs.html' },
-        { label: 'PODA Volunteer', href: 'volunteer.html' }
+      key: 'careers', label: 'Careers', href: 'careers.html', children: [
+        { label: 'PODA Internships', href: 'careers.html#internships' },
+        { label: 'PODA Jobs', href: 'careers.html#jobs' },
+        { label: 'PODA Volunteer', href: 'careers.html#volunteers' }
       ]
     },
     { key: 'contact', label: 'Contact Us', href: 'contact.html' }

@@ -778,7 +778,7 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--gree
 .section-select-wrap{display:none;padding:14px 0;}
 .section-select{
   width:100%;padding:13px 18px;border-radius:14px;border:1.5px solid var(--lavender-300);
-  background:var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23B422D8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 16px center;
+  background:var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2354377C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 16px center;
   appearance:none;-webkit-appearance:none;font-family:inherit;font-size:14.5px;font-weight:600;color:var(--purple-800);
 }
 .section-select:focus{outline:none;border-color:var(--purple-brand);}
@@ -1153,7 +1153,7 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--gree
 .form-group textarea::placeholder{color:var(--text-muted);}
 .form-group select{
   appearance:none;-webkit-appearance:none;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23B422D8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2354377C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
   background-repeat:no-repeat;background-position:right 14px center;
   padding-right:40px;cursor:pointer;
 }
@@ -1298,4 +1298,96 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--gree
   .donate-method-card{padding:28px 22px;}
   .bank-row{flex-direction:column;gap:3px;}
   .bank-row span{min-width:unset;}
+}
+
+/* ============ CAREERS PAGE — Internships / Jobs / Volunteers tabs ============ */
+.intern-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;}
+.intern-card{background:var(--white);border-radius:var(--radius-lg);padding:40px 36px;box-shadow:var(--shadow-card);border:1px solid #F4F5FD;}
+.intern-card h2{font-size:clamp(20px,2.4vw,24px);margin-bottom:24px;color:var(--purple-800);}
+.intern-list{display:flex;flex-direction:column;gap:14px;}
+.intern-list li{display:flex;gap:14px;align-items:flex-start;font-size:14.5px;color:#463a4d;line-height:1.6;}
+.intern-list .ic{width:32px;height:32px;border-radius:50%;background:var(--lavender-200);color:var(--purple-brand);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.intern-list .ic svg{width:15px;height:15px;}
+
+.info-row{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+.info-box{background:var(--lavender-100);border-radius:var(--radius);padding:26px 24px;display:flex;gap:16px;align-items:flex-start;}
+.info-box .ic{width:48px;height:48px;border-radius:14px;background:var(--white);color:var(--purple-brand);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(84,55,124,.08);}
+.info-box .ic svg{width:22px;height:22px;}
+.info-box strong{display:block;font-size:13px;font-weight:700;color:var(--purple-800);text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px;}
+.info-box p{margin:0;font-size:14px;color:var(--text-muted);line-height:1.55;}
+
+.apply-card{background:linear-gradient(125deg,var(--purple-800) 0%,var(--purple-brand) 65%,var(--purple-soft) 100%);border-radius:var(--radius-lg);padding:44px 40px;color:var(--white);position:relative;overflow:hidden;}
+.apply-card::before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.08),transparent 70%);top:-120px;right:-60px;}
+.apply-card::after{content:"";position:absolute;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(147,156,232,.18),transparent 70%);bottom:-80px;left:-60px;}
+.apply-card h2{color:var(--white);font-size:clamp(20px,2.4vw,24px);margin-bottom:8px;position:relative;z-index:1;}
+.apply-card > p{color:rgba(255,255,255,.82);font-size:14.5px;margin:0 0 28px;position:relative;z-index:1;}
+.apply-steps{display:flex;flex-direction:column;gap:14px;position:relative;z-index:1;margin-bottom:32px;}
+.apply-step{display:flex;gap:14px;align-items:flex-start;}
+.apply-step .num{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.18);color:var(--white);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.apply-step p{margin:0;font-size:14px;color:rgba(255,255,255,.88);line-height:1.55;padding-top:4px;}
+.apply-step p strong{color:var(--white);}
+.apply-note{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:var(--radius-sm);padding:16px 18px;font-size:13px;color:rgba(255,255,255,.82);line-height:1.55;position:relative;z-index:1;backdrop-filter:blur(4px);}
+.apply-note strong{color:var(--white);}
+.apply-actions{display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:1;margin-top:24px;}
+
+/* Current Openings (Internships + Jobs tabs) */
+.openings-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:40px;}
+.opening-card{
+  background:var(--white);border-radius:var(--radius-lg);padding:20px;
+  box-shadow:var(--shadow-card);border:1px solid #F4F5FD;
+  display:flex;flex-direction:column;gap:0;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.opening-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lift);}
+.opening-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px;}
+.opening-badge{
+  display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;
+  letter-spacing:.05em;text-transform:uppercase;color:var(--green-accent);
+  background:rgba(147,156,232,.12);padding:5px 13px;border-radius:20px;
+}
+.opening-badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green-accent);}
+.opening-dept{
+  font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--purple-brand);background:var(--lavender-100);padding:5px 13px;border-radius:20px;
+}
+.opening-card h3{font-size:19px;line-height:1.35;margin:0 0 10px;color:var(--purple-800);}
+.opening-card p{font-size:14px;color:var(--text-muted);margin:0 0 20px;line-height:1.65;flex:1;}
+.opening-meta{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:24px;}
+.opening-meta span{
+  display:flex;align-items:center;gap:7px;
+  font-size:12.5px;color:var(--text-muted);
+}
+.opening-meta svg{width:14px;height:14px;color:var(--purple-soft);flex-shrink:0;}
+.opening-meta .deadline{color:#54377C;font-weight:600;}
+.opening-meta .deadline svg{color:#54377C;}
+.opening-card .btn{align-self:flex-start;}
+
+/* Empty state (Jobs tab) */
+.openings-empty{
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  padding:56px 24px;background:var(--lavender-100);border-radius:var(--radius-lg);
+  border:1.5px dashed var(--lavender-300);margin-top:40px;
+}
+.openings-empty .ic{
+  width:68px;height:68px;border-radius:50%;
+  background:linear-gradient(135deg,var(--lavender-200),var(--lavender-300));
+  color:var(--purple-soft);display:flex;align-items:center;justify-content:center;margin-bottom:20px;
+}
+.openings-empty .ic svg{width:30px;height:30px;}
+.openings-empty h3{font-size:19px;margin-bottom:10px;color:var(--purple-800);}
+.openings-empty p{font-size:14.5px;color:var(--text-muted);max-width:420px;margin:0 0 24px;line-height:1.65;}
+
+/* Volunteers tab — reuses .contact-form-wrap / .form-row / .form-group from the Contact page form */
+.volunteer-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;}
+
+@media(max-width:1080px){
+  .intern-grid{grid-template-columns:1fr;}
+  .info-row{grid-template-columns:1fr;}
+  .openings-grid{grid-template-columns:1fr;}
+  .volunteer-grid{grid-template-columns:1fr;}
+}
+@media(max-width:760px){
+  .intern-card{padding:20px;}
+  .apply-card{padding:20px;}
+  .info-row{grid-template-columns:1fr;}
 }
