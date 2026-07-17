@@ -6,6 +6,8 @@ Based on `index.html` (homepage), `about.html` (About Us), `programs.html` (Prog
 
 **Programs merged into Projects (this pass):** the standalone `Programs` collection and its directory (`programs.html` + 7 `programs/*.html` detail pages) have been removed entirely — no page, nav item, or field on this site says "Program" anymore. The reasoning: Programs and Projects were two disconnected content types with no real relationship between them (no project ever recorded which program it fell under), and the live poda.org.pk site's own "causes" turned out to be a third, semi-overlapping concept. Rather than maintain three tangled taxonomies, everything collapses into one `Projects` collection (see below), grouped by a `themeArea` field reusing the name already used on ongoing project cards, plus a dedicated `ConferenceEditions` collection for the one focus area (the Annual Rural Women Leadership Training Conference) that has genuinely distinct recurring content — yearly editions, resolutions, downloadable booklets — deserving its own standalone nav item in the header.
 
+**Careers consolidated onto one hub page (this pass):** the header's "Careers" dropdown previously pointed at three destinations — `internships.html`, `jobs.html`, `volunteer.html` — of which only Internships actually existed as a built page; Jobs and Volunteer were unbuilt nav placeholders. All three are now one page, `careers.html`, following the exact "hub + `section-subnav` tabs" pattern already established by `impact.html` and `projects.html` (sticky tab bar + mobile `<select>`, scrollspy via the shared, class-based logic in `main.js` — no page-specific JS required). The dropdown's three children now point at `careers.html#internships`, `#jobs`, `#volunteers` instead of three separate routes. See the `Careers page` and `JobOpenings` entries below. `internships.html` was deleted outright (its real content moved into the Internships tab) rather than kept as a redirect, since a static prototype has no routing layer to make a redirect meaningful.
+
 ## Collections
 
 **Media** — standard Payload uploads collection (logo, hero backgrounds, post images).
@@ -27,6 +29,18 @@ Real per-flagship facts/figures (1,500+ leaders, 18th edition, Punjab's minimum 
 - `dates` (text), `location` (text), `donorAgencies` (text), `focus` (text)
 - `excerpt` (textarea) — resolution/edition summary
 - `resolutionFile` (upload → Media, optional) — the downloadable booklet/resolution PDF; follows the same `Publications` rule below (non-interactive until a real file exists, never a fake download link). Where a resolution instead has real migrated article content (the 18th edition), the card links to that `Activities` entry directly rather than to a file.
+
+**JobOpenings** — backs both the Internships and Jobs tabs on `careers.html` (see `Careers page` below)
+- `title` (text)
+- `category` (select — `internship` | `job`) — drives which of the two tabs a posting renders under; the two tabs are one collection filtered two ways, not two collections, since a posting is the same shape either way
+- `department` (text, e.g. "Program Department", "Finance Department")
+- `excerpt` (textarea)
+- `postedDate` (date), `deadline` (date)
+- `location` (text)
+- `status` (select — `open` | `closed`) — when a `category` has zero `open` documents, that tab renders the `.openings-empty` state (styled empty-state card with a "send a speculative CV" mailto) instead of `.openings-grid`; the two sample `job` documents seeded for this prototype pass are placeholders (Finance & Grants Officer, MEL Officer) standing in for real postings, not real vacancies
+- `applyUrl` (text, optional) — internship postings currently point at the `#intern-how-to-apply` anchor on the same page (a static `ApplyCard` with document checklist, not per-posting); job postings point at a `mailto:` with a pre-filled subject. A real ATS integration would replace both with a real `applyUrl`.
+
+**VolunteerApplication** — not an editor-authored collection. This is a Payload `form-builder` Form definition (the same pattern the Contact page's message form should also use, though that form predates these notes and isn't documented here yet) capturing `name`, `email`, `phone` (optional), `gender` (select: Female/Male/Other/Prefer not to say), `age` (number), `address` (optional) — submissions land in `form-submissions`, reviewed by whoever coordinates volunteers, not rendered back onto the page. The Volunteers tab's client-side "success" swap on `careers.html` is prototype-only UI feedback (no submission is actually persisted yet in this static build).
 
 **Activities** (renamed from `Posts` — these are dated news/updates, not projects, and were never really "posts" in a blog sense)
 - `title` (text)
@@ -153,13 +167,21 @@ A dynamic route templated from a single `Activities` document rather than a hand
 
 `PageHeader` (sourced from the conference's evergreen facts — 18th edition, 1,500+ leaders, since 2008) + `MissionVision`-style overview + one `.project-feature` card per `ConferenceEditions` document (dates, location, donor agencies, focus, resolution/booklet link where real) + `CtaBar`. Has its own standalone header nav item — the one focus area that earned it, since a conference archive genuinely doesn't fit a generic project card.
 
+### Careers page (`careers.html`) — not a `Pages.layout` document
+
+`PageHeader` + a 3-tab `section-subnav` (Internships / Jobs / Volunteers) — the same jump-nav + scrollspy + mobile `<select>` pattern already used by `impact.html` and `projects.html`, reusing the shared class-based logic in `main.js` rather than a bespoke tab implementation. Replaces what used to be three separate (and, for Jobs/Volunteer, never-built) nav destinations — see the redesign note at the top of this file.
+
+- **Internships tab** — `JobOpenings` filtered to `category: internship` rendered as `.opening-card`s, plus a static eligibility/benefits `IconFeatureGrid`-style pair and an `ApplyCard` banner (document checklist + `mailto:` actions) that isn't per-posting — every internship posting currently applies through the same checklist.
+- **Jobs tab** — `JobOpenings` filtered to `category: job`. The two seeded documents (Finance & Grants Officer, MEL Officer) are prototype placeholders. When a `category` has no `open` documents, the tab falls back to the `.openings-empty` state instead of an empty grid.
+- **Volunteers tab** — static "Why Volunteer" copy + the `VolunteerApplication` form (see Collections above) rendered via `.contact-form-wrap`/`.form-row`/`.form-group` — the same generic form styling the Contact page form already uses, reused rather than duplicated for a second form on the site.
+
 ### Activities archive page (`activities.html`) — not a `Pages.layout` document
 
 `PageHeader` + search-only `ActivityGrid` (no pagination — all 24 real Activities are fully migrated, unlike Press/Videos/Publications/Radio which are still partial slices of a much larger real archive) + `CtaBar`. Follows the same "preview on the News & Media hub + dedicated full archive page" pattern as Gallery/Videos/Press/Publications/Radio.
 
 ## Globals
 
-**Header** — `logo (upload)`, `navItems[]` `{ label, url, children[]? { label, url } }`, `secondaryLink { label, url }` (Legal Aid Helpline), `donateButton { label, url }`. `navItems` no longer includes "Programs" — replaced by "Annual Conference" as its own standalone item, with "Activities" folded into the "News & Media" dropdown instead of getting a nav item of its own.
+**Header** — `logo (upload)`, `navItems[]` `{ label, url, children[]? { label, url } }`, `secondaryLink { label, url }` (Legal Aid Helpline), `donateButton { label, url }`. `navItems` no longer includes "Programs" — replaced by "Annual Conference" as its own standalone item, with "Activities" folded into the "News & Media" dropdown instead of getting a nav item of its own. The "Careers" item's `children[]` now resolve to in-page anchors on one `careers.html` document (`#internships`, `#jobs`, `#volunteers`) rather than three separate routes — see the `Careers page` entry above.
 
 **Footer** — `logo (upload)`, `aboutText (richText)`, `ourWorkLinks[]` (renamed from `programLinks`, relationship → Projects + one entry for `annual-conference.html`), `newsLinks[]` (relationship → Activities, or auto-resolve latest 3), `socialLinks[]` `{ platform: twitter|facebook|youtube|instagram, url }`, `contact { phones[], mobile, email }`, `donateButton { label, url }`, `copyrightText`
 
@@ -183,10 +205,9 @@ Cross-page and within-page duplication was cut deliberately — each fact now ha
 - **Stories of Change** is a distinct collection from **Posts** because success stories don't have a natural "publish date" news cycle — they're closer to evergreen case studies and read better hand-curated (`stories[]` relationship on the block) than "latest N."
 - **TeamMembers** is its own collection (not a repeater field on the About page) so the same person can be reused — e.g. featured in a `TeamGrid.spotlight` on one page and listed in a group on another — without re-entering their name/photo/role twice.
 - The About page intro text reveals the org's full name — "Potohar Organization for Development Advocacy (PODA)" — pulled directly from poda.org.pk/about-us/. Worth surfacing prominently since the homepage never spells it out.
-- Icons are a single inline `<svg><symbol>` sprite, currently duplicated at the top of both `index.html` and `about.html` `<body>` tags since this is a static, no-build prototype. In the Payload frontend this becomes one shared layout component rendered once; store the icon **name** on each document (a select field, same pattern used elsewhere for icon-bearing collections) rather than markup.
-- Brand tokens (colors, fonts) live in `css/styles.css` `:root` — carry these into a Payload-driven frontend's design tokens / Tailwind theme unchanged:
-  - Purple: `#4D217A`, `#561C54`, `#A040B2`, `#B422D8`
-  - Lavender surfaces: `#F6EEFB`, `#F0E3F6`, `#E9DDF6`
-  - Accent green (from the logo's flag mark): `#61CE70`
-  - Footer: `#2A1230`
+- Icons are a single inline `<svg><symbol>` sprite, duplicated at the top of every page's `<body>` (each page only defines the subset of icons it actually uses) since this is a static, no-build prototype. In the Payload frontend this becomes one shared layout component rendered once; store the icon **name** on each document (a select field, same pattern used elsewhere for icon-bearing collections) rather than markup.
+- **Brand palette restricted to two colors (this pass):** every color on the site — every CSS custom property in `css/styles.css` `:root`, every inline `style="color:…"`, every `rgba()`, every URL-encoded SVG stroke color — was audited and replaced so that the entire palette is now just `#54377C` (primary) and `#939CE8` (secondary), plus tints (mixed toward white) and shades (mixed toward black) of those two. True neutrals — `#fff`/`#000`-based grays used for body text, shadows, and chrome like the video lightbox — were deliberately left alone rather than tinted, per the site owner's call. Carry the *constraint*, not just today's hex values, into a Payload-driven frontend's design tokens / Tailwind theme — any new color introduced later should be a derived tint/shade of these two, not a new hue:
+  - Primary `#54377C` — tints `#765F96` (20%), `#9887B0` (40%); shades `#432C63` (20%), `#191125` (70%, used as the footer background)
+  - Secondary `#939CE8` — tints `#F4F5FD` (90%), `#FAFAFE` (95%, the lavender card/surface backgrounds); shade `#767DBA` (20%)
+  - The old CSS variable names (`--purple-900`, `--purple-brand`, `--green-accent`, etc.) were kept as-is to minimize diff — they're now misleading as *names* (there's no green in the palette anymore) but each one's value and mapping is commented inline in `:root`
   - Fonts: Roboto (UI/body), Roboto Slab (editorial mission/vision quotes)
