@@ -37,10 +37,10 @@
 <section class="page-header">
   <div class="container">
     <div class="breadcrumb reveal"><a href="index.html">Home</a> / <span>Projects</span></div>
-    <span class="eyebrow" style="color:#939CE8;">Where the Funding Goes</span>
+    <span class="eyebrow" style="color:#B422D8;">Where the Funding Goes</span>
     <h1 class="reveal">Donor-Funded Projects, Start to Finish</h1>
     <p class="lead reveal" style="margin-bottom:24px;">From a European Union-backed disability inclusion project launching in 2026, to PODA's seven core programs, to a two-decade archive of completed initiatives — every project PODA has delivered, who funded it, and what it changed.</p>
-    <div class="tag-row reveal"><span>2 Ongoing</span><span>41 Completed</span><span>Since 2006</span></div>
+    <div class="tag-row reveal"><span><span id="ongoingCount">2</span> Ongoing</span><span><span id="completedCount">41</span> Completed</span><span>Since 2006</span></div>
   </div>
 </section>
 
@@ -148,13 +148,15 @@
 <nav class="section-subnav" aria-label="Projects page sections">
   <div class="container">
     <div class="section-tabs">
-      <a href="#current-projects" class="active"><span class="n">1</span>Current Projects</a>
-      <a href="#past-projects"><span class="n">2</span>Past Projects</a>
+      <a href="#programs" class="active"><span class="n">1</span>PODA Programs</a>
+      <a href="#current-projects"><span class="n">2</span>PODA Current Projects</a>
+      <a href="#past-projects"><span class="n">3</span>PODA Past Projects</a>
     </div>
     <div class="section-select-wrap">
       <select class="section-select" aria-label="Jump to a section">
-        <option value="current-projects">1 · Current Projects</option>
-        <option value="past-projects">2 · Past Projects</option>
+        <option value="programs">1 · PODA Programs</option>
+        <option value="current-projects">2 · PODA Current Projects</option>
+        <option value="past-projects">3 · PODA Past Projects</option>
       </select>
     </div>
   </div>
@@ -166,10 +168,16 @@
     <div class="section-head reveal">
       <span class="eyebrow">Current projects</span>
       <h2>Currently Underway</h2>
-      <p class="lead">Two active, donor-funded grants running right now across Punjab and Khyber Pakhtunkhwa.</p>
+      <p class="lead" id="currentLead">Two active, donor-funded grants running right now across Punjab and Khyber Pakhtunkhwa.</p>
     </div>
 
-    <article class="project-feature reveal" data-theme="economic-empowerment">
+    <div id="currentProjectsList">
+    <article class="project-feature reveal" data-theme="economic-empowerment"
+      data-end-date="2029-03-31"
+      data-duration="April 2026 – March 2029"
+      data-funder="European Union (EU)"
+      data-location="Punjab &amp; Khyber Pakhtunkhwa (Peshawar, Mardan, Chakwal, Multan)"
+      data-excerpt="Strengthened the institutional capacity of women-led organizations and Organizations of Women with Disabilities, promoted economic inclusion through TVET accessibility and employment linkages, and advanced disability-inclusive workplace policy across Punjab and Khyber Pakhtunkhwa.">
       <span class="project-status">Ongoing</span>
       <h3>Beyond Barriers: Promoting Capacity Building, Disability Inclusion, Safeguarding, and Gender Equity for Pakistani Women With and Without Disabilities</h3>
       <div class="project-meta-grid">
@@ -188,7 +196,12 @@
       </ul>
     </article>
 
-    <article class="project-feature reveal" data-theme="civic-voice-education">
+    <article class="project-feature reveal" data-theme="civic-voice-education"
+      data-end-date="2027-01-31"
+      data-duration="February 2026 – January 2027"
+      data-funder="National Endowment for Democracy (NED)"
+      data-location="Pakistan — Punjab, Islamabad Capital Territory, and participants from 100+ districts nationwide"
+      data-excerpt="Strengthened the Rural Women's Network through leadership and governance training, expanded mobile legal aid clinics and civil registration, and convened the Annual Rural Women Leadership Conference across 100+ districts.">
       <span class="project-status">Ongoing</span>
       <h3>Promoting Civic Leadership and Participation</h3>
       <div class="project-meta-grid">
@@ -206,6 +219,7 @@
         <li><span class="ic"><svg><use href="#i-check"/></svg></span>Convenes the Annual Rural Women Leadership Conference and implements organizational development initiatives to strengthen institutional sustainability, strategic planning, governance systems, and staff capacity.</li>
       </ul>
     </article>
+    </div>
   </div>
 </section>
 
@@ -698,7 +712,7 @@
     </div>
     <div class="projects-more"><button type="button" id="projLoadMore" class="btn btn-ghost">Load More Projects <svg class="icon"><use href="#i-chevron"/></svg></button></div>
     <p class="empty-state" id="projEmpty">No past projects match your search.</p>
-    <p class="archive-note">41 completed projects, 2006–2025 — search, decade and thematic-area filters work across the full archive.</p>
+    <p class="archive-note"><span id="archiveCount">41</span> completed projects, 2006–2025 — search, decade and thematic-area filters work across the full archive.</p>
   </div>
 </section>
 
@@ -721,6 +735,80 @@
 
 
 <a class="btn btn-primary floating-donate" href="donate.html"><svg class="icon"><use href="#i-heart"/></svg>Donate</a>
+
+<!-- ======================= AUTO-GRADUATION — a current project moves itself to Past Projects
+     once its data-end-date has passed, so this list never needs manual upkeep. Must run before
+     js/main.js so the past-projects search/decade/theme filter picks up any newly-added card. ======================= -->
+<script>
+(function(){
+  var today = new Date();
+  var currentList = document.getElementById('currentProjectsList');
+  var pastGrid = document.getElementById('pastProjectsList');
+  if (!currentList || !pastGrid) return;
+
+  Array.from(currentList.querySelectorAll('.project-feature[data-end-date]')).forEach(function(card){
+    var endDate = new Date(card.dataset.endDate);
+    if (isNaN(endDate.getTime()) || today <= endDate) return; // still ongoing — leave as-is
+
+    var title = card.querySelector('h3').textContent.trim();
+    var funder = card.dataset.funder || '';
+    var location = card.dataset.location || '';
+    var duration = card.dataset.duration || '';
+    var excerpt = card.dataset.excerpt || '';
+    var decade = Math.floor(endDate.getFullYear() / 10) * 10 + 's';
+
+    var pastCard = document.createElement('article');
+    pastCard.className = 'project-card reveal';
+    pastCard.dataset.decade = decade;
+    pastCard.dataset.theme = card.dataset.theme || '';
+    pastCard.innerHTML =
+      '<span class="duration">' + duration + '</span>' +
+      '<h4>' + title + '</h4>' +
+      '<div class="row-meta">' +
+        '<span title="' + funder + '"><svg class="icon"><use href="#i-bank"/></svg>' + funder + '</span>' +
+        '<span title="' + location + '"><svg class="icon"><use href="#i-pin"/></svg>' + location + '</span>' +
+      '</div>' +
+      '<p class="excerpt">' + excerpt + '</p>' +
+      '<button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>';
+
+    pastGrid.insertBefore(pastCard, pastGrid.firstChild);
+    card.remove();
+  });
+
+  var remaining = currentList.querySelectorAll('.project-feature').length;
+  var totalPast = pastGrid.querySelectorAll('.project-card').length;
+
+  if (remaining === 0 && !document.getElementById('noCurrentProjects')) {
+    var empty = document.createElement('div');
+    empty.id = 'noCurrentProjects';
+    empty.className = 'openings-empty';
+    empty.innerHTML =
+      '<div class="ic"><svg class="icon"><use href="#i-check"/></svg></div>' +
+      '<h3>No Active Grants Right Now</h3>' +
+      '<p>All of PODA\'s recent grants have concluded — explore the full archive of completed work below, or check back soon for newly awarded projects.</p>' +
+      '<a class="btn btn-primary" href="#past-projects">Browse Past Projects <svg class="icon"><use href="#i-arrow"/></svg></a>';
+    currentList.appendChild(empty);
+  }
+
+  var leadEl = document.getElementById('currentLead');
+  if (leadEl) {
+    var NUMBER_WORDS = {1:'One', 2:'Two', 3:'Three', 4:'Four', 5:'Five'};
+    if (remaining === 0) {
+      leadEl.textContent = 'No active grants right now — browse the full archive of completed projects below.';
+    } else {
+      var countWord = NUMBER_WORDS[remaining] || remaining;
+      leadEl.textContent = countWord + ' active, donor-funded grant' + (remaining === 1 ? '' : 's') + ' running right now across Punjab and Khyber Pakhtunkhwa.';
+    }
+  }
+
+  var ongoingEl = document.getElementById('ongoingCount');
+  var completedEl = document.getElementById('completedCount');
+  var archiveEl = document.getElementById('archiveCount');
+  if (ongoingEl) ongoingEl.textContent = remaining;
+  if (completedEl) completedEl.textContent = totalPast;
+  if (archiveEl) archiveEl.textContent = totalPast;
+})();
+</script>
 <script src="js/main.js"></script>
 
 </body>
