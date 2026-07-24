@@ -158,12 +158,14 @@ function wireListFilter({ searchId, filterId, listId, itemSelector, filterAttr, 
 wireListFilter({ searchId: 'pressSearch', filterId: 'yearFilter', listId: 'pressList', itemSelector: '.press-item', filterAttr: 'year', emptyId: 'pressEmpty' });
 wireListFilter({ searchId: 'pubSearch', filterId: 'typeFilter', listId: 'pubList', itemSelector: '.doc-card', filterAttr: 'type', emptyId: 'pubEmpty' });
 wireListFilter({ searchId: 'projSearch', filterId: 'decadeFilter', filterId2: 'themeFilter', listId: 'pastProjectsList', itemSelector: '.project-card', filterAttr: 'decade', filterAttr2: 'theme', emptyId: 'projEmpty', pageSize: 9, loadMoreId: 'projLoadMore' });
-// news-and-media.html only — same generic wireListFilter, no new logic needed.
-wireListFilter({ listId: 'latestMediaList', itemSelector: '.program-card', pageSize: 3, loadMoreId: 'latestMediaLoadMore' });
 // activities.html only — full archive, search only, no pagination or category filter needed.
 wireListFilter({ searchId: 'activitySearch', listId: 'activityList', itemSelector: '.program-card', emptyId: 'activityEmpty' });
 wireListFilter({ filterId: 'galleryFilter', listId: 'galleryPreviewList', itemSelector: '.gallery-card', filterAttr: 'conference', emptyId: 'galleryEmpty', pageSize: 3, loadMoreId: 'galleryLoadMore' });
 wireListFilter({ filterId: 'radioYearFilter', listId: 'radioPreviewList', itemSelector: '.episode-embed', filterAttr: 'year', emptyId: 'radioEmpty' });
+// blogs.html only — same generic wireListFilter, no new logic needed.
+wireListFilter({ searchId: 'blogSearch', filterId: 'blogCatFilter', listId: 'blogList', itemSelector: '.program-card', filterAttr: 'cat', emptyId: 'blogEmpty' });
+// research-studies.html only — same generic wireListFilter, no new logic needed.
+wireListFilter({ searchId: 'studySearch', filterId: 'studyCatFilter', listId: 'studyList', itemSelector: '.doc-card', filterAttr: 'cat', emptyId: 'studyEmpty' });
 
 // Past-project cards — truncated excerpt that expands in place on click,
 // keeping the grid's cards a uniform height until a reader opts into one.

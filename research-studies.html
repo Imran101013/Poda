@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Research Studies — PODA Pakistan</title>
+<meta name="description" content="Research studies, assessments and participatory research from PODA's field work — the evidence behind our programs and advocacy." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- Icon sprite sheet — swap for an icon library / SVG imports in the Payload frontend -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.5-8.5C1 9 2 5.5 5.5 5c2-.3 3.7.8 4.5 2 .8-1.2 2.5-2.3 4.5-2 3.5.5 4.5 4 3 7.5C19 16.65 12 21 12 21z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.2" y2="16.2"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><line x1="4" y1="12" x2="20" y2="12"/><path d="M14 6l6 6-6 6"/></symbol>
+</svg>
+
+<!-- ======================= HEADER — Payload Global: Header ======================= -->
+<script src="js/global.js" data-poda="header"></script>
+
+<!-- ======================= PAGE HEADER — Payload Block: PageHeader ======================= -->
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb reveal"><a href="index.html">Home</a> / <a href="news-and-media.html">News &amp; Media</a> / <span>Research Studies</span></div>
+    <span class="eyebrow" style="color:#939CE8;">Research Studies</span>
+    <h1 class="reveal">The Evidence Behind Our Programs</h1>
+    <p class="lead reveal" style="margin-bottom:24px;">Data collection, policy assessments and participatory research that shape PODA's advocacy — from women farmers' protection risks to climate-resilient WASH policy.</p>
+    <div class="tag-row reveal"><span>3 Studies</span><span>3 Donors</span></div>
+  </div>
+</section>
+
+<!-- ======================= RESEARCH STUDIES LIST — Payload Block: StudyGrid ======================= -->
+<section class="content-section">
+  <div class="container">
+    <div class="list-toolbar reveal">
+      <div class="search-box">
+        <svg class="icon"><use href="#i-search"/></svg>
+        <input type="search" id="studySearch" placeholder="Search research studies…" aria-label="Search research studies">
+      </div>
+      <div class="category-filter" id="studyCatFilter" style="margin-bottom:0;">
+        <button type="button" class="active" data-cat="all">All Types</button>
+        <button type="button" data-cat="Research Report">Research Report</button>
+        <button type="button" data-cat="Policy Assessment">Policy Assessment</button>
+        <button type="button" data-cat="Participatory Research">Participatory Research</button>
+      </div>
+    </div>
+
+    <div class="doc-grid" id="studyList">
+
+      <div class="doc-card reveal" data-cat="Research Report">
+        <div class="cover"><img src="images/programs/prog2-women.jpeg" alt="Protection Issues Faced by Women Farmers in Pakistan cover"></div>
+        <div class="body">
+          <div class="meta-row"><span class="doc-type">Research Report</span><span class="doc-year">2022</span></div>
+          <h4>Protection Issues Faced by Women Farmers in Pakistan to Develop Strategic Solutions</h4>
+          <div class="card-actions">
+            <a class="btn btn-ghost" href="study-detail.html?study=women-farmers-protection-study">Read Summary <svg class="icon"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="doc-card reveal" data-cat="Policy Assessment">
+        <div class="cover"><img src="images/site/prog-climate.jpeg" alt="Climate-Resilient WASH Policy Assessment cover"></div>
+        <div class="body">
+          <div class="meta-row"><span class="doc-type">Policy Assessment</span><span class="doc-year">2025</span></div>
+          <h4>Gender-Responsive, Inclusive, and Climate-Resilient WASH: A Policy Assessment</h4>
+          <div class="card-actions">
+            <a class="btn btn-ghost" href="study-detail.html?study=climate-resilient-wash-policy-assessment">Read Summary <svg class="icon"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="doc-card reveal" data-cat="Participatory Research">
+        <div class="cover"><img src="images/site/prog-policy.jpg" alt="Gender-Based Violence and Harassment in the Workplace cover"></div>
+        <div class="body">
+          <div class="meta-row"><span class="doc-type">Participatory Research</span><span class="doc-year">2026 · Ongoing</span></div>
+          <h4>Gender-Based Violence and Harassment in the Workplace: A Participatory Research Study</h4>
+          <div class="card-actions">
+            <a class="btn btn-ghost" href="study-detail.html?study=gbvh-workplace-participatory-research">Read Summary <svg class="icon"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <p class="empty-state" id="studyEmpty">No research studies match your search.</p>
+  </div>
+</section>
+
+<!-- ======================= CTA BAR — Payload Block: CtaBar ======================= -->
+<section class="cta-bar">
+  <div class="container">
+    <div>
+      <h3>Want to support this work?</h3>
+      <p>Donate, get free legal aid, or intern with PODA's field teams.</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-white" href="donate.html"><svg class="icon"><use href="#i-heart"/></svg>Donate</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FOOTER — Payload Global: Footer ======================= -->
+<script src="js/global.js" data-poda="footer"></script>
+
+<a class="btn btn-primary floating-donate" href="donate.html"><svg class="icon"><use href="#i-heart"/></svg>Donate</a>
+<script src="js/main.js"></script>
+
+</body>
+</html>

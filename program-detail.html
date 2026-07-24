@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Program Detail — PODA Pakistan</title>
+<meta name="description" content="PODA Pakistan's core programs — what each one does, and the latest donor-funded projects delivered under it." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="7" y1="2" x2="7" y2="6"/><line x1="17" y1="2" x2="17" y2="6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.5-8.5C1 9 2 5.5 5.5 5c2-.3 3.7.8 4.5 2 .8-1.2 2.5-2.3 4.5-2 3.5.5 4.5 4 3 7.5C19 16.65 12 21 12 21z"/></symbol>
+  <symbol id="i-bank" viewBox="0 0 24 24"><path d="M3 10l9-6 9 6"/><path d="M5 10v9M10 10v9M14 10v9M19 10v9"/><path d="M3 21h18"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-twitter" viewBox="0 0 24 24" stroke="none" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.6-2.3.7.8-.5 1.4-1.3 1.7-2.3-.8.5-1.7.8-2.6 1a3.8 3.8 0 0 0-6.5 3.5A10.8 10.8 0 0 1 3.9 4.6a3.9 3.9 0 0 0 1.2 5.2 3.8 3.8 0 0 1-1.7-.5 3.9 3.9 0 0 0 3 3.8c-.5.1-1.1.2-1.7.1a3.9 3.9 0 0 0 3.6 2.7A10.9 10.9 0 0 1 2 18.4a10.9 10.9 0 0 0 5.9 1.7c7 0 10.9-5.9 10.9-11v-.5c.8-.5 1.4-1.2 2-2z"/></symbol>
+  <symbol id="i-facebook" viewBox="0 0 24 24" stroke="none" fill="currentColor"><path d="M14 21v-8h2.7l.5-3.5H14V7.2c0-1 .3-1.7 1.8-1.7h1.6V2.4C17 2.3 15.9 2 14.6 2 11.9 2 10 3.6 10 6.8v2.7H7.3V13H10v8z"/></symbol>
+</svg>
+
+<!-- HEADER -->
+<script src="js/global.js" data-poda="header"></script>
+
+<!-- PAGE HEADER -->
+<section class="page-header post-header" id="prog-page-header">
+  <div class="container">
+    <div class="breadcrumb reveal"><a href="index.html">Home</a> / <a href="projects.html">Projects</a> / <span id="prog-breadcrumb">Program Detail</span></div>
+    <span class="eyebrow" id="prog-eyebrow" style="color:#939CE8;"></span>
+    <h1 class="reveal" id="prog-title"></h1>
+    <p class="lead reveal" id="prog-lead" style="margin-bottom:0;"></p>
+  </div>
+</section>
+
+<!-- DETAIL BODY -->
+<section class="post-detail">
+  <div class="container" style="max-width:960px;">
+    <div id="prog-body"></div>
+
+    <div class="section-head reveal" style="margin-top:56px;text-align:left;max-width:none;">
+      <span class="eyebrow">Latest work</span>
+      <h2 id="prog-latest-heading">Latest Projects Under This Program</h2>
+    </div>
+    <div class="project-card-grid" id="prog-latest-list"></div>
+
+    <div class="post-share reveal" style="margin-top:40px;">
+      <span>Share this program</span>
+      <div class="share-row">
+        <a href="https://twitter.com/PODAPakistan" aria-label="Share on Twitter"><svg><use href="#i-twitter"/></svg></a>
+        <a href="https://www.facebook.com/pages/Potohar-Organization-for-Development-Advocacy-PODA/651141511571116" aria-label="Share on Facebook"><svg><use href="#i-facebook"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var PROGRAMS = {
+    'civic-voice-education': {
+      breadcrumb: 'Civic Voice and Education',
+      eyebrow: 'Program · Civic Voice and Education',
+      title: 'Civic Voice and Education',
+      lead: 'Civic education, digital literacy and youth empowerment — building informed, active citizens across rural Pakistan.',
+      image: 'images/site/prog-ai.jpg',
+      imageAlt: 'Civic Voice and Education',
+      overview: 'This program runs PODA\'s weekly PARWL-Pakistan webinar series, putting rural women and civic leaders in conversation with policy experts and officials on everything from digital safety to civic participation. It also carries forward PODA\'s community-school and youth-leadership work — including the Rural Women\'s Network, mobile legal aid clinics, civic-registration drives, and initiatives tracing back to Malala Yousafzai\'s 2009 appearance at a PODA conference — training rural youth and women to claim their legal identity and take an active civic voice.',
+      latestProjects: [
+        { title: 'Promoting Civic Leadership and Participation', status: 'Ongoing', duration: 'February 2026 – January 2027', funder: 'National Endowment for Democracy (NED)', location: 'Punjab, Islamabad Capital Territory &amp; 100+ districts nationwide', excerpt: 'Strengthens the Rural Women\'s Network through leadership development and civic engagement training; expands mobile legal aid clinics, digital safety and civic education, and convenes the Annual Rural Women Leadership Conference.' },
+        { title: 'Rural Women\'s Network for Civic Leadership and Participation', duration: 'May 2024 – Jan 2026', funder: 'National Endowment for Democracy', location: '50 districts across KP, Punjab, Sindh &amp; Balochistan', excerpt: 'Civic participation of rural women through civil registration and democracy education, and visibility of rural women leaders to monitor compliance with constitutional rights. Formed the District Information Women Alliance (DIWA).' },
+        { title: 'Rural Women\'s Network for Civic Leadership and Participation', duration: 'May 2022 – Apr 2024', funder: 'National Endowment for Democracy (NED)', location: '50 districts in 4 provinces of Pakistan', excerpt: 'Access to legal identity and legal empowerment of rural women. Trained women to facilitate rural women and girls above age 18 in obtaining their CNIC and learning about their legal rights as citizens of Pakistan.' }
+      ]
+    },
+    'economic-empowerment': {
+      breadcrumb: 'Economic Empowerment',
+      eyebrow: 'Program · Economic Empowerment',
+      title: 'Economic Empowerment',
+      lead: 'Livelihood skills, vocational training and inclusive employment for rural women and youth.',
+      image: 'images/site/prog-activity.jpg',
+      imageAlt: 'Economic Empowerment',
+      overview: 'From accessibility assessments of TVET institutions to olive-value-chain training and smallholder dairy farming, this program equips rural women and youth with market-ready skills and links them directly to livelihoods. It spans employer engagement on inclusive workplace practices, agricultural value chains, and artisan and vocational trades — turning training into sustainable household income.',
+      latestProjects: [
+        { title: 'Beyond Barriers: Promoting Capacity Building, Disability Inclusion, Safeguarding, and Gender Equity for Pakistani Women With and Without Disabilities', status: 'Ongoing', duration: 'April 2026 – March 2029', funder: 'European Union (EU)', location: 'Punjab &amp; Khyber Pakhtunkhwa (Peshawar, Mardan, Chakwal, Multan)', excerpt: 'Strengthens women-led organizations and Organizations of Women with Disabilities (OWDs); promotes economic inclusion through TVET accessibility assessments, market-oriented skills development and employment linkages for women with and without disabilities.' },
+        { title: 'Olive Culture', duration: 'Feb 2023 – Oct 2024; Mar – Aug 2025', funder: 'Olive Culture', location: 'Chakwal', excerpt: 'Olive product production, marketing, and sustainable value chains. Trainings on olive product production, marketing, and sustainable value chains.' },
+        { title: 'Improving Smallholder Dairy-Beef and Small Ruminants\' Profitability by Enhancing Farm Production and Value Chain Management in Pakistan', duration: 'Jun 2018 – Apr 2022', funder: 'ACIAR; University of Veterinary and Animal Sciences (UVAS)', location: 'Punjab – Jhelum &amp; Chakwal', excerpt: 'Improved efficiency of smallholder dairy farmer participation in dairy and beef value chains, and improved smallholder household livelihoods through increased value from beef.' }
+      ]
+    },
+    'climate-action': {
+      breadcrumb: 'Climate Action',
+      eyebrow: 'Program · Climate Action',
+      title: 'Climate Action',
+      lead: 'Climate-smart agriculture, rainwater harvesting and green job skills at PODA\'s Nara Mughlan demonstration farm.',
+      image: 'images/site/prog-climate.jpeg',
+      imageAlt: 'Climate Action',
+      overview: 'PODA runs its own demonstration farm at Nara Mughlan, established in 2010, where sustainable-agriculture and climate teams train rural youth in organic farming and climate-resilient techniques — from seasonal sowing to green job skills, IoT weather advisory and rainwater harvesting. This program also drives climate-resilient WASH policy and builds rural women\'s leadership on climate solutions.',
+      latestProjects: [
+        { title: 'Advancing Gender-Responsive, Inclusive, and Climate-Resilient WASH Policies and Promoting Women\'s Leadership in WASH', duration: 'Jan – Mar 2025', funder: 'WaterAid', location: 'Karachi, Lahore, Islamabad', excerpt: 'Gender-responsive, inclusive, and climate-resilient WASH policies and promoting women\'s leadership in WASH. Consultation meetings held across three cities.' },
+        { title: 'Amplifying the Voices and Skills of Pakistani Rural Women for Climate Action', duration: 'Aug 2022 – Jan 2023', funder: 'Canadian Fund for Local Initiatives (CFLI), Canadian High Commission Islamabad', location: 'AJK, Balochistan, GB, KPK, Punjab, Sindh, ICT', excerpt: 'Developed a network of 180 Rural Women Climate Action Leaders in Pakistan. Thirty rural women gained practical knowledge in rainwater harvesting, drip irrigation, and weather advisory services.' },
+        { title: 'Promoting Rainwater Harvesting through Community Participation', duration: 'Apr – Oct 2015', funder: 'Korea Green Foundation', location: 'Jhelum &amp; Chakwal', excerpt: 'Provided training and installation of rainwater harvesting models with community involvement to conserve water for domestic and agricultural use in rain-dependent areas.' }
+      ]
+    },
+    'democracy-promotion': {
+      breadcrumb: 'Democracy Promotion',
+      eyebrow: 'Program · Democracy Promotion',
+      title: 'Democracy Promotion',
+      lead: 'Voter education, civic registration and grassroots governance across rural Pakistan.',
+      image: 'images/site/prog-democracy.jpeg',
+      imageAlt: 'Democracy Promotion',
+      overview: 'Nearly two decades of NED-supported work sits under this program — voter registration and education, CNIC and civil-registration drives, and training for rural councilors and communities on democratic governance. It has run continuously since 2006, election cycle after election cycle, to help rural communities exercise their democratic rights.',
+      latestProjects: [
+        { title: 'Vote Without Violence', duration: 'Jul 2023 – Mar 2024', funder: 'National Institute for Democracy', location: '24 districts of KP, Punjab, Sindh &amp; Balochistan', excerpt: 'Capacity-building workshops. ToTs and downstream trainings on voting without violence.' },
+        { title: 'Strengthening Political Participation of Rural Communities', duration: 'May 2019 – Apr 2021', funder: 'National Endowment for Democracy (NED)', location: 'Chakwal, Sargodha, Jhelum, Rawalpindi', excerpt: 'Enhanced participation of rural women and girls in national development through 10,000 CNIC registrations, financial literacy, and livelihood skills training.' },
+        { title: 'Effective Participation of Rural Communities in General Elections', duration: 'May 2018 – Apr 2019', funder: 'National Endowment for Democracy (NED)', location: 'Chakwal, Sargodha, Jhelum, Rawalpindi', excerpt: 'Built the capacity of rural communities to participate in general elections, strengthening rural governance for better development.' }
+      ]
+    },
+    'human-rights-advocacy': {
+      breadcrumb: 'Human Rights Advocacy',
+      eyebrow: 'Program · Human Rights Advocacy',
+      title: 'Human Rights Advocacy',
+      lead: 'Networks of human rights defenders, legal-literacy programs, and disability-inclusive policy advocacy.',
+      image: 'images/site/prog-policy.jpg',
+      imageAlt: 'Human Rights Advocacy',
+      overview: 'This program builds and sustains networks of human rights defenders — training teachers, lawyers, farmers, lady health workers and journalists to organize community-based rights groups. It runs consultations and awareness events during the 16 Days of Activism and Universal Human Rights Day, and advances disability-inclusive policy dialogue with government departments and labor-market stakeholders.',
+      latestProjects: [
+        { title: 'Capacity Building of Women Rights Defenders to Protect Rights', duration: 'Mar 2023 – Oct 2025', funder: 'Czech Embassy', location: '25 districts across KP, Punjab, Sindh &amp; Balochistan', excerpt: 'Capacity building of women rights defenders across four provinces.' },
+        { title: 'European Instrument for Democracy and Human Rights (EIDHR) Support Measure 2013', duration: 'Sep 2016 – Aug 2017', funder: 'European Union Delegation in Pakistan', location: 'All over Pakistan', excerpt: 'Organized activities during the 16 Days of Activism, consultations for women human rights defenders, an event promoting women in sports, and activities marking Universal Human Rights Day.' },
+        { title: 'European Instrument for Democracy and Human Rights (EIDHR) Support Measure 2013', duration: 'Nov 2014 – Oct 2015', funder: 'European Union Delegation in Pakistan', location: 'All over Pakistan', excerpt: 'Organized 10 seminars, 8 consultations, and a debate competition on women\'s role in peacebuilding and development, encouraging youth to express their views on human rights.' }
+      ]
+    },
+    'stop-violence-against-women': {
+      breadcrumb: 'Stop Violence Against Women',
+      eyebrow: 'Program · Stop Violence Against Women',
+      title: 'Stop Violence Against Women',
+      lead: 'Free legal aid, GBV response and child-marriage prevention for survivors across rural Pakistan.',
+      image: 'images/site/prog-women.jpg',
+      imageAlt: 'Stop Violence Against Women',
+      overview: 'Working village by village, this program combines legal-literacy sessions, conflict-resolution workshops and community outreach to prevent child marriage and respond to gender-based violence — including support for raising Punjab\'s minimum legal marriage age to 18. It runs free legal aid centers for GBV survivors, women-friendly spaces, and research into the protection risks faced by women farmers and workers.',
+      latestProjects: [
+        { title: 'Reduce Early Marriages to Enhance Gender Equality', duration: 'Dec 2022 – Nov 2025', funder: 'Royal Norwegian Embassy', location: 'Punjab', excerpt: 'Initiated an inclusive process to amend the Punjab Marriage Restraint Act 2015 to raise the minimum marriage age for girls to 18 years; increased capacity of health facilities and workers to ensure quality SRHR services.' },
+        { title: 'Study for Data Collection on Protection Issues Faced by Women Farmers in Pakistan to Develop Strategic Solutions', duration: 'Nov 2021 – Mar 2022', funder: 'Food and Agriculture Organization of the United Nations (FAO)', location: 'All over Pakistan', excerpt: 'Collected data and identified gaps in the protection of women farmers from violence and harassment in the workplace — health hazards, gender-based violence, denial of access to justice, and grievance redressal mechanisms.' },
+        { title: 'Provision of Free Legal Aid to GBV Victims in District Rawalpindi', duration: 'Jul 2016 – Jun 2017', funder: 'The Fund for Global Human Rights (USA)', location: 'Rawalpindi', excerpt: 'Free Legal Aid Center serving survivors of gender-based violence in Rawalpindi and Islamabad. Provided free legal aid to GBV victims, conducted sessions on pro-women laws, and provided referral services.' }
+      ]
+    },
+    'humanitarian-action': {
+      breadcrumb: 'Humanitarian Action',
+      eyebrow: 'Program · Humanitarian Action',
+      title: 'Humanitarian Action',
+      lead: 'Rapid emergency response to floods and displacement across Pakistan.',
+      image: 'images/site/prog-disaster.jpeg',
+      imageAlt: 'Humanitarian Action',
+      overview: 'When floods hit, PODA\'s rapid response teams are on the ground in districts like Buner, Kasur and Chakwal — distributing hygiene kits and relief packages, setting up child- and women-friendly spaces, and returning for follow-up visits so support keeps reaching communities after the initial response ends. This program has also supported Afghan women and girls at risk of gender-based violence in transit through Pakistan.',
+      latestProjects: [
+        { title: 'UAF Assistance for Post-August 2021 Afghan Women and Girls at Risk of Gender-Based Violence in Transit in Pakistan', duration: 'Jun 2023 – Sep 2024', funder: 'Vital Voices', location: 'Islamabad, Quetta, Peshawar', excerpt: 'Urgent assistance to Afghans. Cash assistance delivered to beneficiaries.' },
+        { title: 'Flood Response 2022 in Pakistan', duration: 'Sep 2022 – Mar 2023', funder: 'MADRE', location: '25 districts across 4 provinces, incl. Gilgit-Baltistan', excerpt: 'Flood response, disaster, and extreme weather events. Provided non-food item (NFI) kits and trainings for social and economic protection in disaster situations.' },
+        { title: 'Establishment of 50 Child-Friendly Spaces in Sindh', duration: '2011 – 2012', funder: 'UNICEF', location: 'Badin, Nawabshah, Sanghar', excerpt: 'Establishment of 50 spaces for children in 3 districts to provide protection training. Child protection education.' }
+      ]
+    }
+  };
+
+  var slug = new URLSearchParams(window.location.search).get('program') || 'civic-voice-education';
+  var prog = PROGRAMS[slug] || PROGRAMS['civic-voice-education'];
+
+  document.getElementById('prog-breadcrumb').textContent = prog.breadcrumb;
+  document.getElementById('prog-eyebrow').textContent = prog.eyebrow;
+  document.getElementById('prog-title').textContent = prog.title;
+  document.getElementById('prog-lead').textContent = prog.lead;
+  document.getElementById('prog-latest-heading').textContent = 'Latest Projects Under ' + prog.title;
+  document.title = prog.title + ' — PODA Pakistan';
+
+  document.getElementById('prog-body').innerHTML =
+    '<div class="reveal"><div class="post-media"><img src="' + prog.image + '" alt="' + prog.imageAlt + '"></div>' +
+    '<p style="margin-top:24px;">' + prog.overview + '</p></div>';
+
+  document.getElementById('prog-latest-list').innerHTML = prog.latestProjects.map(function (p) {
+    return '<article class="project-card reveal">' +
+      (p.status ? '<span class="project-status">' + p.status + '</span>' : '') +
+      '<span class="duration">' + p.duration + '</span>' +
+      '<h4>' + p.title + '</h4>' +
+      '<div class="row-meta">' +
+        '<span title="' + p.funder + '"><svg class="icon"><use href="#i-bank"/></svg>' + p.funder + '</span>' +
+        '<span title="' + p.location + '"><svg class="icon"><use href="#i-pin"/></svg>' + p.location + '</span>' +
+      '</div>' +
+      '<p class="excerpt">' + p.excerpt + '</p>' +
+      '<button type="button" class="read-toggle"><span>Read more</span><svg class="icon"><use href="#i-chevron"/></svg></button>' +
+    '</article>';
+  }).join('');
+})();
+</script>
+
+<!-- CTA BAR -->
+<section class="cta-bar">
+  <div class="container">
+    <div>
+      <h3>Want to support this work?</h3>
+      <p>Donate, get free legal aid, or intern with PODA's field teams.</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-white" href="donate.html"><svg class="icon"><use href="#i-heart"/></svg>Donate</a>
+      <a class="btn btn-outline" href="projects.html">All Programs &amp; Projects</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<script src="js/global.js" data-poda="footer"></script>
+
+<a class="btn btn-primary floating-donate" href="donate.html"><svg class="icon"><use href="#i-heart"/></svg>Donate</a>
+<script src="js/main.js"></script>
+</body>
+</html>

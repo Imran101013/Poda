@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Course Detail — PODA Pakistan</title>
+<meta name="description" content="Course details and curriculum from PODA's Skills Center." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>html{scroll-behavior:smooth;}</style>
+</head>
+<body>
+
+<!-- Icon sprite sheet — swap for an icon library / SVG imports in the Payload frontend -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.5-8.5C1 9 2 5.5 5.5 5c2-.3 3.7.8 4.5 2 .8-1.2 2.5-2.3 4.5-2 3.5.5 4.5 4 3 7.5C19 16.65 12 21 12 21z"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><line x1="12" y1="4" x2="12" y2="18"/><line x1="5" y1="8" x2="19" y2="8"/><path d="M5 8l-2.4 5a3.2 3.2 0 0 0 6.4 0z"/><path d="M19 8l-2.4 5a3.2 3.2 0 0 0 6.4 0z"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="18" x2="12" y2="21"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-grad-cap" viewBox="0 0 24 24"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/><path d="M22 8v6"/></symbol>
+  <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></symbol>
+  <symbol id="i-play-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 9l5 3-5 3z"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24" stroke="none" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.9 8H16a15.7 15.7 0 0 0-1.3-5.4A8 8 0 0 1 18.9 10zM12 4c.9 1.3 1.9 3.4 2.1 6H9.9C10.1 7.4 11.1 5.3 12 4zM4 12a8 8 0 0 1 .1-1h3.9a17.6 17.6 0 0 0 0 2H4.1A8 8 0 0 1 4 12zm1.1 3H8a15.7 15.7 0 0 0 1.3 5.4A8 8 0 0 1 5.1 15zM8 9H5.1a8 8 0 0 1 4.2-5.4A15.7 15.7 0 0 0 8 9zm4 11c-.9-1.3-1.9-3.4-2.1-6h4.2c-.2 2.6-1.2 4.7-2.1 6zm2.7-.6A15.7 15.7 0 0 0 16 15h2.9a8 8 0 0 1-4.2 4.4zM16.1 13a17.6 17.6 0 0 0 0-2h3.9a8 8 0 0 1 0 2z"/></symbol>
+  <symbol id="i-facebook" viewBox="0 0 24 24" stroke="none" fill="currentColor"><path d="M14 21v-8h2.7l.5-3.5H14V7.2c0-1 .3-1.7 1.8-1.7h1.6V2.4C17 2.3 15.9 2 14.6 2 11.9 2 10 3.6 10 6.8v2.7H7.3V13H10v8z"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10" rx="1.5"/><path d="M7.5 10.5V7a4.5 4.5 0 0 1 9 0v3.5"/></symbol>
+  <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></symbol>
+</svg>
+
+<!-- ======================= HEADER — Payload Global: Header ======================= -->
+<script src="js/global.js" data-poda="header"></script>
+
+<!-- ======================= PAGE HEADER — Payload Block: PageHeader ======================= -->
+<section class="page-header post-header" id="course-page-header">
+  <div class="container">
+    <div class="breadcrumb reveal"><a href="index.html">Home</a> / <a href="skills-center.html">Skills Center</a> / <span id="course-breadcrumb">Course Detail</span></div>
+    <span class="eyebrow" style="color:#939CE8;">Course Detail</span>
+    <h1 class="reveal" id="course-title"></h1>
+  </div>
+</section>
+
+<!-- ======================= COURSE DETAIL — Payload Block: CourseDetail ======================= -->
+<section class="content-section">
+  <div class="container">
+    <div class="course-detail-grid">
+      <div class="course-hero-thumb reveal">
+        <svg class="icon grad-cap"><use href="#i-grad-cap"/></svg>
+      </div>
+      <div class="reveal">
+        <h2 style="font-size:24px;margin-bottom:10px;" id="course-detail-title"></h2>
+        <p class="course-detail-category" id="course-category"></p>
+        <p class="course-detail-created" id="course-created"></p>
+
+        <div class="author-box">
+          <div class="author-avatar"><svg class="icon"><use href="#i-person"/></svg></div>
+          <div class="author-info">
+            <span class="label">About the Author</span>
+            <strong id="author-name"></strong>
+            <span class="role" id="author-role"></span>
+            <div class="author-social">
+              <span>Social Links:</span>
+              <a href="#" aria-label="Website"><svg class="icon"><use href="#i-globe"/></svg></a>
+              <a href="https://www.facebook.com/pages/Potohar-Organization-for-Development-Advocacy-PODA/651141511571116" aria-label="Facebook"><svg class="icon"><use href="#i-facebook"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-enroll-box" id="enrollBox"></div>
+
+      </div>
+    </div>
+
+    <div class="course-description reveal">
+      <h2 style="font-size:22px;color:var(--purple-brand);margin-bottom:18px;">Description</h2>
+      <ul id="course-description-list"></ul>
+    </div>
+
+    <div class="curriculum-section reveal" id="curriculum">
+      <h2 style="font-size:22px;color:var(--purple-brand);margin-bottom:6px;">Curriculum</h2>
+      <p style="color:var(--text-muted);font-size:14px;margin-bottom:10px;">Modules and lessons for this course — added and updated by PODA's training team.</p>
+      <div id="curriculum-mount"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Payment modal — demo checkout only; no real payment gateway is wired up yet -->
+<div class="pay-modal" id="payModal" role="dialog" aria-modal="true" aria-label="Course payment">
+  <div class="pay-modal-inner">
+    <button type="button" class="pay-modal-close" id="payModalClose" aria-label="Close">&#x2715;</button>
+    <h4>Unlock Curriculum</h4>
+    <p class="course-name" id="payModalCourseName"></p>
+    <div class="pay-modal-price-row">
+      <span>Course price</span>
+      <span id="payModalPrice"></span>
+    </div>
+
+    <div class="pay-method-label">Choose a payment method</div>
+    <div class="category-filter" id="payMethodTabs" style="margin-bottom:18px;">
+      <button type="button" class="active" data-method="online">Online Payment</button>
+      <button type="button" data-method="mobile">Mobile Wallet / Bank</button>
+    </div>
+
+    <div class="pay-method-panel" id="panel-online">
+      <div class="form-group">
+        <label for="pf-card-number">Card Number</label>
+        <input type="text" id="pf-card-number" placeholder="1234 5678 9012 3456" inputmode="numeric" maxlength="19" autocomplete="off">
+      </div>
+      <div class="pay-field-row">
+        <div class="form-group">
+          <label for="pf-card-expiry">Expiry</label>
+          <input type="text" id="pf-card-expiry" placeholder="MM/YY" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="pf-card-cvv">CVV</label>
+          <input type="text" id="pf-card-cvv" placeholder="123" maxlength="4" autocomplete="off">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="pf-card-name">Name on Card</label>
+        <input type="text" id="pf-card-name" placeholder="Full name" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="pay-method-panel" id="panel-mobile" style="display:none;">
+      <div class="form-group">
+        <label for="pf-wallet">Provider</label>
+        <select id="pf-wallet">
+          <option>JazzCash</option>
+          <option>Easypaisa</option>
+          <option>Bank Transfer</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="pf-wallet-number">Mobile / Account Number</label>
+        <input type="tel" id="pf-wallet-number" placeholder="03XX XXXXXXX" autocomplete="off">
+      </div>
+    </div>
+
+    <p class="pay-modal-note">This is a demo checkout — no payment gateway is connected yet. These fields aren't sent anywhere; clicking below simulates a successful payment so you can preview the unlocked curriculum.</p>
+    <button type="button" class="btn btn-primary" style="width:100%;justify-content:center;" id="payModalConfirm">Simulate Successful Payment</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var COURSES = {
+    'women-health-awareness': {
+      title: 'Women\'s Health Awareness',
+      category: 'Health &amp; Well-being (Health &amp; Well-being)',
+      authorName: 'Madiha Saad',
+      authorRole: '(Lead Trainer, msaad@gmail.com)',
+      createdDate: 'Wed 16 Apr 2025',
+      price: 1500,
+      description: [
+        '<strong>Topics Covered</strong>: Reproductive health, hygiene, nutrition, mental health support.',
+        '<strong>Outcome</strong>: Improved understanding of physical and emotional well-being.'
+      ],
+      curriculum: [
+        { module: 'Reproductive Health', lessons: ['Understanding the Reproductive System', 'Menstrual Health &amp; Hygiene', 'Family Planning Basics'] },
+        { module: 'Nutrition &amp; Hygiene', lessons: ['Nutrition for Women', 'Personal Hygiene Practices', 'Safe Water &amp; Sanitation'] },
+        { module: 'Mental Health Support', lessons: ['Recognizing Emotional Well-being', 'Coping with Stress', 'When &amp; How to Seek Help'] }
+      ]
+    },
+    'mental-health-first-aid': {
+      title: 'Mental Health First Aid',
+      category: 'Health &amp; Well-being (Health &amp; Well-being)',
+      authorName: 'Madiha Saad',
+      authorRole: '(Lead Trainer, msaad@gmail.com)',
+      createdDate: 'Tue 6 May 2025',
+      price: 1500,
+      description: [
+        '<strong>Topics Covered</strong>: Recognizing signs of distress, active listening, stress management, referral pathways.',
+        '<strong>Outcome</strong>: Confidence to provide initial support and connect peers to professional help.'
+      ],
+      curriculum: [
+        { module: 'Understanding Mental Health', lessons: ['What Is Mental Health First Aid', 'Common Signs of Distress'] },
+        { module: 'Core Skills', lessons: ['Active Listening', 'De-escalation Techniques', 'Providing Reassurance'] },
+        { module: 'Referral &amp; Support', lessons: ['Local Support Resources', 'When to Refer to a Professional'] }
+      ]
+    },
+    'stitching-tailoring-basics': {
+      title: 'Stitching &amp; Tailoring Basics',
+      category: 'Vocational &amp; Life Skills (Vocational &amp; Life Skills)',
+      authorName: 'Madiha Saad',
+      authorRole: '(Lead Trainer, msaad@gmail.com)',
+      createdDate: 'Mon 2 Jun 2025',
+      price: 2000,
+      description: [
+        '<strong>Topics Covered</strong>: Hand and machine stitching, pattern cutting, basic garment construction, measurements.',
+        '<strong>Outcome</strong>: Ability to stitch and repair basic garments for household income generation.'
+      ],
+      curriculum: [
+        { module: 'Getting Started', lessons: ['Tools &amp; Materials', 'Taking Measurements'] },
+        { module: 'Core Stitching Skills', lessons: ['Hand Stitching Techniques', 'Using a Sewing Machine', 'Basic Pattern Cutting'] },
+        { module: 'Garment Construction', lessons: ['Stitching a Simple Kameez', 'Repairs &amp; Alterations'] }
+      ]
+    },
+    'handicrafts-jewelry-making': {
+      title: 'Handicrafts &amp; Jewelry Making',
+      category: 'Vocational &amp; Life Skills (Vocational &amp; Life Skills)',
+      authorName: 'Madiha Saad',
+      authorRole: '(Lead Trainer, msaad@gmail.com)',
+      createdDate: 'Thu 19 Jun 2025',
+      price: 2000,
+      description: [
+        '<strong>Topics Covered</strong>: Bead work, embroidery basics, jewelry assembly, packaging for sale.',
+        '<strong>Outcome</strong>: Skills to produce and sell handmade crafts as a livelihood source.'
+      ],
+      curriculum: [
+        { module: 'Materials &amp; Tools', lessons: ['Beads, Threads &amp; Findings', 'Basic Embroidery Stitches'] },
+        { module: 'Making Jewelry', lessons: ['Bead Stringing Techniques', 'Earring &amp; Bracelet Assembly'] },
+        { module: 'Selling Your Work', lessons: ['Packaging &amp; Presentation', 'Pricing Your Crafts'] }
+      ]
+    }
+  };
+
+  var slug = new URLSearchParams(window.location.search).get('course') || 'women-health-awareness';
+  var course = COURSES[slug] || COURSES['women-health-awareness'];
+
+  document.getElementById('course-breadcrumb').textContent = course.title.replace(/&amp;/g, '&');
+  document.getElementById('course-title').innerHTML = course.title;
+  document.getElementById('course-detail-title').innerHTML = course.title;
+  document.getElementById('course-category').innerHTML = course.category;
+  document.getElementById('course-created').textContent = 'Created by ' + course.authorName + ', ' + course.createdDate;
+  document.getElementById('author-name').textContent = course.authorName;
+  document.getElementById('author-role').innerHTML = course.authorRole;
+  document.title = course.title.replace(/&amp;/g, '&') + ' — PODA Pakistan';
+
+  document.getElementById('course-description-list').innerHTML = course.description.map(function(d){
+    return '<li>' + d + '</li>';
+  }).join('');
+
+  function priceLabel(p){ return 'Rs. ' + p.toLocaleString('en-PK'); }
+  var paidKey = 'poda-course-paid-' + slug;
+  function isPaid(){ return localStorage.getItem(paidKey) === 'yes'; }
+
+  var enrollBox = document.getElementById('enrollBox');
+  var mount = document.getElementById('curriculum-mount');
+
+  function renderEnrollBox(){
+    if (isPaid()) {
+      enrollBox.classList.add('is-paid');
+      enrollBox.innerHTML =
+        '<div><span class="price-label">Course Price</span><span class="price-value">' + priceLabel(course.price) + '</span></div>' +
+        '<span class="paid-badge"><svg class="icon"><use href="#i-check-circle"/></svg>Enrolled &amp; Paid</span>';
+    } else {
+      enrollBox.classList.remove('is-paid');
+      enrollBox.innerHTML =
+        '<div><span class="price-label">Course Price</span><span class="price-value">' + priceLabel(course.price) + '</span></div>' +
+        '<button type="button" class="btn btn-primary" id="enrollBtn">Unlock Curriculum</button>';
+    }
+  }
+
+  function renderCurriculum(){
+    if (!isPaid()) {
+      mount.innerHTML =
+        '<div class="curriculum-locked">' +
+          '<div class="lock-ic"><svg class="icon"><use href="#i-lock"/></svg></div>' +
+          '<h4>This curriculum is locked</h4>' +
+          '<p>Enroll in ' + course.title + ' for ' + priceLabel(course.price) + ' to unlock all modules and lessons.</p>' +
+          '<button type="button" class="btn btn-primary" id="curriculumUnlockBtn">Unlock Curriculum — ' + priceLabel(course.price) + '</button>' +
+        '</div>';
+      return;
+    }
+    mount.innerHTML = '<div class="curriculum-list" id="curriculum-list">' +
+      course.curriculum.map(function(mod, i){
+        var lessons = mod.lessons.map(function(l){
+          return '<li><svg class="icon"><use href="#i-play-circle"/></svg>' + l + '</li>';
+        }).join('');
+        return '<div class="curriculum-module' + (i === 0 ? ' is-open' : '') + '">' +
+          '<button type="button" class="curriculum-module-head">' +
+            '<h4>' + mod.module + '</h4>' +
+            '<span class="count">' + mod.lessons.length + ' lessons</span>' +
+            '<svg class="icon"><use href="#i-chevron"/></svg>' +
+          '</button>' +
+          '<ul class="curriculum-lessons">' + lessons + '</ul>' +
+        '</div>';
+      }).join('') +
+    '</div>';
+
+    mount.querySelector('#curriculum-list').addEventListener('click', function(e){
+      var head = e.target.closest('.curriculum-module-head');
+      if (!head) return;
+      head.closest('.curriculum-module').classList.toggle('is-open');
+    });
+  }
+
+  // Payment modal — demo checkout only; no real payment gateway is connected.
+  var payModal = document.getElementById('payModal');
+  document.getElementById('payModalCourseName').textContent = course.title.replace(/&amp;/g, '&');
+  document.getElementById('payModalPrice').textContent = priceLabel(course.price);
+
+  function openPayModal(){ payModal.classList.add('is-open'); document.body.style.overflow = 'hidden'; }
+  function closePayModal(){ payModal.classList.remove('is-open'); document.body.style.overflow = ''; }
+
+  document.addEventListener('click', function(e){
+    if (e.target.closest('#enrollBtn') || e.target.closest('#curriculumUnlockBtn')) openPayModal();
+  });
+  document.getElementById('payModalClose').addEventListener('click', closePayModal);
+  payModal.addEventListener('click', function(e){ if (e.target === payModal) closePayModal(); });
+
+  document.getElementById('payMethodTabs').addEventListener('click', function(e){
+    var btn = e.target.closest('button');
+    if (!btn) return;
+    document.querySelectorAll('#payMethodTabs button').forEach(function(b){ b.classList.toggle('active', b === btn); });
+    document.getElementById('panel-online').style.display = btn.dataset.method === 'online' ? '' : 'none';
+    document.getElementById('panel-mobile').style.display = btn.dataset.method === 'mobile' ? '' : 'none';
+  });
+
+  document.getElementById('payModalConfirm').addEventListener('click', function(){
+    localStorage.setItem(paidKey, 'yes');
+    closePayModal();
+    renderEnrollBox();
+    renderCurriculum();
+  });
+
+  renderEnrollBox();
+  renderCurriculum();
+})();
+</script>
+
+<!-- ======================= FOOTER — Payload Global: Footer ======================= -->
+<script src="js/global.js" data-poda="footer"></script>
+
+<a class="btn btn-primary floating-donate" href="donate.html"><svg class="icon"><use href="#i-heart"/></svg>Donate</a>
+<script src="js/main.js"></script>
+
+</body>
+</html>

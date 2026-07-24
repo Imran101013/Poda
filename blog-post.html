@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Blog Post — PODA Pakistan</title>
+<meta name="description" content="Field notes, policy commentary and community voices from PODA Pakistan." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- Icon sprite sheet — swap for an icon library / SVG imports in the Payload frontend -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.5-8.5C1 9 2 5.5 5.5 5c2-.3 3.7.8 4.5 2 .8-1.2 2.5-2.3 4.5-2 3.5.5 4.5 4 3 7.5C19 16.65 12 21 12 21z"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="7" y1="2" x2="7" y2="6"/><line x1="17" y1="2" x2="17" y2="6"/></symbol>
+  <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><line x1="4" y1="12" x2="20" y2="12"/><path d="M14 6l6 6-6 6"/></symbol>
+  <symbol id="i-twitter" viewBox="0 0 24 24" stroke="none" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.6-2.3.7.8-.5 1.4-1.3 1.7-2.3-.8.5-1.7.8-2.6 1a3.8 3.8 0 0 0-6.5 3.5A10.8 10.8 0 0 1 3.9 4.6a3.9 3.9 0 0 0 1.2 5.2 3.8 3.8 0 0 1-1.7-.5 3.9 3.9 0 0 0 3 3.8c-.5.1-1.1.2-1.7.1a3.9 3.9 0 0 0 3.6 2.7A10.9 10.9 0 0 1 2 18.4a10.9 10.9 0 0 0 5.9 1.7c7 0 10.9-5.9 10.9-11v-.5c.8-.5 1.4-1.2 2-2z"/></symbol>
+  <symbol id="i-facebook" viewBox="0 0 24 24" stroke="none" fill="currentColor"><path d="M14 21v-8h2.7l.5-3.5H14V7.2c0-1 .3-1.7 1.8-1.7h1.6V2.4C17 2.3 15.9 2 14.6 2 11.9 2 10 3.6 10 6.8v2.7H7.3V13H10v8z"/></symbol>
+</svg>
+
+<!-- ======================= HEADER — Payload Global: Header ======================= -->
+<script src="js/global.js" data-poda="header"></script>
+
+<!-- ======================= PAGE HEADER — Payload Block: PageHeader ======================= -->
+<section class="page-header post-header" id="post-page-header">
+  <div class="container">
+    <div class="breadcrumb reveal"><a href="index.html">Home</a> / <a href="blogs.html">Blogs &amp; Articles</a> / <span id="post-breadcrumb">Article</span></div>
+    <span class="eyebrow" id="post-eyebrow" style="color:#939CE8;"></span>
+    <h1 class="reveal" id="post-title"></h1>
+    <div class="post-meta reveal" id="post-meta"></div>
+  </div>
+</section>
+
+<!-- ======================= POST BODY — Payload Block: RichTextPost ======================= -->
+<section class="post-detail">
+  <div class="container" style="max-width:820px;">
+    <div id="post-body"></div>
+
+    <div class="post-share reveal" style="margin-top:36px;">
+      <span>Share this article</span>
+      <div class="share-row">
+        <a href="https://twitter.com/PODAPakistan" aria-label="Share on Twitter"><svg><use href="#i-twitter"/></svg></a>
+        <a href="https://www.facebook.com/pages/Potohar-Organization-for-Development-Advocacy-PODA/651141511571116" aria-label="Share on Facebook"><svg><use href="#i-facebook"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var POSTS = {
+    'reflections-18th-annual-conference': {
+      category: 'Field Notes',
+      title: 'Reflections from the 18th Annual Rural Women Leadership Conference',
+      author: 'PODA Communications Team',
+      date: '10 November 2025',
+      image: 'images/site/prog-conference.png',
+      imageAlt: '18th Annual Rural Women Leadership Training Conference',
+      body: [
+        'Fifteen years ago, PODA convened its first Annual Rural Women Leadership Training Conference with a handful of districts represented in the room. This October, the 18th edition brought together more than 1,500 rural women leaders from 100 districts across Pakistan to Islamabad — a scale that would have been hard to imagine at the start.',
+        'Over three days, the conversation moved from legal identity and CNIC registration to climate resilience, digital safety, and women\'s representation in local government. What struck our team most wasn\'t the size of the crowd, but how specific the questions were: not "how do we get more women involved," but "how do we get the district election commission to actually process our registration forms."',
+        'The conference closed with an 18-point resolution touching legal identity, education, climate response and governance — the same resolution now guiding PODA\'s advocacy priorities for the year ahead. Planning for the 19th edition is already underway.'
+      ]
+    },
+    'legal-identity-first-step': {
+      category: 'Policy &amp; Advocacy',
+      title: 'Why Legal Identity Is the First Step to Empowerment',
+      author: 'Sameena Nazir, Executive Director',
+      date: '2 September 2025',
+      image: 'images/site/prog-democracy.jpeg',
+      imageAlt: 'Mobile legal aid clinic',
+      body: [
+        'A woman without a CNIC cannot vote, cannot open a bank account, cannot inherit property, and often cannot access healthcare that requires identification. For fifteen-plus years, PODA\'s mobile legal aid clinics and civil-registration drives have started from this simple observation: legal identity is not paperwork, it is the precondition for almost everything else rural women are trying to build.',
+        'We have watched the same pattern repeat across dozens of districts — women who had never been able to open a bank account or register a business, blocked not by lack of ambition but by a missing government form. Our mobile legal aid clinics, including a recent three-day clinic in Islamabad\'s France Colony, exist to close exactly that gap: on-the-spot documentation support, legal counseling, and referrals, delivered where people already are instead of asking them to travel to us.',
+        'It is unglamorous work compared to a leadership conference or a policy win, but it is the work that makes the rest possible. You cannot advocate for inheritance rights on behalf of a woman who, on paper, does not officially exist.'
+      ]
+    },
+    'decade-organic-farming-nara-mughlan': {
+      category: 'Field Notes',
+      title: 'A Decade of Organic Farming at Nara Mughlan: What We\'ve Learned',
+      author: 'PODA Sustainable Agriculture Team',
+      date: '14 July 2025',
+      image: 'images/site/prog-climate.jpeg',
+      imageAlt: 'Nara Mughlan demonstration farm',
+      body: [
+        'PODA\'s demonstration farm at Nara Mughlan, Chakwal, was established in 2010 with a simple premise: rural youth learn climate-resilient agriculture best by doing it, season after season, on a real working farm rather than in a classroom.',
+        'Over the past decade the farm has expanded from basic organic kitchen gardening into vegetable tunnel farming, wheat seed banking, and — more recently — real-time weather advisory using IoT weather stations and soil moisture meters. Training now covers everything from seasonal sowing and harvesting to the green job skills that translate directly into local livelihoods.',
+        'The lesson that took us longest to learn: technology adoption follows trust, not the other way around. The weather stations only became useful to farmers once they had spent a season watching the demonstration plots outperform expectations using the same data. Now it\'s a routine part of how the farm — and increasingly, the surrounding community — plans its planting calendar.'
+      ]
+    },
+    'ending-child-marriage-punjab-ordinance': {
+      category: 'Policy &amp; Advocacy',
+      title: 'Ending Child Marriage: How the Punjab Ordinance Came Together',
+      author: 'PODA Policy &amp; Advocacy Team',
+      date: '20 February 2026',
+      image: 'images/site/prog-women.jpg',
+      imageAlt: 'Legal literacy session on child marriage prevention',
+      body: [
+        'The Punjab Child Marriage Restraint Ordinance, which sets 18 as the minimum legal age of marriage for girls across the province, didn\'t happen in a single legislative session. It followed a three-year, 41-district campaign — Reduce Early Marriages to Enhance Gender Equality, backed by the Royal Norwegian Embassy — built on legal-literacy sessions, conflict-resolution workshops and community outreach conducted village by village.',
+        'PODA\'s role was less about drafting legal text and more about building the evidence and the constituency for it: documenting the health and social costs of early marriage, training community-resource persons, and organizing rural women farmers and legal-literacy participants around a shared demand.',
+        'The ordinance is a milestone, not an endpoint. Enforcement depends on the same community-level awareness work that built the case for it in the first place — which is why the legal-literacy sessions continue in the districts where the campaign began.'
+      ]
+    },
+    'voices-from-parwl': {
+      category: 'Community Voices',
+      title: 'Voices from PARWL: What Rural Women Ask Us Every Wednesday',
+      author: 'PARWL-Pakistan Team',
+      date: '4 June 2025',
+      image: 'images/site/prog-ai.jpg',
+      imageAlt: 'PARWL-Pakistan Wednesday webinar',
+      body: [
+        'Every Wednesday, PODA\'s PARWL-Pakistan webinar series puts rural women and civic leaders in the same virtual room as policy experts, government officials and researchers. After more than 200 episodes, a few questions keep coming back.',
+        '"How do I register to vote if I don\'t have my CNIC yet?" is still the single most common question, which is exactly why legal identity work remains a flagship focus area rather than a side project. Close behind: questions about digital safety, as more women in the network use smartphones for the first time, and questions about climate — particularly from rural women farmers watching weather patterns shift under them.',
+        'The format has evolved with the questions. Early episodes leaned toward civic education lectures; recent ones look more like structured office hours, with government officials fielding questions live. It\'s a small format change, but it reflects what the network has taught us: rural women don\'t need to be told what matters to them — they need a direct line to the people who can act on it.'
+      ]
+    }
+  };
+
+  var slug = new URLSearchParams(window.location.search).get('post') || 'reflections-18th-annual-conference';
+  var post = POSTS[slug] || POSTS['reflections-18th-annual-conference'];
+
+  document.getElementById('post-breadcrumb').textContent = post.title;
+  document.getElementById('post-eyebrow').innerHTML = post.category;
+  document.getElementById('post-title').textContent = post.title;
+  document.getElementById('post-meta').innerHTML =
+    '<span><svg class="icon"><use href="#i-person"/></svg>' + post.author + '</span>' +
+    '<span><svg class="icon"><use href="#i-calendar"/></svg>' + post.date + '</span>';
+  document.title = post.title + ' — PODA Pakistan';
+
+  document.getElementById('post-body').innerHTML =
+    '<div class="reveal" style="margin-bottom:32px;"><div class="post-media"><img src="' + post.image + '" alt="' + post.imageAlt + '"></div></div>' +
+    post.body.map(function(p){ return '<p class="reveal" style="margin-bottom:20px;font-size:15.5px;line-height:1.7;color:#463a4d;">' + p + '</p>'; }).join('');
+})();
+</script>
+
+<!-- ======================= CTA BAR — Payload Block: CtaBar ======================= -->
+<section class="cta-bar">
+  <div class="container">
+    <div>
+      <h3>Want to support this work?</h3>
+      <p>Donate, get free legal aid, or intern with PODA's field teams.</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-white" href="donate.html"><svg class="icon"><use href="#i-heart"/></svg>Donate</a>
+      <a class="btn btn-outline" href="blogs.html">More Articles</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FOOTER — Payload Global: Footer ======================= -->
+<script src="js/global.js" data-poda="footer"></script>
+
+<a class="btn btn-primary floating-donate" href="donate.html"><svg class="icon"><use href="#i-heart"/></svg>Donate</a>
+<script src="js/main.js"></script>
+
+</body>
+</html>
