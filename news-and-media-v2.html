@@ -1,3 +1,20 @@
+<!--
+  STRUCTURAL JUDGMENT CALL: Media Statistics is not one of the 5 jump-nav
+  destinations in the original page (it trails Success Stories in normal
+  flow with no nav entry). In a tabbed layout that omission reads as an
+  oversight rather than a deliberate ordering, so it is promoted to its own
+  6th tab here — a funder scanning for credibility numbers can reach it in
+  one click instead of finding it only by exhausting the other five panels.
+
+  All real content (gallery cards, press items incl. the ones the source
+  marks style="display:none", video cards, radio spotlight/schedule/embeds,
+  webinar cards, both story features, all four stat counters) is carried
+  over verbatim from news-and-media.html. The press/radio year-filter
+  buttons, their data-year attributes, and their inline display:none states
+  are left exactly as in the source rather than "unhidden," since the
+  filtering behavior lives in the shared js/main.js which this file does
+  not modify — changing the markup contract could silently break it.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +26,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<style>
+  /* Tab panels: only the active panel is visible. Reuses existing tokens/spacing only. */
+  .tab-panel[hidden]{display:none;}
+  .tab-panel{animation:tabFadeIn .32s cubic-bezier(0.16,1,0.3,1);}
+  @keyframes tabFadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+  @media (prefers-reduced-motion: reduce){.tab-panel{animation:none;}}
+  /* Reuse .section-tabs a exactly; just make the active underline persist regardless of scrollspy */
+  .section-tabs a[role="tab"]:focus-visible{outline:2px solid var(--purple-brand);outline-offset:2px;}
+  .section-select:focus-visible{outline:2px solid var(--purple-brand);outline-offset:2px;}
+</style>
 </head>
 <body>
 
@@ -43,6 +70,8 @@
   <symbol id="i-instagram" viewBox="0 0 24 24" stroke="none" fill="currentColor"><path d="M12 2.2c2.7 0 3 0 4 .1 1 0 1.7.2 2.3.4a4.6 4.6 0 0 1 1.7 1.1 4.6 4.6 0 0 1 1.1 1.7c.2.6.4 1.3.4 2.3.1 1 .1 1.3.1 4s0 3-.1 4c0 1-.2 1.7-.4 2.3a4.9 4.9 0 0 1-2.8 2.8c-.6.2-1.3.4-2.3.4-1 .1-1.3.1-4 .1s-3 0-4-.1c-1 0-1.7-.2-2.3-.4a4.6 4.6 0 0 1-1.7-1.1 4.6 4.6 0 0 1-1.1-1.7c-.2-.6-.4-1.3-.4-2.3-.1-1-.1-1.3-.1-4s0-3 .1-4c0-1 .2-1.7.4-2.3a4.6 4.6 0 0 1 1.1-1.7 4.6 4.6 0 0 1 1.7-1.1c.6-.2 1.3-.4 2.3-.4 1-.1 1.3-.1 4-.1zm0 3.5a6.3 6.3 0 1 0 0 12.6 6.3 6.3 0 0 0 0-12.6zm0 10.4a4.1 4.1 0 1 1 0-8.2 4.1 4.1 0 0 1 0 8.2zm6.4-10.6a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/></symbol>
 </svg>
 
+<div style="background:#191125;color:#BBAFCB;text-align:center;font:600 12.5px/1 Roboto,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:8px;">Variant 2 of 3 — Tabbed Segmented View</div>
+
 <!-- ======================= HEADER — Payload Global: Header ======================= -->
 <script src="js/global.js" data-poda="header"></script>
 
@@ -54,39 +83,35 @@
     <h1 class="reveal">News, Media &amp; <em class="accent">Community Radio</em></h1>
     <p class="lead reveal" style="margin-bottom:24px;">Photos, videos and press releases from PODA's field work — plus Aao Baat Karain, our community radio series broadcasting since 2016. Everything in one place.</p>
     <div class="tag-row reveal"><span>154 Photos</span><span>300+ Videos</span><span>300+ Press Releases</span><span>40+ Radio Episodes</span></div>
-    <!-- <div class="hero-cta reveal" style="margin-top:26px;">
-      <a class="btn btn-white" href="#radio-programs"><svg class="icon"><use href="#i-mic"/></svg>Radio Programs</a>
-      <a class="btn btn-outline" href="#photo-video-highlights">Browse Gallery</a>
-    </div> -->
   </div>
 </section>
 
-<!-- ======================= SUB-NAV — jump-nav + scrollspy across sections ======================= -->
-<nav class="section-subnav" aria-label="News and Media page sections">
+<!-- ======================= TAB BAR — replaces the sticky jump-nav; swaps panels via JS instead of scrolling ======================= -->
+<nav class="section-subnav" aria-label="News and Media sections" style="top:0;">
   <div class="container">
-    <div class="section-tabs">
-      <a href="#photo-video-highlights" class="active"><span class="n">1</span>PODA Photo and Video Highlights</a>
-      <a href="#press-room"><span class="n">2</span>PODA Press Room</a>
-      <a href="#radio-programs"><span class="n">3</span>PODA Audio/Radio</a>
-      <a href="#poda-webinar"><span class="n">4</span>PODA Webinar</a>
-      <a href="#success-stories"><span class="n">5</span>PODA Success Stories</a>
-
+    <div class="section-tabs" role="tablist" aria-label="News and Media sections">
+      <a href="#photo-video-highlights" role="tab" id="tab-photo-video-highlights" aria-controls="photo-video-highlights" aria-selected="true" tabindex="0" class="active"><span class="n">1</span>Photo and Video Highlights</a>
+      <a href="#press-room" role="tab" id="tab-press-room" aria-controls="press-room" aria-selected="false" tabindex="-1"><span class="n">2</span>Press Room</a>
+      <a href="#radio-programs" role="tab" id="tab-radio-programs" aria-controls="radio-programs" aria-selected="false" tabindex="-1"><span class="n">3</span>Audio/Radio</a>
+      <a href="#poda-webinar" role="tab" id="tab-poda-webinar" aria-controls="poda-webinar" aria-selected="false" tabindex="-1"><span class="n">4</span>Webinar</a>
+      <a href="#success-stories" role="tab" id="tab-success-stories" aria-controls="success-stories" aria-selected="false" tabindex="-1"><span class="n">5</span>Success Stories</a>
+      <a href="#media-statistics" role="tab" id="tab-media-statistics" aria-controls="media-statistics" aria-selected="false" tabindex="-1"><span class="n">6</span>Media Statistics</a>
     </div>
     <div class="section-select-wrap">
       <select class="section-select" aria-label="Jump to a section">
-        <option value="photo-video-highlights">1 · PODA Photo and Video Highlights</option>
-        <option value="press-room">2 · PODA Press Room</option>
-        <option value="radio-programs">3 · PODA Audio/Radio</option>
-        <option value="poda-webinar">4 · PODA Webinar</option>
-        <option value="success-stories">5 · PODA Success Stories</option>
-
+        <option value="photo-video-highlights">1 · Photo and Video Highlights</option>
+        <option value="press-room">2 · Press Room</option>
+        <option value="radio-programs">3 · Audio/Radio</option>
+        <option value="poda-webinar">4 · Webinar</option>
+        <option value="success-stories">5 · Success Stories</option>
+        <option value="media-statistics">6 · Media Statistics</option>
       </select>
     </div>
   </div>
 </nav>
 
-<!-- ======================= 1. PHOTO AND VIDEO HIGHLIGHTS — Payload Block: GalleryGrid + VideoGrid (merged) ======================= -->
-<section class="content-section" id="photo-video-highlights">
+<!-- ======================= 1. PHOTO AND VIDEO HIGHLIGHTS ======================= -->
+<div class="tab-panel content-section" id="photo-video-highlights" role="tabpanel" aria-labelledby="tab-photo-video-highlights">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Photo and video highlights</span>
@@ -159,10 +184,10 @@
     </div>
     <div class="impact-more" style="margin-top:36px;"><a class="btn btn-ghost" href="videos.html">View All Videos <svg class="icon"><use href="#i-arrow"/></svg></a></div>
   </div>
-</section>
+</div>
 
-<!-- ======================= 2. PRESS ROOM — Payload Block: PressList (reused) ======================= -->
-<section class="content-section" id="press-room">
+<!-- ======================= 2. PRESS ROOM ======================= -->
+<div class="tab-panel content-section" id="press-room" role="tabpanel" aria-labelledby="tab-press-room" hidden>
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Press room</span>
@@ -335,10 +360,10 @@
     <p class="empty-state" id="pressEmpty">No press releases match your search.</p>
     <div class="impact-more"><a class="btn btn-ghost" href="press.html">View All Press <svg class="icon"><use href="#i-arrow"/></svg></a></div>
   </div>
-</section>
+</div>
 
-<!-- ======================= 3. RADIO PROGRAMS — merged Listen Live + Radio Programmes ======================= -->
-<section class="content-section" id="radio-programs">
+<!-- ======================= 3. RADIO PROGRAMS ======================= -->
+<div class="tab-panel content-section" id="radio-programs" role="tabpanel" aria-labelledby="tab-radio-programs" hidden>
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Radio Programs</span>
@@ -346,7 +371,6 @@
       <p class="lead">Promoting democracy, civic leadership, legal identity and equal rights — one conversation at a time, funded by the National Endowment for Democracy (NED).</p>
     </div>
 
-    <!-- LIVE RADIO PLACEHOLDER — replace href with the live stream URL when a program is on air -->
     <div class="radio-spotlight reveal" style="background:linear-gradient(135deg,var(--purple-800),var(--purple-brand));">
       <div class="ic" style="background:rgba(255,255,255,.15);color:#fff;"><svg class="icon"><use href="#i-mic"/></svg></div>
       <div class="txt">
@@ -354,11 +378,9 @@
         <h3 style="color:#fff;">Live Radio — Coming Soon</h3>
         <p style="color:rgba(255,255,255,.8);">No live program is currently on air. When a live session is scheduled, the listen link will appear here.</p>
       </div>
-      <!-- TO ACTIVATE: swap this <span> back for an <a href="LIVE_STREAM_URL"> and update the button label -->
       <div class="action"><span class="btn btn-white" role="link" aria-disabled="true" style="opacity:.5;cursor:not-allowed;"><svg class="icon"><use href="#i-play"/></svg>Listen Live</span></div>
     </div>
 
-    <!-- Broadcast schedule -->
     <div class="section-head reveal" style="margin-top:44px;">
       <span class="eyebrow">Broadcast schedule</span>
       <h2 style="font-size:20px;">On Air This Week</h2>
@@ -372,7 +394,6 @@
       </div>
     </div>
 
-    <!-- Recorded episodes -->
     <div class="section-head reveal" style="margin-top:44px;">
       <span class="eyebrow">Recorded episodes</span>
       <h2 style="font-size:20px;">Listen to Past Programs</h2>
@@ -388,11 +409,6 @@
           <img src="images/site/hero-2.jpg" alt="Sameena Nazir">
           <div><span class="ep-num">Interview · FM 93 Rawalpindi</span><h4>Sameena Nazir</h4><p>President, PODA</p></div>
         </div>
-        <!-- This track's SoundCloud share link is real and verified (it resolves
-             fine as a direct visit) but the embeddable widget itself rejects it
-             ("You have not provided a valid SoundCloud URL"), likely because it's
-             shared via a private secret-token link rather than a public track.
-             Link out to the real page instead of shipping a broken player. -->
         <a class="embed-fallback" href="https://soundcloud.com/user-611596205/sameena-nazir-interview-fm-93-rawalpindi/s-z6rUzrh47GM" target="_blank" rel="noopener">
           <svg class="icon"><use href="#i-play"/></svg>Listen on SoundCloud
         </a>
@@ -422,10 +438,10 @@
     <p class="empty-state" id="radioEmpty">No episodes match this filter.</p>
     <div class="impact-more"><a class="btn btn-ghost" href="radio-programs.html">View All Episodes <svg class="icon"><use href="#i-arrow"/></svg></a></div>
   </div>
-</section>
+</div>
 
-<!-- ======================= 4. PODA WEBINAR — Payload Block: WebinarGrid ======================= -->
-<section class="content-section" id="poda-webinar">
+<!-- ======================= 4. PODA WEBINAR ======================= -->
+<div class="tab-panel content-section" id="poda-webinar" role="tabpanel" aria-labelledby="tab-poda-webinar" hidden>
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">PODA Webinar</span>
@@ -469,10 +485,10 @@
     </div>
     <div class="impact-more" style="margin-top:36px;"><a class="btn btn-ghost" href="webinars.html">View All Webinars <svg class="icon"><use href="#i-arrow"/></svg></a></div>
   </div>
-</section>
+</div>
 
-<!-- ======================= 5. SUCCESS STORIES — Payload Block: StoryGrid (featured pair) ======================= -->
-<section class="content-section" id="success-stories">
+<!-- ======================= 5. SUCCESS STORIES ======================= -->
+<div class="tab-panel content-section" id="success-stories" role="tabpanel" aria-labelledby="tab-success-stories" hidden>
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Success stories</span>
@@ -510,10 +526,10 @@
       <a class="btn btn-ghost" href="stories.html">View All Success Stories <svg class="icon"><use href="#i-arrow"/></svg></a>
     </div>
   </div>
-</section>
+</div>
 
-<!-- ======================= 6. MEDIA STATISTICS — Payload Block: ImpactHighlights (reused, animated) ======================= -->
-<section class="content-section">
+<!-- ======================= 6. MEDIA STATISTICS (promoted to its own tab — see comment at top of file) ======================= -->
+<div class="tab-panel content-section" id="media-statistics" role="tabpanel" aria-labelledby="tab-media-statistics" hidden>
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Media statistics</span>
@@ -538,41 +554,55 @@
       </div>
     </div>
   </div>
-</section>
-
-<!-- ======================= NEWSLETTER — reuses .cta-band gradient treatment ======================= -->
-<!-- <section class="cta-band" id="newsletter">
-  <div class="container">
-    <div class="cta-inner">
-      <h2>Stay Updated</h2>
-      <p>Get the latest press releases, publications and radio episodes straight to your inbox.</p>
-    </div>
-    <form class="newsletter-form reveal" onsubmit="return false;">
-      <input type="email" placeholder="Enter your email address" aria-label="Email address" required>
-      <button type="submit" class="btn btn-white">Subscribe</button>
-    </form>
-  </div>
-</section> -->
-
-<!-- ======================= CTA BAR — Payload Block: CtaBar ======================= -->
-<!-- <section class="cta-bar">
-  <div class="container">
-    <div>
-      <h3>Want to support this work?</h3>
-      <p>Donate, get free legal aid, or intern with PODA's field teams.</p>
-    </div>
-    <div class="actions">
-      <a class="btn btn-white" href="donate.html"><svg class="icon"><use href="#i-heart"/></svg>Donate</a>
-      <a class="btn btn-outline" href="#">Legal Aid Helpline</a>
-    </div>
-  </div>
-</section> -->
+</div>
 
 <!-- ======================= FOOTER — Payload Global: Footer ======================= -->
 <script src="js/global.js" data-poda="footer"></script>
 
-
 <a class="btn btn-primary floating-donate" href="donate.html"><svg class="icon"><use href="#i-heart"/></svg>Donate</a>
 <script src="js/main.js"></script>
+<script>
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.section-tabs a[role="tab"]'));
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.tab-panel'));
+  var select = document.querySelector('.section-select');
+
+  function activate(id, opts){
+    opts = opts || {};
+    tabs.forEach(function(t){
+      var on = t.getAttribute('aria-controls') === id;
+      t.classList.toggle('active', on);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.setAttribute('tabindex', on ? '0' : '-1');
+    });
+    panels.forEach(function(p){ p.hidden = (p.id !== id); });
+    if (select && select.value !== id) select.value = id;
+    if (opts.moveFocus){
+      var activeTab = tabs.filter(function(t){ return t.getAttribute('aria-controls') === id; })[0];
+      if (activeTab) activeTab.focus();
+    }
+  }
+
+  tabs.forEach(function(tab, i){
+    tab.addEventListener('click', function(e){
+      e.preventDefault();
+      activate(tab.getAttribute('aria-controls'));
+    });
+    tab.addEventListener('keydown', function(e){
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft' && e.key !== 'Home' && e.key !== 'End') return;
+      e.preventDefault();
+      var next;
+      if (e.key === 'Home') next = 0;
+      else if (e.key === 'End') next = tabs.length - 1;
+      else next = (i + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
+      activate(tabs[next].getAttribute('aria-controls'), { moveFocus: true });
+    });
+  });
+
+  if (select){
+    select.addEventListener('change', function(){ activate(select.value); });
+  }
+})();
+</script>
 </body>
 </html>

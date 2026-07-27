@@ -7,7 +7,7 @@
 <meta name="description" content="The Annual Rural Women Leadership Training Conference — PODA's flagship gathering of rural women leaders from across Pakistan, now in its 18th year, with resolution booklets and conference archives from past editions." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -32,11 +32,11 @@
 <script src="js/global.js" data-poda="header"></script>
 
 <!-- ======================= PAGE HEADER — Payload Block: PageHeader ======================= -->
-<section class="page-header">
+<section class="page-header has-photo" style="background-image:linear-gradient(115deg, rgba(35,22,52,.93) 0%, rgba(67,44,99,.86) 48%, rgba(84,55,124,.68) 100%), url('images/site/hero-2.jpg');">
   <div class="container">
     <div class="breadcrumb reveal"><a href="index.html">Home</a> / <span>Annual Conference</span></div>
     <span class="eyebrow" style="color:#B422D8;">PODA's Flagship Gathering</span>
-    <h1 class="reveal">Annual Rural Women Leadership Training Conference</h1>
+    <h1 class="reveal">Annual Rural Women Leadership <em class="accent">Training Conference</em></h1>
     <p class="lead reveal" style="margin-bottom:24px;">PODA's flagship gathering of rural women leaders from across Pakistan, now in its 18th year — producing policy resolutions on climate justice, civic participation and legal identity rights.</p>
     <div class="tag-row reveal"><span>18th Edition</span><span>Oct 2025 · Islamabad</span><span>1,500+ Leaders</span><span>Since 2008</span></div>
   </div>
@@ -76,7 +76,7 @@
     </div>
     <div class="mv-text reveal">
       <span class="eyebrow">Overview</span>
-      <h2 style="font-size:clamp(20px,3vw,20px);margin-bottom:20px;">A Resolution-Driven Conference, Not Just an Event</h2>
+      <h2 style="margin-bottom:20px;">A Resolution-Driven Conference, <em class="accent">Not Just an Event</em></h2>
       <p class="lead">Held every year in Islamabad on or around 15 October — the UN International Day of Rural Women — the Annual Rural Women Leadership Training Conference brings together rural women leaders, policymakers and civil society to develop practical resolutions on the issues affecting their communities. Running since 2008, it has grown into PODA's flagship national platform for transforming rural women from vulnerable populations into effective change makers, building the partnerships and linkages that carry those resolutions into policy.</p>
       <p class="lead">The 18th edition, held 15–17 October 2025, drew more than 1,500 rural women leaders from 100 districts to shape recommendations on climate justice, civic participation and legal identity rights.</p>
     </div>
@@ -88,11 +88,13 @@
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Conference archive</span>
-      <h2>Past Editions, Resolutions &amp; Booklets</h2>
+      <h2>Past Editions, <em class="accent">Resolutions &amp; Booklets</em></h2>
       <p class="lead">Every edition of the conference, who funded it, and where to read the resolutions that came out of it.</p>
     </div>
 
-    <article class="project-feature reveal" id="conf-2025">
+    <div class="conf-timeline">
+
+    <article class="project-feature reveal conf-item" id="conf-2025">
       <span class="project-status">18th Edition</span>
       <h3>18th Annual Rural Women Leadership Training Conference (2025)</h3>
       <div class="project-meta-grid">
@@ -107,7 +109,7 @@
       </div>
     </article>
 
-    <article class="project-feature reveal" id="conf-2024">
+    <article class="project-feature reveal conf-item" id="conf-2024">
       <span class="project-status">2024</span>
       <h3>Rural Women Leadership Training Conference 2024</h3>
       <div class="project-meta-grid">
@@ -122,7 +124,7 @@
       </div>
     </article>
 
-    <article class="project-feature reveal" id="conf-2020">
+    <article class="project-feature reveal conf-item" id="conf-2020">
       <span class="project-status">2020–2021</span>
       <h3>Annual Rural Women Leadership Conference — The Game Changer</h3>
       <div class="project-meta-grid">
@@ -137,7 +139,7 @@
       </div>
     </article>
 
-    <article class="project-feature reveal" id="conf-2019">
+    <article class="project-feature reveal conf-item" id="conf-2019">
       <span class="project-status">2019–2020</span>
       <h3>Rural Women's Day Conference</h3>
       <div class="project-meta-grid">
@@ -152,7 +154,7 @@
       </div>
     </article>
 
-    <article class="project-feature reveal" id="conf-2011">
+    <article class="project-feature reveal conf-item" id="conf-2011">
       <span class="project-status">2011</span>
       <h3>Rural Women's Conference, October 15</h3>
       <div class="project-meta-grid">
@@ -166,8 +168,27 @@
         <a class="btn-text" href="conference-detail.html?edition=2011">View Details <svg class="icon"><use href="#i-arrow"/></svg></a>
       </div>
     </article>
+
+    </div>
   </div>
 </section>
+
+<!-- Page-scoped: these edition entries have no per-edition photo, so the shared
+     .project-feature top image band (built for projects.html's data-theme photos)
+     is switched off here; a left chronological spine replaces it so five repeated
+     entries read as a timeline rather than a stack of near-identical cards. -->
+<style>
+#conference-editions .project-feature{padding-top:0;}
+#conference-editions .project-feature::before{display:none;}
+.conf-timeline{position:relative;padding-left:28px;}
+.conf-timeline::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:var(--card-border);}
+.conf-item{position:relative;}
+.conf-item::after{
+  content:"";position:absolute;left:-28px;top:6px;width:12px;height:12px;border-radius:50%;
+  background:var(--white);border:3px solid var(--purple-brand);z-index:1;
+}
+.conf-item:first-child::after{border-color:var(--accent-secondary);}
+</style>
 
 <!-- ======================= CTA BAR — Payload Block: CtaBar ======================= -->
 <!-- <section class="cta-bar">

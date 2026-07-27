@@ -7,7 +7,7 @@
 <meta name="description" content="PODA's 2025 Annual Report — a message from leadership, the year's key numbers, highlights from 2025, and what's ahead in 2026." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -31,15 +31,38 @@
 <script src="js/global.js" data-poda="header"></script>
 
 <!-- ======================= PAGE HEADER — Payload Block: PageHeader ======================= -->
-<section class="page-header">
+<section class="page-header has-photo" style="background-image:linear-gradient(115deg, rgba(35,22,52,.93) 0%, rgba(67,44,99,.86) 48%, rgba(84,55,124,.68) 100%), url('images/site/prog-policy.jpg');">
   <div class="container">
     <div class="breadcrumb reveal"><a href="index.html">Home</a> / <a href="about.html">About Us</a> / <span>Annual Report</span></div>
     <span class="eyebrow" style="color:#B422D8;">2025 Annual Report</span>
-    <h1 class="reveal">A Year of Impact</h1>
+    <h1 class="reveal">A Year <em class="accent">of Impact</em></h1>
     <p class="lead reveal" style="margin-bottom:24px;">From the 18th Annual Rural Women Leadership Conference to the campaign that helped raise Punjab's minimum marriage age to 18 — a look back at what PODA and its partners delivered in 2025, and what's ahead in 2026.</p>
     <div class="hero-cta reveal">
       <a class="btn btn-white" href="#"><svg class="icon"><use href="#i-download"/></svg>Download Full Report (PDF)</a>
       <a class="btn btn-outline" href="#at-a-glance">View Highlights</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= REPORT ARCHIVE — WISE-style cover grid ======================= -->
+<section class="content-section" id="report-archive">
+  <div class="container">
+    <div class="section-head reveal" style="text-align:left;max-width:none;">
+      <span class="eyebrow">Annual reports</span>
+      <h2>Browse by Edition</h2>
+      <p class="lead">Each edition below covers a full year of PODA's donor-funded work. Select a cover to jump straight to that year's report.</p>
+    </div>
+    <div class="report-cover-row reveal">
+      <a class="report-cover-card" href="#at-a-glance">
+        <div class="cover-art">
+          <span class="yr">PODA Pakistan</span>
+          <h3>Annual Report<br>2025</h3>
+        </div>
+        <div class="meta">2025 Edition</div>
+      </a>
+      <div class="report-cover-placeholder">
+        <span>Earlier editions will be added here as they are published.</span>
+      </div>
     </div>
   </div>
 </section>
@@ -67,49 +90,34 @@
   </div>
 </section>
 
-<!-- ======================= 2025 AT A GLANCE — Payload Block: StatsGrid ======================= -->
-<section class="glance" id="at-a-glance">
+<!-- ======================= 2025 AT A GLANCE — Payload Block: StatsGrid =======================
+     Reuses the .impact-card floating-stat pattern (serif numbers + hairline dividers)
+     instead of the 5-box icon-card .glance-grid, so a report page and the homepage
+     read as the same system. -->
+<section class="content-section" id="at-a-glance">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">2025 at a glance</span>
-      <h2>The Year in Numbers</h2>
+      <h2>The Year <em class="accent">in Numbers</em></h2>
     </div>
-    <div class="glance-grid">
-      <div class="glance-card reveal">
-        <div class="ic"><svg class="icon"><use href="#i-grid"/></svg></div>
-        <div class="stat-num">49</div>
-        <div class="stat-lbl">Projects delivered since 2006</div>
-      </div>
-      <div class="glance-card reveal">
-        <div class="ic"><svg class="icon"><use href="#i-bank"/></svg></div>
-        <div class="stat-num">20+</div>
-        <div class="stat-lbl">Donors &amp; partners, EU to UN agencies</div>
-      </div>
-      <div class="glance-card reveal">
-        <div class="ic"><svg class="icon"><use href="#i-pin"/></svg></div>
-        <div class="stat-num">100+</div>
-        <div class="stat-lbl">Districts reached, all four provinces</div>
-      </div>
-      <div class="glance-card reveal">
-        <div class="ic"><svg class="icon"><use href="#i-people"/></svg></div>
-        <div class="stat-num">1,500+</div>
-        <div class="stat-lbl">Leaders at the Annual Conference</div>
-      </div>
-      <div class="glance-card reveal">
-        <div class="ic"><svg class="icon"><use href="#i-calendar"/></svg></div>
-        <div class="stat-num">18th</div>
-        <div class="stat-lbl">Edition of the Annual Conference</div>
-      </div>
+    <div class="impact-card reveal" style="grid-template-columns:repeat(5,1fr);box-shadow:none;max-width:1000px;margin:0 auto;">
+      <div class="impact-item"><div class="num">49</div><div class="lbl">Projects Since 2006</div></div>
+      <div class="impact-item"><div class="num">20+</div><div class="lbl">Donors &amp; Partners</div></div>
+      <div class="impact-item"><div class="num">100+</div><div class="lbl">Districts Reached</div></div>
+      <div class="impact-item"><div class="num">1,500+</div><div class="lbl">Conference Leaders</div></div>
+      <div class="impact-item"><div class="num">18th</div><div class="lbl">Conference Edition</div></div>
     </div>
   </div>
 </section>
+<style>@media (max-width:1080px){#at-a-glance .impact-card{grid-template-columns:repeat(3,1fr);}}
+@media (max-width:640px){#at-a-glance .impact-card{grid-template-columns:repeat(2,1fr);}}</style>
 
 <!-- ======================= HIGHLIGHTS OF THE YEAR — Payload Block: HighlightList ======================= -->
 <section class="content-section">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Highlights of the year</span>
-      <h2>What We Delivered in 2025</h2>
+      <h2>What We Delivered <em class="accent">in 2025</em></h2>
       <p class="lead">A selection of the projects and moments that defined the year — the full list runs to 49 projects since 2006, all documented on our Projects page.</p>
     </div>
     <ul class="project-interventions" style="max-width:820px;margin:0 auto;">
@@ -123,11 +131,11 @@
 </section>
 
 <!-- ======================= LOOKING AHEAD — Payload Block: TextTeaser ======================= -->
-<section class="content-section" style="background:var(--lavender-100);">
+<section class="content-section">
   <div class="container" style="max-width:820px;text-align:center;">
     <div class="section-head reveal">
       <span class="eyebrow">Looking ahead</span>
-      <h2>What's Next in 2026</h2>
+      <h2>What's Next <em class="accent">in 2026</em></h2>
       <p class="lead">April 2026 brings the launch of Beyond Barriers, a three-year partnership with the European Union and Sightsavers advancing disability inclusion and economic empowerment for women across Punjab and Khyber Pakhtunkhwa. The Rural Women's Network for Civic Leadership and Participation continues into 2026, and planning is already underway for the 19th Annual Rural Women Leadership Training Conference.</p>
     </div>
   </div>

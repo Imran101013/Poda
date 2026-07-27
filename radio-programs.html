@@ -7,7 +7,7 @@
 <meta name="description" content="Aao Baat Karain — PODA's community radio series broadcasting since 2016, covering women's rights, local governance, child protection and rural livelihoods." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -31,10 +31,10 @@
 <script src="js/global.js" data-poda="header"></script>
 
 <!-- ======================= PAGE HEADER — Payload Block: PageHeader ======================= -->
-<section class="page-header">
+<section class="page-header has-photo" style="background-image:linear-gradient(115deg, rgba(35,22,52,.93) 0%, rgba(67,44,99,.86) 48%, rgba(84,55,124,.68) 100%), url('images/site/prog-ai.jpg');">
   <div class="container">
     <div class="breadcrumb reveal"><a href="index.html">Home</a> / <span>Radio Programs</span></div>
-    <h1 class="reveal">Radio Programs</h1>
+    <h1 class="reveal">Radio <em class="accent">Programs</em></h1>
     <p class="lead reveal" style="margin-bottom:24px;">Promoting Democracy, Civic Leadership, Legal Identity, and Equal Rights — PODA's education radio program series, on air since 2016 and funded by NED, using conversation to bring women's rights, local governance and rural livelihoods into households across Pakistan.</p>
     <div class="tag-row reveal"><span>Since 2016 · FM101</span><span>40+ Episodes</span><span>Funded by NED</span></div>
   </div>
@@ -63,7 +63,7 @@
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Listen</span>
-      <h2>Real Episodes, Embedded</h2>
+      <h2>Real Episodes, <em class="accent">Embedded</em></h2>
       <p class="lead">Every card below is a real, individually-verified SoundCloud upload — press play right here, no need to leave the page.</p>
     </div>
 
@@ -194,6 +194,13 @@
     <p class="archive-note">11 real episodes embedded here, out of 40+ recorded since 2016 — more are added as their SoundCloud links are verified.</p>
   </div>
 </section>
+
+<style>
+/* Light typographic polish only — .episode-embed/.embed-grid structure and the
+   real SoundCloud iframes are untouched, they're functional players, not decorative cards. */
+.episode-embed .embed-head h4{font-family:var(--font-display);font-size:15.5px;}
+.episode-embed .embed-head .ep-num{color:var(--accent-secondary);}
+</style>
 
 <!-- ======================= CTA BAR — Payload Block: CtaBar ======================= -->
 <section class="cta-bar">

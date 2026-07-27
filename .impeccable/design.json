@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-26T00:00:00.000Z",
+  "title": "Design System: PODA — Potohar Organization for Development Advocacy",
+  "extensions": {
+    "colorMeta": {
+      "primary-purple": { "role": "primary", "displayName": "Primary Purple", "canonical": "#55357E", "tonalRamp": ["#191125", "#432C63", "#55357E", "#765F96", "#9887B0", "#BBAFCB", "#F4F5FD", "#FAFAFE"] },
+      "primary-purple-deep": { "role": "primary", "displayName": "Deep Purple (20% shade)", "canonical": "#432C63" },
+      "primary-purple-tint": { "role": "primary", "displayName": "Purple Tint (40% tint)", "canonical": "#9887B0" },
+      "primary-purple-soft": { "role": "primary", "displayName": "Soft Purple (20% tint)", "canonical": "#765F96" },
+      "lavender-mist": { "role": "secondary", "displayName": "Lavender Mist (95% tint)", "canonical": "#FAFAFE" },
+      "lavender-pale": { "role": "secondary", "displayName": "Lavender Pale (90% tint)", "canonical": "#F4F5FD" },
+      "lavender-border": { "role": "secondary", "displayName": "Lavender Border", "canonical": "#E9EBFA" },
+      "signature-accent": { "role": "tertiary", "displayName": "Signature Magenta Accent", "canonical": "#B422D8", "tonalRamp": ["#3A0A47", "#5C1370", "#7E1B99", "#9E22BE", "#B422D8", "#C960E3", "#DA8CEB", "#F0D2F7"] },
+      "footer-ink": { "role": "neutral", "displayName": "Footer Ink (70% shade)", "canonical": "#191125" },
+      "footer-text": { "role": "neutral", "displayName": "Footer Text (60% tint)", "canonical": "#BBAFCB" },
+      "photo-overlay-scrim": { "role": "neutral", "displayName": "Photo Overlay Scrim", "canonical": "#231634" },
+      "text-body": { "role": "neutral", "displayName": "Body Text (untinted)", "canonical": "#5c5866" },
+      "text-muted": { "role": "neutral", "displayName": "Muted Text (untinted)", "canonical": "#847f8e" },
+      "card-border": { "role": "neutral", "displayName": "Ledger Card Border", "canonical": "#E4E1EC" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display (Lora)", "purpose": "Page-header h1 and top-of-page banner headlines." },
+      "headline": { "displayName": "Headline (Lora)", "purpose": "Section h2s within content sections." },
+      "subtitle": { "displayName": "Subtitle (Lora)", "purpose": "Nested sub-section heading inside a longer hub section, one step down from Headline." },
+      "body": { "displayName": "Body (Roboto)", "purpose": "Universal default paragraph and UI copy, 14px." },
+      "bodyLong": { "displayName": "Body Long (Roboto)", "purpose": "Long-form article copy on Activity/Post detail pages only." },
+      "editorial": { "displayName": "Editorial (Roboto Slab)", "purpose": "Short editorial asides: mission/vision copy, bios, pull-quotes, takeaway callouts." },
+      "label": { "displayName": "Label (Roboto)", "purpose": "Eyebrows, stat labels, badge/tag text, uppercase tracked." }
+    },
+    "shadows": [
+      { "name": "card", "value": "0 10px 30px rgba(84,55,124,0.10)", "purpose": "Soft purple-tinted lift on photographic media only (gallery cards, portraits) — never on flat ledger cards." },
+      { "name": "lift", "value": "0 22px 44px rgba(84,55,124,0.18)", "purpose": "Deeper elevation for floating UI: nav submenu dropdown, floating badge cards." },
+      { "name": "button-glow", "value": "0 10px 24px rgba(84,55,124,0.35)", "purpose": "Colored shadow signaling primary-button clickability, distinct from card elevation." }
+    ],
+    "motion": [
+      { "name": "reveal", "value": "opacity 0.7s ease, transform 0.7s ease (translateY 26px to 0)", "purpose": "Shared scroll-in fade-and-rise, toggled by adding .in via IntersectionObserver." },
+      { "name": "hover-fast", "value": "all 0.18s-0.22s ease", "purpose": "Border/background hover transitions on cards, nav, filters." },
+      { "name": "image-zoom", "value": "transform 0.3s-0.4s ease, scale(1.05-1.08)", "purpose": "Thumbnail/photo zoom on card hover." }
+    ],
+    "breakpoints": [
+      { "name": "tablet", "value": "1080px" },
+      { "name": "mobile", "value": "760px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Pill-shaped primary call to action.",
+      "html": "<button class=\"ds-btn-primary\">Donate</button>",
+      "css": ".ds-btn-primary { display:inline-flex; align-items:center; gap:9px; padding:11px 22px; border-radius:50px; font-family:'Roboto',sans-serif; font-weight:600; font-size:14.5px; border:1.5px solid transparent; background:var(--purple-brand,#55357E); color:#fff; box-shadow:0 10px 24px rgba(84,55,124,.35); cursor:pointer; transition:all .2s ease; } .ds-btn-primary:hover { background:var(--purple-800,#432C63); transform:translateY(-2px); } .ds-btn-primary:focus-visible { outline:2px solid var(--purple-brand,#55357E); outline-offset:2px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Pill-shaped outline button for secondary actions.",
+      "html": "<button class=\"ds-btn-ghost\">View All</button>",
+      "css": ".ds-btn-ghost { display:inline-flex; align-items:center; gap:9px; padding:11px 22px; border-radius:50px; font-family:'Roboto',sans-serif; font-weight:600; font-size:14.5px; border:1.5px solid var(--purple-brand,#55357E); background:transparent; color:var(--purple-brand,#55357E); cursor:pointer; transition:all .2s ease; } .ds-btn-ghost:hover { background:var(--purple-brand,#55357E); color:#fff; } .ds-btn-ghost:focus-visible { outline:2px solid var(--purple-brand,#55357E); outline-offset:2px; }"
+    },
+    {
+      "name": "Eyebrow Label",
+      "kind": "custom",
+      "refersTo": "eyebrow-label",
+      "description": "Small tracked uppercase label with a leading dot, sits above every section heading.",
+      "html": "<span class=\"ds-eyebrow\">Media Centre</span>",
+      "css": ".ds-eyebrow { display:inline-flex; align-items:center; gap:9px; font-family:'Roboto',sans-serif; font-size:12.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--purple-brand,#55357E); } .ds-eyebrow::before { content:''; width:7px; height:7px; border-radius:50%; background:currentColor; flex-shrink:0; }"
+    },
+    {
+      "name": "Flat Ledger Card",
+      "kind": "card",
+      "refersTo": "card-flat",
+      "description": "The signature flat, hairline-bordered content card — zero radius, no shadow, border brightens on hover. Used for press items, activities, team, projects, courses.",
+      "html": "<article class=\"ds-ledger-card\"><h4>Landmark Law to Empower Millions of Girls</h4><p>A delegation of prominent women leaders attended a session of the Punjab Assembly to mark the passage of landmark legislation.</p></article>",
+      "css": ".ds-ledger-card { background:#fff; border:1px solid var(--card-border,#E4E1EC); padding:24px 22px; transition:border-color .22s ease; } .ds-ledger-card:hover { border-color:var(--purple-brand,#55357E); } .ds-ledger-card h4 { font-family:Lora,Georgia,serif; font-size:17px; line-height:1.35; color:var(--purple-800,#55357E); margin:0 0 10px; } .ds-ledger-card p { font-family:'Roboto',sans-serif; font-size:14px; color:#847f8e; margin:0; line-height:1.6; }"
+    },
+    {
+      "name": "Status Badge",
+      "kind": "chip",
+      "refersTo": "status-badge",
+      "description": "Magenta punctuation badge for status/category labels (e.g. project status, job openings).",
+      "html": "<span class=\"ds-status-badge\"><span class=\"dot\"></span>Ongoing</span>",
+      "css": ".ds-status-badge { display:inline-flex; align-items:center; gap:7px; font-family:'Roboto',sans-serif; font-size:11px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:#B422D8; background:rgba(180,34,216,.12); padding:5px 13px; border-radius:20px; } .ds-status-badge .dot { width:7px; height:7px; border-radius:50%; background:#B422D8; flex-shrink:0; }"
+    },
+    {
+      "name": "Filter Pill",
+      "kind": "chip",
+      "refersTo": "category-filter-button",
+      "description": "Toggleable filter/tab pill; solid purple fill when active.",
+      "html": "<button class=\"ds-filter-pill is-active\">All Years</button>",
+      "css": ".ds-filter-pill { padding:9px 18px; border-radius:20px; border:1.5px solid var(--lavender-border,#E9EBFA); background:#fff; font-family:'Roboto',sans-serif; font-size:13px; font-weight:600; color:#5c5866; cursor:pointer; transition:all .18s ease; } .ds-filter-pill:hover { border-color:var(--purple-brand,#55357E); color:var(--purple-brand,#55357E); } .ds-filter-pill.is-active { background:var(--purple-brand,#55357E); border-color:var(--purple-brand,#55357E); color:#fff; }"
+    },
+    {
+      "name": "Search Input",
+      "kind": "input",
+      "refersTo": "search-input",
+      "description": "Pill-shaped search field with a leading icon, used in list toolbars.",
+      "html": "<div class=\"ds-search\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><line x1=\"21\" y1=\"21\" x2=\"16.2\" y2=\"16.2\"/></svg><input type=\"search\" placeholder=\"Search press releases…\"></div>",
+      "css": ".ds-search { position:relative; min-width:220px; } .ds-search svg { position:absolute; left:14px; top:50%; transform:translateY(-50%); width:16px; height:16px; color:#847f8e; pointer-events:none; } .ds-search input { width:100%; padding:11px 16px 11px 40px; border-radius:24px; border:1.5px solid var(--lavender-border,#E9EBFA); font-family:'Roboto',sans-serif; font-size:13.5px; color:#5c5866; background:#fff; } .ds-search input:focus { outline:none; border-color:var(--purple-brand,#55357E); }"
+    },
+    {
+      "name": "Purple Gradient Banner",
+      "kind": "custom",
+      "refersTo": "page-header",
+      "description": "The site's one recognizable signature banner: purple gradient with two soft decorative radial blobs, reused verbatim across page headers, CTA bands, and dark sections.",
+      "html": "<div class=\"ds-banner\"><span class=\"ds-eyebrow\" style=\"color:#B422D8\">Media Centre</span><h2>News, Media &amp; Community Radio</h2></div>",
+      "css": ".ds-banner { background:linear-gradient(125deg,#55357E 0%,#55357E 65%,#765F96 100%); padding:56px 32px; color:#fff; position:relative; overflow:hidden; } .ds-banner::before { content:''; position:absolute; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle,rgba(255,255,255,.08),transparent 70%); top:-180px; right:-100px; } .ds-banner::after { content:''; position:absolute; width:300px; height:300px; border-radius:50%; background:radial-gradient(circle,rgba(180,34,216,.18),transparent 70%); bottom:-140px; left:-80px; } .ds-banner h2 { position:relative; z-index:1; font-family:Lora,Georgia,serif; font-weight:600; font-size:clamp(24px,4.4vw,38px); line-height:1.15; color:#fff; margin:8px 0 0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Field Report",
+    "overview": "PODA's site reads like a rigorous case file assembled for a funder's due-diligence review, not a marketing brochure. Its dominant grammar is the flat, hairline-bordered ledger card — no radius, no shadow, one shared border color — used for everything from program summaries to press releases to team bios, the same way a grant report tables its evidence. Numbers, dates, and status badges are always set in small tracked uppercase, the visual vocabulary of a document that expects to be audited.\n\nAgainst that restraint, the site allows itself exactly one register of warmth: a recurring purple gradient band (deployed identically on every page-header, CTA, and section banner) and a single magenta accent thread (#B422D8) that marks anything the reader should feel, not just verify — italicized emphasis words, eyebrow labels, read-more links, live badge dots. The two purples read as institutional trust; the magenta is the organization's advocacy voice breaking through the ledger. Interactive elements are the one place the flat system fully relaxes into pills and circles, so the reader always knows what can be clicked versus what is being reported.",
+    "keyCharacteristics": [
+      "Flat, hairline-bordered \"ledger\" cards with zero radius carry almost all repeating content.",
+      "One recurring purple gradient band is the site's only \"banner\" register, reused verbatim across pages.",
+      "A single magenta accent (#B422D8) is the sole punctuation color.",
+      "Interactive chrome is fully pill/circle-shaped, the opposite geometry of the flat content cards.",
+      "Motion is uniformly calm: ease timing, 0.18-0.4s durations, a shared reveal fade-and-rise-in on scroll."
+    ],
+    "rules": [
+      { "name": "The Punctuation-Only Rule", "body": "The magenta signature accent may color text, icons, dots, and thin accent bars — never a background fill larger than a small pill/badge.", "section": "colors" },
+      { "name": "The Confined Exceptions Rule", "body": "A teal utility bar and three Skills Center payment-flow details are documented, isolated exceptions to the three-hue system and are not a precedent for reuse elsewhere.", "section": "colors" },
+      { "name": "The One Size Rule", "body": "Body copy is 14px everywhere except long-form article bodies (16px/1.8, Post Detail only).", "section": "typography" },
+      { "name": "The Flat Ledger Rule", "body": "Content cards are flat at rest: a 1px card-border hairline, no shadow, no radius. Shadows belong to buttons, floating UI, and photographic media — never to a data card.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep every repeating content card flat: zero radius, single hairline border, no shadow at rest.",
+      "Do reuse the exact purple gradient banner treatment for any new page-level header or CTA band.",
+      "Do treat the magenta signature accent as punctuation only.",
+      "Do make interactive chrome fully round or pill-shaped, the opposite geometry of the flat cards.",
+      "Do reuse the sticky jump-nav + scrollspy pattern for any hub page with 4 or more anchored sections."
+    ],
+    "donts": [
+      "Don't add a drop shadow to a content/list card as a default polish pass.",
+      "Don't introduce a fourth brand hue.",
+      "Don't step the body type size up or down for ordinary copy.",
+      "Don't round the corners of a ledger-style content card, even slightly."
+    ]
+  }
+}

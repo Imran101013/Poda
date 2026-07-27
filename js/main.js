@@ -178,6 +178,18 @@ document.addEventListener('click', (e) => {
   toggle.querySelector('span').textContent = expanded ? 'Show less' : 'Read more';
 });
 
+// Current-project cards (compact 3-up grid) — the full thematic-area copy and
+// key-interventions checklist stay collapsed behind a details toggle so the
+// grid cards read at a glance instead of matching the old full-width feature layout.
+document.addEventListener('click', (e) => {
+  const toggle = e.target.closest('.cpc-toggle');
+  if (!toggle) return;
+  const card = toggle.closest('.current-project-card');
+  if (!card) return;
+  const expanded = card.classList.toggle('is-expanded');
+  toggle.querySelector('span').textContent = expanded ? 'Hide key interventions' : 'View key interventions';
+});
+
 // Section hub pages (Our Impact / Projects) — tab bar / mobile dropdown
 // jump-nav + scrollspy. Sections are real, always-rendered content; the
 // tabs/select just scroll to them and reflect which one is currently in
@@ -257,6 +269,19 @@ if (modalVideoCards.length) {
   modal.querySelector('.video-modal-close').addEventListener('click', closeVideoModal);
   modal.addEventListener('click', (e) => { if (e.target === modal) closeVideoModal(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeVideoModal(); });
+}
+
+// Floating donate pill — the footer carries its own "Make A Donation" CTA in
+// its last column, in the same bottom-right corner the fixed pill occupies.
+// Hide the pill once the footer scrolls into view so it never sits on top of
+// (and hides) the footer's real button, links or social icons.
+const floatingDonate = document.querySelector('.floating-donate');
+const siteFooter = document.querySelector('footer.site-footer');
+if (floatingDonate && siteFooter) {
+  const footerIo = new IntersectionObserver((entries) => {
+    entries.forEach(entry => floatingDonate.classList.toggle('is-hidden', entry.isIntersecting));
+  });
+  footerIo.observe(siteFooter);
 }
 
 // Animated stat counters (Media Statistics section, news-and-media.html) —

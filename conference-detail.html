@@ -7,7 +7,7 @@
 <meta name="description" content="Annual conference details, booklets and resolutions from PODA Pakistan." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -34,7 +34,7 @@
 <section class="page-header post-header" id="conf-page-header">
   <div class="container">
     <div class="breadcrumb reveal"><a href="index.html">Home</a> / <a href="annual-conference.html">Annual Conference</a> / <span id="conf-breadcrumb">Conference Detail</span></div>
-    <span class="eyebrow" id="conf-eyebrow" style="color:#B422D8;"></span>
+    <span class="badge-pill"><span class="dot"></span><span id="conf-eyebrow"></span></span>
     <h1 class="reveal" id="conf-title"></h1>
     <div class="post-meta reveal" id="conf-meta"></div>
   </div>
@@ -151,7 +151,9 @@
   // Populate header
   document.getElementById('conf-breadcrumb').textContent = conf.breadcrumb;
   document.getElementById('conf-eyebrow').textContent = conf.eyebrow;
-  document.getElementById('conf-title').textContent = conf.title;
+  var confTitleWords = conf.title.split(' ');
+  var confTitleLastWord = confTitleWords.pop();
+  document.getElementById('conf-title').innerHTML = (confTitleWords.length ? confTitleWords.join(' ') + ' ' : '') + '<em class="accent">' + confTitleLastWord + '</em>';
   document.getElementById('conf-meta').innerHTML = conf.meta;
   document.title = conf.title + ' — PODA Pakistan';
 

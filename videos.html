@@ -7,7 +7,7 @@
 <meta name="description" content="Recorded Wednesday webinars and field coverage from PODA Pakistan's programs." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -29,11 +29,11 @@
 <script src="js/global.js" data-poda="header"></script>
 
 <!-- ======================= PAGE HEADER — Payload Block: PageHeader ======================= -->
-<section class="page-header">
+<section class="page-header has-photo" style="background-image:linear-gradient(115deg, rgba(35,22,52,.93) 0%, rgba(67,44,99,.86) 48%, rgba(84,55,124,.68) 100%), url('images/site/prog-girls.jpg');">
   <div class="container">
     <div class="breadcrumb reveal"><a href="index.html">Home</a> / <span>Videos</span></div>
     <span class="eyebrow" style="color:#B422D8;">Videos</span>
-    <h1 class="reveal">Recorded Webinars &amp; Field Coverage</h1>
+    <h1 class="reveal">Recorded Webinars &amp; <em class="accent">Field Coverage</em></h1>
     <p class="lead reveal" style="margin-bottom:24px;">Every Wednesday webinar and major field visit, on camera — from policy conversations with PARWL-Pakistan to PODA's teams at work in the community.</p>
     <div class="tag-row reveal"><span>21-Page Archive</span><span>300+ Recordings</span></div>
   </div>
@@ -97,6 +97,20 @@
     </div>
   </div>
 </section>
+
+<style>
+/* Lighter, less "boxed" video tile — larger thumbnail, no border/shadow chrome.
+   .video-card/.thumb left alone structurally: this page's cards link straight out to
+   YouTube (real hrefs), no JS hook here — #videoLibraryGrid's modal only exists on
+   news-and-media.html and doesn't touch this page. */
+.video-grid{gap:30px;}
+.video-card{border:0;background:none;}
+.video-card:hover{border-color:transparent;}
+.video-card .thumb{height:210px;}
+.video-card .body{padding:16px 0 0;}
+.video-card h4{font-family:var(--font-display);font-size:16px;line-height:1.4;}
+.video-card:hover h4{color:var(--purple-brand);}
+</style>
 
 <!-- ======================= CTA BAR — Payload Block: CtaBar ======================= -->
 <section class="cta-bar">

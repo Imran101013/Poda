@@ -17,6 +17,7 @@
 
   --font-primary:'Roboto', sans-serif;
   --font-secondary:'Roboto Slab', serif;
+  --font-display:'Lora', Georgia, 'Times New Roman', serif;
 
   --radius-sm:8px;
   --radius:16px;
@@ -24,6 +25,10 @@
   --container:1200px;
   --shadow-card:0 10px 30px rgba(84,55,124,0.10);
   --shadow-lift:0 22px 44px rgba(84,55,124,0.18);
+
+  /* Flat card system — no radius, no colored shadow (WISE / PAGE Foundation inspired) */
+  --card-border:#E4E1EC;
+  --card-border-hover:var(--purple-brand);
 }
 
 *{box-sizing:border-box;}
@@ -48,11 +53,29 @@ section{position:relative;}
   color:var(--purple-brand);margin-bottom:5px;
 }
 .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;flex-shrink:0;}
-h1,h2,h3,h4{font-family:var(--font-primary);color:var(--purple-800);margin:0;}
-h1{line-height:1.1;}
-h2{line-height:1.1;}
+
+/* Bordered pill badge — hero credential line ("Registered NGO · Since 2003 · Islamabad") */
+.badge-pill{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:12.5px;font-weight:600;letter-spacing:.02em;color:rgba(255,255,255,.92);
+  border:1px solid rgba(255,255,255,.35);border-radius:50px;padding:8px 18px;margin-bottom:22px;
+  background:rgba(255,255,255,.06);backdrop-filter:blur(4px);
+}
+.badge-pill .dot{width:5px;height:5px;border-radius:50%;background:var(--accent-secondary);flex-shrink:0;}
+
+h1,h2,h3,h4{font-family:var(--font-display);color:var(--purple-800);margin:0;font-weight:600;}
+h1{line-height:1.12;}
+h2{line-height:1.15;}
 p{font-size:14px;}
 .lead{color:var(--text-muted);font-size:14px;}
+
+/* Italic serif accent word inside a heading — the "It Rebuilds Entire Worlds" treatment */
+em.accent{font-style:italic;color:var(--accent-secondary);font-weight:600;}
+
+/* Inline meta row under hero copy — "Registered NGO  ·  30+ Districts  ·  20+ Years" */
+.meta-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-top:26px;}
+.meta-row span{font-size:13px;font-weight:600;color:rgba(255,255,255,.8);}
+.meta-row .sep{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.4);flex-shrink:0;}
 
 .btn{
   display:inline-flex;align-items:center;gap:9px;
@@ -171,8 +194,13 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
    fields: eyebrow(text), heading(text), body(textarea), backgroundImage(upload) */
 .page-header{
   background:linear-gradient(125deg, var(--purple-800) 0%, var(--purple-brand) 65%, var(--purple-soft) 100%);
-  padding:50px 0 50px;color:var(--white);position:relative;overflow:hidden;
+  padding:64px 0 58px;color:var(--white);position:relative;overflow:hidden;
+  border-bottom:3px solid var(--accent-secondary);
 }
+/* .has-photo: pass a real photo via inline style, e.g.
+   style="background-image:linear-gradient(115deg, rgba(35,22,52,.93) 0%, rgba(67,44,99,.86) 48%, rgba(84,55,124,.68) 100%), url('images/site/xxx.jpg');background-size:cover;background-position:center;"
+   — the gradient stops read as an editorial photo banner instead of the flat-color fallback below. */
+.page-header.has-photo{background-size:cover;background-position:center;}
 .page-header::before{
   content:"";position:absolute;width:420px;height:420px;border-radius:50%;
   background:radial-gradient(circle, rgba(255,255,255,.08), transparent 70%);
@@ -186,28 +214,33 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .page-header .container{position:relative;z-index:2;}
 .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.75);margin-bottom:10px;}
 .breadcrumb a:hover{color:var(--white);}
-.page-header h1{color:var(--white);font-size:clamp(20px,4.2vw,30px);font-weight:800;line-height:1.1;max-width:720px;margin-bottom:16px;}
-.page-header .lead{color:rgba(255,255,255,.85);max-width:620px;font-size:14px;}
+.page-header h1{color:var(--white);font-size:clamp(24px,4.4vw,38px);font-weight:600;line-height:1.15;max-width:720px;margin-bottom:16px;}
+.page-header .lead{color:rgba(255,255,255,.88);max-width:620px;font-size:15px;}
 
 /* ============ IMPACT STRIP — Payload Block: "ImpactHighlights" ============
    fields: items[] { icon(select), value(text), label(text) }
    All figures are real & verifiable (program count, conference edition, coverage). */
-.impact-strip{margin-top:-45px;position:relative;z-index:10;}
+.impact-strip{margin-top:-52px;position:relative;z-index:10;}
 .impact-card{
-  background:var(--white);border-radius:var(--radius-lg);box-shadow:var(--shadow-lift);
+  background:var(--white);border:1px solid var(--card-border);box-shadow:0 16px 40px rgba(20,10,35,.10);
   display:grid;grid-template-columns:repeat(4,1fr);
 }
 .impact-item{
-  display:flex;align-items:center;gap:14px;padding:15px 15px;border-right:1px solid #F4F5FD;
+  text-align:center;padding:28px 15px;border-right:1px solid var(--card-border);
 }
 .impact-item:last-child{border-right:0;}
 .impact-item .ic{
-  width:52px;height:52px;border-radius:14px;background:var(--lavender-200);color:var(--purple-brand);
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  width:34px;height:34px;border-radius:50%;margin:0 auto 12px;
+  background:var(--lavender-100);color:var(--purple-brand);
+  display:flex;align-items:center;justify-content:center;
 }
-.impact-item .num{font-size:20px;font-weight:600;color:var(--purple-800);line-height:1.1;}
+.impact-item .ic svg{width:16px;height:16px;}
+.impact-item .num{
+  font-family:var(--font-display);font-size:clamp(22px,2.6vw,30px);font-weight:600;
+  color:var(--purple-brand);line-height:1.1;margin-bottom:6px;
+}
 .num{font-size:20px;font-weight:600;}
-.impact-item .lbl{font-size:12.8px;color:var(--text-muted);}
+.impact-item .lbl{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--text-muted);}
 
 /* ============ MISSION & VISION — Payload Block: "MissionVision" ============
    fields: image(upload), missionText(richText), visionText(richText) */
@@ -239,14 +272,15 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 
 /* ============ WHAT WE DO / ICON FEATURE GRID — Payload Block: "IconFeatureGrid" ============
    Reused on About Us as "Our Approach" — fields: heading, eyebrow, items[] { icon, title, link } */
-.what-we-do{background:var(--lavender-100);}
-.wwd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:20px;}
+.what-we-do{background:var(--white);}
+.wwd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:20px;border-top:1px solid var(--card-border);border-left:1px solid var(--card-border);}
 .wwd-grid.cols-3{grid-template-columns:repeat(3,1fr);}
 .wwd-card{
-  background:var(--white);padding:28px 22px;text-align:center;border-radius:var(--radius);
-  box-shadow:0 4px 20px rgba(85,53,126,.08);transition:transform .22s ease, box-shadow .22s ease;
+  background:var(--white);padding:28px 22px;text-align:center;
+  border-right:1px solid var(--card-border);border-bottom:1px solid var(--card-border);
+  transition:background .18s ease;
 }
-.wwd-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lift);}
+.wwd-card:hover{background:var(--lavender-100);}
 .wwd-card .ic{
   width:56px;height:56px;border-radius:16px;margin:0 auto 16px;
   background:linear-gradient(135deg, var(--lavender-200), var(--lavender-300));
@@ -263,15 +297,15 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 /* ============ PROGRAMS — Payload Block: "ProgramGrid" ============ */
 .programs{padding:30px 0;}
 .section-head{max-width:660px;margin:0 auto 48px;text-align:center;}
-.section-head h2{font-size:clamp(20px,3.2vw,24px);margin-bottom:5px;}
+.section-head h2{font-size:clamp(24px,3.2vw,32px);margin-bottom:10px;}
 .program-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
 .program-grid.cols-2{grid-template-columns:repeat(2,1fr);max-width:800px;margin:0 auto;}
 .program-card{
-  overflow:hidden;border-radius:var(--radius);box-shadow:0 4px 20px rgba(85,53,126,.08);
+  overflow:hidden;border:1px solid var(--card-border);
   display:flex;flex-direction:column;background:var(--white);
-  transition:transform .25s ease, box-shadow .25s ease;
+  transition:border-color .22s ease;
 }
-.program-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lift);}
+.program-card:hover{border-color:var(--card-border-hover);}
 .program-card .thumb{position:relative;height:200px;overflow:hidden;background:var(--lavender-200);}
 .program-card .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease;}
 .program-card:hover .thumb img{transform:scale(1.06);}
@@ -289,6 +323,33 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .program-card:hover .read-more svg{transform:translateX(3px);}
 .programs-more{text-align:center;margin-top:44px;}
 
+/* ============ PROGRAM ICON GRID — "Our Work" style (page.org.pk inspired) ============
+   Flat icon-card row for the 7 core programs: shared hairline borders (no per-card
+   box/shadow/radius), circular solid-color icon badge, bold title, short description. */
+.program-icon-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--card-border);border-left:1px solid var(--card-border);
+  margin-top:8px;
+}
+.program-icon-card{
+  display:block;padding:32px 26px;background:var(--white);
+  border-right:1px solid var(--card-border);border-bottom:1px solid var(--card-border);
+  transition:background .18s ease;
+}
+.program-icon-card:hover{background:var(--lavender-100);}
+.program-icon-card .ic{
+  width:52px;height:52px;border-radius:50%;flex-shrink:0;
+  background:var(--purple-brand);color:var(--white);
+  display:flex;align-items:center;justify-content:center;margin-bottom:22px;
+}
+.program-icon-card .ic svg{width:24px;height:24px;}
+.program-icon-card h3{font-size:16.5px;line-height:1.35;margin-bottom:10px;}
+.program-icon-card h3 a{color:inherit;}
+.program-icon-card h3 a:hover{color:var(--purple-brand);}
+.program-icon-card p{font-size:13.5px;color:var(--text-muted);margin:0 0 16px;line-height:1.6;}
+@media (max-width:1080px){.program-icon-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.program-icon-grid{grid-template-columns:1fr;}}
+
 /* ============ UPDATE / POST DETAIL — Payload Block: "PostDetail" (the /activities/[slug] route) ============
    fields: title, featuredImage(upload), program(relationship → Programs), publishedDate, content(richText)
    PageHeader-style banner + two-column article layout; replaces linking out to the legacy WordPress post. */
@@ -300,7 +361,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .post-detail{padding:30px 0;}
 .post-layout{display:grid;grid-template-columns:1fr 320px;gap:56px;align-items:start;}
 .post-layout.no-aside{grid-template-columns:1fr;max-width:800px;margin:0 auto;}
-.post-media{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);margin-bottom:36px;}
+.post-media{overflow:hidden;border:1px solid var(--card-border);margin-bottom:36px;}
 .post-media img{width:100%;height:420px;object-fit:cover;}
 .post-body{font-size:16px;line-height:1.8;color:#463a4d;}
 .post-body p{margin:0 0 22px;}
@@ -314,7 +375,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .share-row svg{width:16px;height:16px;}
 
 .post-aside{position:sticky;top:100px;display:flex;flex-direction:column;gap:22px;}
-.aside-card{background:var(--lavender-100);border-radius:var(--radius);padding:26px 24px;}
+.aside-card{background:var(--white);border:1px solid var(--card-border);padding:26px 24px;}
 .aside-card .eyebrow{margin-bottom:8px;}
 .aside-card h4{font-size:17px;line-height:1.35;margin-bottom:10px;}
 .aside-card p{font-size:14px;color:var(--text-muted);margin:0 0 16px;}
@@ -328,13 +389,13 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
    fields: items[] { icon(select), title, body, stat(text), link } — one tile per media collection
    (GalleryAlbums / Videos / PressItems / Publications), kept as distinct collections so each can carry
    its own fields (album/day, video embed, press date, publication file) instead of one generic blob. */
-.media-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+.media-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--card-border);border-left:1px solid var(--card-border);}
 .media-card{
-  background:var(--white);border-radius:var(--radius);padding:30px 24px;text-align:center;
-  box-shadow:0 4px 20px rgba(85,53,126,.08);
-  transition:transform .22s ease, box-shadow .22s ease;
+  background:var(--white);padding:30px 24px;text-align:center;
+  border-right:1px solid var(--card-border);border-bottom:1px solid var(--card-border);
+  transition:background .18s ease;
 }
-.media-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lift);}
+.media-card:hover{background:var(--lavender-100);}
 .media-card .ic{
   width:60px;height:60px;border-radius:16px;margin:0 auto 18px;
   background:linear-gradient(135deg, var(--lavender-200), var(--lavender-300));
@@ -374,8 +435,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
    not just a "Listen" link out) with a small thumbnail and title alongside it. */
 .embed-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
 .episode-embed{
-  background:var(--white);border-radius:var(--radius);
-  box-shadow:0 4px 20px rgba(85,53,126,.08);overflow:hidden;
+  background:var(--white);border:1px solid var(--card-border);overflow:hidden;
 }
 .episode-embed .embed-head{display:flex;gap:14px;align-items:center;padding:16px 18px;}
 .episode-embed .embed-head img{width:52px;height:52px;border-radius:10px;object-fit:cover;flex-shrink:0;background:var(--lavender-200);}
@@ -383,6 +443,20 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .episode-embed .embed-head h4{font-size:14.5px;line-height:1.35;margin:0 0 3px;}
 .episode-embed .embed-head p{font-size:12.5px;color:var(--text-muted);margin:0;}
 .episode-embed iframe{width:100%;height:166px;border:0;display:block;}
+/* .embed-fallback: some verified SoundCloud share links (private tracks
+   shared via a secret token) resolve fine as a direct visit but the
+   embeddable widget itself refuses to play them, surfacing "You have not
+   provided a valid SoundCloud URL" — a broken-looking error box in place of
+   real audio. Link straight out to the real, verified SoundCloud page
+   instead, matching the "real link over a broken embed" rule this same page
+   already uses for the Video Library preview cards. */
+.embed-fallback{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  height:166px;background:var(--lavender-100);color:var(--purple-brand);
+  font-size:14px;font-weight:700;transition:background .18s ease;
+}
+.embed-fallback:hover{background:var(--lavender-200);}
+.embed-fallback svg{width:20px;height:20px;}
 .archive-note{text-align:center;color:var(--text-muted);font-size:14px;margin-top:40px;}
 
 /* ============ PRESS — Payload Block: "PressList" ============
@@ -430,11 +504,11 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
    an honest, functional pattern common on smaller NGO sites without self-serve downloads. */
 .doc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
 .doc-card{
-  background:var(--white);overflow:hidden;border-radius:var(--radius);
-  box-shadow:0 4px 20px rgba(85,53,126,.08);transition:transform .22s ease, box-shadow .22s ease;
+  background:var(--white);overflow:hidden;border:1px solid var(--card-border);
+  transition:border-color .22s ease;
   display:flex;flex-direction:column;
 }
-.doc-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lift);}
+.doc-card:hover{border-color:var(--card-border-hover);}
 .doc-card .accent{height:5px;background:linear-gradient(90deg, var(--purple-brand), var(--purple-soft));}
 .doc-card .body{padding:22px 22px 20px;flex:1;display:flex;flex-direction:column;}
 .doc-card .ic{width:44px;height:44px;border-radius:12px;background:var(--lavender-200);color:var(--purple-brand);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
@@ -474,10 +548,10 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .skills-cat-item.active svg{transform:rotate(180deg);}
 .course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;flex:1;}
 .course-card{
-  background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 20px rgba(85,53,126,.08);
-  display:flex;flex-direction:column;transition:transform .22s ease, box-shadow .22s ease;
+  background:var(--white);overflow:hidden;border:1px solid var(--card-border);
+  display:flex;flex-direction:column;transition:border-color .22s ease;
 }
-.course-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lift);}
+.course-card:hover{border-color:var(--card-border-hover);}
 .course-card.is-hidden{display:none;}
 .course-thumb{
   position:relative;height:150px;overflow:hidden;
@@ -684,7 +758,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
   transition:opacity .2s ease;padding:24px;
 }
 .video-modal.is-open{opacity:1;visibility:visible;}
-.video-modal-inner{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;max-width:640px;width:100%;}
+.video-modal-inner{background:var(--white);overflow:hidden;max-width:640px;width:100%;}
 .video-modal-inner img{width:100%;height:340px;object-fit:cover;display:block;}
 .video-modal-body{padding:26px 28px;}
 .video-modal-body .tag{font-size:11px;font-weight:700;color:var(--purple-brand);text-transform:uppercase;letter-spacing:.05em;background:var(--lavender-100);padding:4px 12px;border-radius:20px;display:inline-block;margin-bottom:12px;}
@@ -724,10 +798,15 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 /* ============ VIDEOS — Payload Block: "VideoGrid" ============
    fields: title, thumbnail(upload), embedUrl (pending full DAM migration) */
 .video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-.video-card{overflow:hidden;border-radius:var(--radius);box-shadow:0 4px 20px rgba(85,53,126,.08);background:var(--white);transition:transform .22s ease, box-shadow .22s ease;}
-.video-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lift);}
+.video-card{overflow:hidden;border:1px solid var(--card-border);background:var(--white);transition:border-color .22s ease;}
+.video-card:hover{border-color:var(--card-border-hover);}
 .video-card .thumb{position:relative;height:170px;background:var(--lavender-200);overflow:hidden;}
 .video-card .thumb img{width:100%;height:100%;object-fit:cover;}
+/* .thumb--poster: the source image is a designed graphic (event flyer, legal
+   infographic) rather than a photo — its meaning lives in edge-to-edge text,
+   so cropping it with object-fit:cover destroys the content. Show the whole
+   graphic, letterboxed, instead of a cover-cropped fragment of it. */
+.video-card .thumb--poster img{object-fit:contain;background:var(--lavender-200);padding:8px;}
 .video-card .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(34,22,50,.28);}
 .video-card .play .circle{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;color:var(--purple-brand);}
 .video-card .play svg{width:20px;height:20px;margin-left:2px;}
@@ -737,16 +816,16 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .video-card .body p{font-size:14px;color:var(--text-muted);margin:8px 0 0;}
 
 /* ============ PODA AT A GLANCE — Payload Block: "StatsGrid" ============ */
-.glance{padding:30px 0;background:var(--lavender-100);}
+.glance{padding:30px 0;background:var(--white);}
 .glance-grid{
-  display:grid;grid-template-columns:repeat(5,1fr);gap:20px;
+  display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--card-border);border-left:1px solid var(--card-border);
 }
 .glance-card{
-  background:var(--white);border-radius:var(--radius);padding:18px 15px;text-align:center;
-  box-shadow:0 4px 20px rgba(85,53,126,.08);
-  transition:transform .22s ease, box-shadow .22s ease;
+  background:var(--white);padding:18px 15px;text-align:center;
+  border-right:1px solid var(--card-border);border-bottom:1px solid var(--card-border);
+  transition:background .18s ease;
 }
-.glance-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lift);}
+.glance-card:hover{background:var(--lavender-100);}
 .glance-card .ic{
   width:35px;height:35px;border-radius:16px;margin:0 auto 16px;
   background:linear-gradient(135deg, var(--lavender-200), var(--lavender-300));
@@ -758,12 +837,120 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 @media (max-width:760px){.glance-grid{grid-template-columns:repeat(2,1fr);}}
 
 /* ============ ABOUT TEASER — Payload Block: "TextTeaser" ============
-   A short, one-off pointer to the About page — deliberately NOT the full
-   MissionVision block, so mission/vision copy lives in exactly one place
-   (About) instead of being duplicated on the homepage.
-   fields: eyebrow, heading, body, button { label, url } */
-.about-teaser{padding:30px 0;text-align:center;}
-.about-teaser .section-head{margin-bottom:26px;}
+   Editorial "Our Story" section — a photo collage (main photo + a smaller
+   overlapping team photo + a small stat badge), heading with an italic
+   accent word, two short paragraphs and a pull-quote, instead of the
+   plain centered text block this used to be. Points to the About page
+   rather than repeating its full Mission/Vision copy.
+   fields: eyebrow, heading, body, quote{text,attribution}, button { label, url } */
+.about-teaser{padding:30px 0;}
+.founder-grid{display:grid;grid-template-columns:0.8fr 1fr;gap:70px;align-items:center;}
+.founder-media{position:relative;padding:0 34px 34px 0;}
+.founder-media .main-photo{width:100%;height:420px;object-fit:cover;border:1px solid var(--card-border);}
+.founder-media .sub-photo{
+  position:absolute;right:0;bottom:0;width:44%;height:56%;
+  object-fit:cover;border:5px solid var(--white);box-shadow:0 14px 34px rgba(20,10,35,.16);
+}
+.founder-media .founder-badge{
+  position:absolute;top:0;left:0;z-index:2;background:var(--purple-brand);color:var(--white);
+  padding:10px 18px;text-align:center;
+}
+.founder-media .founder-badge strong{display:block;font-family:var(--font-display);font-size:20px;line-height:1;}
+.founder-media .founder-badge span{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;margin-top:4px;opacity:.85;}
+.founder-text .eyebrow{margin-bottom:10px;}
+.founder-text h2{font-size:clamp(24px,3vw,32px);margin-bottom:18px;}
+.founder-text p{font-size:15px;color:#463a4d;line-height:1.7;margin:0 0 16px;}
+.pull-quote{
+  margin:26px 0;padding:20px 24px;background:var(--lavender-100);border-left:3px solid var(--accent-secondary);
+}
+.pull-quote p{
+  font-family:var(--font-display);font-style:italic;font-size:16px;line-height:1.55;
+  color:var(--purple-800);margin:0 0 8px;
+}
+.pull-quote cite{font-style:normal;font-size:12.5px;font-weight:700;color:var(--text-muted);}
+.founder-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px;}
+@media (max-width:1080px){
+  .founder-grid{grid-template-columns:1fr;gap:36px;}
+  .founder-media{padding:0 24px 24px 0;max-width:460px;margin:0 auto;}
+}
+
+/* ============ PURPOSE & PROMISE — dark mission section ============
+   Replaces the 5-tile "at a glance" icon-card grid with a single editorial
+   split: mission copy on one side, a photo with a floating dark "What We
+   Stand For" card (program pillars as pill tags + 3 headline stats) on the
+   other — one card instead of five. fields: eyebrow, heading, body,
+   pillars[](text), stats[]{value,label}, image */
+.purpose-dark{
+  background:var(--purple-900);color:#fff;padding:70px 0;position:relative;overflow:hidden;
+}
+.purpose-dark::before{
+  content:"";position:absolute;width:460px;height:460px;border-radius:50%;
+  background:radial-gradient(circle, rgba(180,34,216,.16), transparent 70%);top:-200px;left:-140px;
+}
+.purpose-dark .container{position:relative;z-index:2;}
+.purpose-grid{display:grid;grid-template-columns:1fr 0.95fr;gap:70px;align-items:center;}
+.purpose-text .eyebrow{color:var(--accent-secondary);}
+.purpose-text h2{color:#fff;font-size:clamp(24px,3vw,32px);margin-bottom:18px;}
+.purpose-text p{color:rgba(255,255,255,.72);font-size:15px;line-height:1.75;margin:0;}
+.purpose-media{position:relative;padding:0 0 64px 64px;}
+.purpose-media img{width:100%;height:360px;object-fit:cover;border:1px solid rgba(255,255,255,.14);}
+.pillar-card{
+  position:absolute;left:0;bottom:0;width:320px;max-width:82%;background:var(--purple-900);
+  border:1px solid rgba(255,255,255,.14);padding:24px 24px 26px;box-shadow:0 20px 46px rgba(0,0,0,.3);
+}
+.pillar-card h4{color:rgba(255,255,255,.6);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;margin-bottom:16px;}
+.pillar-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+.pillar-tags span{
+  font-size:11.5px;font-weight:600;color:rgba(255,255,255,.9);
+  border:1px solid rgba(255,255,255,.22);border-radius:20px;padding:6px 12px;
+}
+.pillar-stats{display:flex;gap:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.14);}
+.pillar-stats div{flex:1;min-width:0;}
+.pillar-stats strong{display:block;font-family:var(--font-display);font-size:19px;color:#fff;line-height:1.1;margin-bottom:4px;}
+.pillar-stats span{font-size:10px;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.04em;line-height:1.3;display:block;}
+@media (max-width:1080px){
+  .purpose-grid{grid-template-columns:1fr;gap:56px;}
+  .purpose-media{padding:0 0 0 0;max-width:460px;margin:0 auto 20px;}
+  .pillar-card{position:static;width:100%;max-width:none;margin-top:-30px;margin-left:20px;margin-right:20px;}
+}
+@media (max-width:560px){.pillar-card{margin-left:0;margin-right:0;}}
+
+/* ============ ACTION STRIP — horizontal image-forward project strip ============
+   Replaces two separate boxed-card grids (Recent Activity + Stories of
+   Change) with one consistent pattern: full-bleed photo, a category pill
+   on the image, title + one-line context underneath, no card box/border.
+   fields: items[]{ image, tag, title, meta, link } */
+.action-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+.action-card{display:block;}
+.action-card .frame{position:relative;height:230px;overflow:hidden;margin-bottom:16px;}
+.action-card .frame img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
+.action-card:hover .frame img{transform:scale(1.06);}
+.action-card .frame .tag{
+  position:absolute;top:14px;left:14px;background:rgba(255,255,255,.94);color:var(--purple-brand);
+  font-size:11px;font-weight:700;letter-spacing:.03em;padding:6px 12px;border-radius:20px;
+}
+.action-card h4{font-size:16px;line-height:1.4;margin-bottom:8px;}
+.action-card:hover h4{color:var(--purple-brand);}
+.action-card .meta{font-size:12.5px;color:var(--text-muted);display:flex;align-items:center;gap:6px;}
+.action-card .meta svg{width:13px;height:13px;flex-shrink:0;color:var(--purple-soft);}
+@media (max-width:1080px){.action-strip{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:640px){.action-strip{grid-template-columns:1fr;}}
+
+/* ============ HELP STRIP — divided-column CTA (replaces glass "way-card" boxes) ============ */
+.help-strip{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);}
+.help-col{padding:0 28px;border-left:1px solid rgba(255,255,255,.16);}
+.help-col:first-child{border-left:0;padding-left:0;}
+.help-col .ic{
+  width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.1);color:#fff;
+  display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+}
+.help-col h4{color:#fff;font-size:16px;margin-bottom:8px;}
+.help-col p{color:rgba(255,255,255,.72);font-size:13.5px;margin:0 0 14px;}
+@media (max-width:900px){
+  .help-strip{grid-template-columns:1fr;gap:26px;}
+  .help-col{border-left:0;padding-left:0;border-top:1px solid rgba(255,255,255,.16);padding-top:24px;}
+  .help-col:first-child{border-top:0;padding-top:0;}
+}
 
 /* ============ CTA BAR — Payload Block: "CtaBar" ============
    Slim, single-row CTA for inner pages — the homepage owns the full
@@ -782,14 +969,13 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 /* ============ STORIES OF CHANGE — Payload Block: "StoryGrid" ============
    fields: stories[] { title, location, tags[], link } — sourced from a
    "Stories" collection so new field cases publish automatically. */
-.stories{padding:30px 0;background:var(--lavender-100);}
+.stories{padding:30px 0;background:var(--white);}
 .story-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
 .story-card{
-  background:var(--white);padding:22px;border-radius:var(--radius);
-  box-shadow:0 4px 20px rgba(85,53,126,.08);position:relative;
-  transition:transform .22s ease, box-shadow .22s ease;
+  background:var(--white);padding:22px;border:1px solid var(--card-border);position:relative;
+  transition:border-color .22s ease;
 }
-.story-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lift);}
+.story-card:hover{border-color:var(--card-border-hover);}
 .story-card .ic{color:var(--lavender-300);margin-bottom:10px;}
 .story-card .ic svg{width:30px;height:30px;}
 .story-card h4{font-size:15.5px;line-height:1.4;margin-bottom:10px;min-height:50px;}
@@ -803,14 +989,13 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
    TeamMembers collection: name, role, photo(upload), department(select) */
 .spotlight-card{
   display:grid;grid-template-columns:280px 1fr;gap:40px;align-items:center;
-  background:var(--lavender-100);border-radius:var(--radius-lg);
+  background:var(--white);border:1px solid var(--card-border);padding:32px;
 }
 .spotlight-card .photo{position:relative;}
-.spotlight-card .photo img{width:100%;height:320px;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow-card);}
+.spotlight-card .photo img{width:100%;height:320px;object-fit:cover;}
 .spotlight-card .photo .ic{
-  position:absolute;bottom:-18px;right:-18px;width:48px;height:48px;border-radius:12px;
+  position:absolute;bottom:-18px;right:-18px;width:48px;height:48px;
   background:var(--purple-brand);color:var(--white);display:flex;align-items:center;justify-content:center;
-  box-shadow:var(--shadow-card);
 }
 .spotlight-card .role-tag{
   display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
@@ -826,10 +1011,10 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .team-group-head span{font-size:13px;color:var(--text-muted);}
 .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;}
 .team-card{
-  overflow:hidden;border-radius:var(--radius);box-shadow:0 4px 20px rgba(85,53,126,.08);
-  background:var(--white);transition:transform .22s ease, box-shadow .22s ease;
+  overflow:hidden;border:1px solid var(--card-border);
+  background:var(--white);transition:border-color .22s ease;
 }
-.team-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lift);}
+.team-card:hover{border-color:var(--card-border-hover);}
 .team-card .photo{height:230px;overflow:hidden;background:var(--lavender-200);}
 .team-card .photo img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease;}
 .team-card:hover .photo img{transform:scale(1.05);}
@@ -852,8 +1037,8 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
   background:radial-gradient(circle, rgba(180,34,216,.18), transparent 70%);
   bottom:-120px;left:-80px;
 }
-.cta-inner{position:relative;z-index:2;text-align:center;max-width:620px;margin:0 auto 48px;}
-.cta-inner h2{color:var(--white);font-size:clamp(18px,3.4vw,20px);margin-bottom:14px;}
+.cta-inner{position:relative;z-index:2;text-align:center;max-width:660px;margin:0 auto 48px;}
+.cta-inner h2{color:var(--white);font-size:clamp(22px,3.4vw,30px);margin-bottom:14px;}
 .cta-inner p{color:rgba(255,255,255,.85);}
 .ways-grid{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
 .way-card{
@@ -948,8 +1133,7 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
 }
 .section-select:focus{outline:none;border-color:var(--purple-brand);}
 
-.content-section{padding:30px 0;scroll-margin-top:150px;}
-.content-section:nth-child(even){background:var(--lavender-100);}
+.content-section{padding:30px 0;scroll-margin-top:150px;background:var(--white);}
 .content-section .section-head{max-width:720px;}
 .section-badge{
   display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:.05em;
@@ -961,10 +1145,10 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
 /* Success stories — two featured narrative cases pulled out of the full grid */
 .story-feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-bottom:38px;}
 .story-feature{
-  background:var(--white);border-radius:var(--radius-lg);padding:24px;box-shadow:0 4px 20px rgba(85,53,126,.08);
-  transition:transform .22s ease, box-shadow .22s ease;
+  background:var(--white);padding:24px;border:1px solid var(--card-border);
+  transition:border-color .22s ease;
 }
-.story-feature:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift);}
+.story-feature:hover{border-color:var(--card-border-hover);}
 .story-feature .ic{color:var(--lavender-300);margin-bottom:14px;}
 .story-feature .ic svg{width:34px;height:34px;}
 .story-feature h3{font-size:19px;line-height:1.35;margin-bottom:10px;}
@@ -973,7 +1157,7 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
 .story-feature p{font-size:14px;margin:0 0 16px;}
 .story-feature .takeaway{
   font-family:var(--font-secondary);font-style:italic;color:var(--purple-800);font-size:15px;
-  padding:14px 18px;background:var(--lavender-100);border-left:3px solid var(--accent-secondary);border-radius:0 10px 10px 0;
+  padding:14px 18px;background:var(--lavender-100);border-left:3px solid var(--accent-secondary);
   margin-bottom:18px;
 }
 .story-feature .story-tags{margin-bottom:0;}
@@ -983,11 +1167,11 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
 /* Key achievements — checklist grid */
 .achv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
 .achv-item{
-  display:flex;gap:16px;align-items:flex-start;background:var(--white);border-radius:var(--radius);
-  padding:22px;box-shadow:0 4px 20px rgba(85,53,126,.08);
-  transition:transform .22s ease, box-shadow .22s ease;
+  display:flex;gap:16px;align-items:flex-start;background:var(--white);
+  padding:22px;border:1px solid var(--card-border);
+  transition:border-color .22s ease;
 }
-.achv-item:hover{transform:translateY(-5px);box-shadow:var(--shadow-lift);}
+.achv-item:hover{border-color:var(--card-border-hover);}
 .achv-item .ic{
   width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg, var(--lavender-200), var(--lavender-300));
   color:var(--purple-brand);display:flex;align-items:center;justify-content:center;flex-shrink:0;
@@ -1020,8 +1204,8 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
 
 .mock-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
 .mock-card{
-  position:relative;background:var(--white);border-radius:var(--radius);padding:26px 22px;
-  box-shadow:0 4px 20px rgba(85,53,126,.07);opacity:.86;
+  position:relative;background:var(--white);padding:26px 22px;
+  border:1px solid var(--card-border);opacity:.86;
 }
 .mock-card .preview-tag{
   position:absolute;top:16px;right:16px;font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
@@ -1036,8 +1220,8 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
 
 .testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
 .testimonial-card{
-  position:relative;background:var(--white);border-radius:var(--radius);padding:28px 24px;
-  box-shadow:0 4px 20px rgba(85,53,126,.07);opacity:.86;
+  position:relative;background:var(--white);padding:28px 24px;
+  border:1px solid var(--card-border);opacity:.86;
 }
 .testimonial-card .ic{color:var(--lavender-300);margin-bottom:10px;}
 .testimonial-card .ic svg{width:26px;height:26px;}
@@ -1077,8 +1261,23 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
 }
 .project-status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent-secondary);}
 .project-feature{
-  background:var(--white);padding:24px;border-radius:var(--radius);box-shadow:0 4px 20px rgba(85,53,126,.08);
+  background:var(--white);position:relative;padding:326px 0 28px;border-bottom:1px solid var(--card-border);
   margin-bottom:28px;scroll-margin-top:150px;
+}
+.project-feature::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:300px;
+  background-size:cover;background-position:center;background-color:var(--lavender-200);
+}
+.project-feature[data-theme="civic-voice-education"]::before{background-image:url(../images/site/prog-ai.jpg);}
+.project-feature[data-theme="economic-empowerment"]::before{background-image:url(../images/site/prog-activity.jpg);}
+.project-feature[data-theme="climate-action"]::before{background-image:url(../images/site/prog-climate.jpeg);}
+.project-feature[data-theme="democracy-promotion"]::before{background-image:url(../images/site/prog-democracy.jpeg);}
+.project-feature[data-theme="human-rights-advocacy"]::before{background-image:url(../images/site/prog-policy.jpg);}
+.project-feature[data-theme="stop-violence-against-women"]::before{background-image:url(../images/site/prog-women.jpg);}
+.project-feature[data-theme="humanitarian-action"]::before{background-image:url(../images/site/prog-disaster.jpeg);}
+@media (max-width:760px){
+  .project-feature{padding-top:246px;}
+  .project-feature::before{height:220px;}
 }
 .project-feature:last-child{margin-bottom:0;}
 .project-feature h3{font-size:22px;line-height:1.3;margin-bottom:10px;max-width:820px;}
@@ -1097,6 +1296,46 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
 }
 .project-interventions .ic svg{width:14px;height:14px;}
 
+/* Current Projects — compact 3-up grid, deliberately NOT the photo-thumbnail
+   pattern used by Past Projects below: a flat bordered card led by a solid
+   theme-colored icon badge (echoes the Programs icon grid above it on this
+   page) instead of a photo, with the full thematic-area copy + key-interventions
+   checklist collapsed behind a details toggle rather than a clamped paragraph. */
+.current-projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.current-project-card{
+  display:flex;flex-direction:column;background:var(--white);
+  border:1px solid var(--card-border);border-top:3px solid var(--purple-brand);
+  padding:26px;transition:border-color .22s ease;
+}
+.current-project-card:hover{border-color:var(--card-border-hover);}
+.cpc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:18px;}
+.cpc-icon{
+  width:46px;height:46px;border-radius:50%;flex-shrink:0;background:var(--purple-brand);color:var(--white);
+  display:flex;align-items:center;justify-content:center;
+}
+.cpc-icon svg{width:22px;height:22px;}
+.current-project-card h3{font-size:16.5px;line-height:1.4;margin-bottom:10px;}
+.cpc-excerpt{font-size:13.5px;color:#5c5866;line-height:1.6;margin:0 0 16px;}
+.cpc-meta{display:grid;gap:9px;margin-bottom:18px;}
+.cpc-meta li{position:relative;display:flex;gap:9px;align-items:flex-start;font-size:12.5px;color:var(--text-muted);line-height:1.5;}
+.cpc-meta li svg{width:13px;height:13px;color:var(--purple-soft);flex-shrink:0;margin-top:2px;}
+.cpc-toggle{
+  font-size:12.5px;font-weight:700;color:var(--purple-brand);background:none;border:0;padding:0;
+  cursor:pointer;display:inline-flex;align-items:center;gap:5px;align-self:flex-start;font-family:inherit;
+  margin-top:auto;
+}
+.cpc-toggle:hover{color:var(--purple-800);}
+.cpc-toggle svg{width:13px;height:13px;transition:transform .18s;}
+.current-project-card.is-expanded .cpc-toggle svg{transform:rotate(180deg);}
+.cpc-details{display:none;margin-top:16px;padding-top:16px;border-top:1px solid #F4F5FD;}
+.current-project-card.is-expanded .cpc-details{display:block;}
+.cpc-details h4{font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--purple-800);margin-bottom:8px;}
+.cpc-details .cpc-thematic{font-size:13px;color:#463a4d;line-height:1.6;margin:0 0 16px;}
+.cpc-details .project-interventions{gap:10px;}
+.cpc-details .project-interventions li{font-size:13.5px;line-height:1.55;}
+@media (max-width:1080px){.current-projects-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:600px){.current-projects-grid{grid-template-columns:1fr;}}
+
 /* Past Projects — equal-height card grid. Title and meta are clamped/ellipsed
    to a fixed number of lines so every card starts at the same height (CSS
    grid then stretches same-row cards to match besides); the excerpt clamps
@@ -1104,13 +1343,22 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
    no way to read the rest. Paired with wireListFilter's pageSize/loadMoreId
    (js/main.js) so all 44 don't render open at once — is-paged-hidden is the
    pagination layer, is-hidden is the search/filter layer; both must pass. */
-.project-card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.project-card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
 .project-card{
-  display:flex;flex-direction:column;min-width:0;background:var(--white);border-radius:var(--radius);
-  padding:24px;box-shadow:0 4px 20px rgba(85,53,126,.08);
-  transition:transform .22s ease, box-shadow .22s ease;
+  display:flex;flex-direction:column;min-width:0;background:var(--white);
+  position:relative;padding-top:184px;
 }
-.project-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lift);}
+.project-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:168px;
+  background-size:cover;background-position:center;background-color:var(--lavender-200);
+}
+.project-card[data-theme="civic-voice-education"]::before{background-image:url(../images/site/prog-ai.jpg);}
+.project-card[data-theme="economic-empowerment"]::before{background-image:url(../images/site/prog-activity.jpg);}
+.project-card[data-theme="climate-action"]::before{background-image:url(../images/site/prog-climate.jpeg);}
+.project-card[data-theme="democracy-promotion"]::before{background-image:url(../images/site/prog-democracy.jpeg);}
+.project-card[data-theme="human-rights-advocacy"]::before{background-image:url(../images/site/prog-policy.jpg);}
+.project-card[data-theme="stop-violence-against-women"]::before{background-image:url(../images/site/prog-women.jpg);}
+.project-card[data-theme="humanitarian-action"]::before{background-image:url(../images/site/prog-disaster.jpeg);}
 .project-card.is-hidden,.project-card.is-paged-hidden{display:none;}
 .project-card .duration{
   align-self:flex-start;font-size:11px;font-weight:700;color:var(--purple-brand);
@@ -1173,6 +1421,7 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
   .doc-grid{grid-template-columns:1fr;}
   .gallery-grid{grid-template-columns:1fr;}
   .video-grid{grid-template-columns:1fr;}
+  .embed-grid{grid-template-columns:1fr;}
   .radio-spotlight{flex-direction:column;text-align:center;}
   .radio-spotlight .action{width:100%;}
   .section-subnav{top:0;}
@@ -1232,20 +1481,20 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
 /* --- Contact Cards --- */
 .contact-cards-section{
   padding:50px 0 0;
-  background:var(--lavender-100);
+  background:var(--white);
 }
 .contact-cards-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:22px;
+  gap:0;border-top:1px solid var(--card-border);border-left:1px solid var(--card-border);
 }
 .contact-card{
-  background:var(--white);border-radius:var(--radius);padding:24px;
-  box-shadow:0 4px 20px rgba(85,53,126,.08);
+  background:var(--white);padding:24px;
+  border-right:1px solid var(--card-border);border-bottom:1px solid var(--card-border);
   display:flex;flex-direction:column;gap:0;
-  transition:transform .22s ease, box-shadow .22s ease;
+  transition:background .18s ease;
 }
-.contact-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lift);}
+.contact-card:hover{background:var(--lavender-100);}
 .contact-card-header{
   display:flex;align-items:center;gap:12px;margin-bottom:14px;
 }
@@ -1274,7 +1523,7 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
 /* --- Main Section: Form + Map --- */
 .contact-main-section{
   padding:40px 0;
-  background:var(--lavender-100);
+  background:var(--white);
 }
 .contact-main-grid{
   display:grid;
@@ -1285,8 +1534,8 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
 
 /* Form wrap */
 .contact-form-wrap{
-  background:var(--white);border-radius:var(--radius-lg);
-  padding:36px 32px;box-shadow:var(--shadow-card);
+  background:var(--white);border:1px solid var(--card-border);
+  padding:36px 32px;
 }
 .contact-form-head{margin-bottom:32px;}
 .contact-form-head h2{font-size:clamp(18px,2.6vw,20px);margin-bottom:10px;}
@@ -1351,9 +1600,8 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
   display:flex;flex-direction:column;gap:0;
 }
 .contact-map-head{
-  background:var(--white);border-radius:var(--radius-lg) var(--radius-lg) 0 0;
-  padding:20px;border:1px solid #F4F5FD;border-bottom:0;
-  box-shadow:var(--shadow-card);
+  background:var(--white);
+  padding:20px;border:1px solid var(--card-border);border-bottom:0;
 }
 .contact-map-head h2{font-size:clamp(18px,2.6vw,20px);margin-bottom:10px;}
 .contact-map-head > p{font-size:14px;color:var(--text-muted);margin:0 0 24px;}
@@ -1370,9 +1618,8 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
 .map-address-item strong{display:block;font-size:13px;color:var(--purple-800);margin-bottom:3px;}
 .map-address-item span{font-size:13px;color:var(--text-muted);line-height:1.5;}
 .contact-map-frame{
-  height:340px;border-radius:0 0 var(--radius-lg) var(--radius-lg);
-  overflow:hidden;border:1px solid #F4F5FD;border-top:0;
-  box-shadow:var(--shadow-card);
+  height:340px;
+  overflow:hidden;border:1px solid var(--card-border);border-top:0;
 }
 .contact-map-frame iframe{width:100%;height:100%;display:block;border:0;}
 
@@ -1434,8 +1681,8 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
   display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;
 }
 .donate-method-card{
-  background:var(--white);border-radius:var(--radius-lg);padding:24px 20px;
-  box-shadow:0 4px 20px rgba(85,53,126,.08);
+  background:var(--white);padding:24px 20px;
+  border:1px solid var(--card-border);
 }
 .donate-method-head{
   display:flex;align-items:center;gap:18px;margin-bottom:18px;
@@ -1448,7 +1695,7 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
 .donate-method-icon svg{width:26px;height:26px;}
 .donate-method-head h3{font-size:20px;margin:0;}
 .donate-method-card > p{font-size:14px;color:var(--text-muted);margin:0 0 24px;line-height:1.65;}
-.bank-details{display:flex;flex-direction:column;gap:0;border:1.5px solid var(--lavender-300);border-radius:var(--radius-sm);overflow:hidden;}
+.bank-details{display:flex;flex-direction:column;gap:0;border:1.5px solid var(--lavender-300);overflow:hidden;}
 .bank-row{
   display:flex;align-items:baseline;gap:12px;padding:12px 16px;
   border-bottom:1px solid var(--lavender-300);font-size:13.5px;
@@ -1465,9 +1712,75 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
   .bank-row span{min-width:unset;}
 }
 
+/* ============ PROGRAM DETAIL — PAGE Foundation project-detail page inspired ============
+   Solid-color hero band, two-col description, flat info-card, solid-color impact
+   stat block — replaces the previous gradient/blob PageHeader treatment for this
+   one page so it reads as a distinct, minimalist "project detail" document. */
+.program-hero{background:var(--purple-brand);padding:56px 0 48px;color:var(--white);}
+.program-hero .breadcrumb{color:rgba(255,255,255,.7);}
+.program-hero .breadcrumb a:hover{color:var(--white);}
+.program-hero .eyebrow{color:rgba(255,255,255,.85);}
+.program-hero .eyebrow::before{background:currentColor;}
+.program-hero h1{color:var(--white);font-size:clamp(24px,4vw,36px);font-weight:800;line-height:1.15;max-width:820px;margin:6px 0 14px;}
+.program-hero .lead{color:rgba(255,255,255,.85);max-width:680px;font-size:14.5px;}
+
+.pd-description{padding:50px 0;}
+.pd-description-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;}
+.pd-description-grid .txt h2{margin:6px 0 16px;}
+.pd-description-grid .txt p{font-size:15px;line-height:1.75;color:#463a4d;}
+.pd-media img{width:100%;height:320px;object-fit:cover;display:block;}
+
+.pd-info{background:var(--lavender-100);padding:44px 0;}
+.pd-info-card{background:var(--white);border:1px solid var(--card-border);}
+.pd-info-row{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 26px;border-bottom:1px solid var(--card-border);}
+.pd-info-row:last-child{border-bottom:0;}
+.pd-info-row .label{display:flex;align-items:center;gap:12px;font-size:13.5px;font-weight:700;color:var(--purple-800);flex-shrink:0;}
+.pd-info-row .label .ic{width:34px;height:34px;background:var(--lavender-200);color:var(--purple-brand);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.pd-info-row .label .ic svg{width:16px;height:16px;}
+.pd-info-row .value{font-size:14px;color:#463a4d;text-align:right;flex:1;min-width:0;}
+
+.pd-impact{background:var(--purple-brand);color:var(--white);padding:44px 0;}
+.pd-impact h2{color:var(--white);}
+.pd-impact-grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid rgba(255,255,255,.22);border-left:1px solid rgba(255,255,255,.22);}
+.pd-impact-item{padding:26px 28px;border-right:1px solid rgba(255,255,255,.22);border-bottom:1px solid rgba(255,255,255,.22);}
+.pd-impact-item .num{font-size:28px;font-weight:800;color:var(--white);line-height:1.15;margin-bottom:6px;}
+.pd-impact-item .lbl{font-size:13px;color:rgba(255,255,255,.82);}
+@media (max-width:900px){
+  .pd-description-grid{grid-template-columns:1fr;}
+  .pd-media img{height:240px;}
+  .pd-info-row{flex-direction:column;align-items:flex-start;gap:8px;}
+  .pd-info-row .value{text-align:left;}
+  .pd-impact-grid{grid-template-columns:1fr;}
+}
+
+/* ============ ANNUAL REPORT ARCHIVE — WISE-style cover grid ============
+   Plain clickable "cover" cards (typographic, since no scanned PDF cover art
+   exists yet) instead of a designed narrative summary card — closer to how
+   wise.pk/annual-reports/ treats each edition as a document, not a dashboard. */
+.report-cover-row{display:flex;flex-wrap:wrap;gap:28px;margin-top:8px;}
+.report-cover-card{display:block;width:230px;}
+.report-cover-card .cover-art{
+  height:280px;display:flex;flex-direction:column;justify-content:flex-end;padding:26px 22px;
+  background:linear-gradient(150deg, var(--purple-800), var(--purple-brand));color:var(--white);
+  box-shadow:0 10px 26px rgba(20,10,35,.16);position:relative;overflow:hidden;
+  transition:box-shadow .22s ease;
+}
+.report-cover-card .cover-art::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%, rgba(255,255,255,.14), transparent 60%);}
+.report-cover-card:hover .cover-art{box-shadow:0 16px 36px rgba(20,10,35,.24);}
+.report-cover-card .cover-art .yr{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:10px;position:relative;z-index:1;}
+.report-cover-card .cover-art h3{color:var(--white);font-size:22px;font-weight:800;line-height:1.25;margin:0;position:relative;z-index:1;}
+.report-cover-card .meta{margin-top:14px;font-size:13px;font-weight:600;color:var(--purple-800);text-align:center;}
+.report-cover-placeholder{
+  width:230px;height:280px;border:1.5px dashed var(--lavender-300);display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:24px;color:var(--text-muted);font-size:12.5px;line-height:1.6;
+}
+@media (max-width:560px){
+  .report-cover-card,.report-cover-placeholder{width:100%;}
+}
+
 /* ============ CAREERS PAGE — Internships / Jobs / Volunteers tabs ============ */
 .intern-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;}
-.intern-card{background:var(--white);border-radius:var(--radius-lg);padding:40px 36px;box-shadow:0 4px 20px rgba(85,53,126,.08);}
+.intern-card{background:var(--white);padding:40px 36px;border:1px solid var(--card-border);}
 .intern-card h2{font-size:clamp(20px,2.4vw,24px);margin-bottom:24px;color:var(--purple-800);}
 .intern-list{display:flex;flex-direction:column;gap:14px;}
 .intern-list li{display:flex;gap:14px;align-items:flex-start;font-size:14.5px;color:#463a4d;line-height:1.6;}
@@ -1475,7 +1788,7 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
 .intern-list .ic svg{width:15px;height:15px;}
 
 .info-row{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
-.info-box{background:var(--lavender-100);border-radius:var(--radius);padding:26px 24px;display:flex;gap:16px;align-items:flex-start;}
+.info-box{background:var(--white);border:1px solid var(--card-border);padding:26px 24px;display:flex;gap:16px;align-items:flex-start;}
 .info-box .ic{width:48px;height:48px;border-radius:14px;background:var(--white);color:var(--purple-brand);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(84,55,124,.08);}
 .info-box .ic svg{width:22px;height:22px;}
 .info-box strong{display:block;font-size:13px;font-weight:700;color:var(--purple-800);text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px;}
@@ -1498,12 +1811,12 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
 /* Current Openings (Internships + Jobs tabs) */
 .openings-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:40px;}
 .opening-card{
-  background:var(--white);border-radius:var(--radius-lg);padding:26px 24px;
-  box-shadow:0 4px 20px rgba(85,53,126,.08);
+  background:var(--white);padding:26px 24px;
+  border:1px solid var(--card-border);
   display:flex;flex-direction:column;gap:0;
-  transition:transform .2s ease,box-shadow .2s ease;
+  transition:border-color .2s ease;
 }
-.opening-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lift);}
+.opening-card:hover{border-color:var(--card-border-hover);}
 .opening-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px;}
 .opening-badge{
   display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;
@@ -1530,7 +1843,7 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
 /* Empty state (Jobs tab) */
 .openings-empty{
   display:flex;flex-direction:column;align-items:center;text-align:center;
-  padding:56px 24px;background:var(--lavender-100);border-radius:var(--radius-lg);
+  padding:56px 24px;background:var(--white);
   border:1.5px dashed var(--lavender-300);margin-top:40px;
 }
 .openings-empty .ic{

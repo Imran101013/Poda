@@ -7,7 +7,7 @@
 <meta name="description" content="Donor-funded projects at PODA — flagship focus areas, currently running initiatives and a two-decade archive of completed work across disability inclusion, civic leadership, gender-based violence, climate resilience, legal aid, girls' education and more." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -24,6 +24,12 @@
   <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.2" y2="16.2"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><line x1="4" y1="12" x2="20" y2="12"/><path d="M14 6l6 6-6 6"/></symbol>
   <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5c2-1 5-1 8 1v13c-3-2-6-2-8-1z"/><path d="M20 5c-2-1-5-1-8 1v13c3-2 6-2 8-1z"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 4S8 3 5 10s2 11 2 11 10-1 12-9c1-4 1-8 1-8z"/><path d="M7 21c2-4 6-9 13-15"/></symbol>
+  <symbol id="i-ballot" viewBox="0 0 24 24"><path d="M4 10h16v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M4 10l3-6h10l3 6"/><line x1="9" y1="10" x2="15" y2="10"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><line x1="12" y1="4" x2="12" y2="18"/><line x1="5" y1="8" x2="19" y2="8"/><path d="M5 8l-2.4 5a3.2 3.2 0 0 0 6.4 0z"/><path d="M19 8l-2.4 5a3.2 3.2 0 0 0 6.4 0z"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="18" x2="12" y2="21"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></symbol>
+  <symbol id="i-aid" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="12" y1="7" x2="12" y2="17"/><line x1="7" y1="12" x2="17" y2="12"/></symbol>
   <symbol id="i-twitter" viewBox="0 0 24 24" stroke="none" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.6-2.3.7.8-.5 1.4-1.3 1.7-2.3-.8.5-1.7.8-2.6 1a3.8 3.8 0 0 0-6.5 3.5A10.8 10.8 0 0 1 3.9 4.6a3.9 3.9 0 0 0 1.2 5.2 3.8 3.8 0 0 1-1.7-.5 3.9 3.9 0 0 0 3 3.8c-.5.1-1.1.2-1.7.1a3.9 3.9 0 0 0 3.6 2.7A10.9 10.9 0 0 1 2 18.4a10.9 10.9 0 0 0 5.9 1.7c7 0 10.9-5.9 10.9-11v-.5c.8-.5 1.4-1.2 2-2z"/></symbol>
   <symbol id="i-facebook" viewBox="0 0 24 24" stroke="none" fill="currentColor"><path d="M14 21v-8h2.7l.5-3.5H14V7.2c0-1 .3-1.7 1.8-1.7h1.6V2.4C17 2.3 15.9 2 14.6 2 11.9 2 10 3.6 10 6.8v2.7H7.3V13H10v8z"/></symbol>
   <symbol id="i-youtube" viewBox="0 0 24 24" stroke="none" fill="currentColor"><path d="M22 8.4s-.2-1.5-.8-2.2c-.8-.8-1.6-.8-2-.9C16.4 5 12 5 12 5s-4.4 0-7.2.3c-.4 0-1.2.1-2 .9C2.2 6.9 2 8.4 2 8.4S1.8 10.2 1.8 12v1.9C1.8 15.8 2 17.6 2 17.6s.2 1.5.8 2.2c.8.8 1.9.8 2.3.9C6.6 21 12 21 12 21s4.4 0 7.2-.3c.4-.1 1.2-.1 2-.9.6-.7.8-2.2.8-2.2s.2-1.8.2-3.6V12c0-1.8-.2-3.6-.2-3.6zM9.9 15.4V8.9l5.8 3.3z"/></symbol>
@@ -34,11 +40,11 @@
 <script src="js/global.js" data-poda="header"></script>
 
 <!-- ======================= PAGE HEADER — Payload Block: PageHeader ======================= -->
-<section class="page-header">
+<section class="page-header has-photo" style="background-image:linear-gradient(115deg, rgba(35,22,52,.93) 0%, rgba(67,44,99,.86) 48%, rgba(84,55,124,.68) 100%), url('images/programs/prog2-climate.jpg');">
   <div class="container">
     <div class="breadcrumb reveal"><a href="index.html">Home</a> / <span>Projects</span></div>
     <span class="eyebrow" style="color:#B422D8;">Where the Funding Goes</span>
-    <h1 class="reveal">Donor-Funded Projects, Start to Finish</h1>
+    <h1 class="reveal">Donor-Funded Projects, <em class="accent">Start to Finish</em></h1>
     <p class="lead reveal" style="margin-bottom:24px;">From a European Union-backed disability inclusion project launching in 2026, to PODA's seven core programs, to a two-decade archive of completed initiatives — every project PODA has delivered, who funded it, and what it changed.</p>
     <div class="tag-row reveal"><span><span id="ongoingCount">2</span> Ongoing</span><span><span id="completedCount">41</span> Completed</span><span>Since 2006</span></div>
   </div>
@@ -71,73 +77,59 @@
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Our programs</span>
-      <h2>Seven Programs, One Mission</h2>
+      <h2>Seven Programs, <em class="accent">One Mission</em></h2>
       <p class="lead">Every project PODA delivers — current or completed — sits under one of seven core programs. Explore each to see what it does and the latest work underway.</p>
     </div>
 
-    <div class="program-grid">
+    <div class="program-icon-grid">
 
-      <article class="program-card reveal">
-        <div class="thumb"><span class="tag">Civic Voice and Education</span><img src="images/site/prog-ai.jpg" alt="Civic Voice and Education"></div>
-        <div class="body">
-          <h3><a href="program-detail.html?program=civic-voice-education">Civic Voice and Education</a></h3>
-          <p>Civic education, digital literacy and youth empowerment — from the weekly PARWL-Pakistan webinar series to community schools and leadership training that build informed, active citizens across rural Pakistan.</p>
-          <a class="read-more" href="program-detail.html?program=civic-voice-education">Read More <svg class="icon"><use href="#i-arrow"/></svg></a>
-        </div>
+      <article class="program-icon-card reveal">
+        <div class="ic"><svg class="icon"><use href="#i-book"/></svg></div>
+        <h3><a href="program-detail.html?program=civic-voice-education">Civic Voice and Education</a></h3>
+        <p>Civic education, digital literacy and youth empowerment — from the weekly PARWL-Pakistan webinar series to community schools and leadership training that build informed, active citizens.</p>
+        <a class="read-more" href="program-detail.html?program=civic-voice-education">Read More <svg class="icon"><use href="#i-arrow"/></svg></a>
       </article>
 
-      <article class="program-card reveal">
-        <div class="thumb"><span class="tag">Economic Empowerment</span><img src="images/site/prog-activity.jpg" alt="Economic Empowerment"></div>
-        <div class="body">
-          <h3><a href="program-detail.html?program=economic-empowerment">Economic Empowerment</a></h3>
-          <p>Livelihood skills, vocational training and inclusive employment — equipping rural women and youth with market-ready skills, from artisan trades to agricultural value chains, to build sustainable household incomes.</p>
-          <a class="read-more" href="program-detail.html?program=economic-empowerment">Read More <svg class="icon"><use href="#i-arrow"/></svg></a>
-        </div>
+      <article class="program-icon-card reveal">
+        <div class="ic"><svg class="icon"><use href="#i-bank"/></svg></div>
+        <h3><a href="program-detail.html?program=economic-empowerment">Economic Empowerment</a></h3>
+        <p>Livelihood skills, vocational training and inclusive employment — equipping rural women and youth with market-ready skills to build sustainable household incomes.</p>
+        <a class="read-more" href="program-detail.html?program=economic-empowerment">Read More <svg class="icon"><use href="#i-arrow"/></svg></a>
       </article>
 
-      <article class="program-card reveal">
-        <div class="thumb"><span class="tag">Climate Action</span><img src="images/site/prog-climate.jpeg" alt="Climate Action"></div>
-        <div class="body">
-          <h3><a href="program-detail.html?program=climate-action">Climate Action</a></h3>
-          <p>Climate-smart agriculture, rainwater harvesting and green job skills at PODA's demonstration farm in Nara Mughlan — training rural communities in resilient, sustainable practices for a changing climate.</p>
-          <a class="read-more" href="program-detail.html?program=climate-action">Read More <svg class="icon"><use href="#i-arrow"/></svg></a>
-        </div>
+      <article class="program-icon-card reveal">
+        <div class="ic"><svg class="icon"><use href="#i-leaf"/></svg></div>
+        <h3><a href="program-detail.html?program=climate-action">Climate Action</a></h3>
+        <p>Climate-smart agriculture, rainwater harvesting and green job skills at PODA's demonstration farm in Nara Mughlan — resilient practices for a changing climate.</p>
+        <a class="read-more" href="program-detail.html?program=climate-action">Read More <svg class="icon"><use href="#i-arrow"/></svg></a>
       </article>
 
-      <article class="program-card reveal">
-        <div class="thumb"><span class="tag">Democracy Promotion</span><img src="images/site/prog-democracy.jpeg" alt="Democracy Promotion"></div>
-        <div class="body">
-          <h3><a href="program-detail.html?program=democracy-promotion">Democracy Promotion</a></h3>
-          <p>Voter education, civic registration and grassroots governance — decades of NED-supported work helping rural communities exercise their democratic rights and participate fully in Pakistan's political life.</p>
-          <a class="read-more" href="program-detail.html?program=democracy-promotion">Read More <svg class="icon"><use href="#i-arrow"/></svg></a>
-        </div>
+      <article class="program-icon-card reveal">
+        <div class="ic"><svg class="icon"><use href="#i-ballot"/></svg></div>
+        <h3><a href="program-detail.html?program=democracy-promotion">Democracy Promotion</a></h3>
+        <p>Voter education, civic registration and grassroots governance — decades of NED-supported work helping rural communities exercise their democratic rights.</p>
+        <a class="read-more" href="program-detail.html?program=democracy-promotion">Read More <svg class="icon"><use href="#i-arrow"/></svg></a>
       </article>
 
-      <article class="program-card reveal">
-        <div class="thumb"><span class="tag">Human Rights Advocacy</span><img src="images/site/prog-policy.jpg" alt="Human Rights Advocacy"></div>
-        <div class="body">
-          <h3><a href="program-detail.html?program=human-rights-advocacy">Human Rights Advocacy</a></h3>
-          <p>Building networks of human rights defenders, running legal-literacy and safeguarding programs, and advancing disability-inclusive policy — advocacy that turns constitutional rights into lived protections.</p>
-          <a class="read-more" href="program-detail.html?program=human-rights-advocacy">Read More <svg class="icon"><use href="#i-arrow"/></svg></a>
-        </div>
+      <article class="program-icon-card reveal">
+        <div class="ic"><svg class="icon"><use href="#i-scale"/></svg></div>
+        <h3><a href="program-detail.html?program=human-rights-advocacy">Human Rights Advocacy</a></h3>
+        <p>Building networks of human rights defenders, running legal-literacy and safeguarding programs, and advancing disability-inclusive policy.</p>
+        <a class="read-more" href="program-detail.html?program=human-rights-advocacy">Read More <svg class="icon"><use href="#i-arrow"/></svg></a>
       </article>
 
-      <article class="program-card reveal">
-        <div class="thumb"><span class="tag">Stop Violence Against Women</span><img src="images/site/prog-women.jpg" alt="Stop Violence Against Women"></div>
-        <div class="body">
-          <h3><a href="program-detail.html?program=stop-violence-against-women">Stop Violence Against Women</a></h3>
-          <p>Free legal aid, GBV response and child-marriage prevention — direct services and advocacy for survivors, including women-friendly spaces and legal-literacy sessions across rural Punjab and beyond.</p>
-          <a class="read-more" href="program-detail.html?program=stop-violence-against-women">Read More <svg class="icon"><use href="#i-arrow"/></svg></a>
-        </div>
+      <article class="program-icon-card reveal">
+        <div class="ic"><svg class="icon"><use href="#i-shield"/></svg></div>
+        <h3><a href="program-detail.html?program=stop-violence-against-women">Stop Violence Against Women</a></h3>
+        <p>Free legal aid, GBV response and child-marriage prevention — direct services and advocacy for survivors across rural Punjab and beyond.</p>
+        <a class="read-more" href="program-detail.html?program=stop-violence-against-women">Read More <svg class="icon"><use href="#i-arrow"/></svg></a>
       </article>
 
-      <article class="program-card reveal">
-        <div class="thumb"><span class="tag">Humanitarian Action</span><img src="images/site/prog-disaster.jpeg" alt="Humanitarian Action"></div>
-        <div class="body">
-          <h3><a href="program-detail.html?program=humanitarian-action">Humanitarian Action</a></h3>
-          <p>Rapid emergency response to floods and displacement — hygiene kits, women- and child-friendly spaces, and follow-up support that reaches communities in Buner, Kasur and Chakwal when disaster strikes.</p>
-          <a class="read-more" href="program-detail.html?program=humanitarian-action">Read More <svg class="icon"><use href="#i-arrow"/></svg></a>
-        </div>
+      <article class="program-icon-card reveal">
+        <div class="ic"><svg class="icon"><use href="#i-aid"/></svg></div>
+        <h3><a href="program-detail.html?program=humanitarian-action">Humanitarian Action</a></h3>
+        <p>Rapid emergency response to floods and displacement — hygiene kits, women- and child-friendly spaces, and follow-up support when disaster strikes.</p>
+        <a class="read-more" href="program-detail.html?program=humanitarian-action">Read More <svg class="icon"><use href="#i-arrow"/></svg></a>
       </article>
 
     </div>
@@ -167,57 +159,73 @@
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Current projects</span>
-      <h2>Currently Underway</h2>
+      <h2>Currently <em class="accent">Underway</em></h2>
       <p class="lead" id="currentLead">Two active, donor-funded grants running right now across Punjab and Khyber Pakhtunkhwa.</p>
     </div>
 
-    <div id="currentProjectsList">
-    <article class="project-feature reveal" data-theme="economic-empowerment"
+    <div id="currentProjectsList" class="current-projects-grid">
+    <article class="current-project-card reveal" data-theme="economic-empowerment"
       data-end-date="2029-03-31"
       data-duration="April 2026 – March 2029"
       data-funder="European Union (EU)"
       data-location="Punjab &amp; Khyber Pakhtunkhwa (Peshawar, Mardan, Chakwal, Multan)"
       data-excerpt="Strengthened the institutional capacity of women-led organizations and Organizations of Women with Disabilities, promoted economic inclusion through TVET accessibility and employment linkages, and advanced disability-inclusive workplace policy across Punjab and Khyber Pakhtunkhwa.">
-      <span class="project-status">Ongoing</span>
-      <h3>Beyond Barriers: Promoting Capacity Building, Disability Inclusion, Safeguarding, and Gender Equity for Pakistani Women With and Without Disabilities</h3>
-      <div class="project-meta-grid">
-        <div class="field"><span>Thematic Area</span><p>Disability Inclusion, Women's Economic Empowerment, Gender Equality, GBVH, Safeguarding, Inclusive Employment, Policy Advocacy</p></div>
-        <div class="field"><span>Duration</span><p>April 2026 – March 2029</p></div>
-        <div class="field"><span>Donor Agency</span><p>European Union (EU)</p></div>
-        <div class="field"><span>Location</span><p>Punjab &amp; Khyber Pakhtunkhwa (Peshawar, Mardan, Chakwal, Multan)</p></div>
+      <div class="cpc-top">
+        <span class="cpc-icon"><svg class="icon"><use href="#i-bank"/></svg></span>
+        <span class="project-status">Ongoing</span>
       </div>
-      <h4 class="subhead">Key Interventions</h4>
-      <ul class="project-interventions">
-        <li><span class="ic"><svg><use href="#i-check"/></svg></span>Strengthens the institutional capacity of women-led organizations and Organizations of Women with Disabilities (OWDs) through organizational assessments, capacity-building programs, mentoring, training, and institutional development support.</li>
-        <li><span class="ic"><svg><use href="#i-check"/></svg></span>Promotes economic inclusion by conducting accessibility assessments of Technical and Vocational Education and Training (TVET) institutions, facilitating market-oriented skills development, disability confidence training, and employment linkages for women with and without disabilities.</li>
-        <li><span class="ic"><svg><use href="#i-check"/></svg></span>Engages employers, Business Development Service providers, and TVET institutions to adopt disability-inclusive policies, implement reasonable accommodation measures, and promote accessible and inclusive workplace practices.</li>
-        <li><span class="ic"><svg><use href="#i-check"/></svg></span>Conducts participatory research on Gender-Based Violence and Harassment (GBVH), develops disability-inclusive referral pathways, and strengthens evidence-based advocacy to foster safer, more inclusive, and equitable workplaces.</li>
-        <li><span class="ic"><svg><use href="#i-check"/></svg></span>Facilitates policy dialogue with government departments, labor market stakeholders, and relevant institutions to strengthen implementation of the SME Policy 2021, the Protection Against Harassment of Women at the Workplace Act 2022, and the National Action Plan on Business and Human Rights.</li>
+      <h3>Beyond Barriers: Promoting Capacity Building, Disability Inclusion, Safeguarding, and Gender Equity for Pakistani Women With and Without Disabilities</h3>
+      <p class="cpc-excerpt">Strengthened the institutional capacity of women-led organizations and Organizations of Women with Disabilities, promoted economic inclusion through TVET accessibility and employment linkages, and advanced disability-inclusive workplace policy across Punjab and Khyber Pakhtunkhwa.</p>
+      <ul class="cpc-meta">
+        <li><svg class="icon"><use href="#i-calendar"/></svg>April 2026 – March 2029</li>
+        <li><svg class="icon"><use href="#i-bank"/></svg>European Union (EU)</li>
+        <li><svg class="icon"><use href="#i-pin"/></svg>Punjab &amp; Khyber Pakhtunkhwa (Peshawar, Mardan, Chakwal, Multan)</li>
       </ul>
+      <button type="button" class="cpc-toggle"><span>View key interventions</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      <div class="cpc-details">
+        <h4>Thematic Area</h4>
+        <p class="cpc-thematic">Disability Inclusion, Women's Economic Empowerment, Gender Equality, GBVH, Safeguarding, Inclusive Employment, Policy Advocacy</p>
+        <h4>Key Interventions</h4>
+        <ul class="project-interventions">
+          <li><span class="ic"><svg><use href="#i-check"/></svg></span>Strengthens the institutional capacity of women-led organizations and Organizations of Women with Disabilities (OWDs) through organizational assessments, capacity-building programs, mentoring, training, and institutional development support.</li>
+          <li><span class="ic"><svg><use href="#i-check"/></svg></span>Promotes economic inclusion by conducting accessibility assessments of Technical and Vocational Education and Training (TVET) institutions, facilitating market-oriented skills development, disability confidence training, and employment linkages for women with and without disabilities.</li>
+          <li><span class="ic"><svg><use href="#i-check"/></svg></span>Engages employers, Business Development Service providers, and TVET institutions to adopt disability-inclusive policies, implement reasonable accommodation measures, and promote accessible and inclusive workplace practices.</li>
+          <li><span class="ic"><svg><use href="#i-check"/></svg></span>Conducts participatory research on Gender-Based Violence and Harassment (GBVH), develops disability-inclusive referral pathways, and strengthens evidence-based advocacy to foster safer, more inclusive, and equitable workplaces.</li>
+          <li><span class="ic"><svg><use href="#i-check"/></svg></span>Facilitates policy dialogue with government departments, labor market stakeholders, and relevant institutions to strengthen implementation of the SME Policy 2021, the Protection Against Harassment of Women at the Workplace Act 2022, and the National Action Plan on Business and Human Rights.</li>
+        </ul>
+      </div>
     </article>
 
-    <article class="project-feature reveal" data-theme="civic-voice-education"
+    <article class="current-project-card reveal" data-theme="civic-voice-education"
       data-end-date="2027-01-31"
       data-duration="February 2026 – January 2027"
       data-funder="National Endowment for Democracy (NED)"
       data-location="Pakistan — Punjab, Islamabad Capital Territory, and participants from 100+ districts nationwide"
       data-excerpt="Strengthened the Rural Women's Network through leadership and governance training, expanded mobile legal aid clinics and civil registration, and convened the Annual Rural Women Leadership Conference across 100+ districts.">
-      <span class="project-status">Ongoing</span>
-      <h3>Promoting Civic Leadership and Participation</h3>
-      <div class="project-meta-grid">
-        <div class="field"><span>Thematic Area</span><p>Democratic Governance, Women's Leadership, Civic Participation, Legal Empowerment, Digital Safety, Human Rights, Community Mobilization</p></div>
-        <div class="field"><span>Duration</span><p>February 2026 – January 2027</p></div>
-        <div class="field"><span>Donor Agency</span><p>National Endowment for Democracy (NED)</p></div>
-        <div class="field"><span>Location</span><p>Pakistan — Punjab, Islamabad Capital Territory, and participants from 100+ districts nationwide</p></div>
+      <div class="cpc-top">
+        <span class="cpc-icon"><svg class="icon"><use href="#i-book"/></svg></span>
+        <span class="project-status">Ongoing</span>
       </div>
-      <h4 class="subhead">Key Interventions</h4>
-      <ul class="project-interventions">
-        <li><span class="ic"><svg><use href="#i-check"/></svg></span>Strengthens the Rural Women's Network through leadership development, governance, and civic engagement training to enhance democratic participation and women's leadership.</li>
-        <li><span class="ic"><svg><use href="#i-check"/></svg></span>Expands access to legal identity and justice by providing mobile legal aid clinics, civil registration support, and free legal aid in collaboration with district bar associations and pro bono lawyers.</li>
-        <li><span class="ic"><svg><use href="#i-check"/></svg></span>Conducts training on digital safety, democratic values, constitutional rights, civic education, and media literacy to strengthen women's and youth's digital resilience and informed civic participation.</li>
-        <li><span class="ic"><svg><use href="#i-check"/></svg></span>Organizes weekly webinars, public awareness campaigns, and radio programs to promote women's rights, legal identity, electoral participation, democratic engagement, and civic awareness.</li>
-        <li><span class="ic"><svg><use href="#i-check"/></svg></span>Convenes the Annual Rural Women Leadership Conference and implements organizational development initiatives to strengthen institutional sustainability, strategic planning, governance systems, and staff capacity.</li>
+      <h3>Promoting Civic Leadership and Participation</h3>
+      <p class="cpc-excerpt">Strengthened the Rural Women's Network through leadership and governance training, expanded mobile legal aid clinics and civil registration, and convened the Annual Rural Women Leadership Conference across 100+ districts.</p>
+      <ul class="cpc-meta">
+        <li><svg class="icon"><use href="#i-calendar"/></svg>February 2026 – January 2027</li>
+        <li><svg class="icon"><use href="#i-bank"/></svg>National Endowment for Democracy (NED)</li>
+        <li><svg class="icon"><use href="#i-pin"/></svg>Pakistan — Punjab, Islamabad Capital Territory, and participants from 100+ districts nationwide</li>
       </ul>
+      <button type="button" class="cpc-toggle"><span>View key interventions</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+      <div class="cpc-details">
+        <h4>Thematic Area</h4>
+        <p class="cpc-thematic">Democratic Governance, Women's Leadership, Civic Participation, Legal Empowerment, Digital Safety, Human Rights, Community Mobilization</p>
+        <h4>Key Interventions</h4>
+        <ul class="project-interventions">
+          <li><span class="ic"><svg><use href="#i-check"/></svg></span>Strengthens the Rural Women's Network through leadership development, governance, and civic engagement training to enhance democratic participation and women's leadership.</li>
+          <li><span class="ic"><svg><use href="#i-check"/></svg></span>Expands access to legal identity and justice by providing mobile legal aid clinics, civil registration support, and free legal aid in collaboration with district bar associations and pro bono lawyers.</li>
+          <li><span class="ic"><svg><use href="#i-check"/></svg></span>Conducts training on digital safety, democratic values, constitutional rights, civic education, and media literacy to strengthen women's and youth's digital resilience and informed civic participation.</li>
+          <li><span class="ic"><svg><use href="#i-check"/></svg></span>Organizes weekly webinars, public awareness campaigns, and radio programs to promote women's rights, legal identity, electoral participation, democratic engagement, and civic awareness.</li>
+          <li><span class="ic"><svg><use href="#i-check"/></svg></span>Convenes the Annual Rural Women Leadership Conference and implements organizational development initiatives to strengthen institutional sustainability, strategic planning, governance systems, and staff capacity.</li>
+        </ul>
+      </div>
     </article>
     </div>
   </div>
@@ -228,7 +236,7 @@
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Past projects</span>
-      <h2>A Two-Decade Track Record</h2>
+      <h2>A Two-Decade <em class="accent">Track Record</em></h2>
       <p class="lead">41 completed projects since 2006 — search by keyword, filter by decade, or filter by thematic area to explore the archive.</p>
     </div>
 
@@ -746,7 +754,7 @@
   var pastGrid = document.getElementById('pastProjectsList');
   if (!currentList || !pastGrid) return;
 
-  Array.from(currentList.querySelectorAll('.project-feature[data-end-date]')).forEach(function(card){
+  Array.from(currentList.querySelectorAll('.current-project-card[data-end-date]')).forEach(function(card){
     var endDate = new Date(card.dataset.endDate);
     if (isNaN(endDate.getTime()) || today <= endDate) return; // still ongoing — leave as-is
 
@@ -775,7 +783,7 @@
     card.remove();
   });
 
-  var remaining = currentList.querySelectorAll('.project-feature').length;
+  var remaining = currentList.querySelectorAll('.current-project-card').length;
   var totalPast = pastGrid.querySelectorAll('.project-card').length;
 
   if (remaining === 0 && !document.getElementById('noCurrentProjects')) {

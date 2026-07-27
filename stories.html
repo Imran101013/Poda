@@ -7,7 +7,7 @@
 <meta name="description" content="Real cases, real impact — four stories of child marriage prevented and futures protected through PODA's community-level work in Punjab." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -29,11 +29,11 @@
 <script src="js/global.js" data-poda="header"></script>
 
 <!-- ======================= PAGE HEADER — Payload Block: PageHeader ======================= -->
-<section class="page-header">
+<section class="page-header has-photo" style="background-image:linear-gradient(115deg, rgba(35,22,52,.93) 0%, rgba(67,44,99,.86) 48%, rgba(84,55,124,.68) 100%), url('images/site/hero-4.jpg');">
   <div class="container">
     <div class="breadcrumb reveal"><a href="index.html">Home</a> / <span>Success Stories</span></div>
     <span class="eyebrow" style="color:#B422D8;">Success Stories</span>
-    <h1 class="reveal">Real Cases, Real Impact</h1>
+    <h1 class="reveal">Real Cases, <em class="accent">Real Impact</em></h1>
     <p class="lead reveal" style="margin-bottom:24px;">Behind every policy and program update is a person. These are four real, named cases where community awareness and quick action stopped a child marriage and kept a girl's future open.</p>
     <div class="tag-row reveal"><span>4 Stories</span><span>Punjab</span><span>Child Protection</span></div>
   </div>
@@ -44,40 +44,39 @@
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Stories of change</span>
-      <h2>Four Girls, Four Communities</h2>
+      <h2>Four Girls, <em class="accent">Four Communities</em></h2>
     </div>
-    <div class="story-grid">
-      <a class="story-card reveal" href="stories/nikah-khawan-prevents-child-marriage.html">
-        <div class="ic"><svg><use href="#i-quote"/></svg></div>
+    <div class="action-strip">
+      <a class="story-card action-card reveal" href="stories/nikah-khawan-prevents-child-marriage.html">
+        <div class="frame"><span class="tag">Child Protection</span><img src="images/site/hero-4.jpg" alt="Nikah Khawan Prevents Child Marriage in Toba Tek Singh"></div>
         <h4>Nikah Khawan Prevents Child Marriage in Toba Tek Singh</h4>
-        <div class="loc"><svg class="icon"><use href="#i-pin"/></svg> District Toba Tek Singh, Punjab</div>
-        <div class="story-tags"><span>Child Protection</span><span>Community Leadership</span></div>
-        <span class="btn-text">Read Story <svg><use href="#i-arrow"/></svg></span>
+        <div class="meta"><svg class="icon"><use href="#i-pin"/></svg>District Toba Tek Singh, Punjab</div>
       </a>
-      <a class="story-card reveal" href="stories/stopping-early-marriage-chakwal.html">
-        <div class="ic"><svg><use href="#i-quote"/></svg></div>
+      <a class="story-card action-card reveal" href="stories/stopping-early-marriage-chakwal.html">
+        <div class="frame"><span class="tag">Girls' Education</span><img src="images/site/hero-3.jpg" alt="Stopping Early Marriage and Protecting a Girl's Future"></div>
         <h4>Stopping Early Marriage and Protecting a Girl's Future</h4>
-        <div class="loc"><svg class="icon"><use href="#i-pin"/></svg> District Chakwal, Punjab</div>
-        <div class="story-tags"><span>Child Protection</span><span>Girls' Education</span></div>
-        <span class="btn-text">Read Story <svg><use href="#i-arrow"/></svg></span>
+        <div class="meta"><svg class="icon"><use href="#i-pin"/></svg>District Chakwal, Punjab</div>
       </a>
-      <a class="story-card reveal" href="stories/fight-against-early-marriage-kasur.html">
-        <div class="ic"><svg><use href="#i-quote"/></svg></div>
+      <a class="story-card action-card reveal" href="stories/fight-against-early-marriage-kasur.html">
+        <div class="frame"><span class="tag">Girls' Education</span><img src="images/site/hero-1.jpg" alt="A Fight Against Early Marriage in District Kasur"></div>
         <h4>A Fight Against Early Marriage in District Kasur</h4>
-        <div class="loc"><svg class="icon"><use href="#i-pin"/></svg> District Kasur, Punjab</div>
-        <div class="story-tags"><span>Child Protection</span><span>Girls' Education</span></div>
-        <span class="btn-text">Read Story <svg><use href="#i-arrow"/></svg></span>
+        <div class="meta"><svg class="icon"><use href="#i-pin"/></svg>District Kasur, Punjab</div>
       </a>
-      <a class="story-card reveal" href="stories/empowering-a-brighter-future.html">
-        <div class="ic"><svg><use href="#i-quote"/></svg></div>
+      <a class="story-card action-card reveal" href="stories/empowering-a-brighter-future.html">
+        <div class="frame"><span class="tag">Girls' Empowerment</span><img src="images/site/hero-2.jpg" alt="Empowering a Brighter Future"></div>
         <h4>Empowering a Brighter Future</h4>
-        <div class="loc"><svg class="icon"><use href="#i-pin"/></svg> Nankana Sahib &amp; Khanewal, Punjab</div>
-        <div class="story-tags"><span>Child Protection</span><span>Girls' Empowerment</span></div>
-        <span class="btn-text">Read Story <svg><use href="#i-arrow"/></svg></span>
+        <div class="meta"><svg class="icon"><use href="#i-pin"/></svg>Nankana Sahib &amp; Khanewal, Punjab</div>
       </a>
     </div>
   </div>
 </section>
+
+<style>
+/* Only 4 stories on this page — a 2x2 grid reads better than 3+1 orphaned row. */
+.stories .action-strip{grid-template-columns:repeat(2,1fr);max-width:900px;margin:0 auto;}
+.stories .action-card .frame{height:280px;}
+@media (max-width:640px){.stories .action-strip{grid-template-columns:1fr;}}
+</style>
 
 <!-- ======================= CTA BAR — Payload Block: CtaBar ======================= -->
 <section class="cta-bar">
@@ -87,7 +86,7 @@
       <p>Donate, get free legal aid, or intern with PODA's field teams.</p>
     </div>
     <div class="actions">
-      <a class="btn btn-white" href="#"><svg class="icon"><use href="#i-heart"/></svg>Donate</a>
+      <a class="btn btn-white" href="donate.html"><svg class="icon"><use href="#i-heart"/></svg>Donate</a>
     </div>
   </div>
 </section>
@@ -95,7 +94,7 @@
 <!-- ======================= FOOTER — Payload Global: Footer ======================= -->
 <script src="js/global.js" data-poda="footer"></script>
 
-<a class="btn btn-primary floating-donate" href="#"><svg class="icon"><use href="#i-heart"/></svg>Donate</a>
+<a class="btn btn-primary floating-donate" href="donate.html"><svg class="icon"><use href="#i-heart"/></svg>Donate</a>
 
 <script src="js/main.js"></script>
 
