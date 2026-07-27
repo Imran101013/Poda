@@ -157,7 +157,7 @@ function wireListFilter({ searchId, filterId, listId, itemSelector, filterAttr, 
 
 wireListFilter({ searchId: 'pressSearch', filterId: 'yearFilter', listId: 'pressList', itemSelector: '.press-item', filterAttr: 'year', emptyId: 'pressEmpty' });
 wireListFilter({ searchId: 'pubSearch', filterId: 'typeFilter', listId: 'pubList', itemSelector: '.doc-card', filterAttr: 'type', emptyId: 'pubEmpty' });
-wireListFilter({ searchId: 'projSearch', filterId: 'decadeFilter', filterId2: 'themeFilter', listId: 'pastProjectsList', itemSelector: '.project-card', filterAttr: 'decade', filterAttr2: 'theme', emptyId: 'projEmpty', pageSize: 9, loadMoreId: 'projLoadMore' });
+wireListFilter({ searchId: 'projSearch', filterId: 'decadeFilter', filterId2: 'themeFilter', listId: 'pastProjectsList', itemSelector: '.project-card', filterAttr: 'decade', filterAttr2: 'theme', emptyId: 'projEmpty', pageSize: 3, loadMoreId: 'projLoadMore' });
 // activities.html only — full archive, search only, no pagination or category filter needed.
 wireListFilter({ searchId: 'activitySearch', listId: 'activityList', itemSelector: '.program-card', emptyId: 'activityEmpty' });
 wireListFilter({ filterId: 'galleryFilter', listId: 'galleryPreviewList', itemSelector: '.gallery-card', filterAttr: 'conference', emptyId: 'galleryEmpty', pageSize: 3, loadMoreId: 'galleryLoadMore' });

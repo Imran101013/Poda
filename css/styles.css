@@ -69,8 +69,18 @@ h2{line-height:1.15;}
 p{font-size:14px;}
 .lead{color:var(--text-muted);font-size:14px;}
 
-/* Italic serif accent word inside a heading — the "It Rebuilds Entire Worlds" treatment */
-em.accent{font-style:italic;color:var(--accent-secondary);font-weight:600;}
+/* Italic serif accent word inside a heading — the "It Rebuilds Entire Worlds" treatment.
+   Hand-drawn squiggle underline (charity-template signature motif) tiled beneath the
+   word in the same accent-secondary magenta already used for its color — kept low-amplitude
+   and thin so it reads as a flourish, not the heavier boldness of the reference theme. */
+em.accent{
+  font-style:italic;color:var(--accent-secondary);font-weight:600;
+  padding-bottom:0.14em;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='8' viewBox='0 0 20 8'%3E%3Cpath d='M1 5 Q5 1 10 5 T19 5' fill='none' stroke='%23B422D8' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:repeat-x;
+  background-position:0 100%;
+  background-size:16px 7px;
+}
 
 /* Inline meta row under hero copy — "Registered NGO  ·  30+ Districts  ·  20+ Years" */
 .meta-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-top:26px;}
@@ -217,10 +227,38 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .page-header h1{color:var(--white);font-size:clamp(24px,4.4vw,38px);font-weight:600;line-height:1.15;max-width:720px;margin-bottom:16px;}
 .page-header .lead{color:rgba(255,255,255,.88);max-width:620px;font-size:15px;}
 
+/* ============ IMPACT HERO — bespoke split hero, impact.html only ============
+   Replaces the shared .page-header banner for this page — a light editorial
+   split (copy + photo with an overlapping pull-quote) rather than the dark
+   full-bleed photo banner every other inner page uses. */
+.impact-hero{background:linear-gradient(180deg, var(--lavender-100) 0%, var(--white) 100%);padding:56px 0 84px;}
+.impact-hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:60px;align-items:center;}
+.impact-hero-copy .breadcrumb{color:var(--text-muted);}
+.impact-hero-copy .breadcrumb a{color:var(--text-muted);}
+.impact-hero-copy .breadcrumb a:hover{color:var(--purple-brand);}
+.impact-hero-copy h1{font-size:clamp(28px,3.4vw,40px);line-height:1.16;max-width:480px;margin:8px 0 16px;}
+.impact-hero-copy .lead{max-width:440px;font-size:15px;margin-bottom:24px;}
+.impact-hero-meta{display:flex;flex-wrap:wrap;gap:28px;}
+.impact-hero-meta span{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--purple-800);}
+.impact-hero-media{position:relative;}
+.impact-hero-media img{width:100%;height:420px;object-fit:cover;display:block;}
+.impact-hero-quote{
+  position:absolute;right:0;bottom:-36px;width:72%;box-sizing:border-box;
+  background:var(--purple-brand);color:var(--white);box-shadow:var(--shadow-lift);
+  padding:24px 28px;font-family:var(--font-secondary);font-style:italic;font-size:17px;line-height:1.42;
+}
+@media (max-width:900px){
+  .impact-hero-grid{grid-template-columns:1fr;gap:36px;}
+  .impact-hero-copy h1, .impact-hero-copy .lead{max-width:none;}
+  .impact-hero-media{margin-bottom:44px;}
+  .impact-hero-quote{width:82%;}
+}
+
 /* ============ IMPACT STRIP — Payload Block: "ImpactHighlights" ============
    fields: items[] { icon(select), value(text), label(text) }
    All figures are real & verifiable (program count, conference edition, coverage). */
 .impact-strip{margin-top:-52px;position:relative;z-index:10;}
+.impact-strip--flat{margin-top:0;}
 .impact-card{
   background:var(--white);border:1px solid var(--card-border);box-shadow:0 16px 40px rgba(20,10,35,.10);
   display:grid;grid-template-columns:repeat(4,1fr);
@@ -428,6 +466,22 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .radio-spotlight p{color:rgba(255,255,255,.82);font-size:14px;margin:0;max-width:520px;}
 .radio-spotlight .action{position:relative;z-index:1;flex-shrink:0;}
 
+/* News & Media's "Radio Programs" section — full-bleed dark band (reuses the
+   .purpose-dark color/blob treatment) so the Live Radio card and recorded
+   episodes read as a distinct, branded moment rather than another plain
+   white content-section. Scoped by ID since this is the one section on the
+   page that needs it. */
+#radio-programs{background:var(--purple-900);color:#fff;position:relative;overflow:hidden;}
+#radio-programs::before{
+  content:"";position:absolute;width:460px;height:460px;border-radius:50%;
+  background:radial-gradient(circle, rgba(180,34,216,.16), transparent 70%);top:-200px;right:-140px;
+}
+#radio-programs .container{position:relative;z-index:2;}
+#radio-programs .section-head .eyebrow{color:var(--accent-secondary);}
+#radio-programs .section-head h2{color:#fff;}
+#radio-programs .section-head .lead{color:rgba(255,255,255,.75);}
+#radio-programs .radio-spotlight{box-shadow:0 20px 50px rgba(0,0,0,.25);}
+
 /* ============ RADIO EPISODES — Payload Block: "EpisodeEmbedList" (Radio Programs page) ============
    fields: title, guest(text,optional), thumbnail(upload, optional), audioEmbedUrl (real
    soundcloud.com permalink). Simplified per direction: no category filter, no fake pager —
@@ -496,6 +550,62 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .press-item .share-row svg{width:14px;height:14px;}
 .empty-state{text-align:center;color:var(--text-muted);font-size:14px;padding:40px 0;display:none;}
 .empty-state.is-visible{display:block;}
+
+/* ============ PRESS ROOM (News & Media preview) — featured story + compact row list.
+   Scoped to news-and-media.html's embedded #press-room only, via its own .press-feature/
+   .press-row classes — press.html's full directory keeps the plain .press-item--media
+   list above untouched. Both still carry the base .press-item class so wireListFilter's
+   search/year filtering (targeting .press-item + data-year) keeps working unchanged. */
+.press-feature,
+.press-row{padding:0;border-bottom:0;}
+.press-feature{
+  display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:10px;
+  background:var(--white);border:1px solid var(--card-border);border-radius:var(--radius-lg);
+  overflow:hidden;box-shadow:var(--shadow-card);
+}
+.press-feature-media{position:relative;display:block;overflow:hidden;min-height:300px;}
+.press-feature-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.2,1);}
+.press-feature:hover .press-feature-media img{transform:scale(1.05);}
+.press-feature-date{
+  position:absolute;top:18px;left:18px;background:var(--white);border-radius:12px;padding:8px 13px;
+  text-align:center;line-height:1.05;box-shadow:0 8px 20px rgba(20,10,35,.18);
+}
+.press-feature-date .d{display:block;font-family:var(--font-display);font-size:19px;font-weight:700;color:var(--purple-800);}
+.press-feature-date .m{display:block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-secondary);}
+.press-feature-body{padding:34px 38px;display:flex;flex-direction:column;justify-content:center;}
+.press-kicker{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-secondary);margin-bottom:14px;}
+.press-kicker::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent-secondary);flex-shrink:0;}
+.press-feature-body h3{font-size:22px;line-height:1.32;margin-bottom:12px;}
+.press-feature-body h3 a{color:var(--purple-800);}
+.press-feature-body h3 a:hover{color:var(--purple-brand);}
+.press-feature-body p{font-size:14.5px;color:var(--text-muted);line-height:1.62;margin:0 0 24px;}
+.press-feature-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:auto;}
+
+.press-rows{display:flex;flex-direction:column;}
+.press-row{
+  display:grid;grid-template-columns:100px minmax(0,1fr) auto;gap:20px;align-items:center;
+  padding:18px 10px;border-bottom:1px solid #F1EFF7;border-radius:12px;transition:background .18s ease;
+}
+.press-rows .press-row:last-child{border-bottom:none;}
+.press-row:hover{background:var(--lavender-100);}
+.press-row-thumb{display:block;width:100px;height:74px;border-radius:10px;overflow:hidden;flex-shrink:0;}
+.press-row-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s ease;}
+.press-row:hover .press-row-thumb img{transform:scale(1.06);}
+.press-row-body h4{font-size:15.5px;margin:0 0 4px;}
+.press-row-body p{font-size:13.5px;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.press-row-share{margin:0;flex-shrink:0;}
+.press-row-share a{width:30px;height:30px;}
+.press-row-share svg{width:13px;height:13px;}
+
+@media (max-width:760px){
+  .press-feature{grid-template-columns:1fr;}
+  .press-feature-media{min-height:200px;}
+  .press-feature-body{padding:26px 24px;}
+  .press-row{grid-template-columns:72px 1fr;padding:16px 6px;gap:14px;}
+  .press-row-thumb{width:72px;height:72px;}
+  .press-row-body p,
+  .press-row-share{display:none;}
+}
 
 /* ============ PUBLICATIONS — Payload Block: "DocGrid" ============
    fields: title, docType(select), file(upload → Media), publishedDate(optional)
@@ -800,7 +910,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
 .video-card{overflow:hidden;border:1px solid var(--card-border);background:var(--white);transition:border-color .22s ease;}
 .video-card:hover{border-color:var(--card-border-hover);}
-.video-card .thumb{position:relative;height:170px;background:var(--lavender-200);overflow:hidden;}
+.video-card .thumb{display:block;position:relative;height:170px;background:var(--lavender-200);overflow:hidden;}
 .video-card .thumb img{width:100%;height:100%;object-fit:cover;}
 /* .thumb--poster: the source image is a designed graphic (event flyer, legal
    infographic) rather than a photo — its meaning lives in edge-to-edge text,
@@ -814,6 +924,12 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .video-card h4{font-size:14.5px;line-height:1.4;margin:0;}
 .video-card .body .stat{margin-bottom:8px;}
 .video-card .body p{font-size:14px;color:var(--text-muted);margin:8px 0 0;}
+
+/* Recent Webinars preview (News & Media) only — smaller thumbnails than the
+   full videos.html/webinars.html grids, which keep the base .video-card size. */
+#poda-webinar .video-card .thumb{height:120px;}
+#poda-webinar .video-card .play .circle{width:42px;height:42px;}
+#poda-webinar .video-card .play svg{width:17px;height:17px;}
 
 /* ============ PODA AT A GLANCE — Payload Block: "StatsGrid" ============ */
 .glance{padding:30px 0;background:var(--white);}
@@ -936,20 +1052,24 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 @media (max-width:1080px){.action-strip{grid-template-columns:repeat(2,1fr);}}
 @media (max-width:640px){.action-strip{grid-template-columns:1fr;}}
 
-/* ============ HELP STRIP — divided-column CTA (replaces glass "way-card" boxes) ============ */
-.help-strip{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);}
-.help-col{padding:0 28px;border-left:1px solid rgba(255,255,255,.16);}
-.help-col:first-child{border-left:0;padding-left:0;}
-.help-col .ic{
-  width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.1);color:#fff;
-  display:flex;align-items:center;justify-content:center;margin-bottom:16px;
-}
-.help-col h4{color:#fff;font-size:16px;margin-bottom:8px;}
-.help-col p{color:rgba(255,255,255,.72);font-size:13.5px;margin:0 0 14px;}
+/* ============ HELP STRIP — flat bordered cards, one filled as the accent ============
+   Replaces the earlier divided-column treatment: each way to help is now its
+   own independent bordered box (matching the site's flat card system used
+   elsewhere — no radius, no shadow) rather than columns sharing a divider. */
+.help-strip{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.help-col{background:var(--white);border:1px solid var(--card-border);padding:44px 38px 40px;}
+.help-col.is-accent{background:var(--purple-800);border-color:var(--purple-800);}
+.help-col .ic{color:var(--purple-brand);margin-bottom:22px;}
+.help-col .ic svg{width:38px;height:38px;}
+.help-col.is-accent .ic{color:var(--white);}
+.help-col h4{font-size:21px;color:var(--purple-800);margin-bottom:14px;}
+.help-col.is-accent h4{color:var(--white);}
+.help-col p{color:var(--text-muted);font-size:14.5px;line-height:1.65;margin:0 0 24px;}
+.help-col.is-accent p{color:rgba(255,255,255,.8);}
+.help-col .btn-text{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;}
+.help-col.is-accent .btn-text{color:var(--white);}
 @media (max-width:900px){
-  .help-strip{grid-template-columns:1fr;gap:26px;}
-  .help-col{border-left:0;padding-left:0;border-top:1px solid rgba(255,255,255,.16);padding-top:24px;}
-  .help-col:first-child{border-top:0;padding-top:0;}
+  .help-strip{grid-template-columns:1fr;}
 }
 
 /* ============ CTA BAR — Payload Block: "CtaBar" ============
@@ -1022,24 +1142,18 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .team-card .info h4{font-size:15px;margin-bottom:4px;}
 .team-card .info span{font-size:12.5px;color:var(--purple-brand);font-weight:600;}
 
-/* ============ CTA / WAYS TO HELP — Payload Block: "CtaBand" ============ */
+/* ============ CTA / WAYS TO HELP — Payload Block: "CtaBand" ============
+   Light, editorial closing section — flat bordered cards (one filled as the
+   accent) instead of the glass/gradient treatment, so the site's final
+   conversion moment reads as calm and confident rather than another dark band. */
 .cta-band{
-  background:linear-gradient(125deg, var(--purple-800) 0%, var(--purple-brand) 65%, var(--purple-soft) 100%);
-  padding:50px 0;color:var(--white);position:relative;overflow:hidden;
+  background:var(--lavender-100);
+  padding:76px 0 80px;color:var(--text-body);position:relative;overflow:hidden;
 }
-.cta-band::before{
-  content:"";position:absolute;width:420px;height:420px;border-radius:50%;
-  background:radial-gradient(circle, rgba(255,255,255,.08), transparent 70%);
-  top:-160px;right:-100px;
-}
-.cta-band::after{
-  content:"";position:absolute;width:300px;height:300px;border-radius:50%;
-  background:radial-gradient(circle, rgba(180,34,216,.18), transparent 70%);
-  bottom:-120px;left:-80px;
-}
-.cta-inner{position:relative;z-index:2;text-align:center;max-width:660px;margin:0 auto 48px;}
-.cta-inner h2{color:var(--white);font-size:clamp(22px,3.4vw,30px);margin-bottom:14px;}
-.cta-inner p{color:rgba(255,255,255,.85);}
+.cta-inner{position:relative;z-index:2;text-align:center;max-width:700px;margin:0 auto 52px;}
+.cta-inner h2{color:var(--purple-800);font-size:clamp(26px,3.6vw,38px);line-height:1.25;margin-bottom:0;}
+.cta-inner h2 em.accent{display:block;font-size:1.32em;margin-top:8px;}
+.cta-inner p{color:var(--text-muted);font-size:15px;line-height:1.7;max-width:540px;margin:20px auto 0;}
 .ways-grid{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
 .way-card{
   background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:var(--radius);
@@ -1154,7 +1268,10 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
 .story-feature h3{font-size:19px;line-height:1.35;margin-bottom:10px;}
 .story-feature .loc{font-size:12.5px;color:var(--text-muted);display:flex;align-items:center;gap:6px;margin-bottom:16px;}
 .story-feature .loc svg{width:14px;height:14px;flex-shrink:0;}
-.story-feature p{font-size:14px;margin:0 0 16px;}
+.story-feature p{
+  font-size:14px;margin:0 0 16px;display:-webkit-box;-webkit-box-orient:vertical;
+  -webkit-line-clamp:4;overflow:hidden;
+}
 .story-feature .takeaway{
   font-family:var(--font-secondary);font-style:italic;color:var(--purple-800);font-size:15px;
   padding:14px 18px;background:var(--lavender-100);border-left:3px solid var(--accent-secondary);
@@ -1162,61 +1279,101 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
 }
 .story-feature .story-tags{margin-bottom:0;}
 .story-feature-foot{display:flex;align-items:center;justify-content:space-between;margin-top:18px;}
+#success-stories .story-tags span{letter-spacing:.04em;text-transform:uppercase;}
 .impact-more{text-align:center;}
 
-/* Key achievements — checklist grid */
-.achv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
-.achv-item{
-  display:flex;gap:16px;align-items:flex-start;background:var(--white);
-  padding:22px;border:1px solid var(--card-border);
-  transition:border-color .22s ease;
-}
-.achv-item:hover{border-color:var(--card-border-hover);}
-.achv-item .ic{
-  width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg, var(--lavender-200), var(--lavender-300));
-  color:var(--purple-brand);display:flex;align-items:center;justify-content:center;flex-shrink:0;
-}
-.achv-item p{margin:0;font-size:14px;color:#463a4d;line-height:1.6;}
+/* Pairs a paginated "Load More" with a "View Full ..." link on one row
+   (News & Media's Photo and Video Highlights gallery) instead of stacking
+   them as two separate centered blocks. */
+.gallery-actions{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:20px;}
+.gallery-actions .projects-more,.gallery-actions .impact-more{margin:0;}
 
-/* Major milestones — vertical timeline */
-.timeline{position:relative;max-width:840px;margin:0 auto;padding-left:2px;}
-.timeline::before{content:"";position:absolute;left:19px;top:6px;bottom:6px;width:2px;background:var(--lavender-300);}
-.tl-item{position:relative;padding-left:56px;margin-bottom:34px;}
+
+/* Major milestones — vertical timeline, alternating left/right around a
+   center spine. The year itself is the marker — a solid pill sitting on
+   the spine — rather than a small ring plus a separately floating year
+   label, so there's nothing for the two to collide/overlap into, and the
+   year reads as the attention-grabbing element it should be. Compact
+   item spacing keeps 11 entries from turning into a very long page. */
+.timeline{position:relative;max-width:960px;margin:0 auto;}
+.timeline::before{content:"";position:absolute;left:50%;top:4px;bottom:4px;width:2px;background:var(--lavender-300);transform:translateX(-50%);}
+.tl-item{position:relative;display:grid;grid-template-columns:1fr 1fr;column-gap:64px;margin-bottom:20px;}
 .tl-item:last-child{margin-bottom:0;}
-.tl-item::before{
-  content:"";position:absolute;left:11px;top:2px;width:18px;height:18px;border-radius:50%;
-  background:var(--white);border:3px solid var(--purple-brand);z-index:1;
+.tl-item p{grid-column:2;margin:0;padding-top:34px;padding-left:36px;font-size:13.5px;line-height:1.6;color:#463a4d;}
+.tl-item:nth-child(even) p{grid-column:1;grid-row:1;padding-left:0;padding-right:36px;text-align:right;}
+.tl-year{
+  position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:2;
+  display:inline-block;white-space:nowrap;font-size:12.5px;font-weight:800;letter-spacing:.03em;
+  color:var(--white);background:var(--purple-brand);padding:7px 16px;border-radius:20px;
+  box-shadow:0 6px 16px rgba(84,55,124,.32);
 }
-.tl-item.milestone-flagship::before{border-color:var(--accent-secondary);}
-.tl-year{display:inline-block;font-size:12.5px;font-weight:800;letter-spacing:.04em;color:var(--purple-brand);
-  background:var(--lavender-100);padding:4px 12px;border-radius:20px;margin-bottom:8px;}
-.tl-item p{margin:0;font-size:14px;color:#463a4d;}
+.tl-item.milestone-flagship .tl-year{background:var(--accent-secondary);box-shadow:0 6px 16px rgba(180,34,216,.34);}
 
-/* Community transformation & Beneficiary testimonials — placeholder/mock content */
-.notice-banner{
-  display:flex;gap:14px;align-items:flex-start;background:var(--white);border:1.5px dashed var(--lavender-300);
-  border-radius:var(--radius);padding:20px 24px;margin-bottom:36px;max-width:820px;
+/* ============ POLICIES — governance policy grid (About page) ============
+   fields: items[] { title, body, icon } — flat lavender tiles, no card
+   border/shadow, icon badge floated beside the text rather than above it. */
+.policy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px;}
+.policy-card{
+  background:var(--lavender-100);padding:26px 22px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
 }
-.notice-banner .ic{width:36px;height:36px;border-radius:10px;background:var(--lavender-200);color:var(--purple-soft);
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.notice-banner strong{display:block;color:var(--purple-800);font-size:14.5px;margin-bottom:3px;}
-.notice-banner span{font-size:13.5px;color:var(--text-muted);}
+.policy-card .txt h4{font-size:15.5px;color:var(--purple-800);margin-bottom:8px;line-height:1.35;}
+.policy-card .txt p{font-size:13px;color:var(--text-muted);margin:0;line-height:1.55;}
+.policy-card .ic{
+  width:42px;height:42px;border-radius:50%;flex-shrink:0;
+  background:var(--lavender-300);color:var(--purple-brand);
+  display:flex;align-items:center;justify-content:center;
+}
+.policy-card .ic svg{width:18px;height:18px;}
+@media (max-width:900px){.policy-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.policy-grid{grid-template-columns:1fr;}}
+@media (max-width:760px){
+  .timeline::before{left:9px;}
+  .tl-item{display:block;padding-left:30px;margin-bottom:26px;}
+  .tl-item p{padding:0;text-align:left !important;}
+  .tl-year{position:static;transform:none;display:inline-block;margin-bottom:10px;margin-left:-30px;}
+}
 
-.mock-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-.mock-card{
-  position:relative;background:var(--white);padding:26px 22px;
-  border:1px solid var(--card-border);opacity:.86;
+/* Beneficiary testimonials — avatar-icon quote cards (image reference) */
+#beneficiary-testimonials .section-head h2::after{
+  content:'';display:block;width:48px;height:3px;background:var(--accent-secondary);margin:16px auto 0;
 }
-.mock-card .preview-tag{
-  position:absolute;top:16px;right:16px;font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
-  color:var(--purple-soft);background:var(--lavender-200);padding:4px 10px;border-radius:20px;
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:980px;margin:0 auto;}
+.testi-card{position:relative;text-align:center;padding:8px 12px;}
+.testi-avatar{
+  width:56px;height:56px;border-radius:50%;background:var(--lavender-100);color:var(--purple-brand);
+  display:flex;align-items:center;justify-content:center;margin:0 auto 14px;
 }
-.mock-card .ic{color:var(--purple-brand);margin-bottom:12px;}
-.mock-card .ic svg{width:28px;height:28px;}
-.mock-card h4{font-size:15px;line-height:1.4;margin-bottom:8px;padding-right:70px;}
-.mock-card .loc{font-size:12px;color:var(--text-muted);margin-bottom:10px;display:flex;align-items:center;gap:6px;}
-.mock-card .loc svg{width:13px;height:13px;flex-shrink:0;}
-.mock-card p{font-size:14px;color:var(--text-muted);margin:0;}
+.testi-avatar svg{width:24px;height:24px;}
+.testi-mark{font-family:var(--font-secondary);font-weight:700;font-size:28px;line-height:1;color:var(--accent-secondary);margin-bottom:8px;}
+.testi-quote{font-family:var(--font-secondary);font-style:italic;color:var(--purple-brand);font-size:14.5px;line-height:1.6;margin:0 0 18px;}
+.testi-name{font-weight:700;color:var(--purple-800);font-size:14px;margin-bottom:3px;}
+.testi-role{font-size:12.5px;color:var(--text-muted);}
+@media (max-width:760px){.testi-grid{grid-template-columns:1fr;gap:36px;}}
+
+/* Community transformation — photo/icon preview cards (image reference) */
+.ct-head{max-width:640px;margin:0 0 36px;}
+.ct-head h2{margin-top:8px;}
+.ct-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+.ct-card{position:relative;background:var(--white);border:1px solid var(--card-border);overflow:hidden;transition:border-color .22s ease;}
+.ct-card:hover{border-color:var(--card-border-hover);}
+.ct-preview-badge{
+  position:absolute;top:14px;right:14px;z-index:2;font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--white);background:rgba(35,22,52,.55);backdrop-filter:blur(3px);padding:4px 10px;border-radius:20px;
+}
+.ct-media{height:160px;background:var(--lavender-100);overflow:hidden;}
+.ct-media img{width:100%;height:100%;object-fit:cover;display:block;}
+.ct-media--icon{display:flex;align-items:center;justify-content:center;color:var(--lavender-300);}
+.ct-media--icon svg{width:40px;height:40px;}
+.ct-body{padding:22px 22px 24px;}
+.ct-tag{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--purple-brand);display:flex;align-items:center;gap:6px;margin-bottom:10px;}
+.ct-tag svg{width:12px;height:12px;flex-shrink:0;}
+.ct-card h4{font-size:18px;line-height:1.3;margin-bottom:10px;}
+.ct-card p{font-size:13.5px;line-height:1.6;color:var(--text-muted);margin:0 0 16px;}
+.ct-quote{font-family:var(--font-secondary);font-style:italic;color:var(--purple-800);}
+.ct-cta{font-size:12.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--purple-brand);display:inline-flex;align-items:center;gap:6px;}
+.ct-cta svg{width:13px;height:13px;}
+@media (max-width:900px){.ct-grid{grid-template-columns:1fr;}}
 
 .testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
 .testimonial-card{
@@ -1296,33 +1453,37 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
 }
 .project-interventions .ic svg{width:14px;height:14px;}
 
-/* Current Projects — compact 3-up grid, deliberately NOT the photo-thumbnail
-   pattern used by Past Projects below: a flat bordered card led by a solid
-   theme-colored icon badge (echoes the Programs icon grid above it on this
-   page) instead of a photo, with the full thematic-area copy + key-interventions
-   checklist collapsed behind a details toggle rather than a clamped paragraph. */
-.current-projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+/* Current Projects — image-led 2-up grid. Each card stacks a photo above its
+   body (fixed-height media + object-fit:cover so it always reads as a clear,
+   well-proportioned photo rather than an oddly-cropped sliver), then status +
+   duration, a clamped excerpt, funder/location meta, and the same details
+   toggle as before (key-interventions checklist collapses behind it — kept
+   as a real in-page accordion rather than a link that doesn't go anywhere). */
+.current-projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
 .current-project-card{
-  display:flex;flex-direction:column;background:var(--white);
-  border:1px solid var(--card-border);border-top:3px solid var(--purple-brand);
-  padding:26px;transition:border-color .22s ease;
+  display:grid;grid-template-columns:1fr;background:var(--white);
+  border:1px solid var(--card-border);overflow:hidden;transition:border-color .22s ease;
 }
 .current-project-card:hover{border-color:var(--card-border-hover);}
-.cpc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:18px;}
-.cpc-icon{
-  width:46px;height:46px;border-radius:50%;flex-shrink:0;background:var(--purple-brand);color:var(--white);
-  display:flex;align-items:center;justify-content:center;
-}
-.cpc-icon svg{width:22px;height:22px;}
+.cpc-media{height:220px;background:var(--lavender-200);}
+.cpc-media img{width:100%;height:100%;object-fit:cover;display:block;}
+.cpc-body{display:flex;flex-direction:column;padding:26px 26px 24px;}
+.cpc-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;}
+.current-project-card .project-status{margin-bottom:0;background:var(--lavender-100);color:var(--purple-brand);}
+.current-project-card .project-status::before{display:none;}
+.cpc-date{font-size:11.5px;font-weight:600;color:var(--text-muted);white-space:nowrap;}
 .current-project-card h3{font-size:16.5px;line-height:1.4;margin-bottom:10px;}
-.cpc-excerpt{font-size:13.5px;color:#5c5866;line-height:1.6;margin:0 0 16px;}
+.cpc-excerpt{
+  font-size:13.5px;color:#5c5866;line-height:1.6;margin:0 0 16px;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+}
 .cpc-meta{display:grid;gap:9px;margin-bottom:18px;}
 .cpc-meta li{position:relative;display:flex;gap:9px;align-items:flex-start;font-size:12.5px;color:var(--text-muted);line-height:1.5;}
 .cpc-meta li svg{width:13px;height:13px;color:var(--purple-soft);flex-shrink:0;margin-top:2px;}
 .cpc-toggle{
-  font-size:12.5px;font-weight:700;color:var(--purple-brand);background:none;border:0;padding:0;
-  cursor:pointer;display:inline-flex;align-items:center;gap:5px;align-self:flex-start;font-family:inherit;
-  margin-top:auto;
+  font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--purple-brand);
+  background:none;border:0;padding:0;cursor:pointer;display:inline-flex;align-items:center;gap:6px;
+  align-self:flex-start;font-family:inherit;margin-top:auto;
 }
 .cpc-toggle:hover{color:var(--purple-800);}
 .cpc-toggle svg{width:13px;height:13px;transition:transform .18s;}
@@ -1333,8 +1494,10 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
 .cpc-details .cpc-thematic{font-size:13px;color:#463a4d;line-height:1.6;margin:0 0 16px;}
 .cpc-details .project-interventions{gap:10px;}
 .cpc-details .project-interventions li{font-size:13.5px;line-height:1.55;}
-@media (max-width:1080px){.current-projects-grid{grid-template-columns:repeat(2,1fr);}}
-@media (max-width:600px){.current-projects-grid{grid-template-columns:1fr;}}
+@media (max-width:760px){
+  .current-projects-grid{grid-template-columns:1fr;}
+  .cpc-media{height:200px;}
+}
 
 /* Past Projects — equal-height card grid. Title and meta are clamped/ellipsed
    to a fixed number of lines so every card starts at the same height (CSS
@@ -1351,6 +1514,7 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
 .project-card::before{
   content:"";position:absolute;top:0;left:0;right:0;height:168px;
   background-size:cover;background-position:center;background-color:var(--lavender-200);
+  filter:grayscale(100%);
 }
 .project-card[data-theme="civic-voice-education"]::before{background-image:url(../images/site/prog-ai.jpg);}
 .project-card[data-theme="economic-empowerment"]::before{background-image:url(../images/site/prog-activity.jpg);}
@@ -1391,9 +1555,7 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
 .archive-note{text-align:center;color:var(--text-muted);font-size:14px;margin-top:32px;}
 
 @media (max-width:1080px){
-  .achv-grid{grid-template-columns:1fr;}
   .story-feature-grid{grid-template-columns:1fr;}
-  .mock-grid{grid-template-columns:repeat(2,1fr);}
   .testimonial-grid{grid-template-columns:repeat(2,1fr);}
   .project-meta-grid{grid-template-columns:repeat(2,1fr);}
   .project-card-grid{grid-template-columns:repeat(2,1fr);}
