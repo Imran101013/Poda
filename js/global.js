@@ -55,7 +55,6 @@
     {
       key: 'about', label: 'About Us', href: 'about.html', children: [
         { label: 'PODA Mission', href: 'about.html#mission' },
-        { label: 'PODA History', href: 'about.html#history' },
         { label: 'PODA Board', href: 'about.html#board' },
         { label: 'PODA Team', href: 'about.html#team' },
         { label: 'PODA Policies', href: 'about.html#policies' },
@@ -184,6 +183,10 @@
       '        <li><a href="' + basePath + 'activities/205-wednesday-webinar-parwl.html">205 Wednesday Webinar by PARWL-Pakistan</a></li>\n' +
       '      </ul>';
 
+    // "Our Work" below is a curated 4-of-7 highlight slice (Annual Conference +
+    // 4 of the 7 flagship program-detail.html entries), not the full program
+    // list — same "recency/curation slice, not everything" pattern as the
+    // homepage's ActivityGrid. Not an omission; keep it short on purpose.
     var html =
       '<footer class="site-footer">\n' +
       '  <div class="container footer-grid">\n' +

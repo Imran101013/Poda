@@ -30,7 +30,6 @@
 <section class="page-header post-header" id="post-page-header">
   <div class="container">
     <div class="breadcrumb reveal"><a href="index.html">Home</a> / <a href="blogs.html">Blogs &amp; Articles</a> / <span id="post-breadcrumb">Article</span></div>
-    <span class="eyebrow" id="post-eyebrow" style="color:#B422D8;"></span>
     <h1 class="reveal" id="post-title"></h1>
     <div class="post-meta reveal" id="post-meta"></div>
   </div>
@@ -51,6 +50,10 @@
   </div>
 </section>
 
+<!-- DYNAMIC-ROUTE STAND-IN: this one static file simulates Payload's future
+     /blogs/[slug] route via ?post=<slug> + a client-side data lookup. In the
+     Payload frontend this becomes one template rendering whichever BlogPosts
+     document matches the slug — not a file per article. -->
 <script>
 (function(){
   var POSTS = {

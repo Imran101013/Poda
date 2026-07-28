@@ -79,6 +79,10 @@
 .lb-thumb:hover img{transform:scale(1.06);}
 </style>
 
+<!-- DYNAMIC-ROUTE STAND-IN: this one static file simulates Payload's future
+     /annual-conference/[edition] route via ?edition=<year> + a client-side
+     data lookup. In the Payload frontend this becomes one template rendering
+     whichever ConferenceEditions document matches the edition — not a file per year. -->
 <script>
 (function(){
   var CONFERENCES = {

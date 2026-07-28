@@ -35,7 +35,6 @@
 <section class="page-header post-header" id="course-page-header">
   <div class="container">
     <div class="breadcrumb reveal"><a href="index.html">Home</a> / <a href="skills-center.html">Skills Center</a> / <span id="course-breadcrumb">Course Detail</span></div>
-    <span class="eyebrow" style="color:#B422D8;">Course Detail</span>
     <h1 class="reveal" id="course-title"></h1>
   </div>
 </section>
@@ -142,6 +141,10 @@
   </div>
 </div>
 
+<!-- DYNAMIC-ROUTE STAND-IN: this one static file simulates Payload's future
+     /skills-center/[slug] route via ?course=<slug> + a client-side data
+     lookup. In the Payload frontend this becomes one template rendering
+     whichever Courses document matches the slug — not a file per course. -->
 <script>
 (function(){
   var COURSES = {

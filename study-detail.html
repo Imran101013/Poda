@@ -30,7 +30,6 @@
 <section class="page-header post-header" id="study-page-header">
   <div class="container">
     <div class="breadcrumb reveal"><a href="index.html">Home</a> / <a href="research-studies.html">Research Studies</a> / <span id="study-breadcrumb">Study</span></div>
-    <span class="eyebrow" id="study-eyebrow" style="color:#B422D8;"></span>
     <h1 class="reveal" id="study-title"></h1>
     <div class="post-meta reveal" id="study-meta"></div>
   </div>
@@ -64,6 +63,10 @@
   </div>
 </section>
 
+<!-- DYNAMIC-ROUTE STAND-IN: this one static file simulates Payload's future
+     /research-studies/[slug] route via ?study=<slug> + a client-side data
+     lookup. In the Payload frontend this becomes one template rendering
+     whichever ResearchStudies document matches the slug — not a file per study. -->
 <script>
 (function(){
   var STUDIES = {

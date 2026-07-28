@@ -43,7 +43,6 @@
   <div class="container">
     <div class="pd-description-grid">
       <div class="txt reveal">
-        <span class="eyebrow">Program description</span>
         <h2>Overview</h2>
         <p id="prog-overview"></p>
       </div>
@@ -56,7 +55,6 @@
 <section class="pd-info">
   <div class="container">
     <div class="section-head reveal" style="text-align:left;max-width:none;margin:0 0 24px;">
-      <span class="eyebrow">Program information</span>
       <h2>At a Glance</h2>
     </div>
     <div class="pd-info-card reveal" id="prog-info-rows"></div>
@@ -67,7 +65,6 @@
 <section class="pd-impact">
   <div class="container">
     <div class="section-head reveal" style="text-align:left;max-width:none;margin:0 0 24px;">
-      <span class="eyebrow" style="color:#B422D8;">Impact</span>
       <h2>What This Program Has <em class="accent">Delivered</em></h2>
     </div>
     <div class="pd-impact-grid reveal" id="prog-impact-rows"></div>
@@ -78,7 +75,6 @@
 <section class="content-section">
   <div class="container">
     <div class="section-head reveal" style="text-align:left;max-width:none;">
-      <span class="eyebrow">What this program delivers</span>
       <h2>Key Interventions</h2>
     </div>
     <ul class="project-interventions" id="prog-deliverables" style="max-width:820px;"></ul>
@@ -89,7 +85,6 @@
 <section class="content-section">
   <div class="container">
     <div class="section-head reveal" style="text-align:left;max-width:none;">
-      <span class="eyebrow">Latest work</span>
       <h2 id="prog-latest-heading">Latest Projects Under This Program</h2>
     </div>
     <div class="project-card-grid" id="prog-latest-list"></div>
@@ -104,6 +99,10 @@
   </div>
 </section>
 
+<!-- DYNAMIC-ROUTE STAND-IN: this one static file simulates Payload's future
+     /projects/[slug] route via ?program=<slug> + a client-side data lookup.
+     In the Payload frontend this becomes one template rendering whichever
+     flagship Projects document matches the slug — not a file per program. -->
 <script>
 (function(){
   var PROGRAMS = {
