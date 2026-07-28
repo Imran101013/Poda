@@ -72,7 +72,7 @@
       ]
     },
     {
-      key: 'projects', label: 'Programs', children: [
+      key: 'projects', label: 'Programs', href: 'projects.html', children: [
         { label: 'PODA Programs', href: 'projects.html' },
         { label: 'PODA Past Projects', href: 'projects.html#past-projects' },
         { label: 'PODA Current Projects', href: 'projects.html#current-projects' }
