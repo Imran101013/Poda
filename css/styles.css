@@ -1124,8 +1124,8 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
   padding:76px 0 80px;color:var(--text-body);position:relative;overflow:hidden;
 }
 .cta-inner{position:relative;z-index:2;text-align:center;max-width:700px;margin:0 auto 52px;}
-.cta-inner h2{color:var(--purple-800);font-size:clamp(26px,3.6vw,38px);line-height:1.25;margin-bottom:0;}
-.cta-inner h2 em.accent{display:block;font-size:1.32em;margin-top:8px;}
+.cta-inner h2{color:var(--purple-800);font-size:clamp(26px,3.6vw,32px);line-height:1.25;margin-bottom:0;}
+.cta-inner h2 em.accent{font-size:32px;margin-top:8px;}
 .cta-inner p{color:var(--text-muted);font-size:15px;line-height:1.7;max-width:540px;margin:20px auto 0;}
 .ways-grid{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
 .way-card{
