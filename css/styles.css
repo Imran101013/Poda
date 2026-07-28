@@ -227,38 +227,11 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .page-header h1{color:var(--white);font-size:clamp(24px,4.4vw,38px);font-weight:600;line-height:1.15;max-width:720px;margin-bottom:16px;}
 .page-header .lead{color:rgba(255,255,255,.88);max-width:620px;font-size:15px;}
 
-/* ============ IMPACT HERO — bespoke split hero, impact.html only ============
-   Replaces the shared .page-header banner for this page — a light editorial
-   split (copy + photo with an overlapping pull-quote) rather than the dark
-   full-bleed photo banner every other inner page uses. */
-.impact-hero{background:linear-gradient(180deg, var(--lavender-100) 0%, var(--white) 100%);padding:56px 0 84px;}
-.impact-hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:60px;align-items:center;}
-.impact-hero-copy .breadcrumb{color:var(--text-muted);}
-.impact-hero-copy .breadcrumb a{color:var(--text-muted);}
-.impact-hero-copy .breadcrumb a:hover{color:var(--purple-brand);}
-.impact-hero-copy h1{font-size:clamp(28px,3.4vw,40px);line-height:1.16;max-width:480px;margin:8px 0 16px;}
-.impact-hero-copy .lead{max-width:440px;font-size:15px;margin-bottom:24px;}
-.impact-hero-meta{display:flex;flex-wrap:wrap;gap:28px;}
-.impact-hero-meta span{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--purple-800);}
-.impact-hero-media{position:relative;}
-.impact-hero-media img{width:100%;height:420px;object-fit:cover;display:block;}
-.impact-hero-quote{
-  position:absolute;right:0;bottom:-36px;width:72%;box-sizing:border-box;
-  background:var(--purple-brand);color:var(--white);box-shadow:var(--shadow-lift);
-  padding:24px 28px;font-family:var(--font-secondary);font-style:italic;font-size:17px;line-height:1.42;
-}
-@media (max-width:900px){
-  .impact-hero-grid{grid-template-columns:1fr;gap:36px;}
-  .impact-hero-copy h1, .impact-hero-copy .lead{max-width:none;}
-  .impact-hero-media{margin-bottom:44px;}
-  .impact-hero-quote{width:82%;}
-}
-
 /* ============ IMPACT STRIP — Payload Block: "ImpactHighlights" ============
    fields: items[] { icon(select), value(text), label(text) }
    All figures are real & verifiable (program count, conference edition, coverage). */
 .impact-strip{margin-top:-52px;position:relative;z-index:10;}
-.impact-strip--flat{margin-top:0;}
+.impact-strip--flat{margin: top -52px;;}
 .impact-card{
   background:var(--white);border:1px solid var(--card-border);box-shadow:0 16px 40px rgba(20,10,35,.10);
   display:grid;grid-template-columns:repeat(4,1fr);
@@ -278,7 +251,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
   color:var(--purple-brand);line-height:1.1;margin-bottom:6px;
 }
 .num{font-size:20px;font-weight:600;}
-.impact-item .lbl{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--text-muted);}
+.impact-item .lbl{font-size:12px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--text-muted);}
 
 /* ============ MISSION & VISION — Payload Block: "MissionVision" ============
    fields: image(upload), missionText(richText), visionText(richText) */
@@ -1290,24 +1263,44 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
 
 
 /* Major milestones — vertical timeline, alternating left/right around a
-   center spine. The year itself is the marker — a solid pill sitting on
-   the spine — rather than a small ring plus a separately floating year
-   label, so there's nothing for the two to collide/overlap into, and the
-   year reads as the attention-grabbing element it should be. Compact
-   item spacing keeps 11 entries from turning into a very long page. */
+   center spine. Each entry is a card connected to the spine by a short
+   stem + dot, so it reads as a distinct event rather than loose text
+   floating beside a line. Flagship entries get an accent-tinted card,
+   a left accent bar and a small "Flagship" badge so the handful of
+   defining moments stand out from the routine programme updates. */
 .timeline{position:relative;max-width:960px;margin:0 auto;}
-.timeline::before{content:"";position:absolute;left:50%;top:4px;bottom:4px;width:2px;background:var(--lavender-300);transform:translateX(-50%);}
-.tl-item{position:relative;display:grid;grid-template-columns:1fr 1fr;column-gap:64px;margin-bottom:20px;}
+.timeline::before{content:"";position:absolute;left:50%;top:6px;bottom:6px;width:2px;background:var(--lavender-300);transform:translateX(-50%);}
+.tl-item{position:relative;display:grid;grid-template-columns:1fr 1fr;column-gap:64px;margin-bottom:28px;}
 .tl-item:last-child{margin-bottom:0;}
-.tl-item p{grid-column:2;margin:0;padding-top:34px;padding-left:36px;font-size:13.5px;line-height:1.6;color:#463a4d;}
-.tl-item:nth-child(even) p{grid-column:1;grid-row:1;padding-left:0;padding-right:36px;text-align:right;}
+.tl-card{
+  position:relative;grid-column:2;background:var(--white);border:1px solid var(--lavender-300);
+  border-radius:var(--radius);box-shadow:var(--shadow-card);padding:20px 24px 18px;
+  transition:transform .22s ease, box-shadow .22s ease;
+}
+.tl-item:nth-child(even) .tl-card{grid-column:1;grid-row:1;}
+.tl-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift);}
+.tl-card::before{content:"";position:absolute;top:24px;width:26px;height:2px;background:var(--lavender-300);}
+.tl-card::after{
+  content:"";position:absolute;top:19px;width:12px;height:12px;border-radius:50%;
+  background:var(--purple-brand);box-shadow:0 0 0 4px var(--white),0 0 0 5px var(--lavender-300);
+}
+.tl-item:nth-child(odd) .tl-card::before{left:-26px;}
+.tl-item:nth-child(odd) .tl-card::after{left:-32px;}
+.tl-item:nth-child(even) .tl-card::before{right:-26px;}
+.tl-item:nth-child(even) .tl-card::after{right:-32px;}
+.tl-card p{margin:10px 0 0;font-size:13.5px;line-height:1.6;color:#463a4d;}
 .tl-year{
-  position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:2;
   display:inline-block;white-space:nowrap;font-size:12.5px;font-weight:800;letter-spacing:.03em;
   color:var(--white);background:var(--purple-brand);padding:7px 16px;border-radius:20px;
   box-shadow:0 6px 16px rgba(84,55,124,.32);
 }
+.tl-item.milestone-flagship .tl-card{background:var(--lavender-100);border-color:rgba(180,34,216,.28);}
+.tl-item.milestone-flagship .tl-card::after{background:var(--accent-secondary);box-shadow:0 0 0 4px var(--white),0 0 0 5px rgba(180,34,216,.3);}
 .tl-item.milestone-flagship .tl-year{background:var(--accent-secondary);box-shadow:0 6px 16px rgba(180,34,216,.34);}
+.tl-flag{
+  float:right;font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--accent-secondary);background:rgba(180,34,216,.1);padding:5px 10px;border-radius:20px;
+}
 
 /* ============ POLICIES — governance policy grid (About page) ============
    fields: items[] { title, body, icon } — flat lavender tiles, no card
@@ -1329,9 +1322,11 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
 @media (max-width:560px){.policy-grid{grid-template-columns:1fr;}}
 @media (max-width:760px){
   .timeline::before{left:9px;}
-  .tl-item{display:block;padding-left:30px;margin-bottom:26px;}
-  .tl-item p{padding:0;text-align:left !important;}
-  .tl-year{position:static;transform:none;display:inline-block;margin-bottom:10px;margin-left:-30px;}
+  .tl-item{display:block;padding-left:30px;margin-bottom:20px;}
+  .tl-card,.tl-item:nth-child(even) .tl-card{grid-column:auto;padding:18px 20px 16px;}
+  .tl-card::before{display:none;}
+  .tl-card::after,.tl-item:nth-child(even) .tl-card::after{left:-32px;right:auto;top:22px;}
+  .tl-flag{float:none;display:inline-block;margin-bottom:8px;}
 }
 
 /* Beneficiary testimonials — avatar-icon quote cards (image reference) */
