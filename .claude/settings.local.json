@@ -5,9 +5,6 @@
       "Bash(taskkill //F //IM node.exe)"
     ]
   },
-  "skillOverrides": {
-    "impeccable": "off"
-  },
   "hooks": {
     "PostToolUse": [
       {
