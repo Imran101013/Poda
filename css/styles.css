@@ -70,7 +70,6 @@ p{font-size:14px;}
 em.accent{
   font-style:italic;color:var(--accent-secondary);font-weight:600;
   padding-bottom:0.14em;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='8' viewBox='0 0 20 8'%3E%3Cpath d='M1 5 Q5 1 10 5 T19 5' fill='none' stroke='%23B422D8' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat:repeat-x;
   background-position:0 100%;
   background-size:16px 7px;
@@ -168,7 +167,7 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
 .hero-slide.active{opacity:1;}
 .hero-slide::after{
   content:"";position:absolute;inset:0;
-  background:linear-gradient(100deg, rgba(34,22,50,.88) 0%, rgba(50,33,74,.55) 42%, rgba(50,33,74,.2) 75%);
+  background:linear-gradient(100deg, rgba(34,22,50,.90) 0%, rgba(50,33,74,.55) 32%, rgba(50,33,74,.12) 55%, rgba(50,33,74,0) 72%);
 }
 .hero-inner{position:relative;z-index:2;height:100%;display:flex;align-items:center;justify-content:flex-start;}
 .hero-content{max-width:600px;}
@@ -200,9 +199,13 @@ nav.main-nav .submenu li a:hover{background:var(--lavender-100);color:var(--purp
   border-bottom:3px solid var(--accent-secondary);
 }
 /* .has-photo: pass a real photo via inline style, e.g.
-   style="background-image:linear-gradient(115deg, rgba(35,22,52,.93) 0%, rgba(67,44,99,.86) 48%, rgba(84,55,124,.68) 100%), url('images/site/xxx.jpg');background-size:cover;background-position:center;"
-   — the gradient stops read as an editorial photo banner instead of the flat-color fallback below. */
+   style="background-image:linear-gradient(115deg, rgba(35,22,52,.94) 0%, rgba(50,33,74,.6) 30%, rgba(50,33,74,.18) 52%, rgba(50,33,74,0) 68%), url('images/site/xxx.jpg');"
+   — dark on the left for legible text, fading to a fully clear photo on the right. */
 .page-header.has-photo{background-size:cover;background-position:center;}
+.page-header.has-photo::before,
+.page-header.has-photo::after{display:none;}
+.page-header.has-photo h1,
+.page-header.has-photo .lead{text-shadow:0 6px 20px rgba(20,10,32,.45);}
 .page-header::before{
   content:"";position:absolute;width:420px;height:420px;border-radius:50%;
   background:radial-gradient(circle, rgba(255,255,255,.08), transparent 70%);
@@ -1186,8 +1189,8 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
 .tl-item:nth-child(even) .tl-card::after{right:-32px;}
 .tl-card p{margin:10px 0 0;font-size:13.5px;line-height:1.6;color:#463a4d;}
 .tl-year{
-  display:inline-block;white-space:nowrap;font-size:12.5px;font-weight:800;letter-spacing:.03em;
-  color:var(--white);background:var(--purple-brand);padding:7px 16px;border-radius:20px;
+  display:inline-block;white-space:nowrap;font-size:13px;font-weight:800;letter-spacing:.03em;
+  color:var(--purple-brand);padding:7px 16px;
   box-shadow:0 6px 16px rgba(84,55,124,.32);
 }
 .tl-item.milestone-flagship .tl-card{background:var(--lavender-100);border-color:rgba(180,34,216,.28);}
@@ -1226,9 +1229,6 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
 }
 
 /* Beneficiary testimonials — avatar-icon quote cards (image reference) */
-#beneficiary-testimonials .section-head h2::after{
-  content:'';display:block;width:48px;height:3px;background:var(--accent-secondary);margin:16px auto 0;
-}
 .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:980px;margin:0 auto;}
 .testi-card{position:relative;text-align:center;padding:8px 12px;}
 .testi-avatar{
@@ -1282,11 +1282,10 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
    same list-toolbar + wireListFilter pattern already used on Press/Publications,
    since 44 entries needs a directory, not a card grid. */
 .project-status{
-  display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:.05em;
-  text-transform:uppercase;color:var(--accent-secondary);background:rgba(180,34,216,.12);
+  display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;letter-spacing:.05em;
+  text-transform:uppercase;color:var(--accent-secondary);
   padding:5px 13px;border-radius:20px;margin-bottom:16px;
 }
-.project-status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent-secondary);}
 .project-feature{
   background:var(--white);position:relative;padding:326px 0 28px;border-bottom:1px solid var(--card-border);
   margin-bottom:28px;scroll-margin-top:150px;
@@ -1841,9 +1840,8 @@ address svg{width:15px;height:15px;flex-shrink:0;margin-top:3px;color:var(--acce
 .opening-badge{
   display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;
   letter-spacing:.05em;text-transform:uppercase;color:var(--accent-secondary);
-  background:rgba(180,34,216,.12);padding:5px 13px;border-radius:20px;
+  background:rgba(180,34,216,.12);padding:5px 10px;
 }
-.opening-badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent-secondary);}
 .opening-dept{
   font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
   color:var(--purple-brand);background:var(--lavender-100);padding:5px 13px;border-radius:20px;

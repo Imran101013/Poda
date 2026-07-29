@@ -35,7 +35,6 @@
 <section class="page-header post-header" id="conf-page-header">
   <div class="container">
     <div class="breadcrumb reveal"><a href="index.html">Home</a> / <a href="annual-conference.html">Annual Conference</a> / <span id="conf-breadcrumb">Conference Detail</span></div>
-    <span class="badge-pill"><span class="dot"></span><span id="conf-eyebrow"></span></span>
     <h1 class="reveal" id="conf-title"></h1>
     <div class="post-meta reveal" id="conf-meta"></div>
   </div>
@@ -88,7 +87,6 @@
   var CONFERENCES = {
     '2025': {
       breadcrumb: 'Conference 2025 Detail',
-      eyebrow: '18th Edition · October 2025',
       title: '18th Annual Rural Women Leadership Training Conference',
       meta: '<span><svg class="icon"><use href="#i-calendar"/></svg>15–17 October 2025</span><span><svg class="icon"><use href="#i-pin"/></svg>Islamabad</span><span><svg class="icon"><use href="#i-people"/></svg>1,500+ Leaders · 100 Districts</span>',
       image: 'images/site/prog-conference.png',
@@ -106,7 +104,6 @@
     },
     '2024': {
       breadcrumb: 'Conference 2024 Detail',
-      eyebrow: '17th Edition · 2024',
       title: '17th Annual Rural Women Leadership Training Conference',
       meta: '<span><svg class="icon"><use href="#i-calendar"/></svg>2024</span><span><svg class="icon"><use href="#i-pin"/></svg>Islamabad</span>',
       image: 'images/programs/prog2-conference.jpg',
@@ -117,7 +114,6 @@
     },
     '2020': {
       breadcrumb: 'Conference 2020–2021 Detail',
-      eyebrow: '16th Edition · 2020–2021',
       title: '16th Annual Rural Women Leadership Training Conference',
       meta: '<span><svg class="icon"><use href="#i-calendar"/></svg>2020–2021</span><span><svg class="icon"><use href="#i-pin"/></svg>Pakistan</span>',
       image: 'images/programs/prog2-conference.jpg',
@@ -128,7 +124,6 @@
     },
     '2019': {
       breadcrumb: 'Conference 2019–2020 Detail',
-      eyebrow: '15th Edition · 2019–2020',
       title: '15th Annual Rural Women Leadership Training Conference',
       meta: '<span><svg class="icon"><use href="#i-calendar"/></svg>2019–2020</span><span><svg class="icon"><use href="#i-pin"/></svg>Pakistan</span>',
       image: 'images/programs/prog2-conference.jpg',
@@ -139,7 +134,6 @@
     },
     '2011': {
       breadcrumb: 'Conference 2011 Detail',
-      eyebrow: 'Early Edition · 2011',
       title: 'Annual Rural Women Leadership Training Conference 2011',
       meta: '<span><svg class="icon"><use href="#i-calendar"/></svg>2011</span><span><svg class="icon"><use href="#i-pin"/></svg>Pakistan</span>',
       image: 'images/programs/prog2-conference.jpg',
@@ -155,7 +149,6 @@
 
   // Populate header
   document.getElementById('conf-breadcrumb').textContent = conf.breadcrumb;
-  document.getElementById('conf-eyebrow').textContent = conf.eyebrow;
   var confTitleWords = conf.title.split(' ');
   var confTitleLastWord = confTitleWords.pop();
   document.getElementById('conf-title').innerHTML = (confTitleWords.length ? confTitleWords.join(' ') + ' ' : '') + '<em class="accent">' + confTitleLastWord + '</em>';
